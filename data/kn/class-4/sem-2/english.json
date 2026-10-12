@@ -2,776 +2,271 @@
  "subject": "english",
  "cls": 4,
  "semester": 2,
- "medium": "kn",
+ "medium": "sl",
+ "title": "English",
+ "part": "Part–2 · 2026–27",
  "lessons": [
   {
-   "n": 1,
-   "t": "Who's the Best?",
+   "n": 6,
+   "t": "Farming (Unit 6)",
    "au": "ಸಮಿತಿ ರಚನೆ",
    "pg": 1,
-   "words": "suitable – having the right qualities for a particular person; propose – to ask someone to marry; curious – eager to know about something; precious – something that is valuable or important; protect – to keep someone or something safe from harm; bow – to bend down to show respect; politely – behaving or speaking in a decent manner; attack – to hurt a person or damage a place",
+   "words": "chew – bite food; dappled – marked with spots of colour; cropping – biting off the hay; hay – cut and dried grass; shear – cut the wool off a sheep; pat – touch someone gently to express love; caress – touch something gently; bosom – chest",
    "notes": "",
    "ab": [
     [
-     "I. Put a tick mark on the correct answer :",
+     "ಕವನ ಓದಿ ಅರ್ಥ ಮಾಡಿಕೊಳ್ಳಿ (ಪುಟ 2)",
      [
       [
-       "1. The name of the princess was ___________ (Yasmin / Jasmine)",
-       "Jasmine"
+       "1. The colour of the cow was",
+       "b. brown"
       ],
       [
-       "2. The king gave a test to the ______ princes. (two / three / four)",
-       "three"
+       "2. The little lamb had",
+       "c. wool"
       ],
       [
-       "3. The princes had to bring a gift within a ________ (week / month / year)",
-       "month"
-      ],
-      [
-       "4. The king chose Prince __________ to marry his daughter. (Anush / Faris / Zeeshan)",
-       "Zeeshan"
+       "3. The poet said, “Good morning, Mr. Horse.” The horse said",
+       "c. neigh"
       ]
      ]
     ],
     [
-     "II. Write True (T) or False (F) for the following statements:",
+     "ಪ್ರಾಣಿಗಳ ಕೂಗು – ಹೊಂದಿಸಿ ಹೇಳಿ (ಪುಟ 3)",
      [
       [
-       "1. The king loved his people. ( )",
-       "T"
-      ],
-      [
-       "2. Prince Faris brought a gun as a gift. ( )",
-       "F (Prince Faris brought diamonds and rubies; Prince Anush brought a gun.)"
-      ],
-      [
-       "3. Prince Zeeshan fought with the thieves. ( )",
-       "T"
-      ],
-      [
-       "4. Prince Anush did not bring any gift for the princess. ( )",
-       "F (Prince Anush brought a gun.)"
+       "ಚಿತ್ರ A ಮತ್ತು B ಹೊಂದಿಸಿ ವಾಕ್ಯ ಹೇಳಿ. (ಉದಾ: A donkey brays.)",
+       "[GRID]Animal|Sound / Donkey|brays / Goat|bleats / Pig|snorts / Snake|hisses / Bull|bellows / Hen|cackles",
+       "images/class-4/english/c4-en-u6-p3-animals.webp"
       ]
      ]
     ],
     [
-     "III. Complete the following sentences:",
+     "ಉತ್ತರ ಬರೆ (ಪುಟ 4)",
      [
       [
-       "1. The king had a beautiful __________________",
-       "daughter"
+       "1. When the poet saw the cow, she was ___",
+       "b) raising her head and chewing the grass"
       ],
       [
-       "2. He decided to give away his kingdom because _________",
-       "he had no sons"
+       "2. When the poet saw the horse, it was ___",
+       "c) cropping in the hay"
       ],
       [
-       "3. He wanted to test which prince would _____________",
-       "be able to protect his people"
-      ],
-      [
-       "4. The names of the princes selected by the king were _____ ____________________, ____________________",
-       "Faris, Anush, Zeeshan"
-      ],
-      [
-       "5. The princes had to bring _______________________",
-       "the best gift for the princess"
+       "3. When the poet saw the little lamb, he ___",
+       "a) followed it"
       ]
      ]
     ],
     [
-     "IV. Answer the following questions:",
+     "ಶಬ್ದ ಗುಂಪು – ಒಂದೇ ಶಬ್ದದ ಪದಗಳು (ಪುಟ 4–5)",
      [
       [
-       "1. What did the king ask the princes to do?",
-       "He asked them to bring the best gift for his daughter, which should also be good for his kingdom."
+       "Teacher says these words. Listen. Then say the words aloud. (little, kettle, bottle, lamb, tomb, plumb …)",
+       "ಚಟುವಟಿಕೆ – ಶಿಕ್ಷಕರ ಜೊತೆ ಮಾಡಿ ಪುನರಾವರ್ತಿಸಿ."
       ],
       [
-       "2. What did Prince Faris bring for the princess?",
-       "Diamonds and rubies."
+       "Divide the words into two groups with the same sounds.",
+       "[GRID]“ow” ಶಬ್ದ (crowd, cloud …)|“ay” ಶಬ್ದ (ray, say …) / crowd, frown, cloud, brown, drown, crown, proud, loud|ray, say, may, day, hay, way"
       ],
       [
-       "3. What did Prince Anush bring?",
-       "A gun."
-      ],
-      [
-       "4. What did the thieves take away from the village?",
-       "The cows and corn of the villagers."
-      ],
-      [
-       "5. Why did the king give his daughter in marriage to Prince Zeeshan?",
-       "Because he was brave and kind, and could protect the kingdom and its people."
-      ]
-     ]
-    ],
-    [
-     "V. Use the following words in sentences of your own.",
-     [
-      [
-       "1. gift –",
-       "ಮಕ್ಕಳ ಉತ್ತರವನ್ನು ಆಧರಿಸಿ ಅಂಕ ನೀಡುವುದು. (ಮಾದರಿ: The king gave a gift to the prince.)"
-      ],
-      [
-       "2. beautiful –",
-       "ಮಕ್ಕಳ ಉತ್ತರವನ್ನು ಆಧರಿಸಿ ಅಂಕ ನೀಡುವುದು. (ಮಾದರಿ: The princess was beautiful.)"
-      ],
-      [
-       "3. curious –",
-       "ಮಕ್ಕಳ ಉತ್ತರವನ್ನು ಆಧರಿಸಿ ಅಂಕ ನೀಡುವುದು. (ಮಾದರಿ: Everyone was curious to see the gifts.)"
-      ],
-      [
-       "4. protect –",
-       "ಮಕ್ಕಳ ಉತ್ತರವನ್ನು ಆಧರಿಸಿ ಅಂಕ ನೀಡುವುದು. (ಮಾದರಿ: The prince will protect his people.)"
-      ],
-      [
-       "5. busy –",
-       "ಮಕ್ಕಳ ಉತ್ತರವನ್ನು ಆಧರಿಸಿ ಅಂಕ ನೀಡುವುದು. (ಮಾದರಿ: He was busy the whole month.)"
-      ]
-     ]
-    ],
-    [
-     "VI. “one and many” – Fill in the blanks with the correct word:",
-     [
-      [
-       "1. We say one king, but many _________",
-       "kings"
-      ],
-      [
-       "2. We say one prince, but many _________",
-       "princes"
-      ],
-      [
-       "3. We say one princess, but many _________",
-       "princesses"
-      ],
-      [
-       "4. We say one cow, but many _________",
-       "cows"
-      ],
-      [
-       "5. We say one thief, but many _________",
-       "thieves"
-      ],
-      [
-       "6. We say one deer, but many _________",
-       "deer"
-      ],
-      [
-       "7. We say one sheep, but many _________",
-       "sheep"
-      ]
-     ]
-    ],
-    [
-     "VII. a) Fill in the blanks with “a”, “an” or “the”:",
-     [
-      [
-       "1. Once there was __________ old king.",
-       "an"
-      ],
-      [
-       "2. ________ king had ______ beautiful daughter.",
-       "The / a"
-      ],
-      [
-       "3. Many princes wanted to marry ________ princess.",
-       "the"
-      ],
-      [
-       "4. Each prince had to bring __________ gift for ______ princess.",
-       "a / the"
-      ],
-      [
-       "5. They were given ________ month’s time.",
-       "a"
-      ],
-      [
-       "6. Everybody was curious to see _____ gifts brought by _____ princes finally.",
-       "the / the"
-      ],
-      [
-       "7. _________ king selected ______ able prince.",
-       "The / an"
-      ]
-     ]
-    ],
-    [
-     "VII. b) Pick out at least three words for each column from the lesson which are followed by “a”, “an” or “the”:",
-     [
-      [
-       "a / an / the (words from the lesson)",
-       "a: a month’s time, a gun, a beautiful daughter; an: an old king, an able prince; the: the princess, the king, the thieves, the cows, the palace"
-      ]
-     ]
-    ],
-    [
-     "VIII. Match the words in column ‘A’ with their counterparts in column ‘B’:",
-     [
-      [
-       "1. king",
-       "c. queen"
-      ],
-      [
-       "2. father",
-       "d. mother"
-      ],
-      [
-       "3. prince",
-       "a. princess"
-      ],
-      [
-       "4. son",
-       "e. daughter"
-      ],
-      [
-       "5. uncle",
-       "f. aunt"
-      ],
-      [
-       "6. brother",
-       "g. sister"
-      ],
-      [
-       "7. nephew",
-       "b. niece"
-      ]
-     ]
-    ]
-   ],
-   "qb": []
-  },
-  {
-   "n": 2,
-   "t": "Ants and Spiders",
-   "au": "ಸಮಿತಿ ರಚನೆ",
-   "pg": 7,
-   "words": "silent – making no sound; threat – a danger that may cause harm; capsule – a small closed container; breach – a gap or break; drones – male bees that do not work; shoot – to send out quickly; strand – a single thread of something; seal his fate – to decide his end finally",
-   "notes": "",
-   "ab": [
-    [
-     "X. Let us learn to do: (Jumping Jack frog – paper plate craft)",
-     [
-      [
-       "Things needed: 1. paper plate 2. green and black paint 3. brush 4. scissors 5. red felt paper 6. green and white chart paper 7. glue",
-       "Paper plate, green and black paint, brush, scissors, red felt paper, green and white chart paper, glue."
-      ],
-      [
-       "Steps to make the frog (Step 1 to Step 4)",
-       "ಹಂತ 1: Paint the paper plate green. When it is thoroughly dry, fold the plate in half.\nಹಂತ 2: Cut a 3 x 7 inch 'tongue' from the red felt paper and stick it on the centre of the fold.\nಹಂತ 3: For the eyes, cut a pair of 1 x 2 inch white rectangles and round the upper edges. Fold each in half and glue the lower portion to the top of the plate. Add black eyeballs with black paint.\nಹಂತ 4: Cut frog legs out of green chart paper: a shorter set for the front and a long, bent pair for the back."
-      ]
-     ]
-    ],
-    [
-     "IX. Make sentences using the following words showing the difference in meaning:",
-     [
-      [
-       "1. bat",
-       "ಮಕ್ಕಳ ಉತ್ತರವನ್ನು ಆಧರಿಸಿ ಅಂಕ ನೀಡುವುದು. (ಮಾದರಿ: The bat flew out of the cave. / He hit the ball with a bat.)"
-      ],
-      [
-       "2. bear",
-       "ಮಕ್ಕಳ ಉತ್ತರವನ್ನು ಆಧರಿಸಿ ಅಂಕ ನೀಡುವುದು. (ಮಾದರಿ: The bear sleeps in winter. / I cannot bear the noise.)"
-      ],
-      [
-       "3. orange",
-       "ಮಕ್ಕಳ ಉತ್ತರವನ್ನು ಆಧರಿಸಿ ಅಂಕ ನೀಡುವುದು. (ಮಾದರಿ: I like to eat an orange. / My shirt is orange.)"
-      ],
-      [
-       "4. spring",
-       "ಮಕ್ಕಳ ಉತ್ತರವನ್ನು ಆಧರಿಸಿ ಅಂಕ ನೀಡುವುದು. (ಮಾದರಿ: Flowers bloom in spring. / The spring of the toy broke.)"
-      ],
-      [
-       "5. bank",
-       "ಮಕ್ಕಳ ಉತ್ತರವನ್ನು ಆಧರಿಸಿ ಅಂಕ ನೀಡುವುದು. (ಮಾದರಿ: We keep money in the bank. / The boat is near the river bank.)"
-      ]
-     ]
-    ],
-    [
-     "I. Answer the following questions:",
-     [
-      [
-       "1. How do the ants move?",
-       "They move silently in a line, one behind another, passing leaves along the chain."
-      ],
-      [
-       "2. Why do the ants collect food?",
-       "To feed the queen."
-      ],
-      [
-       "3. Where is the ants' queen?",
-       "Deep below, where she is unseen."
-      ],
-      [
-       "4. Why is the spider's web a silent threat for the fly?",
-       "Because the web is unseen, the fly does not notice it; once the fly is caught it is far too late."
-      ]
-     ]
-    ],
-    [
-     "II. Pick and write the pairs of rhyming words from the poem:",
-     [
-      [
-       "Rhyming pair 1",
-       "mound – sound"
-      ],
-      [
-       "Rhyming pair 2",
-       "chain – brain"
-      ],
-      [
-       "Rhyming pair 3",
-       "net – threat"
-      ],
-      [
-       "Rhyming pair 4",
-       "late – fate"
-      ],
-      [
-       "Rhyming pair 5",
-       "queen – unseen"
-      ],
-      [
-       "Rhyming pair 6",
-       "drones – zones"
-      ],
-      [
-       "Rhyming pair 7",
-       "reach – breach"
-      ],
-      [
-       "Rhyming pair 8",
-       "thread – spread"
-      ]
-     ]
-    ],
-    [
-     "III. What does the poet mean by:",
-     [
-      [
-       "“spider comes to seal his fate”",
-       "The spider comes to catch the fly and end its life."
-      ],
-      [
-       "“ants as one, a single brain”",
-       "The ants work together as one unit, as if they had a single brain."
-      ]
-     ]
-    ],
-    [
-     "IV. Let us write:",
-     [
-      [
-       "1. Which creature do you like the most?",
-       "ಮಕ್ಕಳ ಉತ್ತರವನ್ನು ಆಧರಿಸಿ ಅಂಕ ನೀಡುವುದು."
-      ],
-      [
-       "2. Write at least three sentences on why you like it the most.",
-       "ಮಕ್ಕಳ ಉತ್ತರವನ್ನು ಆಧರಿಸಿ ಅಂಕ ನೀಡುವುದು."
-      ]
-     ]
-    ]
-   ],
-   "qb": []
-  },
-  {
-   "n": 3,
-   "t": "Know Your Nation",
-   "au": "ಸಮಿತಿ ರಚನೆ",
-   "pg": 10,
-   "words": "hoist – to raise or pull up something using ropes; prison – a building where people are kept as punishment for a crime; represent – to be a sign or mark of something; gratitude – a feeling of being thankful to someone; signify – to mean or be a sign of something; progress – to get better at doing something; symbol – a picture or a shape that has a particular meaning or idea; abuse – to say rude things or treat someone or something badly; tribute – something you do or say to show respect for others",
-   "notes": "",
-   "ab": [
-    [
-     "Let us know: Flags of different countries are given below; identify and tick (✓) the flag of India.",
-     [
-      [
-       "Identify and tick the flag of India (picture)",
-       "(ಚಿತ್ರ ಆಧಾರಿತ – ಚಿತ್ರ ಸೇರಿಸಬೇಕು; ಧ್ವಜ ಗುರುತಿಸಿ ✓ ಹಾಕಿ – ಚಿತ್ರದಿಂದ ಓದಿ – ಪರಿಶೀಲಿಸಿ)"
-      ],
-      [
-       "Describe the flag of India looking at the picture.",
-       "ಭಾರತದ ಧ್ವಜದಲ್ಲಿ ಮೂರು ಬಣ್ಣಗಳಿವೆ: ಕೇಸರಿ (ತ್ಯಾಗ), ಬಿಳಿ (ಶಾಂತಿ), ಹಸಿರು (ಸಮೃದ್ಧಿ). ಬಿಳಿ ಪಟ್ಟೆಯ ಮಧ್ಯದಲ್ಲಿ ನೀಲಿ ಬಣ್ಣದ ಅಶೋಕ ಚಕ್ರ ಇದೆ, ಅದು ಪ್ರಗತಿಯ ಸಂಕೇತ."
-      ]
-     ]
-    ],
-    [
-     "I. Answer the following questions:",
-     [
-      [
-       "1. When do we celebrate Independence Day?",
-       "August 15."
-      ],
-      [
-       "2. Who were ruling India before 15th August, 1947?",
-       "The British."
-      ],
-      [
-       "3. Where is the National Emblem taken from?",
-       "It is taken from the Sarnath pillar of Ashoka the Great (the Lion Capital with a Chakra)."
-      ]
-     ]
-    ],
-    [
-     "II. Who am I? (Riddles)",
-     [
-      [
-       "I grow in muddy water and float. I'm pinkish red. I'm the national flower.",
-       "Lotus."
-      ],
-      [
-       "A potter needs me to give shape. Vehicles cannot run without me. I'm the symbol of progress. You can see me at the centre of the Indian flag.",
-       "Wheel (Chakra)."
-      ],
-      [
-       "I'm known for loyalty. I hunt thieves. I guard your house. I'm your friend.",
-       "Dog."
-      ]
-     ]
-    ],
-    [
-     "III. a) Photographs of some of our national leaders are given below; recognize and write their names in the space provided.",
-     [
-      [
-       "Photograph 1 to 4 (picture)",
-       "(ಚಿತ್ರ ಆಧಾರಿತ – ಚಿತ್ರ ಸೇರಿಸಬೇಕು; ಪಾಠದ ಹೆಸರುಗಳು: Bhagat Singh, Lal Bahadur Shastri, Dr. S. Radha Krishnan, Dr. Abdul Kalam, Maulana Azad – ಚಿತ್ರದಿಂದ ಓದಿ – ಪರಿಶೀಲಿಸಿ)"
-      ]
-     ]
-    ],
-    [
-     "III. b) The names of some leaders are given. Paste their pictures against their names.",
-     [
-      [
-       "Paste pictures against: Bhagat Singh, Lal Bahadur Shastri, Dr. S. Radha Krishnan, Dr. Abdul Kalam, Maulana Azad",
-       "(ಚಿತ್ರ ಅಂಟಿಸುವ ಚಟುವಟಿಕೆ – ಚಿತ್ರ ಸೇರಿಸಬೇಕು)"
-      ]
-     ]
-    ],
-    [
-     "IV. Write the full names of our National leaders with the help of clues given. One is done for you.",
-     [
-      [
-       "1. Gandhiji",
-       "Mohandas Karamchand Gandhi (ಪಾಠದ ಉದಾಹರಣೆ)"
-      ],
-      [
-       "2. Shastri",
-       "Lal Bahadur Shastri (ಶಿಕ್ಷಕರು ಪರಿಶೀಲಿಸಿ)"
-      ],
-      [
-       "3. Nehru (Pandit)",
-       "Pandit Jawaharlal Nehru (ಶಿಕ್ಷಕರು ಪರಿಶೀಲಿಸಿ)"
-      ],
-      [
-       "4. Patel (Sardar)",
-       "Sardar Vallabhbhai Patel (ಶಿಕ್ಷಕರು ಪರಿಶೀಲಿಸಿ)"
-      ],
-      [
-       "5. Lal (Lala) Roy",
-       "Lala Lajpat Rai (ಶಿಕ್ಷಕರು ಪರಿಶೀಲಿಸಿ)"
-      ],
-      [
-       "6. Bal (Bala Gangadhara)",
-       "Bala Gangadhara Tilak (ಶಿಕ್ಷಕರು ಪರಿಶೀಲಿಸಿ)"
-      ],
-      [
-       "7. Gokhale (Gopala)",
-       "Gopala Krishna Gokhale (ಶಿಕ್ಷಕರು ಪರಿಶೀಲಿಸಿ)"
-      ],
-      [
-       "8. Maulana Azad",
-       "Maulana Abul Kalam Azad (ಶಿಕ್ಷಕರು ಪರಿಶೀಲಿಸಿ)"
-      ]
-     ]
-    ],
-    [
-     "V. Let us do: Draw a neat picture of our national flag and colour it.",
-     [
-      [
-       "Draw and colour the national flag",
-       "ಚಿತ್ರ ಬಿಡಿಸಿ ಬಣ್ಣ ತುಂಬುವುದು: ಕೇಸರಿ, ಬಿಳಿ, ಹಸಿರು ಪಟ್ಟೆಗಳು; ಬಿಳಿ ಪಟ್ಟೆಯ ಮಧ್ಯದಲ್ಲಿ ನೀಲಿ ಅಶೋಕ ಚಕ್ರ."
-      ]
-     ]
-    ]
-   ],
-   "qb": []
-  },
-  {
-   "n": 4,
-   "t": "A Nation's Strength",
-   "au": "ಸಮಿತಿ ರಚನೆ",
-   "pg": 16,
-   "words": "stand fast – to remain firm and steady; suffer long – to bear pain or difficulty for a long time; honour – respect; pillar – a tall upright support of a building; deep – far below the surface; sake – for the benefit of; brave – showing courage",
-   "notes": "",
-   "ab": [
-    [
-     "Let us understand: I. Fill in the blanks with the suitable rhyming words picking them from the poem.",
-     [
-      [
-       "make : ____",
-       "sake"
-      ],
-      [
-       "strong : ____",
-       "long"
-      ],
-      [
-       "deep : ____",
-       "sleep"
-      ],
-      [
-       "sky : ____",
-       "fly"
-      ]
-     ]
-    ],
-    [
-     "II. Answer the following questions:",
-     [
-      [
-       "1. What makes a nation great and strong according to the poet?",
-       "Not gold, but only men who stand fast for truth and honour, and suffer long, make a nation great and strong."
-      ],
-      [
-       "2. What do the brave men do while others sleep?",
-       "They work while others sleep, and they dare while others fly; they build the nation's pillars deep."
-      ]
-     ]
-    ]
-   ],
-   "qb": []
-  },
-  {
-   "n": 5,
-   "t": "Dr. Kotnis",
-   "au": "ಸಮಿತಿ ರಚನೆ",
-   "pg": 17,
-   "words": "matriculation – a level of examination to be passed to enter a college or university; bear – to deal with a painful or difficult situation; expenses – the amount of money spent on something; determination – the quality of trying to do something even when it is difficult; injured – having a wound or damage to a part of the body; wounded – to be hurt or injured; hardship – something that makes life difficult; epilepsy – a medical condition affecting the brain that can make one suddenly unconscious or unable to control their movements for a short time; courtyard – an open space that is completely or partly surrounded by buildings; mourned – to feel very sad and to miss someone after they have died; revered – to respect or admire someone or something very much; ancestors – members of family who lived a long time ago; commemoration – a day in the past that makes you remember and respect someone or something important; delegation – a group of people who represent a company, country, etc; honour – the respect you receive from other people; remarkable – something that is unusual or surprising which gets praised",
-   "notes": "",
-   "ab": [
-    [
-     "Let us know: Look at the map and write the names of our neighbouring countries.",
-     [
-      [
-       "Names of neighbouring countries (map)",
-       "(ನಕ್ಷೆ ಆಧಾರಿತ – ನಕ್ಷೆ ಸೇರಿಸಬೇಕು; ಶಿಕ್ಷಕರ ಸಹಾಯದಿಂದ ಬರೆಯುವುದು – ಶಿಕ್ಷಕರು ಪರಿಶೀಲಿಸಿ)"
-      ],
-      [
-       "How should we be with our neighbours?",
+       "Add some more words to each group.",
        "ಮಕ್ಕಳ ಉತ್ತರವನ್ನು ಆಧರಿಸಿ ಅಂಕ ನೀಡುವುದು."
       ]
      ]
     ],
     [
-     "I. Answer the following questions:",
+     "ಸೋಲು ಸಾಧನಗಳು – ಆಟ (ಪುಟ 6)",
      [
       [
-       "1. When was Dwarakanath Kotnis born?",
-       "10 October, 1910."
+       "Look at the tools in the wagon wheel. Draw a line and connect them with their names.",
+       "(ಚಿತ್ರ ಆಧಾರಿತ – ಪಠ್ಯಪುಸ್ತಕದ ಚಿತ್ರ ನೋಡಿ) Sickle, plough, pick axe, axe, a pair of shears, spade",
+       "images/class-4/english/c4-en-u6-p6-tools.webp"
       ],
       [
-       "2. Where did he study his medicine?",
-       "G.S. Medical College of the University of Mumbai."
+       "1. My father ploughs the land with a plough. (ಉದಾಹರಣೆ)",
+       "plough"
       ],
       [
-       "3. Who invaded China in 1937?",
-       "Japan."
+       "2. Shivu cuts down the tree with an ___.",
+       "axe"
       ],
       [
-       "4. How old was Dr. Kotnis when he went to China?",
-       "He was about 27 years old (born in 1910, went to China in 1937)."
+       "3. Gundu digs the land with a ___.",
+       "pick axe"
       ],
       [
-       "5. Where was his body buried?",
-       "In the courtyard of Heroes."
+       "4. I transfer the dirt to another place with a ___.",
+       "spade"
       ],
       [
-       "6. Name the movie directed by V. Shantharam on the life of Dr. Kotnis.",
-       "Dr. Kotnis Ki Amar Kahani."
+       "5. My neighbour uses a ___ to cut off the wool from the sheep.",
+       "a pair of shears"
+      ],
+      [
+       "6. Siddappa reaps the crops with a ___.",
+       "sickle"
       ]
      ]
     ],
     [
-     "II. Choose the right word given in brackets and complete the sentences:",
+     "ಹನುಮಂತ ಮತ್ತು ಅವನ ಸ್ನೇಹಿತರು (ಪುಟ 9)",
      [
       [
-       "1. The military life and stress made Kotnis ___________. (week/weak)",
-       "weak"
+       "1. Hanumantha’s family had ___ (a) four members b) six members c) two members)",
+       "a) four members"
       ],
       [
-       "2. Dr. Kotnis is revered _____________ (by/buy) the Chinese even today.",
-       "by"
+       "2. The number of animals Hanumantha reared was ___ (a) four b) six c) two)",
+       "b) six"
       ],
       [
-       "3. School children _________ (too/two) offer flowers to Dr. Kotnis' statue.",
-       "too"
+       "3. By selling wool and milk, Hanumantha could get ___ (a) an ox b) some money c) love of animals)",
+       "b) some money"
       ],
       [
-       "4. On “Ancestors Commemoration Day” flowers ___________ (where/were) offered to the statue of Dr. Kotnis.",
-       "were"
+       "4. Hanumantha asked the sheep to call him ___ (a) master b) boss c) friend)",
+       "c) friend"
       ],
       [
-       "5. Dr. Kotnis has _____________ (one /won) the hearts of many Chinese.",
-       "won"
+       "5. The sheep wanted Hanumantha to ___ (a) shear the wool b) give them food c) sell them at the market)",
+       "a) shear the wool"
+      ],
+      [
+       "6. Hanumantha sold the wool and milk, and bought ___ (a) a horse b) another hen c) an ox)",
+       "c) an ox"
       ]
      ]
     ],
     [
-     "Let us learn some new words: III. Find at least ten words related to sickness from the grid.",
+     "ಪದ ಆಟ – ಕಾಣೆಯಾದ ಅಕ್ಷರ (ಪುಟ 10)",
      [
       [
-       "Words related to sickness found in the grid (1–6)",
-       "medicine, doctor, nurse, patient, sick, hospital"
+       "Look at the pictures. Fill in the blanks with the missing letters. (V__LL__G__ , M__N__ __)",
+       "VILLAGE / MOUNTAIN"
       ],
       [
-       "Words 7–10 from the grid",
-       "ambulance, emergency, treat, needle"
+       "Look at the pictures. Fill in the blanks with the missing letters.",
+       "MARKET; CHICKENS; MONKEY; FARMER; G__A__ __ __O__L"
+      ],
+      [
+       "B. Names of some animals are hidden in the grid. Circle them. Read down and across. (ಉದಾಹರಣೆ: OX ವೃತ್ತದಲ್ಲಿದೆ)",
+       "HORSE (ಕೆಂಪು ಅಕ್ಷರಗಳು); OX"
       ]
      ]
     ],
     [
-     "IV. Circle the odd one that doesn't belong to the group.",
+     "a / an ಬಳಕೆ (ಪುಟ 12)",
      [
       [
-       "1. life / progress / dull / grow / active",
-       "dull"
+       "Read the pictures. Use ‘a’ or ‘an’ in the blanks. (Example: It is raining. Rathna is carrying an umbrella.)",
+       "1. It is a lovely place. There is a lake. Can you see an old house near the lake?"
       ],
       [
-       "2. war / fight / bullets / love / wound",
-       "love"
+       "2. We walked through a forest. It was not an easy walk.",
+       "images/class-4/english/c4-en-u6-p12-aan.webp"
       ],
       [
-       "3. rest / sleep / relax / travel / peaceful",
-       "travel"
+       "3. Suresh saw an elephant. He took a picture of it.",
+       "images/class-4/english/c4-en-u6-p12-aan.webp"
       ],
       [
-       "4. rever / honour / forget / respect / tribute",
-       "forget"
-      ],
-      [
-       "5. movie / shooting / theater / book / actor",
-       "book"
-      ],
-      [
-       "6. medicine / clinic / ambulance / injection / movie",
-       "movie"
-      ],
-      [
-       "7. death / active / bury / mourn / sad",
-       "active"
+       "4. It was a cold day. I wore a sweater.",
+       "images/class-4/english/c4-en-u6-p12-aan.webp"
       ]
      ]
     ],
     [
-     "V. Talk to your friends and find out how they helped others. Here is an example for you.",
+     "a / an – ಪದ ವಿಂಗಡಣೆ (ಪುಟ 13)",
      [
       [
-       "Kotnis – helped wounded soldiers of war, in the ambulance, treatment (example)",
-       "Dr. Kotnis treated the wounded soldiers of war in the ambulance."
-      ],
-      [
-       "Talk to friends: how they helped others",
-       "ಮಕ್ಕಳ ಉತ್ತರವನ್ನು ಆಧರಿಸಿ ಅಂಕ ನೀಡುವುದು."
+       "Add ‘a’ or ‘an’ before the words and put them in the green basket.",
+       "an earthworm, a pig, a well, a seed, an acre, an insect, an animal, a barn, an offspring"
       ]
      ]
     ],
     [
-     "VI. Imagine you are walking to school, on the way you see a small child wounded and crying. Write a few lines about what you would do.",
+     "ಕೆಂಪಣ್ಣ ಮತ್ತು ಅವರ ಹೆಂಡತಿ – ಚಿತ್ರ ಆಧಾರಿತ (ಪುಟ 13–14)",
      [
       [
-       "Write a few lines",
-       "ಮಕ್ಕಳ ಉತ್ತರವನ್ನು ಆಧರಿಸಿ ಅಂಕ ನೀಡುವುದು. (ಮಾದರಿ: I would call a grown-up for help, clean the wound and take the child to the nearest doctor.)"
+       "Kempanna is ___ the land.",
+       "ploughing"
+      ],
+      [
+       "Kempanna and his wife are ___ the saplings.",
+       "planting"
+      ],
+      [
+       "Kempanna and his wife are ___ the weeds.",
+       "removing"
+      ],
+      [
+       "Kempanna and his wife are ___ the grain.",
+       "binding"
+      ],
+      [
+       "Kempanna is ___ the crop.",
+       "harvesting"
+      ],
+      [
+       "Kempanna and his wife are ___ the crop.",
+       "beating"
+      ],
+      [
+       "Kempanna’s wife is ___ the crop.",
+       "winnowing"
       ]
      ]
     ],
     [
-     "VII. Identify the differences in the picture 'B' and complete the sentences given below. (example: The bird is bigger)",
+     "ಸಂಭಾಷಣೆ – ಪಾತ್ರ ವಹಿಸಿ ಅಭ್ಯಾಸ ಮಾಡಿ (ಪುಟ 14)",
      [
       [
-       "1. The building is ___________ | 2. The playground is ___________ | 3. The trees are ___________ | 4. The man is ___________ | 5. The sun is ___________",
-       "(ಪಠ್ಯಪುಸ್ತಕದ ಚಿತ್ರ ನೋಡಿ)"
+       "Read the dialogue. Take roles and practise.",
+       "ಚಟುವಟಿಕೆ – ಶಿಕ್ಷಕರ ಜೊತೆ ಮಾಡಿ ಪುನರಾವರ್ತಿಸಿ."
       ]
      ]
     ],
     [
-     "VIII. Look at the pictures and complete the sentences given below. One is done for you.",
+     "ಕತೆ ಪೂರ್ಣಗೊಳಿಸಿ – ಚಿತ್ರ ಆಧಾರಿತ (ಪುಟ 15)",
      [
       [
-       "1. The hospital is bigger than the ambulance. (big/huge)",
-       "bigger (ಉದಾಹರಣೆ)"
+       "One day Tarun was ___ in his field. (ಚಿತ್ರ ಆಧಾರಿತ)",
+       "walking",
+       "images/class-4/english/c4-en-u6-p15-story.webp"
       ],
       [
-       "2. There are ____ number of beds in the hospital ____ the ambulance. (more/much)",
-       "more; than (ಚಿತ್ರ ಆಧಾರಿತ – ಶಿಕ್ಷಕರು ಪರಿಶೀಲಿಸಿ)"
+       "___ appeared before him. (ಚಿತ್ರ ಆಧಾರಿತ)",
+       "A cobra"
       ],
       [
-       "3. There are ____ number of doctors in the ambulance ____ in the hospital. (little/fewer)",
-       "fewer; than (ಚಿತ್ರ ಆಧಾರಿತ – ಶಿಕ್ಷಕರು ಪರಿಶೀಲಿಸಿ)"
+       "He began to ___. (ಚಿತ್ರ ಆಧಾರಿತ)",
+       "run"
       ],
       [
-       "4. The facility in the ambulance is ____ ____ the hospital. (less/small)",
-       "less than (ಚಿತ್ರ ಆಧಾರಿತ – ಶಿಕ್ಷಕರು ಪರಿಶೀಲಿಸಿ)"
+       "He ___ up a tree. (ಚಿತ್ರ ಆಧಾರಿತ)",
+       "climbed"
       ],
       [
-       "5. There is ____ ____ one room in the hospital. (much/more)",
-       "more than (ಚಿತ್ರ ಆಧಾರಿತ – ಶಿಕ್ಷಕರು ಪರಿಶೀಲಿಸಿ)"
+       "Tarun ___ down. (ಚಿತ್ರ ಆಧಾರಿತ)",
+       "climbed"
       ]
      ]
     ],
     [
-     "Let us speak: IX. Complete the blanks with suitable responses and make it a meaningful dialogue.",
+     "ಒಗಟುಗಳು – ಉತ್ತರ ಹುಡುಕಿ (ಪುಟ 16)",
      [
       [
-       "You: ____? / Seema: I have fever. / You: ____? / Seema: Yes. / You: ____ / Seema: Thank you.",
-       "ಮಕ್ಕಳ ಉತ್ತರವನ್ನು ಆಧರಿಸಿ ಅಂಕ ನೀಡುವುದು. (ಮಾದರಿ: What is the matter? / Do you want some medicine? / Take rest and drink water.)"
-      ]
-     ]
-    ]
-   ],
-   "qb": []
-  },
-  {
-   "n": 6,
-   "t": "For All We Have",
-   "au": "ಸಮಿತಿ ರಚನೆ",
-   "pg": 24,
-   "words": "presence – the state of being present; reflections – careful thoughts about the past; embrace – to hold someone closely; nurtured – cared for and encouraged to grow; proud – feeling pleased about what someone has done; praise – to express admiration; gift of God – a blessing; spirit – the inner feeling or energy of a person",
-   "notes": "",
-   "ab": [
-    [
-     "Let us understand: I. Write a rhyming word from the poem for each of the following words and add one more of your own. The first one is done for you.",
-     [
-      [
-       "1. smile – mile (ಉದಾಹರಣೆ), file (ಸ್ವಂತ)",
-       "mile; file"
+       "1. I grow under the ground, I am orange in colour … Who am I?",
+       "carrot"
       ],
       [
-       "2. day",
-       "away (ಕವಿತೆಯಿಂದ); play (ಸ್ವಂತ)"
+       "2. You can squeeze me to make juice. I am the same colour as my name. Who am I?",
+       "orange"
       ],
       [
-       "3. sight",
-       "delight (ಕವಿತೆಯಿಂದ); light (ಸ್ವಂತ)"
-      ],
-      [
-       "4. one",
-       "done (ಕವಿತೆಯಿಂದ); sun (ಸ್ವಂತ)"
-      ]
-     ]
-    ],
-    [
-     "II. Underline the correct words in the brackets.",
-     [
-      [
-       "1. The presence of love fills ______________ (the air / our hearts)",
-       "the air"
-      ],
-      [
-       "2. We should remember our loved ones who are __________ (away / near)",
-       "away"
-      ],
-      [
-       "3. Our nation should __________ (hate / praise) all people for what they have done for us.",
-       "praise"
+       "3. I am green or red, I am spicy and hot. I begin with the letter “c”. Who am I?",
+       "chilli"
       ]
      ]
     ]
@@ -780,221 +275,288 @@
   },
   {
    "n": 7,
-   "t": "Thimmakka",
+   "t": "Profession (Unit 7)",
    "au": "ಸಮಿತಿ ರಚನೆ",
-   "pg": 26,
-   "words": "cowherd – someone whose job is to care for cattle; labourer – workers, physical work; saplings – young trees; effort – hard work; earn – to get money for the work that you do; award – a prize or money given to someone for something they have done; gallery – a large building where people can see works of art or pictures of famous people; appreciation – a feeling of being thankful to someone for doing something good; display – show",
+   "pg": 17,
+   "words": "tug – a strong pull; pretty – beautiful; irritated – impatient about something; puzzled – confused; cheekiness – disrespectful quality; cloak – a long sleeveless coat; wrapped – covered; realised – understood",
    "notes": "",
    "ab": [
     [
-     "Let us Know: Compare Bengaluru 25 years ago and now, and construct sentences using 'Then' and 'Now'.",
+     "ಹೌದು / ಇಲ್ಲ – ಕವನ ಆಧರಿಸಿ (ಪುಟ 18)",
      [
       [
-       "Trees",
-       "Then Bengaluru had many trees, but now there are fewer trees. (ಚಿತ್ರ ಆಧಾರಿತ – ಪರಿಶೀಲಿಸಿ)"
+       "1. The balloon man skips lunch every day.",
+       "Yes (“never seems to think of lunch”)"
       ],
       [
-       "Houses",
-       "Then there were fewer houses, but now there are many houses. (ಚಿತ್ರ ಆಧಾರಿತ – ಪರಿಶೀಲಿಸಿ)"
+       "2. The balloon man came to the market only in summer.",
+       "No. The balloon man came to the market on market days."
       ],
       [
-       "Vehicles",
-       "Then there were fewer vehicles, but now there are many vehicles. (ಚಿತ್ರ ಆಧಾರಿತ – ಪರಿಶೀಲಿಸಿ)"
+       "3. The balloon man always sold red, purple, blue and green coloured balloons.",
+       "Yes"
       ],
       [
-       "Roads",
-       "Then the roads were less crowded, but now they are more crowded. (ಚಿತ್ರ ಆಧಾರಿತ – ಪರಿಶೀಲಿಸಿ)"
+       "4. The balloon man displayed each balloon separately.",
+       "No. All the balloons are tied together with a string."
+      ],
+      [
+       "5. The balloons look beautiful if they are let into air.",
+       "Yes"
+      ],
+      [
+       "6. People waited for the balloon man to let the balloons go.",
+       "No. The balloon man may let them go some day."
       ]
      ]
     ],
     [
-     "I. Underline the correct answer:",
+     "ಓದಿ ಉತ್ತರ ಬರೆ (ಪುಟ 19)",
      [
       [
-       "1. Thimmakka could not go to school because: a. There was no school in her village. b. Her parents were very poor.",
-       "b. Her parents were very poor."
+       "1. When does the balloon man come to sell his balloons?",
+       "On market days."
       ],
       [
-       "2. Thimmakka earned many awards for ___: a. being illiterate. b. planting trees.",
-       "b. planting trees."
+       "2. What different colours of balloons does the balloon man sell?",
+       "Red, purple, blue and green."
+      ],
+      [
+       "3. Do you like balloons? What colours do you like?",
+       "ಮಕ್ಕಳ ಉತ್ತರವನ್ನು ಆಧರಿಸಿ ಅಂಕ ನೀಡುವುದು."
+      ],
+      [
+       "4. In the sports opening functions, balloons are flown in the sky. Why?",
+       "To make the sky look colourful and pretty"
       ]
      ]
     ],
     [
-     "II. How many times are the following words repeated in this lesson?",
+     "ಶಬ್ದಗಳ ವರ್ಗೀಕರಣ (ಪುಟ 19)",
      [
       [
-       "THIMMAKKA",
-       "8"
-      ],
-      [
-       "TREES",
-       "7"
-      ],
-      [
-       "PLANTS",
-       "5"
-      ],
-      [
-       "SAPLING",
-       "8 (sapling / saplings)"
+       "Teacher will say these words aloud. Listen and repeat. Classify the words into two columns based on their sounds.",
+       "[GRID]‘ai’ ಶಬ್ದ (A)|‘oi’ ಶಬ್ದ (B) / night, mind, high, sky, why, tight, my, buy, bike, like, eye, I, life, kite, try|choice, oil, noise, voice, boy, toy, joy"
       ]
      ]
     ],
     [
-     "III. Answer the following questions:",
+     "ಹಾಡು ಮತ್ತು ಚಟುವಟಿಕೆ (ಪುಟ 20)",
      [
       [
-       "1. What did Thimmakka do to keep herself busy?",
-       "She began to plant trees along the road connecting her village with the neighbouring village."
-      ],
-      [
-       "2. Why did Thimmakka want to plant trees?",
-       "Because she learnt that she would not be able to have a child, so she wanted to create life."
-      ],
-      [
-       "3. When did Thimmakka and Chikkaiah plant trees mostly?",
-       "They planted the saplings mainly when the rains started."
-      ],
-      [
-       "4. How did people come to know about Thimmakka and her love for plants?",
-       "When some villagers planned to cut her trees, she stopped them with the help of the police; this made news, and many people read about her efforts."
-      ],
-      [
-       "5. How have people shown their appreciation of her work?",
-       "They gave her many awards, such as the National Citizen's Award (1995), Indira Priyadarshini Vrikshamitra Award (1997), Veera Chakra Prashasthi Award (1997), a certificate of honour from the Government of Karnataka and a certificate of appreciation from the Indian Institute of Wood Science and Technology."
-      ],
-      [
-       "6. What kind of a woman is Thimmakka?",
-       "She is a hard-working, caring woman who loves plants and trees and has spent her life looking after them."
+       "Sing and enjoy: “Bang and a bang”",
+       "ಚಟುವಟಿಕೆ – ಶಿಕ್ಷಕರ ಜೊತೆ ಮಾಡಿ ಪುನರಾವರ್ತಿಸಿ."
       ]
      ]
     ],
     [
-     "IV. Identify the trees and write their names. (Picture)",
+     "ಆಟ – ಚಿತ್ರ ಆಧಾರಿತ (ಪುಟ 21)",
      [
       [
-       "Trees in the picture (1–5)",
-       "(ಪಠ್ಯಪುಸ್ತಕದ ಚಿತ್ರ ನೋಡಿ)"
+       "Read the given pictures. Write the suitable word for each picture and its number.",
+       "[GRID]Word|Number / Bakery|3 / Jeweller’s|7 / Chemist’s|8 / Supermarket|2 / Bookshop|4 / Flower shop|1 / Beauty parlour|5 / Vegetable market|6",
+       "images/class-4/english/c4-en-u7-bakery.webp"
       ]
      ]
     ],
     [
-     "V. Some plants/trees grow from seeds and some grow from cuttings. Put the names in the right boxes.",
+     "ಖಾಲಿ ಜಾಗ ತುಂಬಿ (ಪುಟ 22)",
      [
       [
-       "Grow from seeds: guava, neem, drumstick, coconut, rose, mango, cactus, hibiscus, papaya, black neem",
-       "Seeds: guava, neem, coconut, mango, papaya, black neem.\nCuttings: rose, cactus, hibiscus, drumstick. (ಶಿಕ್ಷಕರು ಪರಿಶೀಲಿಸಿ)"
+       "1. We can buy some pain-killer at the ______.",
+       "chemist’s"
+      ],
+      [
+       "2. I’m going to the ______ to buy some bread.",
+       "bakery"
+      ],
+      [
+       "3. There are some lovely flowers at the ______.",
+       "florist’s"
+      ],
+      [
+       "4. I bought this gold necklace at a local ______.",
+       "jeweller’s"
+      ],
+      [
+       "5. There weren’t any fresh vegetables at the ______.",
+       "market"
+      ],
+      [
+       "6. Laxmi’s hair looks awful! She needs to go to the ______.",
+       "beauty parlour"
       ]
      ]
     ],
     [
-     "VI. Identify the verbs that come after 'to' and write them in the space (example: to read and write).",
+     "ರಾಜ ಮತ್ತು ಮಂತ್ರಿ – ಕತೆ ಆಧರಿಸಿ (ಪುಟ 25)",
      [
       [
-       "2. ___ (from the lesson)",
-       "to plant"
+       "1. The Minister told the king that even a shepherd boy could answer what God could do.",
+       "Yes"
       ],
       [
-       "3. ___ (from the lesson)",
-       "to grow"
+       "2. The king was happy to hear that a shepherd boy could answer what God could do.",
+       "No. The king was irritated by this response."
       ],
       [
-       "4. ___ (from the lesson)",
-       "to water"
+       "3. The shepherd boy was afraid when the king asked him a question.",
+       "No. The shepherd boy was not afraid."
       ],
       [
-       "5. ___ (from the lesson)",
-       "to keep"
+       "4. The king was puzzled when the shepherd asked him if the king was asking the question as a student or as a teacher.",
+       "Yes"
+      ],
+      [
+       "5. The Minister led the shepherd boy to the throne.",
+       "No. The Emperor led the shepherd boy to the throne."
+      ],
+      [
+       "6. “God turns a shepherd boy into an Emperor! And an Emperor into a shepherd!”",
+       "Yes"
       ]
      ]
     ],
     [
-     "VII. Identify the correct phrases and complete the statements.",
+     "ಪದ ವಿಂಗಡಣೆ – ರಾಜಸಭೆ (ಪುಟ 26)",
      [
       [
-       "2. Thimmakka knows how to ____",
-       "water the plants"
-      ],
-      [
-       "3. Thimmakka doesn't know how to ____",
-       "read and write"
-      ],
-      [
-       "4. Thimmakka knows how to ____",
-       "stop villagers from cutting the trees"
-      ],
-      [
-       "5. Thimmakka doesn't know how to ____",
-       "ride a bicycle"
-      ],
-      [
-       "6. Thimmakka knows how to ____",
-       "keep herself busy"
+       "Pick out words which are associated with a king’s court and write them in box ‘B’.",
+       "palace, minister, soldier, servant, commander, queen, prince, emperor, courtier"
       ]
      ]
     ],
     [
-     "VIII. By adding 'not', change the meaning of the sentences.",
+     "ಓದಿ ಉತ್ತರ ಬರೆ (ಪುಟ 26)",
      [
       [
-       "2. Thimmakka could go to school.",
-       "Thimmakka could not go to school."
+       "1. What did the Minister tell the king?",
+       "That even a shepherd boy could answer what God does."
       ],
       [
-       "3. Thimmakka learnt that she would be able to have a child.",
-       "Thimmakka learnt that she would not be able to have a child."
+       "2. Why was the king happy?",
+       "The king was not happy; he was irritated."
+      ],
+      [
+       "3. Was the shepherd boy afraid when the king asked him a question?",
+       "No, he was not afraid."
+      ],
+      [
+       "4. Who led the shepherd boy to the throne?",
+       "The Emperor (king) led him to the throne."
+      ],
+      [
+       "5. What did the shepherd boy tell the king?",
+       "God turns a shepherd boy into an Emperor, and an Emperor into a shepherd."
       ]
      ]
     ],
     [
-     "IX. Let us do: Grow a green family (steps from the book).",
+     "ಉದ್ಯೋಗ ಪದಗಳು – ಪದ ಆಟ (ಪುಟ 27)",
      [
       [
-       "The things you need and the steps",
-       "Things: empty containers, wheat/ragi/coriander seeds, soil, water, poster colours, brush.\nಹಂತ 1: Fill three-fourths of the containers with garden soil.\nಹಂತ 2: Spread a handful of seeds on the soil and cover with another layer of soil.\nಹಂತ 3: Sprinkle water, place the pots in a sunny place; spray water twice a day. Shoots appear in 7–14 days.\nಹಂತ 4: When the grass is thick, paint the family members' faces on the containers with poster colours and brush."
+       "Fill in columns B, C and D appropriately for the professionals shown in A. (ಚಿತ್ರ ಆಧಾರಿತ)",
+       "[GRID]Professional|Things they use|Where they work|How they help us / Doctor|stethoscope|hospitals or clinics|treats patients / Tailor|scissors, thread, tape|tailor’s shop|stitches clothes / Traffic policeman|whistle|traffic circle|controls traffic / Potter|clay, wheel|potter’s corner|makes pots / Cameraman (photographer)|camera|studio|takes pictures and records events",
+       "images/class-4/english/c4-en-u7-professions.webp"
       ]
      ]
     ],
     [
-     "X. Let us speak: Complete the dialogue with suitable responses.",
+     "ಯಾರು ಮತ್ತು ಎಲ್ಲಿ? – ಕೇಳಿ ಗುರುತಿಸಿ (ಪುಟ 28)",
      [
       [
-       "Seenu: When do you get up in the morning? / You: ____",
-       "ಮಾದರಿ: I get up at six o'clock."
+       "e.g. “How much salt should I add to this solution?” (ಪಠ್ಯದಲ್ಲಿ ನೀಡಿದ ಉದಾಹರಣೆ)",
+       "Place: in a lab; people: a teacher and a student."
       ],
       [
-       "Seenu: Who wakes you up? / You: ____",
-       "ಮಾದರಿ: My mother wakes me up."
+       "2. A: How long have you been suffering? B: Since yesterday night.",
+       "Place: hospital; people: a doctor and a patient."
       ],
       [
-       "Seenu: I study for some time in the morning, what do you do? / You: ____",
-       "ಮಾದರಿ: I help my mother in the kitchen and then go to school."
+       "3. C: Are you not tired yet? D: No, I’ve been tilling just for 20 mins.",
+       "Place: farm / field; people: a farmer and a friend."
+      ],
+      [
+       "4. E: Where should I present the cheque? F: At counter 6.",
+       "Place: bank; people: a customer and a bank clerk."
+      ],
+      [
+       "5. G: How much is this? H: It’s Rs. 20 a metre. It’s very fragrant.",
+       "Place: shop; people: a shopkeeper and a customer"
+      ],
+      [
+       "1. X: What’s the scheduled time of arrival? Y: 6.30 am. It leaves the station at 6.40 am.",
+       "Place: railway station; people: a passenger and a railway staff member."
       ]
      ]
     ],
     [
-     "XI. Ask questions for the sentences so that the underlined words become the answers.",
+     "ಅಭ್ಯಾಸ ಸಂಭಾಷಣೆ (ಪುಟ 29)",
      [
       [
-       "1. I'm eight years old.",
-       "How old are you?"
+       "Task 1 & Task 2: Work in pairs. Take roles, practise the dialogues and frame more dialogues for other places and professions.",
+       "ಚಟುವಟಿಕೆ – ಶಿಕ್ಷಕರ ಜೊತೆ ಮಾಡಿ ಪುನರಾವರ್ತಿಸಿ."
+      ]
+     ]
+    ],
+    [
+     "ವಾಕ್ಯ ರಚನೆ – ನಕಾರ / ಪ್ರಶ್ನೆ (ಪುಟ 29)",
+     [
+      [
+       "1. The king asked the Minister a question. (ಉದಾಹರಣೆ – ಪುಸ್ತಕದಲ್ಲಿ ನೀಡಿದ)",
+       "The king did not ask the Minister a question. / Did the king ask the Minister a question? / Didn’t the king ask the Minister a question?"
       ],
       [
-       "2. My mother helps me with my homework.",
-       "Who helps you with your homework?"
+       "2. The Emperor was irritated by this response.",
+       "The Emperor was not irritated by this response. / Was the Emperor irritated by this response? / Wasn’t the Emperor irritated by this response?"
       ],
       [
-       "3. I study for four hours a day.",
-       "How long do you study a day?"
+       "3. The Minister brought a young shepherd to court.",
+       "The Minister did not bring a young shepherd to court. / Did the Minister bring a young shepherd to court? / Didn’t the Minister bring a young shepherd to court?"
       ],
       [
-       "4. No, I watch only cartoons, on T.V.",
-       "Do you watch the news on T.V.?"
+       "4. The Emperor took the shepherd’s cloak.",
+       "The Emperor did not take the shepherd’s cloak. / Did the Emperor take the shepherd’s cloak? / Didn’t the Emperor take the shepherd’s cloak?"
       ],
       [
-       "5. Yes, I read a lot of comics.",
-       "Do you read a lot of comics?"
+       "5. The Minister looked at the Emperor.",
+       "The Minister did not look at the Emperor. / Did the Minister look at the Emperor? / Didn’t the Minister look at the Emperor?"
+      ]
+     ]
+    ],
+    [
+     "ಖಾಲಿ ಜಾಗ – ಪದಗಳ ಪೆಟ್ಟಿಗೆ (ಪುಟ 30)",
+     [
+      [
+       "Read and fill in the blanks with words from the box: believe, fantastic, getting ready, preparing, project, student.",
+       "1. student; 2. project; 3. preparing; 4. believe; 5. fantastic; 6. getting ready"
+      ]
+     ]
+    ],
+    [
+     "ಕ್ರಿಯಾಪದಕ್ಕೆ -er / -r (ಪುಟ 31)",
+     [
+      [
+       "Add ‘-er’ or ‘-r’ to the doing words to make new words.",
+       "1. fighter; 2. dancer; 3. speaker; 4. rider; 5. writer; 6. joker; 7. singer; 8. player"
+      ]
+     ]
+    ],
+    [
+     "ತಪ್ಪು ಕಾಗುಣಿತ ಸರಿಪಡಿಸಿ (ಪುಟ 31–32)",
+     [
+      [
+       "Read the dialogue, underline the mis-spelt words and write their correct spellings.",
+       "grate → great; funy → funny; intresting → interesting; childern → children"
+      ]
+     ]
+    ],
+    [
+     "ಹಾಡು ಮತ್ತು ಚಟುವಟಿಕೆ (ಪುಟ 32)",
+     [
+      [
+       "Sing and enjoy: “Five little soldiers”",
+       "ಚಟುವಟಿಕೆ – ಶಿಕ್ಷಕರ ಜೊತೆ ಮಾಡಿ ಪುನರಾವರ್ತಿಸಿ."
       ]
      ]
     ]
@@ -1003,56 +565,220 @@
   },
   {
    "n": 8,
-   "t": "Trees Are a Lot Like Us",
+   "t": "Art (Unit 8)",
    "au": "ಸಮಿತಿ ರಚನೆ",
-   "pg": 34,
-   "words": "entice – to attract or tempt someone; woods – a small forest; climb – to go up something; chance – an opportunity; take a walk – to walk for pleasure; grown-up – an adult; tall – high in height; strong – powerful and able",
+   "pg": 33,
+   "words": "",
    "notes": "",
    "ab": [
     [
-     "Let us learn: I. Underline the correct answer:",
+     "ಪ್ರಾಸ ಜೋಡಿ – ಬ್ಯಾಟ್ ಮತ್ತು ಚೆಂಡು (ಪುಟ 34)",
      [
       [
-       "1. The poet compares the tree to ____ (a. God / b. a human being / c. an animal)",
-       "b. a human being"
-      ],
-      [
-       "2. 'We'll have fun all afternoon.' 'We' here refers to ____ (a. the poet and the reader / b. you and the teacher / c. the reader and the tree)",
-       "a. the poet and the reader"
-      ],
-      [
-       "3. 'I'd like to take a walk in the woods' means ____ (a. walk on a wooden board / b. walk in the forest / c. walk with wooden shoes)",
-       "b. the poet likes to take a walk in the forest"
+       "Match the bats with the balls to get the pair of rhyming words and write them.",
+       "Seen – Green; Play – Day; Sky – Fly; Sight – Bright; June – Moon"
       ]
      ]
     ],
     [
-     "II. Answer the following:",
+     "ಓದಿ ಉತ್ತರಿಸಿ (ಪುಟ 35)",
      [
       [
-       "1. What will be fun all afternoon according to the poet?",
-       "Finding a tree that they can climb and climbing it with the reader."
-      ],
-      [
-       "2. What do the little trees need to grow?",
-       "A chance to grow, time and care."
-      ],
-      [
-       "3. What looks like a big family to the poet?",
-       "The many kinds of different trees – big ones, short ones and baby ones."
+       "If you get a pair of wings, where would you like to fly? Why? What else would you do there?",
+       "ಮಕ್ಕಳ ಉತ್ತರವನ್ನು ಆಧರಿಸಿ ಅಂಕ ನೀಡುವುದು."
       ]
      ]
     ],
     [
-     "III. Identify and write the words from the poem that end with the same sounds as the words given below:",
+     "ಚಿತ್ರ ಸೂಚನೆಯೊಂದಿಗೆ ಕವನ ಪೂರ್ಣಗೊಳಿಸಿ (ಪುಟ 35)",
      [
       [
-       "grow",
-       "know"
+       "Imagine you are the poet and complete the passage. Pictures are given as clues. (ಚಿತ್ರ ಆಧಾರಿತ)",
+       "I want wings to fly into the sky. I would like to carry a brush to colour the clouds purple, yellow and green. My desire is to paint the rainbow. At night when the stars and moon come out, I would paint them too.",
+       "images/class-4/english/c4-en-u8-passage.webp"
+      ]
+     ]
+    ],
+    [
+     "ಶಬ್ದ ವಿಂಗಡಣೆ (ಪುಟ 36)",
+     [
+      [
+       "Teacher says these words. Listen and say them aloud. Then write them in circles ‘A’ and ‘B’ based on their sounds.",
+       "[GRID]A (ಶಬ್ದ “ae”)|B (ಶಬ್ದ “e”) / cat, mat, fat, pat, mad, bad, dad, sad|pen, hen, men, den, bed, fed, led, shed"
+      ]
+     ]
+    ],
+    [
+     "ಹಾಡು ಮತ್ತು ಚಟುವಟಿಕೆ (ಪುಟ 37)",
+     [
+      [
+       "Sing and enjoy: “The paint box”",
+       "ಚಟುವಟಿಕೆ – ಶಿಕ್ಷಕರ ಜೊತೆ ಮಾಡಿ ಪುನರಾವರ್ತಿಸಿ."
+      ]
+     ]
+    ],
+    [
+     "ಪದ ಒಗಟು (ಪುಟ 38)",
+     [
+      [
+       "Complete the word puzzle. Pictures will help you to do so.",
+       "Across: SINGING (top), MODELLING (middle), PAINTING (lower), DANCING (bottom). Down: PHOTOGRAPHY (left), SCULPTURE (right).",
+       "images/class-4/english/c4-en-u8-crossword.webp"
+      ]
+     ]
+    ],
+    [
+     "ಸಂಭಾಷಣೆ ಪೂರ್ಣಗೊಳಿಸಿ – ಅಕ್ಬರ್ ಮತ್ತು ಬೀರಬಲ್ (ಪುಟ 41)",
+     [
+      [
+       "Birbal, make me a ______ and use imagination in it. (ಕತೆ ಆಧಾರಿತ)",
+       "painting"
       ],
       [
-       "he",
-       "tree"
+       "But Huzoor! How can I ______ paint?",
+       "paint"
+      ],
+      [
+       "Huzoor, it’s a cow eating ______.",
+       "grass"
+      ],
+      [
+       "Where is the ______?",
+       "cow"
+      ],
+      [
+       "I have used my ______.",
+       "imagination"
+      ],
+      [
+       "Now I understand that I cannot make someone a ______.",
+       "painter"
+      ]
+     ]
+    ],
+    [
+     "ಹೊಂದಿಸಿ ಬರೆ (ಪುಟ 42)",
+     [
+      [
+       "A. What was Birbal in the court of Akbar? → B. Birbal was ______.",
+       "a minister"
+      ],
+      [
+       "What would be the punishment if Birbal did not bring a painting? → Birbal would be sent out of the ______.",
+       "country"
+      ],
+      [
+       "How did the courtiers feel on hearing? → They felt ______.",
+       "happy"
+      ],
+      [
+       "What was the picture? → The picture showed just ______ and ______.",
+       "green grass and the sky"
+      ]
+     ]
+    ],
+    [
+     "ಚಿತ್ರ ಬಣ್ಣ ಹಚ್ಚಿ (ಪುಟ 42)",
+     [
+      [
+       "Listen to the teacher and colour the pictures numbered 1 to 5.",
+       "ಚಟುವಟಿಕೆ – ಶಿಕ್ಷಕರ ಜೊತೆ ಮಾಡಿ ಪುನರಾವರ್ತಿಸಿ."
+      ]
+     ]
+    ],
+    [
+     "ನೃತ್ಯ ರೂಪಗಳು – ಗುರುತಿಸಿ (ಪುಟ 45)",
+     [
+      [
+       "A. Can you identify the following dance forms? Write them in the boxes. (ಚಿತ್ರ ಆಧಾರಿತ)",
+       "Kolata; Bharatanatyam; Dollu kunitha; Yakshagana",
+       "images/class-4/english/c4-en-u8-dance-identify.webp"
+      ]
+     ]
+    ],
+    [
+     "ರಾಜ್ಯ ಮತ್ತು ರಾಜಧಾನಿ (ಪುಟ 45–46)",
+     [
+      [
+       "Do you know this? Write the names of the States related to the classical dance forms. Capital cities are given as clues.",
+       "[GRID]Capital city|State / Thiruvananthapuram|Kerala / Hyderabad|Andhra Pradesh / Imphal|Manipur / Chandigarh|Punjab / Chennai|Tamil Nadu / Lucknow|Uttar Pradesh",
+       "images/class-4/english/c4-en-u8-capitals.webp"
+      ]
+     ]
+    ],
+    [
+     "ಸಂಗೀತ ವಾದ್ಯಗಳು (ಪುಟ 47)",
+     [
+      [
+       "Fill in the blanks to get the name of the musical instrument (picture order 1–5).",
+       "1. Tabla; 2. Violin; 3. Guitar; 4. Harmonium; 5. Flute"
+      ]
+     ]
+    ],
+    [
+     "ನಾವು ಯಾರು? – ವೃತ್ತಿ ಪದಗಳು (ಪುಟ 48)",
+     [
+      [
+       "Fill in the blanks with one word each from the brackets and match the columns.",
+       "He dances → dancer; Sumathi is a violinist; We paint pictures → painters; They carve out stones → sculptors; I sing songs → singer; You capture pictures → photographer; Mohan plays the guitar → guitarist"
+      ]
+     ]
+    ],
+    [
+     "ಪೂರ್ವಭಾವ ಅವ್ಯಯ (ಪುಟ 49–50)",
+     [
+      [
+       "Fill in the blanks with the appropriate preposition (for/from, to/in, at/from, on/at, from/to, at/for, on/at).",
+       "Keshavmurthy is a well known Bharatanatyam dancer from Karnataka. He came to participate in the All India dance competition held at Jaipur. The competition was on 31st July 2013. The dancers from different States came to perform there. All the participants gathered at the backstage for their preparation. The competition started at 9:00 am."
+      ]
+     ]
+    ],
+    [
+     "ಸಂಭಾಷಣೆ ಅಭ್ಯಾಸ (ಪುಟ 50–51)",
+     [
+      [
+       "Read the dialogues. Complete the dialogues and practise in pairs.",
+       "ಚಟುವಟಿಕೆ – ಶಿಕ್ಷಕರ ಜೊತೆ ಮಾಡಿ ಪುನರಾವರ್ತಿಸಿ."
+      ],
+      [
+       "Can you draw a picture of ______? / Can you play on the ______?",
+       "(ಉದಾ: Yes, I can. / No, I can’t.)"
+      ]
+     ]
+    ],
+    [
+     "ಕಾರ್ಡ್ ತಯಾರಿ (ಪುಟ 51)",
+     [
+      [
+       "Let’s make a card: trace the butterfly, complete and colour the picture, cut out and fold.",
+       "ಚಟುವಟಿಕೆ – ಶಿಕ್ಷಕರ ಜೊತೆ ಮಾಡಿ ಪುನರಾವರ್ತಿಸಿ."
+      ]
+     ]
+    ],
+    [
+     "ಆಹ್ವಾನ ಪತ್ರ – ಪೂರ್ವಭಾವ (ಪುಟ 52)",
+     [
+      [
+       "Complete the birthday invitation by filling the gaps with the appropriate prepositions.",
+       "I am inviting you to my birthday party. The party is on 24th May at 7:00 pm at my sweet home. Be there, don’t miss out on the fun."
+      ]
+     ]
+    ],
+    [
+     "ಪತ್ರ ಪೂರ್ಣಗೊಳಿಸಿ (ಪುಟ 53)",
+     [
+      [
+       "Complete the letter with the words from the flower.",
+       "1. birthday; 2. home; 3. balloons; 4. dress; 5. cake; 6. games"
+      ]
+     ]
+    ],
+    [
+     "ಹಾಡು ಮತ್ತು ಮೋಜು (ಪುಟ 54–55)",
+     [
+      [
+       "Sing and enjoy: “I am a singer from America”",
+       "ಚಟುವಟಿಕೆ – ಶಿಕ್ಷಕರ ಜೊತೆ ಮಾಡಿ ಪುನರಾವರ್ತಿಸಿ."
       ]
      ]
     ]
@@ -1061,85 +787,144 @@
   },
   {
    "n": 9,
-   "t": "Let Us Learn Something New",
+   "t": "Adventure (Unit 9)",
    "au": "ಸಮಿತಿ ರಚನೆ",
-   "pg": 36,
-   "words": "alphabetical order – arranged from A to Z; headword – a word whose meaning is explained in a dictionary; daydream – dreaming of things while awake; dictionary – a book of words with their meanings; passer-by – a person who walks past; decease – death (a formal word)",
+   "pg": 56,
+   "words": "",
    "notes": "",
    "ab": [
     [
-     "Beena and Zoheb's dialogue – questions about the dictionary:",
+     "ಕವನ – ಹೊಂದಿಸಿ ವಾಕ್ಯ ರಚಿಸಿ (ಪುಟ 57)",
      [
       [
-       "What is the headword on the top left corner of the page?",
-       "paper"
-      ],
-      [
-       "What is the headword on the top right corner of the page?",
-       "passer-by"
-      ],
-      [
-       "What does 'daydream' mean?",
-       "Dreaming of things when you are awake."
+       "Match the words to make meaningful sentences and say them. (ಉದಾ: Girls wear hand gloves to keep hands warm.)",
+       "Girls feel chill in the marrow; Girls ignore how far is the top; Girls like climbing without stopping; Girls tap under the feet; Girls do not feel sore in the soles"
       ]
      ]
     ],
     [
-     "I. Arrange the following set of words as they occur in the dictionary.",
+     "ಪದಗಳಿಂದ ವಾಕ್ಯ (ಪುಟ 57)",
      [
       [
-       "1. biscuits, aeroplane, education, call, dictionary",
-       "aeroplane, biscuits, call, dictionary, education"
-      ],
-      [
-       "2. oil, monkey, new, letter",
-       "letter, monkey, new, oil"
-      ],
-      [
-       "3. clear, clerk, clean, cleft",
-       "clean, clear, cleft, clerk"
-      ],
-      [
-       "4. green, gem, gobble, grid",
-       "gem, gobble, green, grid"
+       "Frame meaningful sentences using: wear, ignore, climb, know, feel, bite, whistle, rise.",
+       "We wear gloves in winter. / We should not ignore our health. / We climb hills for fun. / I know the way to school. / I feel happy today. / A dog may bite. / The wind whistles in the trees. / The sun rises in the east."
       ]
      ]
     ],
     [
-     "II. Underline the headword in the following set of words:",
+     "ಶಬ್ದ ವಿಂಗಡಣೆ – ‘ear’ ಮತ್ತು ‘air’ (ಪುಟ 59)",
      [
       [
-       "1. market, mark, maroon",
-       "mark (first headword in the set)"
-      ],
-      [
-       "2. pie, pierce, piece",
-       "pie (first headword in the set)"
+       "Teacher says these words. Listen and put them under the right box (A or B).",
+       "[GRID]A (ಶಬ್ದ “ear”)|B (ಶಬ್ದ “air”) / mere, year, dear, hear, near, clear, ear, tear|mare, pair, fare, chair, air"
       ]
      ]
     ],
     [
-     "III. Write the meaning of the following words using the dictionary.",
+     "ಹಾಡು ಮತ್ತು ಚಟುವಟಿಕೆ (ಪುಟ 59–60)",
      [
       [
-       "1. breeze",
-       "a gentle, light wind"
+       "Sing and enjoy: “What is pink?”",
+       "ಚಟುವಟಿಕೆ – ಶಿಕ್ಷಕರ ಜೊತೆ ಮಾಡಿ ಪುನರಾವರ್ತಿಸಿ."
+      ]
+     ]
+    ],
+    [
+     "ಸಾಹಸ ಕ್ರೀಡೆ – ಟೇಬಲ್ ತುಂಬಿ (ಪುಟ 60–61)",
+     [
+      [
+       "Look at the pictures of adventurous sports. Fill in the table by putting (*) in the right column.",
+       "[GRID]Sport|Water|Air|Ground/Rock|Ice / Surfing|*|||/ Water rafting|*|||/ Paragliding||*||/ Parachuting||*||/ Rock climbing|||*|/ Skating||||*/ Rope walking||*||/ Skiing||||*/ Bungee jumping||*||"
+      ]
+     ]
+    ],
+    [
+     "ಹೊಂದಿಸಿ ಬರೆ – ಅರುಣಿಮಾ ಸಿನ್ಹಾ (ಪುಟ 64)",
+     [
+      [
+       "Match the words of column A with those in column B.",
+       "Doctors → amputated her leg; Training → Tata Steel Adventure Foundation; Bachendri Pal → trained Arunima; Dream → scaling Mount Everest; Arunima → a former volleyball player; People’s advice → stop the expedition; Achievement → reaching the top of Everest"
+      ]
+     ]
+    ],
+    [
+     "ಪರ್ವತಾರೋಹಣ ವಸ್ತುಗಳು (ಪುಟ 65–66)",
+     [
+      [
+       "Draw a line to match the pictures with their names. Look at the pictures used by mountaineers and write their names.",
+       "1. Sleeping bag; 2. Boots (shoes); 3. Jacket; 4. Gloves; 5. Ice axe; 6. Sunglasses (goggles); 7. Water bottle; 8. Torch",
+       "images/class-4/english/c4-en-u9-mountaineer.webp"
       ],
       [
-       "2. crime",
-       "an act that is against the law"
+       "What things do the mountaineers carry in their bags? (ಉದಾ: Torch)",
+       "ಮಕ್ಕಳ ಉತ್ತರವನ್ನು ಆಧರಿಸಿ ಅಂಕ ನೀಡುವುದು."
       ],
       [
-       "3. arrow",
-       "a thin stick with a pointed end, shot from a bow"
-      ],
+       "What do the mountaineers wear while climbing?",
+       "ಮಕ್ಕಳ ಉತ್ತರವನ್ನು ಆಧರಿಸಿ ಅಂಕ ನೀಡುವುದು."
+      ]
+     ]
+    ],
+    [
+     "ಆಲಿಸಿ ಮಾಡಿ (ಪುಟ 66)",
+     [
       [
-       "4. decease",
-       "death (a formal word)"
-      ],
+       "Listen to your teacher and do what the teacher asks you to do.",
+       "ಚಟುವಟಿಕೆ – ಶಿಕ್ಷಕರ ಜೊತೆ ಮಾಡಿ ಪುನರಾವರ್ತಿಸಿ."
+      ]
+     ]
+    ],
+    [
+     "ಹಾಸ್ಯ ಪದಗಳು (ಪುಟ 67)",
+     [
       [
-       "5. tiny",
-       "very small"
+       "Look at the pictures and read the dialogues. Write one word for the underlined words and fill in the blanks.",
+       "1. centenarian; 2. draw; 3. pedestrians; 4. pesticide"
+      ]
+     ]
+    ],
+    [
+     "ಸರ್ವನಾಮ (ಪುಟ 68–69)",
+     [
+      [
+       "Write what and whom the underlined words refer to.",
+       "1. She → Kamala; 2. It → the skateboard; 3. He → Vishnu; 4. They → hand gloves and boots"
+      ]
+     ]
+    ],
+    [
+     "ಸ್ವಾಮ್ಯ ಸರ್ವನಾಮ (ಪುಟ 68–69)",
+     [
+      [
+       "Read the sentences. Fill in the blanks with the words from the brackets (theirs, his, yours, hers).",
+       "1. hers; 2. theirs; 3. yours; 4. his"
+      ]
+     ]
+    ],
+    [
+     "ಯಾರು ಯಾರನ್ನು ಸೂಚಿಸುತ್ತದೆ? – ಪತ್ರ (ಪುಟ 69)",
+     [
+      [
+       "Read the letter written by Jyothi. Write who the underlined words refer to.",
+       "me → Jyothi; we → Jyothi and her friends; you → Nihaan; him → the warden"
+      ]
+     ]
+    ],
+    [
+     "ಸಂಭಾಷಣೆ (ಪುಟ 70)",
+     [
+      [
+       "Read the dialogue. Take turns and read.",
+       "ಚಟುವಟಿಕೆ – ಶಿಕ್ಷಕರ ಜೊತೆ ಮಾಡಿ ಪುನರಾವರ್ತಿಸಿ."
+      ]
+     ]
+    ],
+    [
+     "ಸಾರಾಂಶ (ಪುಟ 70–71)",
+     [
+      [
+       "Read the passage. Write the summary by filling in the blanks.",
+       "The police went to an old woman’s house. The thief entered her house at night. He opened the refrigerator and ate all the food."
       ]
      ]
     ]
@@ -1148,170 +933,56 @@
   },
   {
    "n": 10,
-   "t": "Chimpu Monkey",
+   "t": "Additional Activities",
    "au": "ಸಮಿತಿ ರಚನೆ",
-   "pg": 41,
-   "words": "ahead – distance in front of someone or something; terrified – very frightened; wondered – to think about something you are not sure about and try to guess what is true",
+   "pg": 73,
+   "words": "",
    "notes": "",
    "ab": [
     [
-     "Answer the following questions:",
+     "ಮೋಜು – ಸಮಾನಾರ್ಥಕ ಪದಗಳು (ಪುಟ 83)",
      [
       [
-       "1. What did Jumbo the elephant give to Chimpu the monkey?",
-       "A man's coat."
-      ],
-      [
-       "2. Who were waiting to catch the little monkey?",
-       "Tiggy Tiger and his friend Billu Bear."
-      ],
-      [
-       "3. How did Chimpu and his friends save the little monkey?",
-       "Chimpu put on the coat and rode on Jumbo's back. Perky flew ahead and shouted 'A hunter is coming!' Tiggy and Billu were scared and ran away, and the little monkey was saved."
-      ]
-     ]
-    ]
-   ],
-   "qb": []
-  },
-  {
-   "n": 11,
-   "t": "Nithin's Tricycle",
-   "au": "ಸಮಿತಿ ರಚನೆ",
-   "pg": 42,
-   "words": "knock – to hit; narrow – measuring only a small distance from one side to another; lane – a path or a narrow road; rattling – a short repeated sound when something shakes; dangerous – something that may harm you; huge – extremely large in size; finished – not able to continue; crush – to press something so hard that it breaks or is damaged; aching – paining continuously",
-   "notes": "",
-   "ab": [
-    [
-     "Answer the following questions:",
-     [
-      [
-       "1. How was Nithin's tricycle to look at?",
-       "It was a cute little tricycle with three wheels and a horn that went 'Pom! Pom! Pom!'; it also had pedals and a beautiful seat."
-      ],
-      [
-       "2. Why was the tricycle angry with Nithin?",
-       "Because Nithin would not let it go to the main road to race with cars and buses; he said he would ride only in the compound."
-      ],
-      [
-       "3. What did the tricycle do when Nithin was away at the playschool?",
-       "It rolled out of the compound, into a narrow lane, and then onto the main road full of cars, buses and lorries."
-      ],
-      [
-       "4. What lesson did the tricycle learn that day?",
-       "It learnt that it should never roll out of the compound again, and that Nithin was right."
-      ]
-     ]
-    ]
-   ],
-   "qb": []
-  },
-  {
-   "n": 12,
-   "t": "The Tooth Fairy",
-   "au": "ಸಮಿತಿ ರಚನೆ",
-   "pg": 45,
-   "words": "fond of – to like someone or something very much; munching – eating noisily; crunching – a noise like the sound of something being crushed; roof – a structure that covers the top of a building; besides – in addition to; spotted – to notice someone or something, especially when they are difficult to be seen; delighted – a feeling of great pleasure or happiness; indeed – surely, certainly; peep – to look through a small opening or from a hidden location; suits – something that fits; useful",
-   "notes": "",
-   "ab": [
-    [
-     "Answer the following questions:",
-     [
-      [
-       "1. What did Abdullah do with the fallen tooth?",
-       "He threw the tooth over the roof, singing a rhyme."
-      ],
-      [
-       "2. Whom did he see in his dream?",
-       "A fairy whose head had the shape of a tooth."
-      ],
-      [
-       "3. Why did he feel happy when the fairy gave him a small tooth?",
-       "Because the small tooth fitted his mouth just right; it was not sharp, did not stick out and was not too big."
-      ]
-     ]
-    ]
-   ],
-   "qb": []
-  },
-  {
-   "n": 13,
-   "t": "Obey Your Parents",
-   "au": "ಸಮಿತಿ ರಚನೆ",
-   "pg": 48,
-   "words": "fawn – young one of a deer; frustrating – causing anger; sneak off – to leave a place quietly without being seen or heard; hither and thither – here and there in a disorderly manner; thrilling – causing great pleasure and excitement; aghast – frightened, terrified; lolling – hanging out from the mouth; intention – goal or purpose; devour – to eat quickly, greedily or hungrily",
-   "notes": "",
-   "ab": [
-    [
-     "QUESTIONS:",
-     [
-      [
-       "1. Why did the fawn feel frustrated?",
-       "Because his mother did not allow him to go alone to places, though he was grown up."
-      ],
-      [
-       "2. What did the fawn do when its mother was asleep?",
-       "He slipped out alone, went to an open field to play, and then went to a stream to drink water."
-      ],
-      [
-       "3. What answer did the fawn give to the lion?",
-       "'Sir, how can I spoil the water? It is flowing from your side towards me.'"
+       "Fill the empty spaces with words having the same meaning.",
+       "Child → Boy, Kid; Fast → Quick, Hurry; See → Look, Watch"
       ]
      ]
     ],
     [
-     "Moral",
+     "ಮೋಜು – ದಾರಿ ತೋರಿಸಿ (ಪುಟ 83)",
      [
       [
-       "What is the moral of the story?",
-       "Children should obey their parents in order to avoid getting into difficulties."
-      ]
-     ]
-    ]
-   ],
-   "qb": []
-  },
-  {
-   "n": 14,
-   "t": "I Can Draw Too",
-   "au": "ಸಮಿತಿ ರಚನೆ",
-   "pg": 50,
-   "words": "figure – a shape or drawing; creep – to move slowly and quietly; imagination – the ability to form new ideas; hidden – not easily seen; magic – unusual and wonderful; beak – the hard mouth of a bird; wings – body parts used for flying",
-   "notes": "",
-   "ab": [
-    [
-     "I. Sajan the Pigeon in eight steps (draw):",
-     [
-      [
-       "Steps 1–8",
-       "ಹಂತ 1: Start with an 'O' for Sajan's head.\nಹಂತ 2: Add a 'U' for his body.\nಹಂತ 3: Two black dots for eyes.\nಹಂತ 4: A triangle for his beak.\nಹಂತ 5: Two upside-down V's for his feet.\nಹಂತ 6: A 'W' and a 'U' for his tail.\nಹಂತ 7: Wings to fly in the sky.\nಹಂತ 8: Two curves for the hills to fly over.\n(ಪಠ್ಯಪುಸ್ತಕದ ಚಿತ್ರ ನೋಡಿ)"
+       "Here is a man with no eyes. Show him the right direction to reach the eye care centre (maze).",
+       "(ಚಿತ್ರ ಆಧಾರಿತ – ಮಾರ್ಗ ಹುಡುಕಿ)",
+       "images/class-4/english/c4-en-add-maze.webp"
       ]
      ]
     ],
     [
-     "II. Figures hidden in a letter of the alphabet:",
+     "ವ್ಯತ್ಯಾಸ ಹುಡುಕಿ (ಪುಟ 84)",
      [
       [
-       "Find figures hidden in a letter",
-       "(ಪಠ್ಯಪುಸ್ತಕದ ಚಿತ್ರ ನೋಡಿ)"
+       "Find and circle EIGHT differences between the two pictures. (ಚಿತ್ರ ಆಧಾರಿತ)",
+       "8 differences",
+       "images/class-4/english/c4-en-add-spot.webp"
       ]
      ]
     ],
     [
-     "III. Sudheer and the letter S:",
+     "ಪದ ಪಟ್ಟಿ – ಪ್ರಾಸ ಪದಗಳು (ಪುಟ 85)",
      [
       [
-       "What can you see when the letter S sleeps?",
-       "A mouse creeping out of it. (ಪಠ್ಯಪುಸ್ತಕದ ಚಿತ್ರ ನೋಡಿ)"
+       "Teacher says these words. Listen, repeat, and say more such words if you can.",
+       "ಚಟುವಟಿಕೆ – ಶಿಕ್ಷಕರ ಜೊತೆ ಮಾಡಿ ಪುನರಾವರ್ತಿಸಿ."
       ]
      ]
     ],
     [
-     "IV. Magical shapes hidden in numbers:",
+     "ಉಚ್ಚಾರಣೆ (ಪುಟ 86)",
      [
       [
-       "Draw a figure from the number 2",
-       "A duck. (ಪಠ್ಯಪುಸ್ತಕದ ಚಿತ್ರ ನೋಡಿ)"
+       "Listen, repeat and pronounce the words well (fleet, read, meet, seek; kick, lip, ink, fill; …).",
+       "ಚಟುವಟಿಕೆ – ಶಿಕ್ಷಕರ ಜೊತೆ ಮಾಡಿ ಪುನರಾವರ್ತಿಸಿ."
       ]
      ]
     ]
