@@ -587,67 +587,78 @@
       "The farmer became rich"
      ],
      "a": 1,
-     "lv": "e"
+     "lv": "e",
+     "ob": "p"
     },
     {
      "t": "short",
      "q": "Answer “Yes” or “No” in a full sentence: Did Hanumantha live in a village?",
      "a": "Yes, Hanumantha lived in a village.",
-     "lv": "m"
+     "lv": "m",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "Answer “Yes” or “No” in a full sentence: Was Hanumantha a teacher?",
      "a": "No, Hanumantha was not a teacher.",
-     "lv": "m"
+     "lv": "m",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "Answer “Yes” or “No” in a full sentence: Did Hanumantha have two cows and two sheep?",
      "a": "Yes, Hanumantha had two cows and two sheep.",
-     "lv": "m"
+     "lv": "m",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "Answer “Yes” or “No” in a full sentence: Did the sheep offer eggs to the farmer?",
      "a": "No, the sheep didn’t offer eggs to the farmer.",
-     "lv": "m"
+     "lv": "m",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "Answer “Yes” or “No” in a full sentence: Did the cow tell Hanumantha that he could sell milk in the market?",
      "a": "Yes, the cow told Hanumantha that he could sell milk in the market.",
-     "lv": "m"
+     "lv": "m",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "Answer “Yes” or “No” in a full sentence: Did the hen say she laid some eggs?",
      "a": "Yes, the hen said that she laid some eggs.",
-     "lv": "m"
+     "lv": "m",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "Answer “Yes” or “No” in a full sentence: Did the cock say he could give milk?",
      "a": "No, the cock didn’t say that he could give milk.",
-     "lv": "m"
+     "lv": "m",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "Answer “Yes” or “No” in a full sentence: Did Hanumantha buy a tractor with the money?",
      "a": "No, Hanumantha didn’t buy a tractor with the money.",
-     "lv": "m"
+     "lv": "m",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "Answer “Yes” or “No” in a full sentence: Did Hanumantha feed his daughters with the eggs?",
      "a": "Yes, Hanumantha fed his daughters with the eggs.",
-     "lv": "m"
+     "lv": "m",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "Answer “Yes” or “No” in a full sentence: Did everyone live happily forever in the end?",
      "a": "Yes, everyone lived happily forever in the end.",
-     "lv": "m"
+     "lv": "m",
+     "ob": "g"
     },
     {
      "t": "long",
@@ -2181,211 +2192,246 @@
      "t": "short",
      "q": "In \"The Balloon Man,\" does the poet say the balloon man eats a big lunch every day? Explain.",
      "a": "No. The poem says the balloon man \"never seems to think of lunch.\"",
-     "lv": "m"
+     "lv": "m",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "In \"What God Does...?\", did the Emperor remain seated on the throne when the shepherd boy first pointed out the student-teacher situation? Explain.",
      "a": "No. The Emperor quickly stood up and walked down, then made the boy sit on the throne.",
-     "lv": "m"
+     "lv": "m",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "Is the sentence \"The balloon man come to the market\" grammatically correct? If no, correct it.",
      "a": "No. Correct: The balloon man comes to the market.",
-     "lv": "m"
+     "lv": "m",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "In \"What God Does...?\", does the shepherd boy sit on the throne first? Explain briefly.",
      "a": "No. The Emperor sits first; the Emperor later makes the boy sit on the throne.",
-     "lv": "m"
+     "lv": "m",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "In the poem \"The Balloon Man,\" does the balloon man sell balloons of only one color? Explain.",
      "a": "No. The poem says the balloons are red, purple, blue, and green.",
-     "lv": "m"
+     "lv": "m",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "Was the Emperor happy when the shepherd boy first spoke to him in \"What God Does...?\" Explain.",
      "a": "No. The Emperor was puzzled and irritated at first.",
-     "lv": "m"
+     "lv": "m",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "Does the word \"irritated\" mean feeling very happy and pleased? Explain briefly.",
      "a": "No. \"Irritated\" means feeling annoyed, impatient, or slightly angry.",
-     "lv": "m"
+     "lv": "m",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "If a person is \"puzzled,\" do they understand something very clearly? Explain briefly.",
      "a": "No. A puzzled person is confused and does not understand clearly.",
-     "lv": "m"
+     "lv": "m",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "The text says, \"The balloon man holds balloons – a lovely bunch.\" Can you write one more sentence describing the balloons using an adjective from the poem?",
      "a": "Yes. The balloons are red and purple. (Or: The balloons are blue and green.)",
-     "lv": "m"
+     "lv": "m",
+     "ob": "b"
     },
     {
      "t": "short",
      "q": "The shepherd boy was clever. Write one sentence from the story \"What God Does...?\" that shows he was clever.",
      "a": "Yes. The shepherd boy said, \"Is my Emperor asking this question as a teacher or as a student?\"",
-     "lv": "m"
+     "lv": "m",
+     "ob": "b"
     },
     {
      "t": "short",
      "q": "Who wrote the poem \"The Balloon Man\"?",
      "a": "Rose Fyleman wrote the poem \"The Balloon Man.\"",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "What question did the king ask the Minister in the story \"What God Does...?\"",
      "a": "The king asked, \"What does God do?\"",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "When does the balloon man usually come to the market square?",
      "a": "The balloon man usually comes on market days.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "Where does a doctor typically work, according to page 27?",
      "a": "A doctor typically works in hospitals or clinics.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "To whom did the shepherd boy give his final answer about what God does?",
      "a": "The shepherd boy gave his final answer to the Emperor.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "Who always comes on market days in the poem?",
      "a": "The balloon man always comes on market days.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "What colors of balloons does the balloon man hold?",
      "a": "He holds red, purple, blue, and green balloons.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "When did the Minister bring the shepherd boy to court?",
      "a": "The Minister brought the shepherd boy to court the next day.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "Where does a cobbler mend shoes in the poem \"Bang and a bang!\"?",
      "a": "The cobbler mends shoes down the street.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "To whom did the king ask, \"What does God do?\"",
      "a": "The king asked the Minister, \"What does God do?\"",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "Who is the author of the poem \"The Balloon Man\"?",
      "a": "Rose Fyleman is the author.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "What did the shepherd boy say God does at the end of the story \"What God Does...?\"",
      "a": "He said, \"God turns a shepherd boy into an Emperor! And an Emperor into a shepherd!\"",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "When does the balloon man always come, according to the poem?",
      "a": "He always comes on market days.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "Where did the conversation between the king and the Minister about God take place?",
      "a": "It took place in the king's court.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "For whom does the cobbler mend shoes in the poem \"Bang and a bang!\"?",
      "a": "The cobbler mends shoes for little feet.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "Who in the story \"What God Does...?\" showed \"cheekiness\"?",
      "a": "The shepherd boy showed \"cheekiness.\"",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "What does it mean when the poem says the balloon man \"never seems to think of lunch\"?",
      "a": "It means he seems too busy or focused on selling balloons to stop for his midday meal.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "When might a king become \"speechless\" according to the story?",
      "a": "A king might become speechless when he hears something very surprising or unexpected that leaves him unable to respond immediately.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "Where might you find a \"cobbler\" mending shoes?",
      "a": "You might find a cobbler mending shoes in his shop or down the street.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "For whom was the Emperor's question (\"What does God do?\") initially too difficult, leading the Minister to suggest a shepherd boy?",
      "a": "The Minister thought the question was simple enough for a shepherd boy.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "Who comes on market days? Write a sentence.",
      "a": "The balloon man comes on market days.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "b"
     },
     {
      "t": "short",
      "q": "What does a cobbler mend? Write a sentence.",
      "a": "A cobbler mends shoes.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "b"
     },
     {
      "t": "short",
      "q": "When did the Minister bring the shepherd boy to court? Write a sentence.",
      "a": "The Minister brought the shepherd boy to court the next day.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "b"
     },
     {
      "t": "short",
      "q": "Where did the Emperor sit? Write a sentence.",
      "a": "The Emperor sat on the throne.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "b"
     },
     {
      "t": "short",
      "q": "With whom was the King having a conversation at the beginning of \"What God Does...?\" Write a sentence.",
      "a": "The King was having a conversation with the Minister.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "b"
     }
    ]
   },
@@ -3678,7 +3724,8 @@
       "Paint very quickly"
      ],
      "a": 2,
-     "lv": "e"
+     "lv": "e",
+     "ob": "p"
     },
     {
      "t": "mcq",
@@ -3756,205 +3803,239 @@
      "t": "short",
      "q": "In \"A Unique Painting,\" did Akbar immediately understand Birbal's explanation of the painting? Explain.",
      "a": "No. Akbar first shouted, \"What is this?\" He understood only after Birbal explained about using imagination.",
-     "lv": "m"
+     "lv": "m",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "According to the table on page 43, is Bharatanatyam a dance form from Karnataka? Explain.",
      "a": "No. According to the table, Bharatanatyam is a dance form from Tamil Nadu.",
-     "lv": "m"
+     "lv": "m",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "Is the sentence \"Akbar give Birbal a bag of gold\" grammatically correct? If no, correct it.",
      "a": "No. Correct: Akbar gave Birbal a bag of gold.",
-     "lv": "m"
+     "lv": "m",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "In the poem \"IF I COULD FLY,\" does the poet want to paint only during the day? Explain.",
      "a": "No. The poet also wants to paint the moon and stars when they come out at night.",
-     "lv": "m"
+     "lv": "m",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "In \"A Unique Painting,\" were the courtiers happy when Akbar gave Birbal a gift? Explain based on the text.",
      "a": "No. The text says, \"The courtiers were unhappy again.\"",
-     "lv": "m"
+     "lv": "m",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "Does the poet in \"IF I COULD FLY\" only want to paint during the daytime? Provide evidence from the poem.",
      "a": "No. The poet says, \"And when the moon and stars come out at night, Perhaps I'll paint them too.\"",
-     "lv": "m"
+     "lv": "m",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "Does the word \"soar\" mean to fall down quickly? Explain briefly.",
      "a": "No. \"Soar\" means to fly high upwards.",
-     "lv": "m"
+     "lv": "m",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "If a painting is described as \"utterly new,\" does it mean it has some old parts? Explain briefly.",
      "a": "No. \"Utterly new\" means completely or totally new, with no old parts.",
-     "lv": "m"
+     "lv": "m",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "The poet in \"IF I COULD FLY\" says, \"I'd carry a brush, and paints in colours bright.\" Write another short sentence about what the poet would paint, using a word from the poem.",
      "a": "Yes. I would paint the clouds. (Or: I would paint a rainbow.)",
-     "lv": "m"
+     "lv": "m",
+     "ob": "b"
     },
     {
      "t": "short",
      "q": "Birbal told Akbar, \"Huzoor, it is a cow eating grass.\" Write one question Akbar asked Birbal after this statement.",
      "a": "Yes. Akbar asked, \"Where is the cow?\"",
-     "lv": "m"
+     "lv": "m",
+     "ob": "b"
     },
     {
      "t": "short",
      "q": "Who is the author of the poem \"The paint box\"?",
      "a": "E.V. Rieu is the author.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "What gift did Akbar give Birbal at the end of \"A Unique Painting\"?",
      "a": "Akbar gave Birbal a gift of a bag full of gold.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "When does the poet in \"IF I COULD FLY\" want to paint the moon and stars?",
      "a": "The poet wants to paint them at night.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "Where was the All India dance competition held, in which Keshavmurthy participated (p.49)?",
      "a": "The All India dance competition was held in Jaipur.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "For whom was the birthday card on page 51-52 created?",
      "a": "The birthday card was created for Priya.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "Who told Birbal to make a painting?",
      "a": "Akbar told Birbal to make a painting.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "What did Birbal's painting show when he presented it?",
      "a": "It showed just green grass and the sky.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "When would the poet in \"IF I COULD FLY\" paint the moon and stars?",
      "a": "The poet would paint them at night.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "Where was the All India Exhibition held, according to page 49?",
      "a": "It was held at the Jaganmohan palace in Mysuru.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "With whom did the poet in \"IF I COULD FLY\" want to fly (implied by \"if I had wings\")?",
      "a": "The poem does not state with whom; it implies the poet would fly alone with their brush and paints.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "What colors did the poet in \"The paint box\" use to paint tigers?",
      "a": "The poet used crimson and white to paint tigers.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "When was the All India dance competition held in Jaipur, according to page 49?",
      "a": "It was held on 31st July 2013.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "Where did Sahera come from, according to the passage on page 49?",
      "a": "Sahera came from Raichur.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "For whom is the birthday invitation on page 52 addressed?",
      "a": "The invitation is addressed to Kavya.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "Who felt \"jealous\" of Birbal in the story \"A Unique Painting\"?",
      "a": "Some of the courtiers felt jealous of Birbal.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "What does \"fluffy\" describe in the poem \"IF I COULD FLY\"?",
      "a": "Fluffy describes the clouds.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "When might an artist feel \"delight\" from their work?",
      "a": "An artist might feel delight when they have created something beautiful or when others appreciate their work.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "Where might you see a \"sculptor\" working with stone?",
      "a": "You might see a sculptor working in their studio or workshop.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "For whom did Birbal create his \"unique\" painting?",
      "a": "Birbal created his unique painting for Emperor Akbar.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "Who asked Birbal to make a painting? Write a sentence.",
      "a": "Akbar asked Birbal to make a painting.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "b"
     },
     {
      "t": "short",
      "q": "What did the poet in \"IF I COULD FLY\" want to paint in the sky every day? Write a sentence.",
      "a": "The poet wanted to paint a rainbow in the sky every day.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "b"
     },
     {
      "t": "short",
      "q": "When do the moon and stars come out, according to the poem \"IF I COULD FLY\"? Write a sentence.",
      "a": "The moon and stars come out at night.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "b"
     },
     {
      "t": "short",
      "q": "Where was the All India Exhibition held (page 49)? Write a sentence.",
      "a": "The All India Exhibition was held at the Jaganmohan palace in Mysuru.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "b"
     },
     {
      "t": "short",
      "q": "To whom did Akbar give a bag full of gold? Write a sentence.",
      "a": "Akbar gave a bag full of gold to Birbal.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "b"
     }
    ]
   },
@@ -5100,7 +5181,8 @@
       "To write a book."
      ],
      "a": 2,
-     "lv": "e"
+     "lv": "e",
+     "ob": "p"
     },
     {
      "t": "mcq",
@@ -5262,187 +5344,218 @@
      "t": "short",
      "q": "Did Arunima continue the expedition at Everest when people advised her to stop? Explain based on the text.",
      "a": "No. The text says, \"But she was not ready to give up her attempt. She continued the expedition.\"",
-     "lv": "m"
+     "lv": "m",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "In the poem \"MOUNTAIN,\" do the climbers know exactly how far the top is? Provide evidence from the poem.",
      "a": "No. The poem says, \"No one knows, how far is the top.\"",
-     "lv": "m"
+     "lv": "m",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "Does the word \"challenge\" mean an easy task that anyone can do? Explain briefly.",
      "a": "No. A challenge is a difficult task that tests one's abilities or strength.",
-     "lv": "m"
+     "lv": "m",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "If someone gives you \"advice,\" are they forcing you to do something? Explain briefly.",
      "a": "No. Advice is a suggestion; you can choose whether to follow it.",
-     "lv": "m"
+     "lv": "m",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "The poem \"MOUNTAIN\" says, \"No thought of yesterday or tomorrow.\" Write one short sentence saying what the climbers do think about.",
      "a": "Yes. The climbers think about their steps rising and falling, and about climbing more and more.",
-     "lv": "m"
+     "lv": "m",
+     "ob": "b"
     },
     {
      "t": "short",
      "q": "Arunima Sinha faced problems with her artificial leg. Write one sentence from the text describing a problem she had with it.",
      "a": "Yes. Sometimes her leg started bleeding.",
-     "lv": "m"
+     "lv": "m",
+     "ob": "b"
     },
     {
      "t": "short",
      "q": "Who is described as \"a brave soul\" in this unit?",
      "a": "Arunima Sinha is described as \"a brave soul.\"",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "What did doctors have to do to Arunima's left leg after her accident?",
      "a": "Doctors had to amputate her left leg below the knee.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "When was little oxygen left in Arunima's cylinder?",
      "a": "Little oxygen was left in her cylinder during her expedition to Mount Everest.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "Where did the thief eat all the food, according to the old woman's story (p.71)?",
      "a": "The thief ate all the food from the refrigerator in her kitchen.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "With whom is Abdul planning to walk through a tunnel (p.70)?",
      "a": "Abdul is planning to walk through a tunnel with Bhanu. (ಪರಿಶೀಲಿಸಿ)",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "Who was a former volleyball player mentioned in the unit?",
      "a": "Arunima Sinha was a former volleyball player.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "What did Arunima Sinha decide to scale while on her hospital bed?",
      "a": "She decided to scale Mount Everest.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "When was little oxygen left in Arunima's cylinder during her expedition?",
      "a": "It was during her expedition to Mount Everest.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "Where did Arunima Sinha join a training camp?",
      "a": "She joined a training camp conducted by Tata Steel Adventure Foundation.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "With whom did Shankara climb the rock (according to page 70)?",
      "a": "Shankara climbed the rock with the help of a trainer.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "Who is the author of the poem \"What is pink?\"",
      "a": "Christina Rossetti is the author.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "What part of Arunima Sinha's body had to be amputated?",
      "a": "Her left leg (below the knee) had to be amputated.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "When did Arunima's artificial leg sometimes start bleeding?",
      "a": "It sometimes started bleeding during her expedition to Mount Everest.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "Where does the poem \"MOUNTAIN\" say the climbers put their hands due to the cold?",
      "a": "The poem says, \"hands in gloves.\"",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "From whom does Jyothi want Nihaan to take permission in the letter on page 69?",
      "a": "Jyothi wants Nihaan to take permission from the hostel warden.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "Who is called a \"brave soul\" for her great \"achievement\" in the unit?",
      "a": "Arunima Sinha is called a \"brave soul\" for her great achievement.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "What does it mean to \"scale\" Mount Everest?",
      "a": "To scale Mount Everest means to climb to its top.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "When might a mountaineer need a \"sleeping bag\"?",
      "a": "A mountaineer might need a sleeping bag when resting or sleeping during an expedition, especially in cold conditions.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "Where might you find \"pedestrians\" using a Zebra crossing?",
      "a": "You might find pedestrians using a Zebra crossing on a road or street.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "For whom was Bachendri Pal a trainer, helping them prepare for a difficult expedition?",
      "a": "Bachendri Pal was a trainer for Arunima Sinha.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "g"
     },
     {
      "t": "short",
      "q": "Who trained Arunima Sinha for her Mount Everest expedition? Write a sentence.",
      "a": "Bachendri Pal trained Arunima Sinha for her Mount Everest expedition.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "b"
     },
     {
      "t": "short",
      "q": "What did Arunima Sinha decide to do while she was in the hospital? Write a sentence.",
      "a": "Arunima Sinha decided to scale Mount Everest.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "b"
     },
     {
      "t": "short",
      "q": "When did Arunima Sinha join the training camp? Write a sentence. (ಪರಿಶೀಲಿಸಿ)",
      "a": "She joined it after deciding to scale Mount Everest, while still on the hospital bed.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "b"
     },
     {
      "t": "short",
      "q": "Where did the climbers in the poem \"MOUNTAIN\" put their hands? Write a sentence. (ಪರಿಶೀಲಿಸಿ)",
      "a": "The climbers put their hands in gloves.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "b"
     },
     {
      "t": "short",
      "q": "To whom did people give advice to stop the expedition? Write a sentence. (ಪರಿಶೀಲಿಸಿ)",
      "a": "People gave advice to Arunima Sinha.",
-     "lv": "h"
+     "lv": "h",
+     "ob": "b"
     }
    ]
   },
