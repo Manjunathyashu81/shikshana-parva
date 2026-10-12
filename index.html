@@ -179,7 +179,7 @@ window.addEventListener('popstate',function(e){
  exitTimer=setTimeout(()=>{exitArmed=false},2200)});
 function toast(m){const t=document.createElement('div');t.className='toast';t.textContent=m;document.body.appendChild(t);setTimeout(()=>t.remove(),2200)}
 function openClass(c){hasClass(c)?nav('class',{cls:c}):toast(ORD[c-1]+' ತರಗತಿ – ಶೀಘ್ರದಲ್ಲೇ ಸೇರಿಸಲಾಗುವುದು')}
-async function openSub(id){toast('ಲೋಡ್ ಆಗುತ್ತಿದೆ…');const ok=await ensureSubject(ST.cls,id);if(!ok){toast('ಈ ವಿಷಯ ಶೀಘ್ರದಲ್ಲೇ ಸೇರಿಸಲಾಗುವುದು');return}nav('subject',{sub:id,tab:'ab',mode:'browse',ch:'all',type:'all',lv:'all',q:'',abl:DATA[ST.cls+'-'+id].lessons[0].n})}
+async function openSub(id){const ok=await ensureSubject(ST.cls,id);if(!ok){toast('ಈ ವಿಷಯ ಶೀಘ್ರದಲ್ಲೇ ಸೇರಿಸಲಾಗುವುದು');return}nav('subject',{sub:id,tab:'ab',mode:'browse',ch:'all',type:'all',lv:'all',q:'',abl:DATA[ST.cls+'-'+id].lessons[0].n})}
 function setTab(t){ST.tab=t;ST.mode='browse';render()}
 /* ===== ಮುಖಪುಟ ===== */
 function vHome(){return `<div class="fade fill"><div class="h2">ತರಗತಿ ಆರಿಸಿ</div><div class="sub">ನಿಮ್ಮ ತರಗತಿಯನ್ನು ಆಯ್ಕೆ ಮಾಡಿ ಕಲಿಕಾ ಸಂಪನ್ಮೂಲಗಳನ್ನು ತೆರೆಯಿರಿ</div><div class="hgrid">${CLASSES.map(c=>{const on=hasClass(c);return `<button class="tile glass neu ${on?'':'off'}" onclick="openClass(${c})"><div class="n">${c}</div><div class="l">${ORD[c-1]} ತರಗತಿ</div><div class="e">${ENG[c-1]} Standard</div><span class="badge ${on?'on':''}">${on?'ಲಭ್ಯ':'ಶೀಘ್ರದಲ್ಲೇ'}</span></button>`}).join('')}</div></div>`}
