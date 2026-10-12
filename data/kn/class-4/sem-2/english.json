@@ -271,7 +271,416 @@
      ]
     ]
    ],
-   "qb": []
+   "qb": [
+    {
+     "t": "one",
+     "q": "Fill in the blank: Once, in a _______, there lived a ________ by name Hanumantha.",
+     "a": "village; farmer",
+     "lv": "e"
+    },
+    {
+     "t": "one",
+     "q": "Fill in the blank: He had two cows, two _________, a hen and a ______________.",
+     "a": "sheep; cock",
+     "lv": "e"
+    },
+    {
+     "t": "one",
+     "q": "Fill in the blank: The farmer said, “Please call me _____________.”",
+     "a": "friend",
+     "lv": "e"
+    },
+    {
+     "t": "one",
+     "q": "Fill in the blank: The sheep said, “… You can shear the ________________.”",
+     "a": "wool",
+     "lv": "e"
+    },
+    {
+     "t": "one",
+     "q": "Fill in the blank: You can sell it at the ______________. You will get some money.",
+     "a": "market",
+     "lv": "e"
+    },
+    {
+     "t": "one",
+     "q": "Fill in the blank: Hanumantha __________ and patted them gently on the back.",
+     "a": "smiled",
+     "lv": "e"
+    },
+    {
+     "t": "one",
+     "q": "Fill in the blank: The ____________ said, “Friend, you have given us enough food.”",
+     "a": "cows",
+     "lv": "e"
+    },
+    {
+     "t": "one",
+     "q": "Fill in the blank: You can sell _________________ at the market.",
+     "a": "milk",
+     "lv": "e"
+    },
+    {
+     "t": "one",
+     "q": "Fill in the blank: The hen said, “I have laid some ____________. You can feed your _____________ with them.”",
+     "a": "eggs; daughters",
+     "lv": "e"
+    },
+    {
+     "t": "one",
+     "q": "Fill in the blank: The ____________ said, “I can’t give you anything, but I wake you and the villagers up.”",
+     "a": "cock",
+     "lv": "e"
+    },
+    {
+     "t": "one",
+     "q": "Fill in the blank: Hanumantha bought an ______ with the money he earned.",
+     "a": "ox",
+     "lv": "e"
+    },
+    {
+     "t": "one",
+     "q": "Fill in the blank: All of them lived _______ forever.",
+     "a": "happily",
+     "lv": "e"
+    },
+    {
+     "t": "one",
+     "q": "Match: Hanumantha – Small farm; Sheep – Wool; Cows – Milk; Cock – Village alarm; Daughters – Eggs. (ಶಿಕ್ಷಕರು ಪರಿಶೀಲಿಸಿ – ಮೂಲ ಜೋಡಿ ತಪ್ಪಾಗಿತ್ತು)",
+     "a": "Hanumantha–Small farm, Sheep–Wool, Cows–Milk, Cock–Village alarm, Daughters–Eggs",
+     "lv": "e"
+    },
+    {
+     "t": "one",
+     "q": "Pick out the odd one out: Village, Rural area, City, Suburb.",
+     "a": "City",
+     "lv": "e"
+    },
+    {
+     "t": "one",
+     "q": "Pick out the odd one out: Cows, Sheep, Hen, Dog.",
+     "a": "Dog",
+     "lv": "e"
+    },
+    {
+     "t": "one",
+     "q": "Pick out the odd one out: Good morning, thank you, good afternoon, good night.",
+     "a": "Thank you",
+     "lv": "e"
+    },
+    {
+     "t": "one",
+     "q": "Pick out the odd one out: Neck, Forehead, bosom, money.",
+     "a": "Money",
+     "lv": "e"
+    },
+    {
+     "t": "one",
+     "q": "Pick out the odd one out: Loved, Said, Wake, Smiled.",
+     "a": "Wake",
+     "lv": "e"
+    },
+    {
+     "t": "one",
+     "q": "Give one word: A person who works on a farm",
+     "a": "Farmer",
+     "lv": "e"
+    },
+    {
+     "t": "one",
+     "q": "Give one word: A place where people live",
+     "a": "Village",
+     "lv": "e"
+    },
+    {
+     "t": "one",
+     "q": "Give one word: Male bird that crows in the morning",
+     "a": "Cock",
+     "lv": "e"
+    },
+    {
+     "t": "one",
+     "q": "Give one word: A female bird that lays eggs",
+     "a": "Hen",
+     "lv": "e"
+    },
+    {
+     "t": "one",
+     "q": "Give one word: A baby sheep",
+     "a": "Lamb",
+     "lv": "e"
+    },
+    {
+     "t": "one",
+     "q": "Give one word: A man who rears domestic animals",
+     "a": "Farmer (ಶಿಕ್ಷಕರು ಪರಿಶೀಲಿಸಿ)",
+     "lv": "e"
+    },
+    {
+     "t": "one",
+     "q": "Give one word: The hair of sheep used to make clothes",
+     "a": "Wool",
+     "lv": "e"
+    },
+    {
+     "t": "one",
+     "q": "Give one word: A liquid food produced by cows",
+     "a": "Milk",
+     "lv": "e"
+    },
+    {
+     "t": "one",
+     "q": "Give one word: A male working animal used to plough fields",
+     "a": "Ox",
+     "lv": "e"
+    },
+    {
+     "t": "one",
+     "q": "Give one word: A place where goods are bought and sold",
+     "a": "Market",
+     "lv": "e"
+    },
+    {
+     "t": "mcq",
+     "q": "What was the name of the farmer?",
+     "o": [
+      "Ramanna",
+      "Krishna",
+      "Hanumantha",
+      "Raghavendra"
+     ],
+     "a": 2,
+     "lv": "e"
+    },
+    {
+     "t": "mcq",
+     "q": "How many members were there in Hanumantha's family?",
+     "o": [
+      "Two",
+      "Four",
+      "Three",
+      "Five"
+     ],
+     "a": 1,
+     "lv": "e"
+    },
+    {
+     "t": "mcq",
+     "q": "What animals did Hanumantha have on his farm?",
+     "o": [
+      "Two cows, one sheep, one hen, and one cock",
+      "Two cows, two sheep, a hen, and a cock",
+      "One cow, two sheep, and a hen",
+      "Two hens and a cock"
+     ],
+     "a": 1,
+     "lv": "e"
+    },
+    {
+     "t": "mcq",
+     "q": "What did the sheep offer to Hanumantha?",
+     "o": [
+      "Eggs",
+      "Milk",
+      "Wool",
+      "Meat"
+     ],
+     "a": 2,
+     "lv": "e"
+    },
+    {
+     "t": "mcq",
+     "q": "What did the cows give Hanumantha?",
+     "o": [
+      "Eggs",
+      "Wool",
+      "Grass",
+      "Milk"
+     ],
+     "a": 3,
+     "lv": "e"
+    },
+    {
+     "t": "mcq",
+     "q": "What did the hen give to the farmer?",
+     "o": [
+      "Milk",
+      "Eggs",
+      "Wool",
+      "Grains"
+     ],
+     "a": 1,
+     "lv": "e"
+    },
+    {
+     "t": "mcq",
+     "q": "What did the cock say it gave to the farmer?",
+     "o": [
+      "Wool",
+      "Nothing",
+      "Milk",
+      "Eggs"
+     ],
+     "a": 1,
+     "lv": "e"
+    },
+    {
+     "t": "mcq",
+     "q": "What did Hanumantha buy with the money he earned?",
+     "o": [
+      "A new house",
+      "More cows",
+      "An ox",
+      "A tractor"
+     ],
+     "a": 2,
+     "lv": "e"
+    },
+    {
+     "t": "mcq",
+     "q": "What did Hanumantha do after selling the wool and milk?",
+     "o": [
+      "Went on a vacation",
+      "Bought food for himself",
+      "Fed his daughters with eggs",
+      "Sold all his animals"
+     ],
+     "a": 2,
+     "lv": "e"
+    },
+    {
+     "t": "mcq",
+     "q": "How did the story end?",
+     "o": [
+      "The farmer left the village",
+      "All of them lived happily forever",
+      "The animals ran away",
+      "The farmer became rich"
+     ],
+     "a": 1,
+     "lv": "e"
+    },
+    {
+     "t": "short",
+     "q": "Answer “Yes” or “No” in a full sentence: Did Hanumantha live in a village?",
+     "a": "Yes, Hanumantha lived in a village.",
+     "lv": "m"
+    },
+    {
+     "t": "short",
+     "q": "Answer “Yes” or “No” in a full sentence: Was Hanumantha a teacher?",
+     "a": "No, Hanumantha was not a teacher.",
+     "lv": "m"
+    },
+    {
+     "t": "short",
+     "q": "Answer “Yes” or “No” in a full sentence: Did Hanumantha have two cows and two sheep?",
+     "a": "Yes, Hanumantha had two cows and two sheep.",
+     "lv": "m"
+    },
+    {
+     "t": "short",
+     "q": "Answer “Yes” or “No” in a full sentence: Did the sheep offer eggs to the farmer?",
+     "a": "No, the sheep didn’t offer eggs to the farmer.",
+     "lv": "m"
+    },
+    {
+     "t": "short",
+     "q": "Answer “Yes” or “No” in a full sentence: Did the cow tell Hanumantha that he could sell milk in the market?",
+     "a": "Yes, the cow told Hanumantha that he could sell milk in the market.",
+     "lv": "m"
+    },
+    {
+     "t": "short",
+     "q": "Answer “Yes” or “No” in a full sentence: Did the hen say she laid some eggs?",
+     "a": "Yes, the hen said that she laid some eggs.",
+     "lv": "m"
+    },
+    {
+     "t": "short",
+     "q": "Answer “Yes” or “No” in a full sentence: Did the cock say he could give milk?",
+     "a": "No, the cock didn’t say that he could give milk.",
+     "lv": "m"
+    },
+    {
+     "t": "short",
+     "q": "Answer “Yes” or “No” in a full sentence: Did Hanumantha buy a tractor with the money?",
+     "a": "No, Hanumantha didn’t buy a tractor with the money.",
+     "lv": "m"
+    },
+    {
+     "t": "short",
+     "q": "Answer “Yes” or “No” in a full sentence: Did Hanumantha feed his daughters with the eggs?",
+     "a": "Yes, Hanumantha fed his daughters with the eggs.",
+     "lv": "m"
+    },
+    {
+     "t": "short",
+     "q": "Answer “Yes” or “No” in a full sentence: Did everyone live happily forever in the end?",
+     "a": "Yes, everyone lived happily forever in the end.",
+     "lv": "m"
+    },
+    {
+     "t": "long",
+     "q": "Who was Hanumantha and where did he live?",
+     "a": "Hanumantha was a farmer who lived in a village.",
+     "lv": "h"
+    },
+    {
+     "t": "long",
+     "q": "What animals did Hanumantha have on his farm?",
+     "a": "He had two cows, two sheep, a hen, and a cock.",
+     "lv": "h"
+    },
+    {
+     "t": "long",
+     "q": "How did Hanumantha treat his animals?",
+     "a": "He loved them with all his heart and treated them kindly and like friends.",
+     "lv": "h"
+    },
+    {
+     "t": "long",
+     "q": "What did the sheep say to Hanumantha and what did it offer?",
+     "a": "The sheep said they had grown to full size and offered their wool for Hanumantha to sell in the market.",
+     "lv": "h"
+    },
+    {
+     "t": "long",
+     "q": "What did the cow say to Hanumantha and how did he respond?",
+     "a": "The cow thanked him for the food and said he could sell their milk. Hanumantha hugged them and kissed them on the forehead.",
+     "lv": "h"
+    },
+    {
+     "t": "long",
+     "q": "What did the hen and cock say when Hanumantha approached them?",
+     "a": "The hen said she had laid eggs that could be used to feed his daughters. The cock said he could not give anything but helped by waking everyone up in the morning.",
+     "lv": "h"
+    },
+    {
+     "t": "long",
+     "q": "What did Hanumantha do with the things his animals gave him?",
+     "a": "He sold the wool and milk at the market, fed his daughters with the eggs, and bought an ox with the money he earned.",
+     "lv": "h"
+    },
+    {
+     "t": "long",
+     "q": "How does the story show the bond between Hanumantha and his animals?",
+     "a": "It shows that the animals respected and loved Hanumantha, and he treated them with care and affection, calling them his friends.",
+     "lv": "h"
+    },
+    {
+     "t": "long",
+     "q": "What did Hanumantha buy with the money he earned from selling the wool and milk?",
+     "a": "He bought an ox.",
+     "lv": "h"
+    },
+    {
+     "t": "long",
+     "q": "How does the story end?",
+     "a": "The story ends happily, with Hanumantha and all his animals living together in peace and harmony.",
+     "lv": "h"
+    }
+   ]
   },
   {
    "n": 7,
