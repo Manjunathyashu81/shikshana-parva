@@ -276,169 +276,198 @@
      "t": "one",
      "q": "Fill in the blank: Once, in a _______, there lived a ________ by name Hanumantha.",
      "a": "village; farmer",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: He had two cows, two _________, a hen and a ______________.",
      "a": "sheep; cock",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: The farmer said, “Please call me _____________.”",
      "a": "friend",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: The sheep said, “… You can shear the ________________.”",
      "a": "wool",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: You can sell it at the ______________. You will get some money.",
      "a": "market",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: Hanumantha __________ and patted them gently on the back.",
      "a": "smiled",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: The ____________ said, “Friend, you have given us enough food.”",
      "a": "cows",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: You can sell _________________ at the market.",
      "a": "milk",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: The hen said, “I have laid some ____________. You can feed your _____________ with them.”",
      "a": "eggs; daughters",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: The ____________ said, “I can’t give you anything, but I wake you and the villagers up.”",
      "a": "cock",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: Hanumantha bought an ______ with the money he earned.",
      "a": "ox",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: All of them lived _______ forever.",
      "a": "happily",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: Hanumantha – Small farm; Sheep – Wool; Cows – Milk; Cock – Village alarm; Daughters – Eggs. (ಶಿಕ್ಷಕರು ಪರಿಶೀಲಿಸಿ – ಮೂಲ ಜೋಡಿ ತಪ್ಪಾಗಿತ್ತು)",
      "a": "Hanumantha–Small farm, Sheep–Wool, Cows–Milk, Cock–Village alarm, Daughters–Eggs",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: Village, Rural area, City, Suburb.",
      "a": "City",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: Cows, Sheep, Hen, Dog.",
      "a": "Dog",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5,
+     "img": "images/class-4/english/c4-en-u6-p3-animals.webp"
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: Good morning, thank you, good afternoon, good night.",
      "a": "Thank you",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: Neck, Forehead, bosom, money.",
      "a": "Money",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: Loved, Said, Wake, Smiled.",
      "a": "Wake",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: A person who works on a farm",
      "a": "Farmer",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: A place where people live",
      "a": "Village",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: Male bird that crows in the morning",
      "a": "Cock",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: A female bird that lays eggs",
      "a": "Hen",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: A baby sheep",
      "a": "Lamb",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: A man who rears domestic animals",
      "a": "Farmer (ಶಿಕ್ಷಕರು ಪರಿಶೀಲಿಸಿ)",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: The hair of sheep used to make clothes",
      "a": "Wool",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: A liquid food produced by cows",
      "a": "Milk",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: A male working animal used to plough fields",
      "a": "Ox",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: A place where goods are bought and sold",
      "a": "Market",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "mcq",
@@ -975,751 +1004,878 @@
      "t": "one",
      "q": "Fill in the blank: The poem \"The Balloon Man\" is written by ______. (Anonymous / Rose Fyleman / E.V. Rieu)",
      "a": "Rose Fyleman",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: In \"What God Does...?\", the king wanted to know what ______ does. (the Minister / God / the shepherd)",
      "a": "God",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: The cobbler in the poem \"Bang and a bang!\" mends ______ all day long. (clothes / shoes / pots)",
      "a": "shoes",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: According to page 21, you can buy bread at a ______. (florist / bakery / jeweller's)",
      "a": "bakery",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: The shepherd boy made the Emperor exchange his throne for the shepherd's ______. (hat / staff / cloak)",
      "a": "cloak",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: The balloon man always ______ on market days. (come / comes / coming)",
      "a": "comes",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: The balloons are red, purple, blue, ______ green. (or / and / but)",
      "a": "and",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: The cobbler is mending shoes ______ little feet. (for / with / on)",
      "a": "for",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: \"What ______ God do?\" the king asked. (does / do / did)",
      "a": "does",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: The shepherd boy was not ______ of the Emperor. (afraid / fear / brave)",
      "a": "afraid",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: The balloon man in the poem always comes on ______ days. (holiday / market / sunny)",
      "a": "market",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: According to \"The Balloon Man,\" the balloons are red, purple, blue, and ______. (yellow / green / orange)",
      "a": "green",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: In \"What God Does...?\", the Minister said even a ______ boy could answer the king's question. (farmer / shepherd / prince)",
      "a": "shepherd",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: The cobbler in the poem \"Bang and a bang!\" mends shoes for ______ feet. (old / big / little)",
      "a": "little",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: Ragini, from the \"Write more\" section (page 30), is preparing for a local ______ competition. (singing / art / sports)",
      "a": "art",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: The balloon man holds a \"lovely ______\" of balloons. (group / bunch / set)",
      "a": "bunch",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: The Emperor was ______ by the Minister's response, meaning he was annoyed. (pleased / irritated / calm)",
      "a": "irritated",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: The shepherd boy's reply showed ______, meaning he was a bit disrespectful but clever. (shyness / cheekiness / fear)",
      "a": "cheekiness",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: Ragini paints ______ paintings, which means they are very good or wonderful. (ordinary / terrible / fantastic)",
      "a": "fantastic",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: The king was ______ when the shepherd boy asked him a question back, meaning confused. (certain / puzzled / angry)",
      "a": "puzzled",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: The balloon man ______ a lovely bunch of balloons. (holds / holding / hold)",
      "a": "holds",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: \"What ______ God do?\" asked the king. (is / does / are)",
      "a": "does",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: A cobbler ______ shoes for little feet. (mend / mending / mends)",
      "a": "mends",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: Ragini ______ fantastic paintings. (paint / paints / painting)",
      "a": "paints",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: The shepherd boy ______ not afraid of the Emperor. (was / were / is)",
      "a": "was",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: The balloon man always comes on ______ days.",
      "a": "market",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: The Minister told the king that even a ______ boy could answer his question.",
      "a": "shepherd",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: A person who uses a camera to take pictures is called a ______.",
      "a": "photographer",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: The shepherd boy's final answer was that God turns an Emperor into a ______.",
      "a": "shepherd",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: Ragini, in the \"Write more\" section (page 30), is a ______.",
      "a": "student",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: The balloon man holds balloons – ______ lovely bunch.",
      "a": "a",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: We can buy some pain-killer at ______ chemist's.",
      "a": "the",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: The Minister brought ______ young shepherd to court.",
      "a": "a",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: A doctor works ______ a hospital.",
      "a": "in",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: The king ______ irritated by this response. (past tense of 'be')",
      "a": "was",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: The balloon man stays in the market ______ and never seems to think of lunch.",
      "a": "square",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: The shepherd boy told the Emperor that God turns a shepherd boy into an ______.",
      "a": "Emperor",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: To buy bread, you would go to a ______, according to page 21.",
      "a": "bakery",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5,
+     "img": "images/class-4/english/c4-en-u7-bakery.webp"
     },
     {
      "t": "one",
      "q": "Fill in the blank: The Minister brought the ______ to the court the next day.",
      "a": "shepherd / young shepherd",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: A doctor uses a ______ to listen to a patient's heartbeat.",
      "a": "stethoscope",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5,
+     "img": "images/class-4/english/c4-en-u7-professions.webp"
     },
     {
      "t": "one",
      "q": "Fill in the blank: The balloons ______ and tug if there is a wind, meaning they pull hard.",
      "a": "tug",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: A ______ is a long, sleeveless coat, like the one the shepherd wore.",
      "a": "cloak",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: The Emperor ______ that God could do anything, meaning he understood it.",
      "a": "realised",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: A ______ is a person who looks after sheep.",
      "a": "shepherd",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: Ragini is working on a school ______, which is a special task or assignment.",
      "a": "project",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: The balloons are red, purple, blue, ______ green.",
      "a": "and",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: I am going ______ the bakery to buy some bread.",
      "a": "to",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: The Emperor ______ on the throne.",
      "a": "sat",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: A doctor helps people who are ______.",
      "a": "sick / ill",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: Please give ______ a pen.",
      "a": "me / him / her",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: 1. Balloon Man",
      "a": "c. Sells colorful balloons in the market square (ಪರಿಶೀಲಿಸಿ)",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: 2. Cobbler",
      "a": "d. Mends shoes with a “bang, bang, bang” (ಪರಿಶೀಲಿಸಿ)",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: 3. King (in story)",
      "a": "b. Asked “What does God do?” (ಪರಿಶೀಲಿಸಿ)",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: 4. Shepherd Boy",
      "a": "a. Answered the king’s question about God (ಪರಿಶೀಲಿಸಿ)",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: 5. Minister (in story)",
      "a": "e. Initially suggested a shepherd could answer the king (ಪರಿಶೀಲಿಸಿ)",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: 6. Balloons",
      "a": "h. tug",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: 7. Cobbler",
      "a": "f. mends",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: 8. King",
      "a": "g. asks",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: 9. Doctor",
      "a": "j. treats",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: 10. Ragini (p.30)",
      "a": "i. paint",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: 11. The Balloon Man",
      "a": "w. always comes on market days (ಪರಿಶೀಲಿಸಿ)",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: 12. The Cobbler",
      "a": "u. mends shoes the whole day long",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: 13. The King (in “What God Does?”)",
      "a": "l. Asked, “What does God do?”",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: 14. The Shepherd Boy",
      "a": "y. answered the king’s question cleverly",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: 15. Ragini (p.30)",
      "a": "n. Paints fantastic paintings",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: 16. Tug",
      "a": "r. Pull strongly",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: 17. Irritated",
      "a": "p. Annoyed or impatient",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: 18. Puzzled",
      "a": "q. Confused",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: 19. Cloak",
      "a": "t. A long, sleeveless outer garment",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: 20. Realised",
      "a": "s. Understand clearly",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: 21. The balloon man",
      "a": "w. always comes on market days (ಪರಿಶೀಲಿಸಿ)",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: 22. The cobbler",
      "a": "u. mends shoes the whole day long (ಪರಿಶೀಲಿಸಿ)",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: 23. The King",
      "a": "v. asked the Minister a question (ಪರಿಶೀಲಿಸಿ)",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: 24. A photographer",
      "a": "x. uses a camera to take pictures",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: 25. The shepherd boy",
      "a": "y. answered the king’s question cleverly",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: Red, Purple, Blue, String",
      "a": "String",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: King, Minister, Shepherd, Cobbler",
      "a": "Cobbler",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: Bakery, Florist, Chemist's, Court",
      "a": "Court",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: Stethoscope, Camera, Clay, Throne",
      "a": "Throne",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: Balloons, Shoes, Bread, Advice",
      "a": "Advice",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: red, purple, blue, quickly",
      "a": "quickly",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: cobbler, shoes, street, mending",
      "a": "street",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: king, minister, court, shepherd",
      "a": "shepherd (ಪರಿಶೀಲಿಸಿ)",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: camera, clay, scissors, hospital",
      "a": "hospital",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: ask, brought, irritated, looked",
      "a": "irritated",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: Balloon man, cobbler, king, balloons",
      "a": "balloons",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: Market square, court, bakery, lunch",
      "a": "lunch",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: Shepherd boy, minister, emperor, Rose Fyleman",
      "a": "Rose Fyleman",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: Red, purple, blue, string",
      "a": "string",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: Stethoscope, camera, clay, throne",
      "a": "throne",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: cobbler, tailor, doctor, market",
      "a": "market",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: balloons, string, bunch, lunch",
      "a": "lunch",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: king, emperor, minister, shepherd",
      "a": "shepherd",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: irritated, puzzled, angry, happy",
      "a": "happy",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: camera, clay, scissors, studio",
      "a": "studio",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: Red balloon, blue balloon, green balloon, quickly balloon",
      "a": "quickly balloon",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: He mends, She mends, They mends, I mend",
      "a": "They mends (ಪರಿಶೀಲಿಸಿ)",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: King asked, Minister replied, Boy laughed, Shepherd happy",
      "a": "Shepherd happy (ಪರಿಶೀಲಿಸಿ)",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: In the market, On the throne, At the shop, Under beautiful",
      "a": "Under beautiful (ಪರಿಶೀಲಿಸಿ)",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: Paints well, Sings loudly, Works hard, Shoes strong",
      "a": "Shoes strong (ಪರಿಶೀಲಿಸಿ)",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: The author of \"The Balloon Man.\"",
      "a": "Rose Fyleman",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: The sound the cobbler makes while mending shoes in the poem.",
      "a": "Bang (or bang, bang, bang)",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: The place where you can buy flowers (p.22).",
      "a": "Florist's",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: The profession that uses a stethoscope (p.27).",
      "a": "Doctor",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: What the shepherd boy was wearing that the Emperor put on.",
      "a": "Cloak",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: A person who mends shoes.",
      "a": "Cobbler",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: A place where bread is sold.",
      "a": "Bakery",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: The word used to ask about a person.",
      "a": "Who",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: The opposite of 'happy'.",
      "a": "Sad / Unhappy",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: A word that describes a noun (e.g., 'red' balloon).",
      "a": "Adjective",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: The place where the balloon man stays to sell balloons.",
      "a": "Market square",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: The person who wrote the poem \"The Balloon Man.\"",
      "a": "Rose Fyleman",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: The response the Emperor gave when the shepherd boy asked if he was a teacher or student.",
      "a": "Student",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: The job of the person in the poem \"Bang and a bang!\"",
      "a": "Cobbler",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: What Ragini (p.30) is working on this week.",
      "a": "Project",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: To pull something hard.",
      "a": "Tug",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: A feeling of being annoyed or impatient.",
      "a": "Irritated / Irritation",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: A person whose job is to mend shoes.",
      "a": "Cobbler",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: A respectful quality (opposite of cheekiness).",
      "a": "Respectfulness / Politeness",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: Extremely good or wonderful.",
      "a": "Fantastic",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: A story about a king and a clever boy: The King and the ______.",
      "a": "Boy / Shepherd",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: A poem about a man who sells colorful, airy toys: The ______ Man.",
      "a": "Balloon",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: A person who fixes shoes: A ______.",
      "a": "Cobbler",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: What you say when you meet someone in the morning: Good ______.",
      "a": "Morning",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: A list of jobs people do: List of ______.",
      "a": "Professions / Occupations",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "mcq",
@@ -2458,721 +2614,842 @@
      "t": "one",
      "q": "Fill in the blank: The poem \"IF I COULD FLY\" is written by ______. (Anonymous / E.V. Rieu / Christina Rossetti)",
      "a": "Anonymous",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: In \"A Unique Painting,\" Akbar asked Birbal to paint using his ______. (best colors / imagination / a model)",
      "a": "imagination",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: The poem \"The paint box\" mentions painting tigers in crimson and ______. (black / white / yellow)",
      "a": "white",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: ______ is a classical dance form from Kerala (p.43). (Kuchipudi / Kathakali / Bangra)",
      "a": "Kathakali",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: The birthday invitation on page 52 is for ______'s birthday. (Rani / Priya / Sahera)",
      "a": "Priya",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: If I ______ a pair of wings, I'd soar. (have / has / had)",
      "a": "had",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: I'd carry a brush ______ paints in colours bright. (or / and / but)",
      "a": "and",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: Akbar ______ angry at Birbal's reply. (get / got / getting)",
      "a": "got",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: Bharatanatyam is a dance form ______ Tamil Nadu. (in / from / at)",
      "a": "from",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: A person who paints pictures ______ called a painter. (is / are / am)",
      "a": "is",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: In \"IF I COULD FLY,\" the poet wants to carry a brush and ______ to paint. (crayons / paints / chalk)",
      "a": "paints",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: According to \"IF I COULD FLY,\" the poet would paint every fluffy ______ in sight. (bird / cloud / tree)",
      "a": "cloud",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: In \"A Unique Painting,\" Akbar asked Birbal to use ______ in his painting. (gold / imagination / dark colors)",
      "a": "imagination",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: Birbal's painting, when presented, showed just green grass and the ______. (sun / sky / river)",
      "a": "sky",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: ______ is a dance form from Tamil Nadu mentioned in the table (p.43). (Kathak / Bharatanatyam / Kolata)",
      "a": "Bharatanatyam",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: The poet in \"IF I COULD FLY\" would ______ straight away, meaning fly high. (fall / soar / walk)",
      "a": "soar",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: The clouds are described as ______, meaning soft and light. (hard / fluffy / dark)",
      "a": "fluffy",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: The courtiers were ______ of Birbal, meaning they felt resentful of his success. (proud / jealous / fond)",
      "a": "jealous",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: The poet in \"The paint box\" wants to paint something ______ new, meaning completely new. (slightly / partly / utterly)",
      "a": "utterly",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: Akbar told Birbal to use his ______ in the painting, meaning his creative thoughts. (colors / imagination / anger)",
      "a": "imagination",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: If I had wings, I ______ soar into the sky. (would / will / am)",
      "a": "would",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: Birbal ______ a painting for Akbar. (make / makes / made)",
      "a": "made",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: A ______ is a person who dances. (sing / dance / dancer)",
      "a": "dancer",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: Sahera ______ a famous painter from Raichur. (is / are / was)",
      "a": "is",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: The birthday invitation says the party ______ on July 20th. (is / are / was)",
      "a": "is",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: The poet in \"IF I COULD FLY\" would carry a brush and ______ to paint the clouds.",
      "a": "paints",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: Birbal's painting for Akbar showed only green grass and the ______.",
      "a": "sky",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: The author of \"The paint box\" is ______.",
      "a": "E.V. Rieu",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: Yakshagana is a dance form originating from the state of ______.",
      "a": "Karnataka",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: In the \"Fun\" poem (p.54), the singer from America can play the Indian ______.",
      "a": "Tabla",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: I would paint ______ rainbow in the sky.",
      "a": "a / the",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: Birbal had a covered frame ______ him.",
      "a": "with",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: The picture showed just green grass and ______ sky.",
      "a": "the",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: Mohan plays ______ the guitar.",
      "a": "on",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: The competition started ______ 9:00 am.",
      "a": "at",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: The poet in \"IF I COULD FLY\" wishes to paint a ______ in the sky every single day.",
      "a": "rainbow",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: In \"The paint box,\" the poet has already painted tigers in crimson and ______.",
      "a": "white",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: Akbar gave Birbal a gift of a bag full of ______ for his clever painting.",
      "a": "gold",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: Yakshagana is a dance form from the state of ______.",
      "a": "Karnataka",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: The birthday invitation on page 52 is for a girl named ______.",
      "a": "Priya",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: The poet in \"IF I COULD FLY\" might paint for his ______, meaning for his great pleasure.",
      "a": "delight",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: ______ is a deep red color, like the tigers in \"The paint box.\"",
      "a": "Crimson",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: The courtiers ______ to see the painting, meaning they moved very quickly.",
      "a": "rushed",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: A ______ is a person who makes sculptures.",
      "a": "sculptor",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: The opposite of \"ugly\" is ______.",
      "a": "beautiful / pretty",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: I would carry a brush ______ paints.",
      "a": "and",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5,
+     "img": "images/class-4/english/c4-en-u8-passage.webp"
     },
     {
      "t": "one",
      "q": "Fill in the blank: Akbar asked Birbal to use his ______.",
      "a": "imagination",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: A violinist plays the ______.",
      "a": "violin",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: The competition was held ______ Jaipur.",
      "a": "in",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: Please come ______ my birthday party.",
      "a": "to",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: Poet (p.33)",
      "a": "f. painted (or presented a painting) (ಪರಿಶೀಲಿಸಿ)",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: Birbal",
      "a": "l. Showed a painting of grass and sky (ಪರಿಶೀಲಿಸಿ)",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: Akbar",
      "a": "j. asked (ಪರಿಶೀಲಿಸಿ)",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: Dancer",
      "a": "g. dances",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: Sumathi (p.48)",
      "a": "i. plays (violin)",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: Poet (\"IF I COULD FLY\")",
      "a": "v. to fly into the sky with wings",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: Poet (\"The paint box\")",
      "a": "o. Painted tigers in crimson and white",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: Akbar (wants a painting)",
      "a": "k. Asked for a painting with imagination",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: Birbal (asked to paint)",
      "a": "w. to make him a painting using imagination (ಪರಿಶೀಲಿಸಿ)",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: Singer from America (p.54)",
      "a": "n. Plays on the Indian Tabla",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: Soar",
      "a": "r. Fly high upwards",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: Fluffy",
      "a": "t. Soft and light like cotton",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: Delight",
      "a": "q. Great pleasure",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: Utterly",
      "a": "p. Completely or totally",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: Jealous",
      "a": "s. Feeling unhappy because you want what someone else has",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: The poet wants",
      "a": "m. Wants to paint clouds purple, yellow, and green",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: Akbar told Birbal",
      "a": "w. to make him a painting using imagination",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: Birbal's painting",
      "a": "u. showed just green grass and the sky",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: A guitarist",
      "a": "y. plays on the guitar",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: Keshavmurthy (p.49)",
      "a": "x. is a famous Bharatanatyam dancer",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: Clouds, Rainbow, Moon, Birbal",
      "a": "Birbal",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: Akbar, Birbal, Courtiers, Violinist",
      "a": "Violinist",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: Bharatanatyam, Kolata, Yakshagana, Tabla",
      "a": "Tabla",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: Crimson, White, Green, Unicorn",
      "a": "Unicorn",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: Priya, Kavya, Birthday, Jaipur",
      "a": "Jaipur",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: fly, soar, paint, sky",
      "a": "sky",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: brush, paints, frame, angry",
      "a": "angry",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: purple, yellow, green, happily",
      "a": "happily",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: tabla, violin, guitar, singer",
      "a": "singer",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: on, in, at, famous",
      "a": "famous",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: Brush, paints, clouds, wings",
      "a": "wings",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: Akbar, Birbal, courtiers, E.V. Rieu",
      "a": "E.V. Rieu",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: Tabla, violin, guitar, Bharatanatyam",
      "a": "Bharatanatyam",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: Karnataka, Kerala, Tamil Nadu, Jaipur",
      "a": "Jaipur",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: Priya, birthday, cake, Sahera",
      "a": "Sahera",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: purple, yellow, green, bright",
      "a": "bright",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: brush, paints, canvas, imagination",
      "a": "imagination",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: sculptor, painter, dancer, violin",
      "a": "violin",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: soar, fly, paint, watch",
      "a": "watch",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: unique, pretty, beautiful, angry",
      "a": "angry",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: Paint clouds, Fly high, Sing songs, Happy Birbal",
      "a": "Happy Birbal (ಪರಿಶೀಲಿಸಿ)",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: Red, yellow, green, beautifully",
      "a": "beautifully",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: In the sky, On the wall, At the palace, With clever",
      "a": "With clever (ಪರಿಶೀಲಿಸಿ)",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: He paints, She dances, They sing, It drawing",
      "a": "It drawing (ಪರಿಶೀಲಿಸಿ)",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: Tabla, Flute, Dhol, Singer",
      "a": "Singer",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: The objects the poet of \"IF I COULD FLY\" would paint purple, yellow, and green.",
      "a": "Clouds",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: What Birbal said had eaten the grass in his painting.",
      "a": "Cow",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: A dance form from Andhra Pradesh listed in the table (p.44).",
      "a": "Kuchipudi",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: The musical instrument played by the singer from Australia in the \"Fun\" poem (p.54).",
      "a": "Dhol",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: The date of Priya's birthday party (p.52).",
      "a": "July 20th",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: A person who carves statues from stone.",
      "a": "Sculptor",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: A traditional dance form from Karnataka mentioned in the text.",
      "a": "Kolata / Yakshagana / Dollu Kunitha",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: The word that means \"fly upwards.\"",
      "a": "Soar",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: A person who plays the guitar.",
      "a": "Guitarist",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: The short form of \"I would.\"",
      "a": "I'd",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: The objects the poet in \"IF I COULD FLY\" wants to paint purple, yellow, and green.",
      "a": "Clouds",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: The author of the poem \"The paint box.\"",
      "a": "E.V. Rieu",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: What Birbal said the cow did with the grass in his painting.",
      "a": "Ate (it)",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: A dance form from Punjab shown in the table.",
      "a": "Bangra",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: The musical instrument a singer from Germany plays in the poem on page 55.",
      "a": "Tutturi",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: To fly high up in the air.",
      "a": "Soar",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: A person who is an expert at playing the violin.",
      "a": "Violinist",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: A type of painting that shows a person.",
      "a": "Portrait",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: Another word for king or supreme ruler.",
      "a": "Emperor",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: Soft, light, and airy.",
      "a": "Fluffy",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: A poem about wanting to fly and paint: \"If I Could ______.\"",
      "a": "Fly",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: A story about a clever minister and a painting: \"A Unique ______.\"",
      "a": "Painting",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: An invitation for a celebration of someone's birth: \"Birthday ______.\"",
      "a": "Invitation / Party",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: A person who creates art with paint: A ______.",
      "a": "Painter",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: A list of different dances: \"Dance ______.\"",
      "a": "Forms",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "mcq",
@@ -3220,7 +3497,8 @@
       "Uttar Pradesh"
      ],
      "a": 3,
-     "lv": "e"
+     "lv": "e",
+     "img": "images/class-4/english/c4-en-u8-dance-identify.webp"
     },
     {
      "t": "mcq",
@@ -3829,733 +4107,856 @@
      "t": "one",
      "q": "Fill in the blank: The poem \"MOUNTAIN\" is written by ______. (Anonymous / Christina Rossetti / Arunima Sinha)",
      "a": "Anonymous",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: Arunima Sinha was a ______ player before her accident. (cricket / volleyball / basketball)",
      "a": "volleyball",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: ______ Pal was the first Indian lady to scale Mount Everest and trained Arunima. (Sunita / Bachendri / Anita)",
      "a": "Bachendri",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: The poem \"What is pink?\" states that a ______ is white. (rose / cloud / swan)",
      "a": "swan",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: Shankara (p.70) wanted to climb a ______. (tree / mountain / rock)",
      "a": "rock",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: Together, we walk ______ make moves. (and / or / but)",
      "a": "and",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: Arunima Sinha ______ a volleyball player. (is / was / were)",
      "a": "was",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: She ______ rushed to a hospital. (is / was / were)",
      "a": "was",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: Doctors saved her life ______ they had to amputate her leg. (and / but / so)",
      "a": "but",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: She continued the expedition ______ she reached the top. (because / until / if)",
      "a": "until",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: In the poem \"MOUNTAIN,\" climbers wear ______ on their hands due to the biting cold. (socks / gloves / hats)",
      "a": "gloves",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: Arunima Sinha was a ______ player before her accident. (tennis / volleyball / badminton)",
      "a": "volleyball",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: Bachendri Pal was the first Indian ______ to scale Mount Everest. (man / lady / child)",
      "a": "lady",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: Arunima had problems with her ______ leg during the expedition. (right / artificial / broken)",
      "a": "artificial",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: According to \"What is pink?\", a ______ is red. (rose / poppy / swan)",
      "a": "poppy",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: Climbers face \"______ cold,\" meaning very severe cold. (mild / biting / warm)",
      "a": "biting",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: Arunima's leg had to be ______, meaning cut off by surgery. (healed / amputated / bandaged)",
      "a": "amputated",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: Her ______ to Mount Everest was full of challenges. (picnic / expedition / stroll)",
      "a": "expedition",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: Scaling Everest was a great ______, meaning a success achieved through effort. (failure / achievement / dream)",
      "a": "achievement",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: People ______ her to stop, meaning they gave her strong suggestions. (forced / advised / ignored)",
      "a": "advised",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: Together, we ______ and make moves. (walks / walk / walking)",
      "a": "walk",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: Arunima Sinha ______ a brave soul. (is / are / was)",
      "a": "was",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: Doctors ______ her life. (save / saves / saved)",
      "a": "saved",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: She ______ not ready to give up her attempt. (were / was / is)",
      "a": "was",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: Shankara ______ to climb a rock. (want / wants / wanted)",
      "a": "wanted",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: In \"MOUNTAIN,\" climbers wear ______ on their hands because of the biting cold.",
      "a": "gloves",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: Arunima Sinha was thrown out of a moving ______.",
      "a": "train",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: Tata Steel Adventure ______ conducted the training camp Arunima joined.",
      "a": "Foundation",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: According to \"What is pink?\", pears are ______.",
      "a": "yellow",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: The police (p.71) enquired about a ______ at the old woman's house.",
      "a": "theft",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: No one knows, how far ______ the top.",
      "a": "is",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: She had problems ______ her artificial leg.",
      "a": "with",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: Little oxygen was left ______ the cylinder.",
      "a": "in",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: The skateboard is useful, but ______ is very expensive.",
      "a": "it",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: This is ______ oxygen cylinder. (referring to possession)",
      "a": "your / my / his / her / their",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: In \"MOUNTAIN,\" the climbers' feet tap on the ______ below.",
      "a": "rocks",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: Arunima Sinha joined a training camp conducted by Tata Steel Adventure ______.",
      "a": "Foundation",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: During Arunima's expedition, little ______ was left in the cylinder.",
      "a": "oxygen",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: According to \"What is pink?\", the ______ is blue where the clouds float through.",
      "a": "sky",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: A person who is one hundred years old is called a ______. (Fun with words, p.67)",
      "a": "centenarian",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: The soft substance in the center of bones is called ______.",
      "a": "marrow",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: If a part of your body is painful from an injury, it is ______.",
      "a": "sore",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: Arunima decided to ______ Mount Everest, meaning to climb it.",
      "a": "scale",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: A ______ is a person who is one hundred years old.",
      "a": "centenarian",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: Chemicals used to kill pests are called ______.",
      "a": "pesticides",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: Arunima was thrown out ______ a moving train.",
      "a": "of",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: She joined ______ training camp.",
      "a": "a",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: The police went ______ an old woman's house.",
      "a": "to",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Fill in the blank: He climbed the rock ______ the help of a trainer.",
      "a": "with",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: Climbers (\"MOUNTAIN\")",
      "a": "b. Their feet tap on rocks below (ಪರಿಶೀಲಿಸಿ)",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: Arunima Sinha",
      "a": "d. Scaled Mount Everest with an amputated leg (ಪರಿಶೀಲಿಸಿ)",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: Bachendri Pal",
      "a": "a. First Indian lady to scale Mount Everest (ಪರಿಶೀಲಿಸಿ)",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: Christina Rossetti",
      "a": "c. Wrote \"What is pink?\" (ಪರಿಶೀಲಿಸಿ)",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: Old Woman (p.71)",
      "a": "e. Told police a thief ate all the food from her fridge (ಪರಿಶೀಲಿಸಿ)",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: Climbers (p.56)",
      "a": "m. Wear gloves for biting cold (ಪರಿಶೀಲಿಸಿ)",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: Arunima",
      "a": "k. Was a volleyball player (ಪರಿಶೀಲಿಸಿ)",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: Doctors",
      "a": "g. amputated (ಪರಿಶೀಲಿಸಿ)",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: Bachendri Pal (trainer)",
      "a": "l. Trained Arunima (ಪರಿಶೀಲಿಸಿ)",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: People (p.63)",
      "a": "f. advised (ಪರಿಶೀಲಿಸಿ)",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: Climbers (\"MOUNTAIN\") - feet",
      "a": "i. walk / tap (ಪರಿಶೀಲಿಸಿ)",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: Arunima Sinha (sport)",
      "a": "u. was a former volleyball player",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: Bachendri Pal (Everest)",
      "a": "v. trained Arunima for Mount Everest",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: Christina Rossetti (poem)",
      "a": "n. Wrote the poem \"What is pink?\"",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: Shankara (p.70)",
      "a": "o. Wanted to climb a rock",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: Biting (cold)",
      "a": "r. Severe; feeling like it's nipping",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: Amputate",
      "a": "s. To cut off a limb by surgery",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: Scale",
      "a": "p. To climb a steep surface",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: Expedition",
      "a": "t. A long journey, often to a dangerous place",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: Achievement",
      "a": "q. A success achieved by effort",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: Climbers in \"MOUNTAIN\"",
      "a": "w. wear gloves for the biting cold",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: Shankara",
      "a": "x. wanted to climb a rock",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Match: The police (p.71)",
      "a": "y. enquired about a theft",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: Gloves, Oxygen cylinder, Sleeping bag, Volleyball",
      "a": "Volleyball",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: Arunima Sinha, Bachendri Pal, Mount Everest, Shankara",
      "a": "Shankara",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: Parachuting, Water rafting, Rock climbing, Hospital",
      "a": "Hospital",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: Rose, Poppy, Swan, Pesticide",
      "a": "Pesticide",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: Jyothi, Nihaan, Kodachadri hill, Abdul",
      "a": "Abdul (ಪರಿಶೀಲಿಸಿ)",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: walk, make, knows, cold",
      "a": "cold",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: volleyball, train, hospital, leg",
      "a": "leg",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: rope, torch, bag, climbing",
      "a": "climbing",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: she, he, expensive, they",
      "a": "expensive",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: on, in, with, brave",
      "a": "brave",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: Gloves, rocks, marrow, volleyball",
      "a": "volleyball",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: Arunima Sinha, Bachendri Pal, Mount Everest, Christina Rossetti",
      "a": "Christina Rossetti",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: Parachuting, Surfing, Skiing, Sleeping bag",
      "a": "Sleeping bag",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: Rose, poppy, swan, mountain",
      "a": "mountain",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: Torch, rope, ice axe, train",
      "a": "train",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: rope, torch, sleeping bag, mountain",
      "a": "mountain",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: parachuting, surfing, skiing, reading",
      "a": "reading",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: amputate, scale, climb, advise",
      "a": "advise",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: brave, strong, determined, afraid",
      "a": "afraid",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: pedestrian, centenarian, mountaineer, pesticide",
      "a": "pesticide",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: Walk together, Climb more, Feet tap, Cold biting",
      "a": "Cold biting (ಪರಿಶೀಲಿಸಿ)",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: She was thrown, Doctors saved, Leg amputated, Arunima brave",
      "a": "Arunima brave (ಪರಿಶೀಲಿಸಿ)",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: On the water, In the air, On the ground, With dangerous",
      "a": "With dangerous (ಪರಿಶೀಲಿಸಿ)",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: He climbs, She trains, They scale, It useful",
      "a": "It useful (ಪರಿಶೀಲಿಸಿ)",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Pick out the odd one out: Good shoes, Strong rope, Big rock, Climbed help",
      "a": "Climbed help (ಪರಿಶೀಲಿಸಿ)",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: The sport Arunima Sinha played.",
      "a": "Volleyball",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: The highest mountain Arunima Sinha scaled.",
      "a": "Mount Everest",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: The color of grass, according to \"What is pink?\".",
      "a": "Green",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: One item listed under \"mountaineering equipment\" on page 65 (besides sleeping bag).",
      "a": "Rope / Ice axe / Torch / Helmet / Boots / Oxygen cylinder (any one)",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5,
+     "img": "images/class-4/english/c4-en-u9-mountaineer.webp"
     },
     {
      "t": "one",
      "q": "Give one word: The type of crossing meant for people who walk on foot (p.67).",
      "a": "Zebra (crossing)",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: A person who climbs mountains.",
      "a": "Mountaineer / Climber",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: To cut off a leg or arm by surgery.",
      "a": "Amputate",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: A long journey to a dangerous or unknown place.",
      "a": "Expedition",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: The first Indian lady to scale Mount Everest.",
      "a": "Bachendri Pal",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: The word for \"people who walk on foot.\"",
      "a": "Pedestrians",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: The sport Arunima Sinha played before her accident.",
      "a": "Volleyball",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: The person who trained Arunima for her Everest expedition.",
      "a": "Bachendri Pal",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: The color of a swan, according to \"What is pink?\".",
      "a": "White",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: One item mountaineers carry in their bags (from p.66).",
      "a": "Torch / Rope / Sleeping bag (any one)",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: What police use a Zebra crossing for, according to page 67.",
      "a": "Pedestrians (people who walk on foot)",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: Very severe cold that feels like it's nipping you.",
      "a": "Biting cold",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: To climb to the top of something steep, like a mountain.",
      "a": "Scale",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: A long, organized journey for a particular purpose, often to a difficult place.",
      "a": "Expedition",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: Success that you get by your own efforts.",
      "a": "Achievement",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: A person who is walking, especially in an area where there are vehicles.",
      "a": "Pedestrian",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: A poem about climbing a cold, high place: \"______.\"",
      "a": "Mountain",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: A story about a courageous woman who climbed Everest: \"Arunima Sinha, A Brave ______.\"",
      "a": "Soul",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: A list of sports that are risky and exciting: \"______ Sports.\"",
      "a": "Adventurous / Adventure",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: A person who climbs mountains: A ______.",
      "a": "Mountaineer / Climber",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "one",
      "q": "Give one word: A short summary of a story: \"______ of the Passage.\"",
      "a": "Summary",
-     "lv": "e"
+     "lv": "e",
+     "mk": 0.5
     },
     {
      "t": "mcq",
