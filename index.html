@@ -128,6 +128,12 @@ const L=(q,a,lv)=>({t:'long',q,a,lv:lv||'h'});
 const TL={mcq:'ಬಹು ಆಯ್ಕೆ',one:'ಒಂದು ವಾಕ್ಯ',lang:'ಭಾಷಾ ಚಟುವಟಿಕೆ',short:'ಎರಡು–ಮೂರು ವಾಕ್ಯ',long:'ವಿವರಣಾತ್ಮಕ'};
 const MK={mcq:1,one:1,lang:1,short:2,long:3};
 const LVN={e:'ಸುಲಭ',m:'ಮಧ್ಯಮ',h:'ಕಠಿಣ'};
+const TL_EN={mcq:'MCQ',one:'One sentence',lang:'Language activity',short:'Two–three sentences',long:'Descriptive'};
+const LVN_EN={e:'Easy',m:'Medium',h:'Hard'};
+function TLx(){return ST.sub==='en'?TL_EN:TL}
+function LVx(){return ST.sub==='en'?LVN_EN:LVN}
+const EN_UI={'ಪಾಠ (Chapter)':'Chapter','ಎಲ್ಲಾ ಪಾಠಗಳು':'All chapters','ಪ್ರಶ್ನೆ ಪ್ರಕಾರ':'Question type','ಎಲ್ಲಾ ಪ್ರಕಾರ':'All types','ಎಲ್ಲಾ ಹಂತ':'All levels','ಸುಲಭ':'Easy','ಮಧ್ಯಮ':'Medium','ಕಠಿಣ':'Hard','ಅಂಕ':'mark','ಪ್ರಶ್ನೆಗಳು':'questions','ಉತ್ತರ:':'Answer:','ಉತ್ತರ ನೋಡಿ':'Show answer','ಮುಂದಿನದು →':'Next →'};
+function T(s){return (ST.sub==='en'&&EN_UI[s]!==undefined)?EN_UI[s]:s}
 const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 const $=id=>document.getElementById(id);
 const SUBJ_META=[{id:'kn',name:'ಕನ್ನಡ',en:'Kannada',ic:'ಕ'},{id:'ma',name:'ಗಣಿತ',en:'Mathematics',ic:'∑'},{id:'en',name:'English',en:'English',ic:'Aa'},{id:'evs',name:'ಪರಿಸರ ಅಧ್ಯಯನ',en:'Environmental Studies',ic:'ಪ'},{id:'hi',name:'ಹಿಂದಿ',en:'Hindi',ic:'ह'}];
@@ -220,7 +226,7 @@ function vAb(){const L=lessons(),l=L.find(x=>x.n==ST.abl)||L[0];
  return h+'</div>'}
 function togAbEdit(){const b=$('abbody'),btn=$('abedbtn');if(!b)return;const on=b.getAttribute('contenteditable')==='true';b.setAttribute('contenteditable',on?'false':'true');b.classList.toggle('editing',!on);if(btn)btn.textContent=on?'✏ ಎಡಿಟ್ ಮಾಡಿ':'✔ ಎಡಿಟ್ ಮುಗಿಸಿ'}
 function qHtml(q,a){let h=`<div class="qt">${esc(q.q)}</div>`;
- if(q.t==='mcq')h+=q.o.map((o,i)=>`<div class="opt ${a&&i===q.a?'ok':''}"><span class="ol">${'ABCD'[i]}</span>${esc(o)}</div>`).join('');else if(a)h+=`<div class="ans"><b>ಉತ್ತರ:</b> ${esc(q.a)}</div>`;return h}
+ if(q.t==='mcq')h+=q.o.map((o,i)=>`<div class="opt ${a&&i===q.a?'ok':''}"><span class="ol">${'ABCD'[i]}</span>${esc(o)}</div>`).join('');else if(a)h+=`<div class="ans"><b>${T('ಉತ್ತರ:')}</b> ${esc(q.a)}</div>`;return h}
 function fq(){return allQ().filter(q=>(ST.ch==='all'||q.ch==ST.ch)&&(ST.type==='all'||q.t===ST.type)&&(ST.lv==='all'||q.lv===ST.lv))}
 /* ===== LBA ಪ್ರಶ್ನೆ ಬಂಡಾರ ===== */
 /* ===== ಥೀಮ್ ಡ್ರಾಪ್‌ಡೌನ್ (ಆ್ಯಪ್ ಥೀಮ್ ಬಣ್ಣದಲ್ಲಿ) ===== */
@@ -231,12 +237,12 @@ function ddT(k,e){if(e)e.stopPropagation();const d=document.getElementById('dd-'
 function ddP(k,v){new Function('value',DDC[k])(v)}
 document.addEventListener('click',()=>document.querySelectorAll('.ddl').forEach(x=>x.style.display='none'));
 function vQb(){const list=fq();
- const lo=[['all','ಎಲ್ಲಾ ಪಾಠಗಳು'],...lessons().map(l=>[String(l.n),`${l.n}. ${l.t}`])];
- const to=[['all','ಎಲ್ಲಾ ಪ್ರಕಾರ'],...Object.keys(TL).map(k=>[k,TL[k]])];
- return `<div class="card glass neu ddz"><div class="row"><div><label class="fl">ಪಾಠ (Chapter)</label>${sel('ch',lo,ST.ch,'ST.ch=value;render()')}</div>
- <div><label class="fl">ಪ್ರಶ್ನೆ ಪ್ರಕಾರ</label>${sel('type',to,ST.type,'ST.type=value;render()')}</div></div>
- <div class="pills">${[['all','ಎಲ್ಲಾ ಹಂತ'],['e','ಸುಲಭ'],['m','ಮಧ್ಯಮ'],['h','ಕಠಿಣ']].map(p=>`<button class="pill ${ST.lv===p[0]?'on':''}" onclick="ST.lv='${p[0]}';render()">${p[1]}</button>`).join('')}</div></div>
- <div class="cnt">${list.length} ಪ್ರಶ್ನೆಗಳು</div><div class="qwrap">`+list.map(q=>`<div class="card glass neu"><div class="meta"><span class="tag">${TL[q.t]}</span><span>${q.mk} ಅಂಕ</span><span><i class="dot ${q.lv}"></i>${LVN[q.lv]}</span></div><div class="chn">${esc(lessons().find(l=>l.n==q.ch).t)}</div>${qHtml(q,true)}</div>`).join('')+'</div>'}
+ const lo=[['all',T('ಎಲ್ಲಾ ಪಾಠಗಳು')],...lessons().map(l=>[String(l.n),`${l.n}. ${l.t}`])];
+ const to=[['all',T('ಎಲ್ಲಾ ಪ್ರಕಾರ')],...Object.keys(TLx()).map(k=>[k,TLx()[k]])];
+ return `<div class="card glass neu ddz"><div class="row"><div><label class="fl">${T('ಪಾಠ (Chapter)')}</label>${sel('ch',lo,ST.ch,'ST.ch=value;render()')}</div>
+ <div><label class="fl">${T('ಪ್ರಶ್ನೆ ಪ್ರಕಾರ')}</label>${sel('type',to,ST.type,'ST.type=value;render()')}</div></div>
+ <div class="pills">${[['all','ಎಲ್ಲಾ ಹಂತ'],['e','ಸುಲಭ'],['m','ಮಧ್ಯಮ'],['h','ಕಠಿಣ']].map(p=>`<button class="pill ${ST.lv===p[0]?'on':''}" onclick="ST.lv='${p[0]}';render()">${T(p[1])}</button>`).join('')}</div></div>
+ <div class="cnt">${list.length} ${T('ಪ್ರಶ್ನೆಗಳು')}</div><div class="qwrap">`+list.map(q=>`<div class="card glass neu"><div class="meta"><span class="tag">${TLx()[q.t]}</span><span>${q.mk} ${T('ಅಂಕ')}</span><span><i class="dot ${q.lv}"></i>${LVx()[q.lv]}</span></div>${ST.sub==='en'?'':'<div class="chn">'+esc(lessons().find(l=>l.n==q.ch).t)+'</div>'}${qHtml(q,true)}</div>`).join('')+'</div>'}
 
 /* ===== LBA ಬ್ಲೂಪ್ರಿಂಟ (ಪಾಠವಾರು) : BP[ಪಾಠ] = {o: ಉದ್ದಿಷ್ಟ [ಪ್ರಶ್ನೆಗಳು, ಅಂಕಗಳು]; d: ಕಠಿಣತೆ [ಪ್ರಶ್ನೆಗಳು, ಅಂಕಗಳು]} ===== */
 const OBJ={a:'ಅರಿವು',g:'ಗ್ರಹಿಕೆ',b:'ಅಭಿವ್ಯಕ್ತಿ',p:'ಪ್ರಶಂಸೆ'};
@@ -260,7 +266,7 @@ function bpTbl(rows,label,tq,tm){const T=tm||1;
  return `<div class="tw"><table class="bpt"><thead><tr><th>ಕ್ರ.ಸಂ</th><th>${label}</th><th>ಪ್ರಶ್ನೆಗಳ ಸಂಖ್ಯೆ</th><th>ಅಂಕಗಳು</th><th>ಶೇಕಡಾ</th></tr></thead><tbody>${rows.map((r,i)=>`<tr><td>${i+1}.</td><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td><td>${Math.round(r[2]*100/T)}%</td></tr>`).join('')}<tr class="tot"><td colspan="2">ಒಟ್ಟು</td><td>${tq}</td><td>${tm}</td><td>100%</td></tr></tbody></table></div>`}
 function vBp(){const all=ST.bpl==='all';const ls=all?lessons().map(l=>l.n):[+ST.bpl];const A=bpAgg(ls);
  const title=all?'ಎಲ್ಲಾ ಪಾಠಗಳು':`ಪಾಠ ${ST.bpl}: ${lessons().find(l=>l.n==+ST.bpl).t}`;
- const lo=[['all','ಎಲ್ಲಾ ಪಾಠಗಳು'],...lessons().map(l=>[String(l.n),`ಪಾಠ ${l.n}: ${l.t}`])];
+ const lo=[['all',T('ಎಲ್ಲಾ ಪಾಠಗಳು')],...lessons().map(l=>[String(l.n),`ಪಾಠ ${l.n}: ${l.t}`])];
  return `<div class="card glass neu ddz"><label class="fl" style="margin-top:0">ಪಾಠ ಆಯ್ಕೆ</label>${sel('bpl',lo,ST.bpl,'ST.bpl=value;render()')}</div>
  <div class="card glass neu"><h3>${esc(title)} – ಬ್ಲೂಪ್ರಿಂಟ</h3><div class="bph">ಹಂತ: 1 ಉದ್ದಿಷ್ಟ ವಾರು ಅಂಕಗಳ ಹಂಚಿಕೆ:</div>${bpTbl(A.o,'ಉದ್ದಿಷ್ಟಗಳು',A.oq,A.om)}<div class="bph">ಹಂತ: 2 ಕಠಿಣತೆ ಮಟ್ಟ ಆಧಾರಿತ ಅಂಕಗಳ ಹಂಚಿಕೆ:</div>${bpTbl(A.d,'ಪ್ರಶ್ನೆಯ ವಿಧ',A.dq,A.dm)}</div>`}
 
@@ -323,16 +329,16 @@ function vPaper(){if(!allQ().length)return '<div class="card glass neu">ಈ ವ�
  <div class="pills"><button class="btn" onclick="ST.seed[ST.ptype]++;render()">🔀 ಹೊಸ ಪ್ರಶ್ನೆಪತ್ರಿಕೆ</button><button class="btn" onclick="ST.showAns=!ST.showAns;render()">${ST.showAns?'ಉತ್ತರ ಮರೆಮಾಡಿ':'ಉತ್ತರ ತೋರಿಸಿ'}</button><button class="btn" onclick="togEdit(this)">✏ ಎಡಿಟ್ ಮಾಡಿ</button><button class="btn" onclick="window.print()">🖨 ಮುದ್ರಿಸಿ</button><button class="btn ${ST.bpOpen?'on':''}" onclick="ST.bpOpen=!ST.bpOpen;render()">📊 ಬ್ಲೂಪ್ರಿಂಟ ${ST.bpOpen?'▴':'▾'}</button></div></div>${bpSec}${paperHtml}`}
 /* ===== ರಸಪ್ರಶ್ನೆ (ಎಲ್ಲಾ ಪ್ರಶ್ನೆ ವಿಧಗಳು) ===== */
 function vQuiz(){const list=allQ().filter(q=>(ST.qzc==='all'||q.ch==ST.qzc)&&(ST.qzt==='all'||q.t===ST.qzt));
- const lo=[['all','ಎಲ್ಲಾ ಪಾಠಗಳು'],...lessons().map(l=>[String(l.n),`${l.n}. ${l.t}`])];
- const to=[['all','ಎಲ್ಲಾ ಪ್ರಕಾರ'],...Object.keys(TL).map(k=>[k,TL[k]])];
+ const lo=[['all',T('ಎಲ್ಲಾ ಪಾಠಗಳು')],...lessons().map(l=>[String(l.n),`${l.n}. ${l.t}`])];
+ const to=[['all',T('ಎಲ್ಲಾ ಪ್ರಕಾರ')],...Object.keys(TLx()).map(k=>[k,TLx()[k]])];
  return `<div class="card glass neu nopr ddz"><div class="row"><div><label class="fl" style="margin-top:0">ಪಾಠ</label>${sel('qzc',lo,ST.qzc,'ST.qzc=value;startQuiz()')}</div><div><label class="fl" style="margin-top:0">ಪ್ರಶ್ನೆ ಪ್ರಕಾರ</label>${sel('qzt',to,ST.qzt,'ST.qzt=value;startQuiz()')}</div></div></div>`+quizHtml(list)}
 function startQuiz(){ST.qi=0;ST.qs=0;ST.qa=null;ST.qo=[];render()}
 function quizHtml(list){if(!list.length)return '<div class="card glass neu">ಪ್ರಶ್ನೆಗಳಿಲ್ಲ</div>';
  if(!ST.qo.length)ST.qo=shuffle(list.map(q=>q.id),rng(Date.now()%99999));const id=ST.qo[ST.qi];
  if(!id)return `<div class="card glass neu"><h3>ಮುಗಿಯಿತು!</h3><p>ಒಟ್ಟು ${ST.qo.length} ಪ್ರಶ್ನೆಗಳು; ಬಹು ಆಯ್ಕೆ ಸರಿ ಉತ್ತರ: ${ST.qs}</p><button class="btn" onclick="startQuiz()">ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ</button></div>`;
- const q=allQ().find(x=>x.id===id);let h=`<div class="card glass neu"><div class="meta"><span class="tag">${TL[q.t]}</span><span>${q.mk} ಅಂಕ</span><span>${ST.qi+1}/${ST.qo.length}</span></div><div class="qt">${esc(q.q)}</div>`;
+ const q=allQ().find(x=>x.id===id);let h=`<div class="card glass neu"><div class="meta"><span class="tag">${TLx()[q.t]}</span><span>${q.mk} ${T('ಅಂಕ')}</span><span>${ST.qi+1}/${ST.qo.length}</span></div><div class="qt">${esc(q.q)}</div>`;
  if(q.t==='mcq')h+=q.o.map((o,i)=>{let c='';if(ST.qa!==null){if(i===q.a)c='ok';else if(i===ST.qa)c='bad'}return `<div class="opt ${c}" onclick="ansQ(${i},${q.a})" style="cursor:pointer"><span class="ol">${'ABCD'[i]}</span>${esc(o)}</div>`}).join('');
- else h+=ST.qa!==null?`<div class="ans"><b>ಉತ್ತರ:</b> ${esc(q.a)}</div>`:`<button class="btn" onclick="ST.qa=0;render()">ಉತ್ತರ ನೋಡಿ</button>`;
+ else h+=ST.qa!==null?`<div class="ans"><b>${T('ಉತ್ತರ:')}</b> ${esc(q.a)}</div>`:`<button class="btn" onclick="ST.qa=0;render()">${T('ಉತ್ತರ ನೋಡಿ')}</button>`;
  if(ST.qa!==null)h+=`<button class="btn" onclick="ST.qi++;ST.qa=null;render()">ಮುಂದಿನದು →</button>`;return h+'</div>'}
 function ansQ(i,a){if(ST.qa!==null)return;ST.qa=i;if(i===a)ST.qs++;render()}
 /* ===== ರೆಂಡರ್ ===== */
