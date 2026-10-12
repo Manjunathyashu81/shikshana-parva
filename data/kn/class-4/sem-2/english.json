@@ -358,13 +358,6 @@
     },
     {
      "t": "one",
-     "q": "Match: Hanumantha – Small farm; Sheep – Wool; Cows – Milk; Cock – Village alarm; Daughters – Eggs. (ಶಿಕ್ಷಕರು ಪರಿಶೀಲಿಸಿ – ಮೂಲ ಜೋಡಿ ತಪ್ಪಾಗಿತ್ತು)",
-     "a": "Hanumantha–Small farm, Sheep–Wool, Cows–Milk, Cock–Village alarm, Daughters–Eggs",
-     "lv": "e",
-     "mk": 0.5
-    },
-    {
-     "t": "one",
      "q": "Pick out the odd one out: Village, Rural area, City, Suburb.",
      "a": "City",
      "lv": "e",
@@ -1034,13 +1027,6 @@
     },
     {
      "t": "one",
-     "q": "Fill in the blank: According to page 21, you can buy bread at a ______. (florist / bakery / jeweller's)",
-     "a": "bakery",
-     "lv": "e",
-     "mk": 0.5
-    },
-    {
-     "t": "one",
      "q": "Fill in the blank: The shepherd boy made the Emperor exchange his throne for the shepherd's ______. (hat / staff / cloak)",
      "a": "cloak",
      "lv": "e",
@@ -1106,13 +1092,6 @@
      "t": "one",
      "q": "Fill in the blank: The cobbler in the poem \"Bang and a bang!\" mends shoes for ______ feet. (old / big / little)",
      "a": "little",
-     "lv": "e",
-     "mk": 0.5
-    },
-    {
-     "t": "one",
-     "q": "Fill in the blank: Ragini, from the \"Write more\" section (page 30), is preparing for a local ______ competition. (singing / art / sports)",
-     "a": "art",
      "lv": "e",
      "mk": 0.5
     },
@@ -1216,13 +1195,6 @@
     },
     {
      "t": "one",
-     "q": "Fill in the blank: Ragini, in the \"Write more\" section (page 30), is a ______.",
-     "a": "student",
-     "lv": "e",
-     "mk": 0.5
-    },
-    {
-     "t": "one",
      "q": "Fill in the blank: The balloon man holds balloons – ______ lovely bunch.",
      "a": "a",
      "lv": "e",
@@ -1269,14 +1241,6 @@
      "a": "Emperor",
      "lv": "e",
      "mk": 0.5
-    },
-    {
-     "t": "one",
-     "q": "Fill in the blank: To buy bread, you would go to a ______, according to page 21.",
-     "a": "bakery",
-     "lv": "e",
-     "mk": 0.5,
-     "img": "images/class-4/english/c4-en-u7-bakery.webp"
     },
     {
      "t": "one",
@@ -1428,13 +1392,6 @@
     },
     {
      "t": "one",
-     "q": "Match: 10. Ragini (p.30)",
-     "a": "i. paint",
-     "lv": "e",
-     "mk": 0.5
-    },
-    {
-     "t": "one",
      "q": "Match: 11. The Balloon Man",
      "a": "w. always comes on market days (ಪರಿಶೀಲಿಸಿ)",
      "lv": "e",
@@ -1458,13 +1415,6 @@
      "t": "one",
      "q": "Match: 14. The Shepherd Boy",
      "a": "y. answered the king’s question cleverly",
-     "lv": "e",
-     "mk": 0.5
-    },
-    {
-     "t": "one",
-     "q": "Match: 15. Ragini (p.30)",
-     "a": "n. Paints fantastic paintings",
      "lv": "e",
      "mk": 0.5
     },
@@ -1729,20 +1679,6 @@
     },
     {
      "t": "one",
-     "q": "Give one word: The place where you can buy flowers (p.22).",
-     "a": "Florist's",
-     "lv": "e",
-     "mk": 0.5
-    },
-    {
-     "t": "one",
-     "q": "Give one word: The profession that uses a stethoscope (p.27).",
-     "a": "Doctor",
-     "lv": "e",
-     "mk": 0.5
-    },
-    {
-     "t": "one",
      "q": "Give one word: What the shepherd boy was wearing that the Emperor put on.",
      "a": "Cloak",
      "lv": "e",
@@ -1808,13 +1744,6 @@
      "t": "one",
      "q": "Give one word: The job of the person in the poem \"Bang and a bang!\"",
      "a": "Cobbler",
-     "lv": "e",
-     "mk": 0.5
-    },
-    {
-     "t": "one",
-     "q": "Give one word: What Ragini (p.30) is working on this week.",
-     "a": "Project",
      "lv": "e",
      "mk": 0.5
     },
@@ -1914,18 +1843,6 @@
     },
     {
      "t": "mcq",
-     "q": "What profession involves working with clay and a potter's wheel (p.27)?",
-     "o": [
-      "Tailor",
-      "Photographer",
-      "Potter",
-      "Doctor"
-     ],
-     "a": 2,
-     "lv": "e"
-    },
-    {
-     "t": "mcq",
      "q": "According to the poem \"Bang and a bang!\", what is the cobbler mending shoes for?",
      "o": [
       "To make them look new",
@@ -1934,18 +1851,6 @@
       "To give them away for free"
      ],
      "a": 2,
-     "lv": "e"
-    },
-    {
-     "t": "mcq",
-     "q": "What does a photographer use to capture pictures (p.27)?",
-     "o": [
-      "A paintbrush",
-      "A camera",
-      "A pair of scissors",
-      "A whistle"
-     ],
-     "a": 1,
      "lv": "e"
     },
     {
@@ -2042,18 +1947,6 @@
       "That the shepherd boy was the wisest in the village."
      ],
      "a": 1,
-     "lv": "e"
-    },
-    {
-     "t": "mcq",
-     "q": "Where would you go if you needed to buy flowers, based on page 22?",
-     "o": [
-      "Bakery",
-      "Chemist's",
-      "Florist's",
-      "Jeweller's"
-     ],
-     "a": 2,
      "lv": "e"
     },
     {
@@ -2276,13 +2169,6 @@
      "t": "short",
      "q": "When does the balloon man usually come to the market square?",
      "a": "The balloon man usually comes on market days.",
-     "lv": "h",
-     "ob": "g"
-    },
-    {
-     "t": "short",
-     "q": "Where does a doctor typically work, according to page 27?",
-     "a": "A doctor typically works in hospitals or clinics.",
      "lv": "h",
      "ob": "g"
     },
@@ -2679,20 +2565,6 @@
     },
     {
      "t": "one",
-     "q": "Fill in the blank: ______ is a classical dance form from Kerala (p.43). (Kuchipudi / Kathakali / Bangra)",
-     "a": "Kathakali",
-     "lv": "e",
-     "mk": 0.5
-    },
-    {
-     "t": "one",
-     "q": "Fill in the blank: The birthday invitation on page 52 is for ______'s birthday. (Rani / Priya / Sahera)",
-     "a": "Priya",
-     "lv": "e",
-     "mk": 0.5
-    },
-    {
-     "t": "one",
      "q": "Fill in the blank: If I ______ a pair of wings, I'd soar. (have / has / had)",
      "a": "had",
      "lv": "e",
@@ -2751,13 +2623,6 @@
      "t": "one",
      "q": "Fill in the blank: Birbal's painting, when presented, showed just green grass and the ______. (sun / sky / river)",
      "a": "sky",
-     "lv": "e",
-     "mk": 0.5
-    },
-    {
-     "t": "one",
-     "q": "Fill in the blank: ______ is a dance form from Tamil Nadu mentioned in the table (p.43). (Kathak / Bharatanatyam / Kolata)",
-     "a": "Bharatanatyam",
      "lv": "e",
      "mk": 0.5
     },
@@ -2861,13 +2726,6 @@
     },
     {
      "t": "one",
-     "q": "Fill in the blank: In the \"Fun\" poem (p.54), the singer from America can play the Indian ______.",
-     "a": "Tabla",
-     "lv": "e",
-     "mk": 0.5
-    },
-    {
-     "t": "one",
      "q": "Fill in the blank: I would paint ______ rainbow in the sky.",
      "a": "a / the",
      "lv": "e",
@@ -2926,13 +2784,6 @@
      "t": "one",
      "q": "Fill in the blank: Yakshagana is a dance form from the state of ______.",
      "a": "Karnataka",
-     "lv": "e",
-     "mk": 0.5
-    },
-    {
-     "t": "one",
-     "q": "Fill in the blank: The birthday invitation on page 52 is for a girl named ______.",
-     "a": "Priya",
      "lv": "e",
      "mk": 0.5
     },
@@ -3009,13 +2860,6 @@
     },
     {
      "t": "one",
-     "q": "Match: Poet (p.33)",
-     "a": "f. painted (or presented a painting) (ಪರಿಶೀಲಿಸಿ)",
-     "lv": "e",
-     "mk": 0.5
-    },
-    {
-     "t": "one",
      "q": "Match: Birbal",
      "a": "l. Showed a painting of grass and sky (ಪರಿಶೀಲಿಸಿ)",
      "lv": "e",
@@ -3032,13 +2876,6 @@
      "t": "one",
      "q": "Match: Dancer",
      "a": "g. dances",
-     "lv": "e",
-     "mk": 0.5
-    },
-    {
-     "t": "one",
-     "q": "Match: Sumathi (p.48)",
-     "a": "i. plays (violin)",
      "lv": "e",
      "mk": 0.5
     },
@@ -3067,13 +2904,6 @@
      "t": "one",
      "q": "Match: Birbal (asked to paint)",
      "a": "w. to make him a painting using imagination (ಪರಿಶೀಲಿಸಿ)",
-     "lv": "e",
-     "mk": 0.5
-    },
-    {
-     "t": "one",
-     "q": "Match: Singer from America (p.54)",
-     "a": "n. Plays on the Indian Tabla",
      "lv": "e",
      "mk": 0.5
     },
@@ -3137,13 +2967,6 @@
      "t": "one",
      "q": "Match: A guitarist",
      "a": "y. plays on the guitar",
-     "lv": "e",
-     "mk": 0.5
-    },
-    {
-     "t": "one",
-     "q": "Match: Keshavmurthy (p.49)",
-     "a": "x. is a famous Bharatanatyam dancer",
      "lv": "e",
      "mk": 0.5
     },
@@ -3338,27 +3161,6 @@
     },
     {
      "t": "one",
-     "q": "Give one word: A dance form from Andhra Pradesh listed in the table (p.44).",
-     "a": "Kuchipudi",
-     "lv": "e",
-     "mk": 0.5
-    },
-    {
-     "t": "one",
-     "q": "Give one word: The musical instrument played by the singer from Australia in the \"Fun\" poem (p.54).",
-     "a": "Dhol",
-     "lv": "e",
-     "mk": 0.5
-    },
-    {
-     "t": "one",
-     "q": "Give one word: The date of Priya's birthday party (p.52).",
-     "a": "July 20th",
-     "lv": "e",
-     "mk": 0.5
-    },
-    {
-     "t": "one",
      "q": "Give one word: A person who carves statues from stone.",
      "a": "Sculptor",
      "lv": "e",
@@ -3417,13 +3219,6 @@
      "t": "one",
      "q": "Give one word: A dance form from Punjab shown in the table.",
      "a": "Bangra",
-     "lv": "e",
-     "mk": 0.5
-    },
-    {
-     "t": "one",
-     "q": "Give one word: The musical instrument a singer from Germany plays in the poem on page 55.",
-     "a": "Tutturi",
      "lv": "e",
      "mk": 0.5
     },
@@ -3535,19 +3330,6 @@
     },
     {
      "t": "mcq",
-     "q": "Which state is the dance form Kathak from (p.44)?",
-     "o": [
-      "Karnataka",
-      "Kerala",
-      "Punjab",
-      "Uttar Pradesh"
-     ],
-     "a": 3,
-     "lv": "e",
-     "img": "images/class-4/english/c4-en-u8-dance-identify.webp"
-    },
-    {
-     "t": "mcq",
      "q": "What items are mentioned in Priya's birthday invitation besides games?",
      "o": [
       "Books and music",
@@ -3656,30 +3438,6 @@
     },
     {
      "t": "mcq",
-     "q": "Which musical instrument is associated with a \"potter's corner\" in the list of professions? (ಪರಿಶೀಲಿಸಿ)",
-     "o": [
-      "Flute",
-      "Tabla",
-      "None, a potter uses a wheel.",
-      "Harmonium"
-     ],
-     "a": 2,
-     "lv": "e"
-    },
-    {
-     "t": "mcq",
-     "q": "In the birthday invitation on page 52, what time is Priya's party?",
-     "o": [
-      "10:00 AM",
-      "12:00 PM",
-      "5:00 PM",
-      "7:00 PM"
-     ],
-     "a": 2,
-     "lv": "e"
-    },
-    {
-     "t": "mcq",
      "q": "In \"IF I COULD FLY,\" if the poet paints for his \"delight,\" he paints for his:",
      "o": [
       "Work",
@@ -3753,18 +3511,6 @@
     },
     {
      "t": "mcq",
-     "q": "How would you correctly write the heading for the poem on page 33?",
-     "o": [
-      "if i could fly",
-      "IF I COULD FLY",
-      "If I Could Fly.",
-      "if i could fly?"
-     ],
-     "a": 1,
-     "lv": "e"
-    },
-    {
-     "t": "mcq",
      "q": "Choose the correctly spelled word for a type of art material.",
      "o": [
       "Pents",
@@ -3803,13 +3549,6 @@
      "t": "short",
      "q": "In \"A Unique Painting,\" did Akbar immediately understand Birbal's explanation of the painting? Explain.",
      "a": "No. Akbar first shouted, \"What is this?\" He understood only after Birbal explained about using imagination.",
-     "lv": "m",
-     "ob": "g"
-    },
-    {
-     "t": "short",
-     "q": "According to the table on page 43, is Bharatanatyam a dance form from Karnataka? Explain.",
-     "a": "No. According to the table, Bharatanatyam is a dance form from Tamil Nadu.",
      "lv": "m",
      "ob": "g"
     },
@@ -3892,20 +3631,6 @@
     },
     {
      "t": "short",
-     "q": "Where was the All India dance competition held, in which Keshavmurthy participated (p.49)?",
-     "a": "The All India dance competition was held in Jaipur.",
-     "lv": "h",
-     "ob": "g"
-    },
-    {
-     "t": "short",
-     "q": "For whom was the birthday card on page 51-52 created?",
-     "a": "The birthday card was created for Priya.",
-     "lv": "h",
-     "ob": "g"
-    },
-    {
-     "t": "short",
      "q": "Who told Birbal to make a painting?",
      "a": "Akbar told Birbal to make a painting.",
      "lv": "h",
@@ -3927,13 +3652,6 @@
     },
     {
      "t": "short",
-     "q": "Where was the All India Exhibition held, according to page 49?",
-     "a": "It was held at the Jaganmohan palace in Mysuru.",
-     "lv": "h",
-     "ob": "g"
-    },
-    {
-     "t": "short",
      "q": "With whom did the poet in \"IF I COULD FLY\" want to fly (implied by \"if I had wings\")?",
      "a": "The poem does not state with whom; it implies the poet would fly alone with their brush and paints.",
      "lv": "h",
@@ -3943,27 +3661,6 @@
      "t": "short",
      "q": "What colors did the poet in \"The paint box\" use to paint tigers?",
      "a": "The poet used crimson and white to paint tigers.",
-     "lv": "h",
-     "ob": "g"
-    },
-    {
-     "t": "short",
-     "q": "When was the All India dance competition held in Jaipur, according to page 49?",
-     "a": "It was held on 31st July 2013.",
-     "lv": "h",
-     "ob": "g"
-    },
-    {
-     "t": "short",
-     "q": "Where did Sahera come from, according to the passage on page 49?",
-     "a": "Sahera came from Raichur.",
-     "lv": "h",
-     "ob": "g"
-    },
-    {
-     "t": "short",
-     "q": "For whom is the birthday invitation on page 52 addressed?",
-     "a": "The invitation is addressed to Kavya.",
      "lv": "h",
      "ob": "g"
     },
@@ -4020,13 +3717,6 @@
      "t": "short",
      "q": "When do the moon and stars come out, according to the poem \"IF I COULD FLY\"? Write a sentence.",
      "a": "The moon and stars come out at night.",
-     "lv": "h",
-     "ob": "b"
-    },
-    {
-     "t": "short",
-     "q": "Where was the All India Exhibition held (page 49)? Write a sentence.",
-     "a": "The All India Exhibition was held at the Jaganmohan palace in Mysuru.",
      "lv": "h",
      "ob": "b"
     },
@@ -4214,13 +3904,6 @@
     },
     {
      "t": "one",
-     "q": "Fill in the blank: Shankara (p.70) wanted to climb a ______. (tree / mountain / rock)",
-     "a": "rock",
-     "lv": "e",
-     "mk": 0.5
-    },
-    {
-     "t": "one",
      "q": "Fill in the blank: Together, we walk ______ make moves. (and / or / but)",
      "a": "and",
      "lv": "e",
@@ -4389,13 +4072,6 @@
     },
     {
      "t": "one",
-     "q": "Fill in the blank: The police (p.71) enquired about a ______ at the old woman's house.",
-     "a": "theft",
-     "lv": "e",
-     "mk": 0.5
-    },
-    {
-     "t": "one",
      "q": "Fill in the blank: No one knows, how far ______ the top.",
      "a": "is",
      "lv": "e",
@@ -4454,13 +4130,6 @@
      "t": "one",
      "q": "Fill in the blank: According to \"What is pink?\", the ______ is blue where the clouds float through.",
      "a": "sky",
-     "lv": "e",
-     "mk": 0.5
-    },
-    {
-     "t": "one",
-     "q": "Fill in the blank: A person who is one hundred years old is called a ______. (Fun with words, p.67)",
-     "a": "centenarian",
      "lv": "e",
      "mk": 0.5
     },
@@ -4557,20 +4226,6 @@
     },
     {
      "t": "one",
-     "q": "Match: Old Woman (p.71)",
-     "a": "e. Told police a thief ate all the food from her fridge (ಪರಿಶೀಲಿಸಿ)",
-     "lv": "e",
-     "mk": 0.5
-    },
-    {
-     "t": "one",
-     "q": "Match: Climbers (p.56)",
-     "a": "m. Wear gloves for biting cold (ಪರಿಶೀಲಿಸಿ)",
-     "lv": "e",
-     "mk": 0.5
-    },
-    {
-     "t": "one",
      "q": "Match: Arunima",
      "a": "k. Was a volleyball player (ಪರಿಶೀಲಿಸಿ)",
      "lv": "e",
@@ -4587,13 +4242,6 @@
      "t": "one",
      "q": "Match: Bachendri Pal (trainer)",
      "a": "l. Trained Arunima (ಪರಿಶೀಲಿಸಿ)",
-     "lv": "e",
-     "mk": 0.5
-    },
-    {
-     "t": "one",
-     "q": "Match: People (p.63)",
-     "a": "f. advised (ಪರಿಶೀಲಿಸಿ)",
      "lv": "e",
      "mk": 0.5
     },
@@ -4622,13 +4270,6 @@
      "t": "one",
      "q": "Match: Christina Rossetti (poem)",
      "a": "n. Wrote the poem \"What is pink?\"",
-     "lv": "e",
-     "mk": 0.5
-    },
-    {
-     "t": "one",
-     "q": "Match: Shankara (p.70)",
-     "a": "o. Wanted to climb a rock",
      "lv": "e",
      "mk": 0.5
     },
@@ -4678,13 +4319,6 @@
      "t": "one",
      "q": "Match: Shankara",
      "a": "x. wanted to climb a rock",
-     "lv": "e",
-     "mk": 0.5
-    },
-    {
-     "t": "one",
-     "q": "Match: The police (p.71)",
-     "a": "y. enquired about a theft",
      "lv": "e",
      "mk": 0.5
     },
@@ -4886,21 +4520,6 @@
     },
     {
      "t": "one",
-     "q": "Give one word: One item listed under \"mountaineering equipment\" on page 65 (besides sleeping bag).",
-     "a": "Rope / Ice axe / Torch / Helmet / Boots / Oxygen cylinder (any one)",
-     "lv": "e",
-     "mk": 0.5,
-     "img": "images/class-4/english/c4-en-u9-mountaineer.webp"
-    },
-    {
-     "t": "one",
-     "q": "Give one word: The type of crossing meant for people who walk on foot (p.67).",
-     "a": "Zebra (crossing)",
-     "lv": "e",
-     "mk": 0.5
-    },
-    {
-     "t": "one",
      "q": "Give one word: A person who climbs mountains.",
      "a": "Mountaineer / Climber",
      "lv": "e",
@@ -4952,20 +4571,6 @@
      "t": "one",
      "q": "Give one word: The color of a swan, according to \"What is pink?\".",
      "a": "White",
-     "lv": "e",
-     "mk": 0.5
-    },
-    {
-     "t": "one",
-     "q": "Give one word: One item mountaineers carry in their bags (from p.66).",
-     "a": "Torch / Rope / Sleeping bag (any one)",
-     "lv": "e",
-     "mk": 0.5
-    },
-    {
-     "t": "one",
-     "q": "Give one word: What police use a Zebra crossing for, according to page 67.",
-     "a": "Pedestrians (people who walk on foot)",
      "lv": "e",
      "mk": 0.5
     },
@@ -5077,30 +4682,6 @@
     },
     {
      "t": "mcq",
-     "q": "Which of these is an adventurous sport played on water, according to page 60?",
-     "o": [
-      "Parachuting",
-      "Skiing",
-      "Surfing",
-      "Rock climbing"
-     ],
-     "a": 2,
-     "lv": "e"
-    },
-    {
-     "t": "mcq",
-     "q": "In the letter on page 69, Jyothi asks Nihaan to take permission from whom?",
-     "o": [
-      "Her parents",
-      "The college principal",
-      "The hostel warden",
-      "Nihaan's parents"
-     ],
-     "a": 2,
-     "lv": "e"
-    },
-    {
-     "t": "mcq",
      "q": "\"She was badly injured.\" The word \"badly\" is:",
      "o": [
       "An adjective",
@@ -5194,30 +4775,6 @@
       "Clouds"
      ],
      "a": 2,
-     "lv": "e"
-    },
-    {
-     "t": "mcq",
-     "q": "Which of these is NOT listed as an adventurous sport on page 60?",
-     "o": [
-      "Rock climbing",
-      "Surfing",
-      "Cycling",
-      "Bungee jumping"
-     ],
-     "a": 2,
-     "lv": "e"
-    },
-    {
-     "t": "mcq",
-     "q": "In the letter from Jyothi to Nihaan (p.69), where are they planning to trek?",
-     "o": [
-      "Mount Everest",
-      "Kodachadri hill",
-      "The Himalayas",
-      "A local park"
-     ],
-     "a": 1,
      "lv": "e"
     },
     {
@@ -5405,20 +4962,6 @@
     },
     {
      "t": "short",
-     "q": "Where did the thief eat all the food, according to the old woman's story (p.71)?",
-     "a": "The thief ate all the food from the refrigerator in her kitchen.",
-     "lv": "h",
-     "ob": "g"
-    },
-    {
-     "t": "short",
-     "q": "With whom is Abdul planning to walk through a tunnel (p.70)?",
-     "a": "Abdul is planning to walk through a tunnel with Bhanu. (ಪರಿಶೀಲಿಸಿ)",
-     "lv": "h",
-     "ob": "g"
-    },
-    {
-     "t": "short",
      "q": "Who was a former volleyball player mentioned in the unit?",
      "a": "Arunima Sinha was a former volleyball player.",
      "lv": "h",
@@ -5447,13 +4990,6 @@
     },
     {
      "t": "short",
-     "q": "With whom did Shankara climb the rock (according to page 70)?",
-     "a": "Shankara climbed the rock with the help of a trainer.",
-     "lv": "h",
-     "ob": "g"
-    },
-    {
-     "t": "short",
      "q": "Who is the author of the poem \"What is pink?\"",
      "a": "Christina Rossetti is the author.",
      "lv": "h",
@@ -5477,13 +5013,6 @@
      "t": "short",
      "q": "Where does the poem \"MOUNTAIN\" say the climbers put their hands due to the cold?",
      "a": "The poem says, \"hands in gloves.\"",
-     "lv": "h",
-     "ob": "g"
-    },
-    {
-     "t": "short",
-     "q": "From whom does Jyothi want Nihaan to take permission in the letter on page 69?",
-     "a": "Jyothi wants Nihaan to take permission from the hostel warden.",
      "lv": "h",
      "ob": "g"
     },
@@ -5533,27 +5062,6 @@
      "t": "short",
      "q": "What did Arunima Sinha decide to do while she was in the hospital? Write a sentence.",
      "a": "Arunima Sinha decided to scale Mount Everest.",
-     "lv": "h",
-     "ob": "b"
-    },
-    {
-     "t": "short",
-     "q": "When did Arunima Sinha join the training camp? Write a sentence. (ಪರಿಶೀಲಿಸಿ)",
-     "a": "She joined it after deciding to scale Mount Everest, while still on the hospital bed.",
-     "lv": "h",
-     "ob": "b"
-    },
-    {
-     "t": "short",
-     "q": "Where did the climbers in the poem \"MOUNTAIN\" put their hands? Write a sentence. (ಪರಿಶೀಲಿಸಿ)",
-     "a": "The climbers put their hands in gloves.",
-     "lv": "h",
-     "ob": "b"
-    },
-    {
-     "t": "short",
-     "q": "To whom did people give advice to stop the expedition? Write a sentence. (ಪರಿಶೀಲಿಸಿ)",
-     "a": "People gave advice to Arunima Sinha.",
      "lv": "h",
      "ob": "b"
     }
