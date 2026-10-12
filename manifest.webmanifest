@@ -1,16 +1,22 @@
 {
-  "name": "ಶಿಕ್ಷಣ ಪರ್ವ · Shikshana Parva",
-  "short_name": "ಶಿಕ್ಷಣ ಪರ್ವ",
-  "description": "ಕಲಿಕೆಯ ಹಬ್ಬ — ಶಿಕ್ಷಕರಿಗಾಗಿ ಶೈಕ್ಷಣಿಕ ಸಂಪನ್ಮೂಲಗಳು",
-  "start_url": "./",
-  "scope": "./",
-  "display": "standalone",
-  "orientation": "portrait-primary",
-  "background_color": "#07111f",
-  "theme_color": "#07111f",
-  "lang": "kn",
-  "icons": [
-    {"src":"./icons/icon-192.png","sizes":"192x192","type":"image/png","purpose":"any maskable"},
-    {"src":"./icons/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}
-  ]
+ "name": "ಶಿಕ್ಷಣ ಪರ್ವ",
+ "short_name": "ಶಿಕ್ಷಣ ಪರ್ವ",
+ "start_url": "./",
+ "scope": "./",
+ "display": "standalone",
+ "background_color": "#1c2136",
+ "theme_color": "#232a45",
+ "lang": "kn",
+ "icons": [
+  {
+   "src": "icons/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "icons/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  }
+ ]
 }
