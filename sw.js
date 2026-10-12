@@ -1,4 +1,4 @@
-const CACHE = 'shikshana-v2';
+const CACHE = 'shikshana-v3';
 const SHELL = ['./', 'index.html', 'manifest.webmanifest'];
 
 self.addEventListener('install', e => {
@@ -12,19 +12,13 @@ self.addEventListener('activate', e => {
   self.clients.claim();
 });
 
+// Network first: always try the latest files; use the saved copy only when offline.
 self.addEventListener('fetch', e => {
   if (e.request.method !== 'GET') return;
   e.respondWith(
-    caches.open(CACHE).then(async cache => {
-      const hit = await cache.match(e.request);
-      if (hit) return hit;
-      try {
-        const res = await fetch(e.request);
-        if (res.ok) cache.put(e.request, res.clone());
-        return res;
-      } catch (err) {
-        return cache.match('index.html');
-      }
-    })
+    fetch(e.request).then(res => {
+      if (res.ok) caches.open(CACHE).then(c => c.put(e.request, res.clone()));
+      return res;
+    }).catch(() => caches.match(e.request).then(hit => hit || caches.match('index.html')))
   );
 });
