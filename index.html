@@ -122,6 +122,32 @@ main{max-width:min(1100px,100%)}
  #abbody .card *{color:#000!important}
  #abbody .ans{background:#f2f2f2!important;border-left-color:#555!important}
 }
+
+/* ===== v13: ಕನ್ನಡ ಪತ್ರಿಕೆ ಮಾದರಿ, ಬ್ಲೂಪ್ರಿಂಟ್ ಸ್ಥಾನ ಮತ್ತು ಪ್ರತ್ಯೇಕ ಮುದ್ರಣ ===== */
+.paper .sh{display:flex;justify-content:space-between;gap:1rem;align-items:baseline;font-weight:700;margin:.2rem 0 .35rem}
+.paper .wl{border-bottom:1px solid #6b7390;height:1.7rem;margin:.1rem 0 0 1.4rem}
+.paper .ln{display:inline-block;min-width:8rem;border-bottom:1px solid #232a45;margin:0 .25rem;height:1.05em;vertical-align:baseline}
+.paper .wh{margin:.35rem 0 0 1.4rem}
+.paper .mt{width:100%;border-collapse:collapse;margin:.2rem 0 .4rem}
+.paper .mt td{padding:.4rem .4rem;vertical-align:bottom}
+.paper .mt td.ml,.paper .mt td.mr{width:36%}
+.paper .mt td.ma{width:28%;border-bottom:1px solid #232a45}
+.bpwrap{margin-top:1rem}
+.bpwrap .bpbar{display:flex;justify-content:space-between;align-items:center;gap:.6rem;flex-wrap:wrap;margin-bottom:.4rem}
+.bpwrap .bpbar h3{margin:0}
+@media print{
+ .bpwrap{display:none!important}
+ body.pr-bp .bpwrap{display:block!important;background:#fff!important;color:#000!important;box-shadow:none!important;border:0!important;padding:0!important;margin:0!important}
+ body.pr-bp .paper{display:none!important}
+ body.pr-bp .bpwrap *{color:#000!important;border-color:#000!important}
+ body.pr-bp .bpwrap .bpt th{background:#eee!important}
+ body.pr-bp .bpwrap .bph{margin-top:.8rem}
+ body.pr-bp .bpwrap .bpbar{display:none!important}
+ body.pr-bp .bpg{min-width:0!important}
+ .paper .wl{border-bottom-color:#000}.paper .ln,.paper .mt td.ma{border-bottom-color:#000}
+ .paper .pq .qpic img{max-height:8.5rem}
+ .paper .sec,.paper .pq{break-inside:avoid}
+}
 </style></head><body>
 <div class="top"><button class="ib" id="bk" onclick="goBack()" aria-label="ಹಿಂದೆ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button><div class="crumb" id="crumb"></div>
 <button class="ib" onclick="goHome()" aria-label="ಹೋಮ್"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg></button></div>
@@ -141,21 +167,23 @@ const $=id=>document.getElementById(id);
 const fmt=n=>(Math.round(n*100)/100).toString();
 const SUBJ_META=[{id:'kn',name:'ಕನ್ನಡ',en:'Kannada',ic:'ಕ'},{id:'ma',name:'ಗಣಿತ',en:'Mathematics',ic:'∑'},{id:'en',name:'English',en:'English',ic:'Aa'},{id:'evs',name:'ಪರಿಸರ ಅಧ್ಯಯನ',en:'Environmental Studies',ic:'ಪ'},{id:'hi',name:'ಹಿಂದಿ',en:'Hindi',ic:'ह'}];
 const DATA={};
-const AVAIL={'4-kn':1,'4-en':1};
-const FILE={kn:'kannada',en:'english'};
-const TITLE={kn:['ಕನ್ನಡ','ಭಾಗ–2 · 2026–27'],en:['English','Part–2 · 2026–27']};
+const AVAIL={'4-kn':1,'4-en':1,'4-ma':1,'4-evs':1};
+const FILE={kn:['kannada'],en:['english'],ma:['maths','math','mathematics','ganita'],evs:['evs','environment','environmental-studies','parisara']};
+const TITLE={kn:['ಕನ್ನಡ','ಭಾಗ–2 · 2026–27'],en:['English','Part–2 · 2026–27'],ma:['ಗಣಿತ','ಭಾಗ–2 · 2026–27'],evs:['ಪರಿಸರ ಅಧ್ಯಯನ','ಭಾಗ–2 · 2026–27']};
 async function ensureSubject(cls,id){
  const key=cls+'-'+id;
  if(DATA[key])return true;
  if(!AVAIL[key]||!FILE[id])return false;
- try{
-  const res=await fetch(`data/kn/class-${cls}/sem-2/${FILE[id]}.json`,{cache:'no-store'});
-  if(!res.ok)return false;
-  const j=await res.json();
-  DATA[key]={title:TITLE[id][0],part:TITLE[id][1],lessons:j.lessons};
-  return true;
- }catch(e){return false}
-}
+ for(const f of FILE[id]){
+  try{
+   const res=await fetch(`data/kn/class-${cls}/sem-2/${f}.json`,{cache:'no-store'});
+   if(!res.ok)continue;
+   const j=await res.json();
+   DATA[key]={title:TITLE[id][0],part:TITLE[id][1],lessons:j.lessons};
+   return true;
+  }catch(e){}
+ }
+ return false}
 const CLASSES=[1,2,3,4,5,6,7,8,9,10];
 const ORD=['1ನೇ','2ನೇ','3ನೇ','4ನೇ','5ನೇ','6ನೇ','7ನೇ','8ನೇ','9ನೇ','10ನೇ'],ENG=['1st','2nd','3rd','4th','5th','6th','7th','8th','9th','10th'];
 const hasClass=c=>Object.keys(AVAIL).some(k=>k.startsWith(c+'-'));
@@ -167,10 +195,10 @@ kn:{tabs:[['ab','ಅಭ್ಯಾಸ ಉತ್ತರಗಳು'],['qb','LBA ಪ್
  types:{mcq:'ಬಹು ಆಯ್ಕೆ',one:'ಒಂದು ವಾಕ್ಯ / ಪದ',lang:'ಭಾಷಾ ಚಟುವಟಿಕೆ',short:'ಎರಡು–ಮೂರು ವಾಕ್ಯ',long:'ವಿವರಣಾತ್ಮಕ'},
  lv:{e:'ಸುಲಭ',m:'ಮಧ್ಯಮ',h:'ಕಠಿಣ'},mark:'ಅಂಕ',marks:'ಅಂಕ',qs:'ಪ್ರಶ್ನೆಗಳು',ans:'ಉತ್ತರ:',showAns:'ಉತ್ತರ ನೋಡಿ',next:'ಮುಂದಿನದು →',
  words:'ಪದಗಳ ಅರ್ಥ',notes:'ಟಿಪ್ಪಣಿ',noWords:'ಈ ಪಾಠಕ್ಕೆ ಪದಗಳ ಅರ್ಥ ಪಟ್ಟಿ ಇಲ್ಲ',noNotes:'ಈ ಪಾಠಕ್ಕೆ ಟಿಪ್ಪಣಿ ಇಲ್ಲ',author:'ಲೇಖಕರು/ಕವಿ',page:'ಪುಟ',
- abNote:'⚠ "ಮಾದರಿ/ಸೂಚಿತ" ಎಂದಿರುವ ಉತ್ತರಗಳು ಸ್ವತಂತ್ರ ಉತ್ತರಗಳ ಉದಾಹರಣೆಗಳು.',lessonWord:'ಪಾಠ',edit:'✏ ಎಡಿಟ್ ಮಾಡಿ',editDone:'✔ ಎಡಿಟ್ ಮುಗಿಸಿ',print:'🖨 ಮುದ್ರಿಸಿ',
+ abNote:'⚠ "ಮಾದರಿ/ಸೂಚಿತ" ಎಂದಿರುವ ಉತ್ತರಗಳು ಸ್ವತಂತ್ರ ಉತ್ತರಗಳ ಉದಾಹರಣೆಗಳು.',lessonWord:'ಪಾಠ',edit:'✏ ಎಡಿಟ್ ಮಾಡಿ',editDone:'✔ ಎಡಿಟ್ ಮುಗಿಸಿ',print:'🖨 ಮುದ್ರಿಸಿ',printP:'🖨 ಪ್ರಶ್ನೆ ಪತ್ರಿಕೆ ಮುದ್ರಿಸಿ',printBp:'🖨 ಬ್ಲೂಪ್ರಿಂಟ್ ಮುದ್ರಿಸಿ',
  exam:{unit:'ಘಟಕ ಪರೀಕ್ಷೆ',fa3:'ರೂಪನಾತ್ಮಕ ಮೌಲ್ಯಮಾಪನ-3',fa4:'ರೂಪನಾತ್ಮಕ ಮೌಲ್ಯಮಾಪನ-4',sa2:'ಸಂಕಲನಾತ್ಮಕ ಮೌಲ್ಯಮಾಪನ-2'},
  examTab:{unit:'ಘಟಕ ಪರೀಕ್ಷೆ',fa3:'FA 3',fa4:'FA 4',sa2:'SA 2'},
- school:c=>c<=5?'ಸರ್ಕಾರಿ ಕಿರಿಯ ಪ್ರಾಥಮಿಕ ಶಾಲೆ':c<=7?'ಸರ್ಕಾರಿ ಹಿರಿಯ ಪ್ರಾಥಮಿಕ ಶಾಲೆ':'ಸರ್ಕಾರಿ ಪ್ರೌಢಶಾಲೆ',
+ school:c=>c<=8?'ಸರ್ಕಾರಿ ಹಿರಿಯ ಪ್ರಾಥಮಿಕ ಶಾಲೆ':'ಸರ್ಕಾರಿ ಪ್ರೌಢಶಾಲೆ',
  cls:'ತರಗತಿ',subj:'ವಿಷಯ',time:'ಸಮಯ',maxm:'ಗರಿಷ್ಠ ಅಂಕ',stu:'ವಿದ್ಯಾರ್ಥಿಯ ಹೆಸರು',roll:'ಕ್ರಮ ಸಂಖ್ಯೆ',totalM:'ಒಟ್ಟು ಅಂಕ',
  times:{unit:'45 ನಿಮಿಷ',fa3:'35 ನಿಮಿಷ',fa4:'35 ನಿಮಿಷ',sa2:'1 ಗಂಟೆ 30 ನಿಮಿಷ'},
  ins:{mcq:'ಸರಿಯಾದ ಉತ್ತರವನ್ನು ಆರಿಸಿ ಬರೆಯಿರಿ.',half:'ಅರ್ಧ ಅಂಕ – ಒಂದು ಪದ ಅಥವಾ ಪದಗುಚ್ಛದಲ್ಲಿ ಉತ್ತರಿಸಿ.',lang:'ಭಾಷಾ ಚಟುವಟಿಕೆ – ಸೂಚನೆಯಂತೆ ಉತ್ತರಿಸಿ.',short:'ಎರಡು–ಮೂರು ವಾಕ್ಯಗಳಲ್ಲಿ ಉತ್ತರಿಸಿ.',long:'ವಿವರಣಾತ್ಮಕವಾಗಿ ಉತ್ತರಿಸಿ.'},
@@ -192,10 +220,10 @@ en:{tabs:[['ab','Practice Answers'],['qb','LBA Question Bank'],['paper','Questio
  types:{mcq:'MCQ',one:'One word / sentence',lang:'Language activity',short:'Two–three sentences',long:'Descriptive'},
  lv:{e:'Easy',m:'Medium',h:'Hard'},mark:'mark',marks:'marks',qs:'questions',ans:'Answer:',showAns:'Show answer',next:'Next →',
  words:'Word meanings (ಪದಗಳ ಅರ್ಥ)',notes:'Notes (ಟಿಪ್ಪಣಿ)',noWords:'No word list for this lesson',noNotes:'No notes for this lesson',author:'Author / Poet',page:'Page',
- abNote:'⚠ Answers marked "model / suggested" are examples of independent answers.',lessonWord:'Lesson',edit:'✏ Edit',editDone:'✔ Finish editing',print:'🖨 Print',
+ abNote:'⚠ Answers marked "model / suggested" are examples of independent answers.',lessonWord:'Lesson',edit:'✏ Edit',editDone:'✔ Finish editing',print:'🖨 Print',printP:'🖨 Print paper',printBp:'🖨 Print blueprint',
  exam:{unit:'Unit Test',fa3:'Formative Assessment-3',fa4:'Formative Assessment-4',sa2:'Summative Assessment-2'},
  examTab:{unit:'Unit test',fa3:'FA 3',fa4:'FA 4',sa2:'SA 2'},
- school:c=>c<=5?'Government Lower Primary School':c<=7?'Government Higher Primary School':'Government High School',
+ school:c=>c<=8?'Government Higher Primary School':'Government High School',
  cls:'Class',subj:'Subject',time:'Time',maxm:'Max marks',stu:'Student name',roll:'Roll no.',totalM:'Total marks',
  times:{unit:'45 min',fa3:'35 min',fa4:'35 min',sa2:'1 hr 30 min'},
  ins:{mcq:'Choose the correct answer and write it.',half:'Half-mark questions – answer in one word or phrase.',lang:'Language activity – answer as instructed.',short:'Answer in two or three sentences.',long:'Answer descriptively.'},
@@ -280,7 +308,7 @@ function ansHtml(a){a=String(a);
  if(a.startsWith('[GRID]'))return gridHtml(a.slice(6));
  if(a.startsWith('[TAB]')){let rows='',rest=[];a.slice(5).split('\n').forEach(ln=>{const i=ln.indexOf('|');if(i>0&&!rest.length){rows+=`<div class="trow"><span>${esc(ln.slice(0,i))}</span><span>${esc(ln.slice(i+1))}</span></div>`}else rest.push(ln)});return `<div class="ans"><b>${T('ans')}</b><div class="tbl">${rows}</div>${esc(rest.join('\n'))}</div>`}
  return `<div class="ans"><b>${T('ans')}</b> ${esc(a)}</div>`}
-function picHtml(p){return p?`<div class="qpic">${String(p).trim().startsWith('<svg')?p:`<img loading="lazy" src="${p}" alt="">`}</div>`:''}
+function picHtml(p){if(!p||(Array.isArray(p)&&!p.length))return '';const a=Array.isArray(p)?p:[p];return `<div class="qpic">${a.map(x=>String(x).trim().startsWith('<svg')?x:`<img loading="lazy" src="${x}" alt="">`).join('')}</div>`}
 function vAb(){const L=lessons(),l=L.find(x=>x.n==ST.abl)||L[0];
  let h=`<div class="card glass neu ddz nopr"><label class="fl" style="margin-top:0">${T('chapter')}</label>${sel('abs',L.map(x=>[String(x.n),lessonLabel(x)]),l.n,'ST.abl=+value;render()')}</div>
  <div id="abbody">
@@ -345,9 +373,98 @@ function buildPaper(){const P=ST.ptype,EN=ST.sub==='en',max=PT[P].max,quota=(EN?
  const tm=all.reduce((s,q)=>s+q.mk,0);
  ST.lastPicked=all;ST.lastLs=ls;
  return `<div class="paper fade" id="pp"><div class="ph"><div class="sch">${T('school')(ST.cls)} ${EN?'':'………………………………………………'}</div><b style="font-size:1.25em">${T('exam')[P]}</b><br>${T('cls')}: ${EN?ENG[ST.cls-1]:ORD[ST.cls-1]} | ${T('subj')}: ${cur().title} ${cur().part}<br>${T('time')}: ${T('times')[P]} | ${T('maxm')}: ${max}<br>${T('stu')}: ______________________ ${T('roll')}: ____</div>${body}<div class="ph" style="border:0;border-top:2px solid #232a45;padding-top:.6rem">${T('totalM')}: ${fmt(tm)}</div></div>`}
+
+/* ===== ಕನ್ನಡ ಪ್ರಶ್ನೆ ಪತ್ರಿಕೆ: ನೀಡಿದ ಮಾದರಿ ಪತ್ರಿಕೆಗಳ ರೂಪದಲ್ಲಿ (LBA ಪ್ರಶ್ನೆಗಳಿಂದ) ===== */
+const ROMAN=['I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII'];
+/* [ಪ್ರಶ್ನೆ ಬಗೆ, ಪ್ರಶ್ನೆಗಳ ಸಂಖ್ಯೆ, ಪ್ರತಿ ಪ್ರಶ್ನೆಗೆ ಅಂಕ] */
+const KN_TPL={
+ unit:[['own',2,1],['anto',2,1],['poem',1,2],['who',1,2],['sent',4,1],['short',2,2],['long',1,4]],
+ fa3:[['odd',3,1],['own',2,1],['correct',2,1],['poem',1,2],['sent',4,1],['who',1,2]],
+ fa4:[['anto',3,1],['own',2,1],['correct',2,1],['poem',1,2],['sent',4,1],['who',1,2]],
+ sa2:[['blank',3,1],['odd',3,1],['match',4,1],['anto',2,1],['own',2,1],['poem',1,4],['who',2,2],['sent',4,1],['short',3,2],['long',2,4]]};
+const KN_MAXIMG={unit:1,fa3:2,fa4:2,sa2:3};
+const KN_INS={blank:'ಬಿಟ್ಟ ಸ್ಥಳಗಳನ್ನು ಸೂಕ್ತ ಪದಗಳಿಂದ ತುಂಬಿರಿ:',odd:'ಗುಂಪಿಗೆ ಸೇರದ ಪದ ಗುರುತಿಸಿ ಬರೆಯಿರಿ:',match:'ಹೊಂದಿಸಿ ಬರೆಯಿರಿ:',anto:'ವಿರುದ್ಧಾರ್ಥಕ ಪದ ಬರೆಯಿರಿ:',own:'ಸ್ವಂತ ವಾಕ್ಯ ರಚಿಸಿ:',correct:'ವಾಕ್ಯಗಳನ್ನು ಸರಿಪಡಿಸಿ ಬರೆಯಿರಿ:',poem:'ಪದ್ಯ ಭಾಗ ಪೂರ್ಣಗೊಳಿಸಿ:',who:'ಕೊಟ್ಟಿರುವ ಮಾತನ್ನು ಯಾರು? ಯಾರಿಗೆ ಹೇಳಿದರು?',sent:'ಒಂದು ವಾಕ್ಯದಲ್ಲಿ ಉತ್ತರಿಸಿ:',short:'ಈ ಕೆಳಗಿನ ಪ್ರಶ್ನೆಗಳಿಗೆ ಎರಡು–ಮೂರು ವಾಕ್ಯಗಳಲ್ಲಿ ಉತ್ತರಿಸಿರಿ:',long:'ಈ ಕೆಳಗಿನ ಪ್ರಶ್ನೆಗಳಿಗೆ 5–6 ವಾಕ್ಯಗಳಲ್ಲಿ ಉತ್ತರಿಸಿರಿ:'};
+/* ಬ್ಲೂಪ್ರಿಂಟ್‌ಗಾಗಿ: [ಉದ್ದಿಷ್ಟ(a/g/b/p), ಸ್ವರೂಪ(0 ವ.ಉ,1 ಕಿ.ಉ,2 ವಿ.ಉ), ನಿರ್ದಿಷ್ಟ, ಸಮಯ(ನಿ)] */
+const KN_BP={blank:['a',0,'ಸ್ಮರಿಸುತ್ತಾನೆ',2],odd:['g',0,'ಆಯ್ಕೆ ಮಾಡುತ್ತಾನೆ',2],match:['g',0,'ಹೊಂದಿಸುತ್ತಾನೆ',2],anto:['g',0,'ಬರೆಯುತ್ತಾನೆ',2],own:['b',0,'ಸ್ವಂತ ವಾಕ್ಯ ರಚಿಸುತ್ತಾನೆ',3],correct:['g',0,'ಸರಿಪಡಿಸುತ್ತಾನೆ',3],poem:['g',1,'ಬರೆಯುತ್ತಾನೆ',5],who:['a',1,'ಸ್ಮರಿಸುತ್ತಾನೆ',5],sent:['a',1,'ಸ್ಮರಿಸುತ್ತಾನೆ',4],short:['g',1,'ಬರೆಯುತ್ತಾನೆ',5],long:['b',2,'ಬರೆಯುತ್ತಾನೆ',7]};
+function knKind(q){const t=q.q,ty=q.t;
+ if(ty==='mcq')return 'mcq';
+ if(/ಗುಂಪಿಗೆ ಸೇರದ/.test(t))return 'odd';
+ if(/ಯಾರು\?\s*ಯಾರಿಗೆ\?\s*$/.test(t)||(/["“”]/.test(t)&&/ಯಾರು\??\s*ಯಾರಿಗೆ/.test(t)&&!/ಯಾವಾಗ/.test(t)))return 'who';
+ if(/ಪದ್ಯ[\s\S]{0,12}(ಪೂರ್ಣಗೊಳಿಸು|ತುಂಬಿರಿ)|ಬಿಟ್ಟ ಪದ್ಯ/.test(t))return 'poem';
+ if(/^(ಕೊಟ್ಟಿರುವ )?ವಾಕ್ಯ(ಗಳನ್ನು|ವನ್ನು)[\s\S]{0,6}ಸರಿಪಡಿಸಿ/.test(t)&&!/ಸರಿ.ತಪ್ಪು/.test(t))return 'correct';
+ if(/^(ಹೊಂದಿಸಿ ಬರೆ|ರಾಷ್ಟ್ರೀಯ ಹಬ್ಬಗಳ ದಿನಾಂಕವನ್ನು ಜೋಡಿಸಿ|ಲೇಖನ ಚಿಹ್ನೆಗಳನ್ನು ಹೊಂದಿಸಿ)/.test(t))return 'match';
+ if(/^ವಿರುದ್ಧ/.test(t))return 'anto';
+ if(ty==='lang'&&/ಸ್ವಂತ ವಾಕ್ಯ/.test(t))return 'own';
+ if(/^(ಬಿಟ್ಟ ಸ್ಥಳ ತುಂಬಿರಿ|ಖಾಲಿ ಜಾಗ ಭರ್ತಿ)/.test(t))return 'blank';
+ if(/^ಒಂದು ವಾಕ್ಯದಲ್ಲಿ ಉತ್ತರ/.test(t))return 'sent';
+ return ty==='one'?'oneo':ty==='lang'?'lango':ty}
+function knStrip(k,q){let t=q.q;if(q.img||q.keep)return t;
+ if(k==='who'){const m=t.match(/["“]([^"“”]+)["”]/);if(m)return '“'+m[1].trim()+'”';return t.replace(/^[^"“”]{0,40}?ಉತ್ತರಿಸಿ:\s*/,'').replace(/\s*ಯಾರು\?\s*ಯಾರಿಗೆ\?\s*$/,'')}
+ if(['blank','odd','own','anto','correct','poem','sent'].includes(k)){const i=t.indexOf(':');if(i>0&&i<80&&/ಬರೆ|ಉತ್ತರ|ಸರಿಪಡಿಸಿ|ಬಳಸು|ತುಂಬಿರಿ|ಪೂರ್ಣಗೊಳಿಸು|ಗುರುತಿಸಿ|ಭರ್ತಿ|ರಚಿಸಿ|ರಚಿಸು/.test(t.slice(0,i)))return t.slice(i+1).trim()}
+ return t}
+function knMatchCands(pool){const c=[];
+ pool.forEach(q=>{const a=String(q.a);if(/;/.test(a)&&/ – /.test(a)){const pr=a.split(/\s*;\s*/).map(x=>x.split(/\s+–\s+/)).filter(x=>x.length===2&&x[0].trim()&&x[1].trim());if(pr.length>=4)c.push({pairs:pr,ch:q.ch,lv:q.lv})}});
+ const sg={};
+ pool.forEach(q=>{const a=String(q.a),i=q.q.indexOf(':');if(!/;/.test(a)&&a.length<30&&i>0&&a.indexOf('ಮಕ್ಕಳ ಉತ್ತರ')<0&&q.q.slice(i+1).trim()){(sg[q.ch]=sg[q.ch]||[]).push({l:q.q.slice(i+1).trim(),r:a.trim(),ins:q.q.slice(0,i).trim()+':',lv:q.lv})}});
+ Object.keys(sg).forEach(ch=>{if(sg[ch].length>=4)c.push({pairs:sg[ch].map(x=>[x.l,x.r]),ch:+ch,lv:sg[ch][0].lv,ins:sg[ch][0].ins})});
+ return c}
+function knItemHtml(k,q,n){const t=knStrip(k,q),e=esc(t),ln='<span class="ln"></span>',wl='<div class="wl"></div>';
+ const img=q.img?`<div class="qpic"><img loading="lazy" src="${q.img}" alt=""></div>`:'';let h='';
+ if(k==='blank')h=`<div>${n}. ${e.replace(/_{2,}/g,ln)}</div>`;
+ else if(k==='odd')h=`<div>${n}. ${e} ${ln}</div>`;
+ else if(k==='anto')h=`<div>${n}. ${e} ${ln}</div>`;
+ else if(k==='own')h=`<div>${n}. ${e} – <span class="ln" style="min-width:55%"></span></div>`;
+ else if(k==='correct')h=`<div>${n}. ${e}</div>${wl}`;
+ else if(k==='poem')h=`<div>${n}. ${t.split(/\s*[;/]\s*/).map(x=>esc(x).replace(/_{2,}/g,'<span class="ln" style="min-width:5.5rem"></span>')).join('<br>')}</div>`;
+ else if(k==='who')h=`<div>${n}. ${e}</div><div class="wh">ಯಾರು? ${ln} &nbsp; ಯಾರಿಗೆ? ${ln}</div>`;
+ else if(k==='short')h=`<div>${n}. ${e}</div>${wl.repeat(3)}`;
+ else if(k==='long')h=`<div>${n}. ${e}</div>${wl.repeat(5)}`;
+ else h=`<div>${n}. ${e}</div>${img}${wl}`;
+ if(ST.showAns)h+=`<div class="ans"><b>${T('ans')}</b> ${esc(q.a)}</div>`;
+ return `<div class="pq">${h}</div>`}
+function buildPaperKN(){
+ const P=ST.ptype,max=PT[P].max,tpl=KN_TPL[P],ls=parseSel(ST.sel[P]);
+ const r=rng(ST.seed[P]*7919+ls.length*31+P.length+(ls[0]||0));
+ const by={};['blank','odd','match','anto','own','correct','poem','who','sent','short','long','oneo','lango'].forEach(k=>by[k]=[]);
+ allQ().filter(q=>ls.includes(q.ch)).forEach(q=>{const k=knKind(q);if(by[k])by[k].push(q)});
+ Object.keys(by).forEach(k=>by[k]=shuffle(by[k],r));
+ /* ಅಭ್ಯಾಸ ಉತ್ತರಗಳ ಚಿತ್ರಗಳನ್ನು ಬಳಸಿದ ಚಿತ್ರಾಧಾರಿತ ಪ್ರಶ್ನೆಗಳು – ಗರಿಷ್ಠ 3 */
+ const iqs=[];lessons().filter(l=>ls.includes(l.n)).forEach(l=>(l.iq||[]).forEach((x,i)=>iqs.push(Object.assign({id:l.n+'-iq'+i,ch:l.n,t:'one'},x))));
+ const imgs=[],seen=new Set();shuffle(iqs,r).forEach(x=>{if(imgs.length<KN_MAXIMG[P]&&!seen.has(x.img)){seen.add(x.img);imgs.push(x)}});
+ const sec={};let deficit=0;
+ tpl.forEach(([k,n,m])=>{
+  if(k==='sent')return;
+  if(k==='match'){const c=knMatchCands(by.match);
+   if(c.length){const b=c[Math.floor(r()*c.length)],pr=shuffle(b.pairs,r).slice(0,n);sec[k]={m,block:{pairs:pr,ch:b.ch,lv:b.lv,ins:b.ins},cnt:pr.length};deficit+=(n-pr.length)*m}
+   else deficit+=n*m;return}
+  const take=by[k].slice(0,n);deficit+=(n-take.length)*m;
+  if(take.length)sec[k]={m,items:take,cnt:take.length}});
+ /* ಒಂದು ವಾಕ್ಯದ ಉತ್ತರ: ಯೋಜಿತ ಸಂಖ್ಯೆ + ಕೊರತೆಯ ಅಂಕಗಳು */
+ const sn=tpl.find(t=>t[0]==='sent'),want=sn[1]+deficit;
+ let its=imgs.slice(0,want);const rest=[...by.sent,...by.oneo.map(q=>Object.assign({keep:1},q)),...by.lango.map(q=>Object.assign({keep:1},q))];
+ while(its.length<want&&rest.length)its.push(rest.shift());
+ its=shuffle(its,r);if(its.length)sec.sent={m:1,items:its,cnt:its.length};
+ let body='',n=1,si=0,tot=0;const bp=[];
+ tpl.forEach(([k])=>{const s=sec[k];if(!s)return;const m=s.m;
+  const ins=(s.block&&s.block.ins)||KN_INS[k];
+  body+=`<div class="sec"><div class="sh"><span>${ROMAN[si++]}. ${esc(ins)}</span><span>${k==='poem'?fmt(s.cnt*m):`${s.cnt}×${fmt(m)}=${fmt(s.cnt*m)}`}</span></div>`;
+  const B=KN_BP[k];
+  const bpi=(ch,lv)=>bp.push({ch,mk:m,lv:lv||'m',ob:B[0],fi:B[1],sp:B[2],tm:B[3],t:'one'});
+  if(k==='match'){const rs=shuffle(s.block.pairs.map(p=>p[1]),rng(ST.seed[P]*131+7));
+   body+='<table class="mt"><tbody>'+s.block.pairs.map((p,i)=>`<tr><td class="ml">${n+i}. ${esc(p[0])}</td><td class="mr">${esc(rs[i])}</td><td class="ma"></td></tr>`).join('')+'</tbody></table>';
+   if(ST.showAns)body+=`<div class="ans"><b>${T('ans')}</b> ${s.block.pairs.map(p=>esc(p[0])+' – '+esc(p[1])).join(' ; ')}</div>`;
+   s.block.pairs.forEach(()=>bpi(s.block.ch,s.block.lv));n+=s.cnt;tot+=s.cnt*m}
+  else{s.items.forEach(q=>{body+=knItemHtml(k==='sent'?'sent':k,q,n++);bpi(q.ch,k==='long'?'h':(q.lv||'m'));tot+=m})}
+  body+='</div>'});
+ ST.lastPicked=bp;ST.lastLs=ls;
+ const EN=false;
+ return `<div class="paper fade" id="pp"><div class="ph"><div class="sch">${T('school')(ST.cls)}, ____________ ____________ ತಾಲ್ಲೂಕು</div><b style="font-size:1.25em">${T('exam')[P]}</b><br>${T('cls')}: ${ORD[ST.cls-1]} | ${T('subj')}: ${cur().title} ${cur().part}<br>${T('time')}: ${T('times')[P]} | ${T('maxm')}: ${max}<br>${T('stu')}: ______________________ ${T('roll')}: ____</div>${body}<div class="ph" style="border:0;border-top:2px solid #232a45;padding-top:.6rem">${T('totalM')}: ${fmt(tot)}</div></div>`}
+function printMode(m){const c=document.body.classList;c.remove('pr-paper','pr-bp');c.add('pr-'+m);
+ const done=()=>{c.remove('pr-paper','pr-bp');window.removeEventListener('afterprint',done)};
+ window.addEventListener('afterprint',done);setTimeout(()=>window.print(),60);setTimeout(done,20000)}
 function togEdit(b){const p=$('pp');if(!p)return;const on=p.getAttribute('contenteditable')==='true';p.setAttribute('contenteditable',on?'false':'true');p.classList.toggle('editing',!on);b.textContent=on?T('edit'):T('editDone')}
 /* ===== ಬ್ಲೂಪ್ರಿಂಟ್ (ಮಾದರಿ ಪ್ರಶ್ನೆ ಪತ್ರಿಕೆಯಂತೆ) ===== */
-function formIdx(q){return q.t==='short'?1:q.t==='long'?2:0}
+function formIdx(q){return q.fi!==undefined?q.fi:(q.t==='short'?1:q.t==='long'?2:0)}
 function lessonShort(l){return ST.sub==='en'?l.t.replace(/\s*\(.*$/,''):l.t}
 function bpPaperHtml(qs,ls){const B=T('bt'),max=PT[ST.ptype].max;const tq=qs.length,tm=qs.reduce((s,q)=>s+q.mk,0);const pc=m=>fmt(Math.round(m*1000/max)/10)+'%';
  /* 1. ಉದ್ದಿಷ್ಟವಾರು */
@@ -372,18 +489,18 @@ function bpPaperHtml(qs,ls){const B=T('bt'),max=PT[ST.ptype].max;const tq=qs.len
  /* 6. ಪ್ರಶ್ನಾವಾರು ವಿಶ್ಲೇಷಣೆ */
  const lname=n=>{const l=lessons().find(x=>x.n===n);return l?lessonShort(l):''};
  let a=`<div class="tw"><table class="bpt"><thead><tr><th>${B.qn}</th><th>${B.unit}</th><th>${B.obj}</th><th>${B.spec}</th><th>${B.mk}</th><th>${B.form}</th><th>${B.diffc}</th><th>${B.tm}</th></tr></thead><tbody>`;
- let tt=0;qs.forEach((q,i)=>{const tmv=TMIN[q.t];tt+=tmv;a+=`<tr><td>${i+1}</td><td class="l">${esc(lname(q.ch))}</td><td>${T('obj')[objOf(q)]}</td><td>${B.specs[q.t]}</td><td>${fmt(q.mk)}</td><td>${B.forms[q.t]}</td><td>${B.diffs['emh'.indexOf(q.lv)]}</td><td>${tmv}</td></tr>`});
+ let tt=0;qs.forEach((q,i)=>{const tmv=q.tm||TMIN[q.t];tt+=tmv;a+=`<tr><td>${i+1}</td><td class="l">${esc(lname(q.ch))}</td><td>${T('obj')[objOf(q)]}</td><td>${q.sp||B.specs[q.t]}</td><td>${fmt(q.mk)}</td><td>${q.fi!==undefined?B.qtypes[q.fi]:B.forms[q.t]}</td><td>${B.diffs['emh'.indexOf(q.lv)]}</td><td>${tmv}</td></tr>`});
  a+=`<tr class="tot"><td colspan="4">${B.total}</td><td>${fmt(tm)}</td><td></td><td></td><td>${tt}</td></tr></tbody></table></div>`;
  return `<div class="bph">${B.t1}</div>${t1}<div class="bph">${B.t2}</div>${tbl(lrow,B.unitName)}<div class="bph">${B.t3}</div>${tbl(frow,B.qform)}<div class="bph">${B.t4}</div>${tbl(drow,B.diff)}<div class="bph">${B.t5}</div>${g}<div class="bph">${B.t6}</div>${a}`}
 function vPaper(){if(!allQ().length)return `<div class="card glass neu">${T('noPaper')}</div>`;
  const P=ST.ptype;ensureSel(P);const o=selOpts(P),v=ST.sel[P];
- const paperHtml=buildPaper();
- const bpSec=ST.bpOpen?`<div class="card glass neu nopr bpwrap"><h3>${T('bpTitle')}</h3>${bpPaperHtml(ST.lastPicked,ST.lastLs)}</div>`:'';
+ const paperHtml=ST.sub==='kn'?buildPaperKN():buildPaper();
+ const bpSec=ST.bpOpen?`<div class="card glass neu bpwrap"><div class="bpbar nopr"><h3>${T('bpTitle')}</h3><button class="btn" onclick="printMode('bp')">${T('printBp')}</button></div>${bpPaperHtml(ST.lastPicked,ST.lastLs)}</div>`:'';
  const tabs=['unit','fa3','fa4','sa2'].map(k=>`<button class="tb sm ${P===k?'on':''}" onclick="ST.ptype='${k}';render()">${T('examTab')[k]} (${PT[k].max})</button>`).join('');
  const po=[];if(o.g.length){po.push([null,T('groups')]);o.g.forEach(x=>po.push(x))}if(o.s.length){po.push([null,T('single')]);o.s.forEach(x=>po.push(x))}
  return `<div class="tabs nopr">${tabs}</div>
  <div class="card glass neu nopr ddz"><label class="fl" style="margin-top:0">${T('lessonSel')}</label>${sel('psel',po,v,'ST.sel[ST.ptype]=value;render()')}
- <div class="pills"><button class="btn" onclick="ST.seed[ST.ptype]++;render()">${T('newP')}</button><button class="btn" onclick="ST.showAns=!ST.showAns;render()">${ST.showAns?T('hideA'):T('showA')}</button><button class="btn" onclick="togEdit(this)">${T('edit')}</button><button class="btn" onclick="window.print()">${T('print')}</button><button class="btn ${ST.bpOpen?'on':''}" onclick="ST.bpOpen=!ST.bpOpen;render()">${T('bp')} ${ST.bpOpen?'▴':'▾'}</button></div></div>${paperHtml}${bpSec}`}
+ <div class="pills"><button class="btn" onclick="ST.seed[ST.ptype]++;render()">${T('newP')}</button><button class="btn" onclick="ST.showAns=!ST.showAns;render()">${ST.showAns?T('hideA'):T('showA')}</button><button class="btn" onclick="togEdit(this)">${T('edit')}</button><button class="btn" onclick="printMode('paper')">${T('printP')}</button><button class="btn ${ST.bpOpen?'on':''}" onclick="ST.bpOpen=!ST.bpOpen;render()">${T('bp')} ${ST.bpOpen?'▴':'▾'}</button></div></div>${bpSec}${paperHtml}`}
 /* ===== ರಸಪ್ರಶ್ನೆ ===== */
 function vQuiz(){const list=allQ().filter(q=>(ST.qzc==='all'||q.ch==ST.qzc)&&(ST.qzt==='all'||q.t===ST.qzt));
  const lo=[['all',T('allCh')],...lessons().filter(l=>l.qb.length).map(l=>[String(l.n),lessonLabel(l)])];
