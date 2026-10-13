@@ -463,14 +463,15 @@ function buildPaperKN(){
 /* ===== English ಪ್ರಶ್ನೆ ಪತ್ರಿಕೆ: ನೀಡಿದ SA-2 / FA-3 English ಮಾದರಿ ಪತ್ರಿಕೆಗಳ ರೂಪದಲ್ಲಿ (LBA ಪ್ರಶ್ನೆಗಳಿಂದ) ===== */
 /* [kind, count, marks, group(1 = "Do as directed" ನ ಉಪಭಾಗ)] – ಒಟ್ಟು = ಪರೀಕ್ಷೆಯ ಗರಿಷ್ಠ ಅಂಕ */
 const EN_TPL={
- unit:[['mcq',6,1,0],['blank',3,1,1],['word',2,1,1],['odd',2,1,1],['yn',3,1,0],['short',2,2,0]],
- fa3:[['mcq',4,1,0],['yn',2,1,0],['blank',2,1,1],['word',2,1,1],['odd',1,1,1],['short',2,2,0]],
- fa4:[['mcq',4,1,0],['match',4,1,1],['blank',1,1,1],['yn',2,1,0],['short',2,2,0]],
- sa2:[['mcq',10,1,0],['match',6,1,1],['blank',4,1,1],['word',4,1,1],['odd',4,1,1],['yn',2,1,0],['short',3,2,0],['long',1,4,0]]};
+ unit:[['mcq',6,1],['mean',2,1],['blank',3,1],['word',2,1],['odd',2,1],['yn',2,1],['short',2,2]],
+ fa3:[['mcq',3,1],['odd',2,1],['mean',2,1],['jumble',2,1],['blank',2,1],['short',2,2]],
+ fa4:[['mcq',4,1],['mean',2,1],['jumble',2,1],['blank',1,1],['yn',2,1],['short',2,2]],
+ sa2:[['mcq',10,1],['mean',3,1],['own',2,1],['jumble',3,1],['blank',4,1],['word',3,1],['odd',3,1],['yn',2,1],['short',3,2],['long',1,4]]};
 const EN_MAXIMG={unit:1,fa3:2,fa4:2,sa2:3};
-const EN_INS={mcq:'Choose the correct answer for the following questions:',blank:'Fill in the blanks with suitable words.',word:'Give one word for each.',odd:'Pick out the odd one out.',match:'Match the following.',yn:'Answer “Yes” or “No” in a full sentence.',short:'Answer the following questions in two or three sentences:',long:'Answer the following question in 5–6 sentences:',extra:'Answer as directed:'};
+const EN_ORDER=['mcq','mean','own','jumble','blank','word','odd','yn','short','long'];
+const EN_INS={mcq:'Choose the correct answer:',mean:'Write the meaning of the following words:',own:'Make your own sentence using each word:',jumble:'Rearrange the words to make a meaningful sentence:',blank:'Fill in the blanks with suitable words:',word:'Give one word for each:',odd:'Pick out the odd one out and write:',yn:'Answer “Yes” or “No” in a full sentence:',short:'Answer the following questions in two or three sentences:',long:'Answer the following question in 5–6 sentences:'};
 /* [objective a/g/b/p, form 0 V.S.A /1 S.A /2 L.A, specification, minutes] */
-const EN_BP={mcq:['g',0,'Finds out',3],blank:['a',0,'Recall',2],word:['a',0,'Recall',2],odd:['g',0,'Grasps',2],match:['g',0,'Matches',2],yn:['g',0,'Finds out',3],short:['a',1,'Recall',6],long:['g',2,'Grasps',8]};
+const EN_BP={mcq:['g',0,'Finds out',3],mean:['a',0,'Recall',2],own:['b',0,'Writes own sentence',3],jumble:['g',0,'Arranges',3],blank:['a',0,'Recall',2],word:['a',0,'Recall',2],odd:['g',0,'Grasps',2],yn:['g',0,'Finds out',3],short:['a',1,'Recall',6],long:['g',2,'Grasps',8]};
 function enKind(q){const t=q.q||'';
  if(q.t==='mcq')return 'mcq';
  if(/^Fill in the blank/i.test(t))return 'blank';
@@ -485,6 +486,9 @@ function enItemHtml(k,q,n){const t=q.keep?q.q:enStrip(k,q),e=esc(t),ln='<span cl
  const img=q.img?`<div class="qpic"><img loading="lazy" src="${q.img}" alt=""></div>`:'';let h='';
  const blanks=x=>x.replace(/_{2,}/g,ln);
  if(k==='mcq')h=`<div>${n}. ${blanks(e)}</div>${img}<div class="po">${q.o.map((o,i)=>`(${T('optL')[i]}) ${esc(o)}`).join(' &nbsp; ')}</div>`;
+ else if(k==='mean')h=`<div>${n}. ${e} – ${ln}${ln}</div>`;
+ else if(k==='own')h=`<div>${n}. ${e}</div>${wl}`;
+ else if(k==='jumble')h=`<div>${n}. ${e}</div>${wl}`;
  else if(k==='blank')h=`<div>${n}. ${/_{2,}/.test(t)?blanks(e):e+' '+ln}</div>${img}`;
  else if(k==='word')h=`<div>${n}. ${/_{2,}/.test(t)?blanks(e):e+' '+ln}</div>${img}`;
  else if(k==='odd')h=`<div>${n}. ${e} ${ln}</div>${img}`;
@@ -496,41 +500,57 @@ function enItemHtml(k,q,n){const t=q.keep?q.q:enStrip(k,q),e=esc(t),ln='<span cl
 function buildPaperEN(){
  const P=ST.ptype,max=PT[P].max,tpl=EN_TPL[P],ls=parseSel(ST.sel[P]);
  const r=rng(ST.seed[P]*7919+ls.length*31+P.length+(ls[0]||0));
- const by={};['mcq','blank','word','odd','match','yn','short','long'].forEach(k=>by[k]=[]);
+ const by={};['mcq','blank','word','odd','yn','short','long','mean','own','jumble'].forEach(k=>by[k]=[]);
  const seen=new Set();
- allQ().filter(q=>ls.includes(q.ch)).forEach(q=>{const key=q.ch+'|'+q.q;if(seen.has(key))return;seen.add(key);by[enKind(q)].push(q)});
- Object.keys(by).forEach(k=>by[k]=shuffle(by[k],r));
+ /* “Match the following” ಪ್ರಶ್ನೆಗಳನ್ನು ಪತ್ರಿಕೆಯಲ್ಲಿ ಬಳಸುವುದಿಲ್ಲ (ಏಕಾಂಗಿಯಾಗಿ ಸ್ಪಷ್ಟ ಸೂಚನೆ ಇಲ್ಲ) */
+ allQ().filter(q=>ls.includes(q.ch)).forEach(q=>{const key=q.ch+'|'+q.q;if(seen.has(key))return;seen.add(key);const k=enKind(q);if(k==='match')return;by[k].push(q)});
+ ['mcq','blank','word','odd','yn','short','long'].forEach(k=>by[k]=shuffle(by[k],r));
+ /* ಪದಗಳ ಅರ್ಥ ಪಟ್ಟಿಯಿಂದ: ಅರ್ಥ ಬರೆಯಿರಿ / ಸ್ವಂತ ವಾಕ್ಯ */
+ const gl=[];lessons().filter(l=>ls.includes(l.n)).forEach(l=>String(l.words||'').split(/\s*;\s*/).forEach((w,i)=>{const m=w.split(/\s+[–-]\s+/);if(m.length>=2&&m[0].trim()&&m[1].trim())gl.push({id:l.n+'-gl'+i,ch:l.n,lv:'e',q:m[0].trim(),a:m.slice(1).join(' – ').trim()})}));
+ const gs=shuffle(gl,r);
+ by.mean=gs.filter((x,i)=>i%2===0);
+ by.own=gs.filter((x,i)=>i%2===1).map(x=>Object.assign({},x,{a:'Any correct sentence using the word “'+x.q+'”.'}));
+ /* “Yes/No” ಉತ್ತರ ವಾಕ್ಯಗಳಿಂದ: ಪದಗಳನ್ನು ಜೋಡಿಸಿ ವಾಕ್ಯ ಮಾಡಿ */
+ const FW=['the','a','an','he','she','it','they','we','his','her','their','there','this','that','these','those','my','our','did','was','were','is','are','do','does','in','on','at'];
+ shuffle([...by.yn,...by.short],r).forEach(q=>{let t=String(q.a).replace(/\s*\((?:ಶಿಕ್ಷಕರು )?ಪರಿಶೀಲಿಸಿ\)/g,'').replace(/^(Yes|No)\s*,\s*/i,'').trim();
+  if(!t||/[\/;]/.test(t)||/[.!?]\s+\S/.test(t))return;t=t[0].toUpperCase()+t.slice(1);
+  const w=t.replace(/[.!?]+$/,'').split(/\s+/);if(w.length<4||w.length>9)return;
+  let sh=w.slice(),tr=0;do{sh=shuffle(w,r);tr++}while(sh.join(' ')===w.join(' ')&&tr<10);
+  if(sh.join(' ')===w.join(' '))return;
+  sh=sh.map(x=>FW.includes(x.toLowerCase())&&x!=='I'?x.toLowerCase():x);
+  by.jumble.push({id:'j'+q.id,src:q.id,ch:q.ch,lv:q.lv||'e',q:sh.join(' / '),a:t})});
+ /* ಬಿಟ್ಟ ಸ್ಥಳ ಪ್ರಶ್ನೆಗಳ ಸರಿಯಾದ ಉತ್ತರ ತುಂಬಿದ ಸರಳ ವಾಕ್ಯಗಳು (ಉದ್ಧರಣೆ/ಆಯ್ಕೆ ಇಲ್ಲದವು) */
+ shuffle(by.blank,r).forEach(q=>{let t=String(q.q).replace(/^Fill in the blanks?:\s*/i,'').replace(/\s*\([^)]*\/[^)]*\)\s*$/,'').trim();const a=String(q.a).trim();
+  if((t.match(/_{2,}/g)||[]).length!==1||/[\/;“”"‘’]/.test(t+a)||/[.!?]\s+\S/.test(t))return;
+  t=t.replace(/_{2,}/,a);if(!/[.!?]$/.test(t))t+='.';t=t[0].toUpperCase()+t.slice(1);
+  const w=t.replace(/[.!?]+$/,'').split(/\s+/);if(w.length<4||w.length>9)return;
+  let sh=w.slice(),tr=0;do{sh=shuffle(w,r);tr++}while(sh.join(' ')===w.join(' ')&&tr<10);
+  if(sh.join(' ')===w.join(' '))return;
+  sh=sh.map(x=>FW.includes(x.toLowerCase())&&x!=='I'?x.toLowerCase():x);
+  by.jumble.push({id:'j'+q.id,src:q.id,ch:q.ch,lv:q.lv||'e',q:sh.join(' / '),a:t})});
  let imgN=0;const used=new Set(),sec=[];
- const take=(k,n)=>{const o=[];for(const q of by[k]){if(o.length>=n)break;if(used.has(q.id))continue;if(q.img&&imgN>=EN_MAXIMG[P])continue;o.push(q);used.add(q.id);if(q.img)imgN++}return o};
- tpl.forEach(([k,n,m,g])=>{
-  if(k==='match'){const g2={};by.match.forEach(q=>(g2[q.ch]=g2[q.ch]||[]).push(q));
-   const c=Object.keys(g2).filter(ch=>g2[ch].length>=Math.min(n,4));
-   if(c.length){const ch=c[Math.floor(r()*c.length)],its=g2[ch].slice(0,n);its.forEach(q=>used.add(q.id));sec.push({k,m,g,items:its})}
-   return}
-  const its=take(k,n);if(its.length)sec.push({k,m,g,items:its})});
- /* ಕೊರತೆ ನಿಯಮ: ಒಟ್ಟು ಅಂಕ ನಿಖರವಾಗಿ ಗರಿಷ್ಠ ಅಂಕಕ್ಕೆ ಸಮನಾಗುವಂತೆ ಅದೇ ಪಾಠಗಳ ಬಳಕೆಯಾಗದ 1-ಅಂಕದ ಪ್ರಶ್ನೆಗಳಿಂದ ತುಂಬುವುದು */
- const miss=max-sec.reduce((s,x)=>s+x.items.length*x.m,0);
- if(miss>0){const ex=[];for(const q of shuffle([...by.word,...by.blank,...by.odd,...by.yn,...by.mcq],r)){if(ex.length>=miss)break;if(used.has(q.id))continue;if(q.img&&imgN>=EN_MAXIMG[P])continue;ex.push(Object.assign({keep:1,kk:enKind(q)},q));used.add(q.id);if(q.img)imgN++}
-  if(ex.length)sec.push({k:'extra',m:1,g:0,items:ex})}
- const groups=[];sec.forEach(s=>{const L=groups[groups.length-1];if(s.g===1&&L&&L.do_)L.secs.push(s);else groups.push({do_:s.g===1,secs:[s]})});
+ const take=(k,n)=>{const o=[];for(const q of by[k]){if(o.length>=n)break;if(used.has(q.id)||(q.src&&used.has(q.src)))continue;if(q.img&&imgN>=EN_MAXIMG[P])continue;o.push(q);used.add(q.id);if(q.src)used.add(q.src);if(q.img)imgN++}return o};
+ tpl.forEach(([k,n,m])=>{const its=take(k,n);if(its.length)sec.push({k,m,items:its})});
+ /* ಕೊರತೆ ನಿಯಮ: ಒಟ್ಟು ಅಂಕ ನಿಖರವಾಗಿ ಗರಿಷ್ಠ ಅಂಕಕ್ಕೆ ಸಮನಾಗುವಂತೆ ಅದೇ ರೀತಿಯ 1-ಅಂಕದ ವಿಭಾಗಗಳಿಗೇ ಪ್ರಶ್ನೆ ಸೇರಿಸುವುದು */
+ let miss=max-sec.reduce((a,x)=>a+x.items.length*x.m,0);
+ if(miss>0){const pool=['blank','word','odd','yn','mcq','mean','jumble'];
+  const ord=[...pool.filter(k=>sec.some(x=>x.k===k&&x.m===1)),...pool.filter(k=>!sec.some(x=>x.k===k&&x.m===1))];
+  let guard=0;while(miss>0&&guard++<300){let add=false;
+   for(const k of ord){if(miss<=0)break;const it=take(k,1);if(!it.length)continue;
+    let s2=sec.find(x=>x.k===k&&x.m===1);if(!s2){s2={k,m:1,items:[]};sec.push(s2)}
+    s2.items.push(it[0]);miss--;add=true}
+   if(!add)break}}
+ sec.sort((a,b)=>EN_ORDER.indexOf(a.k)-EN_ORDER.indexOf(b.k));
  let body='',n=1,ri=0,tot=0;const bp=[];
- const subHead=(s,ins)=>`<span>${esc(ins)}</span><span>${s.items.length}×${fmt(s.m)}=${fmt(s.items.length*s.m)}</span>`;
  const secBody=(s)=>{let h='';const k=s.k;
-  if(k==='match'){const pr=s.items.map((q,i)=>({i,l:enStrip('match',q),t:String(q.a).replace(/\s*\((?:ಶಿಕ್ಷಕರು )?ಪರಿಶೀಲಿಸಿ\)/g,'').replace(/^[a-z]\.\s*/i,'').trim()}));
-   const rs=shuffle(pr,rng(ST.seed[ST.ptype]*131+7)),lt='abcdefghij';
-   h+='<table class="mt"><tbody>'+pr.map((p,i)=>`<tr><td class="ml">${n+i}. ${esc(p.l)}</td><td class="mr">(${lt[i]}) ${esc(rs[i].t)}</td><td class="ma"></td></tr>`).join('')+'</tbody></table>';
-   if(ST.showAns)h+=`<div class="ans"><b>${T('ans')}</b> ${pr.map((p,i)=>(n+i)+'–'+lt[rs.findIndex(x=>x.i===p.i)]).join(', ')}</div>`;
-   n+=pr.length}
-  else s.items.forEach(q=>{h+=enItemHtml(k==='extra'?q.kk:k,q,n++)});
-  s.items.forEach(q=>{const kk=k==='extra'?q.kk:k,B=EN_BP[kk];bp.push({ch:q.ch,mk:s.m,lv:kk==='long'?'h':(q.lv||'e'),ob:q.ob||B[0],fi:B[1],sp:B[2],tm:B[3],t:'one'});tot+=s.m});
+  s.items.forEach(q=>{h+=enItemHtml(k,q,n++)});
+  s.items.forEach(q=>{const B=EN_BP[k];bp.push({ch:q.ch,mk:s.m,lv:k==='long'?'h':(q.lv||'e'),ob:q.ob||B[0],fi:B[1],sp:B[2],tm:B[3],t:'one'});tot+=s.m});
   return h};
- groups.forEach(g=>{
-  if(!g.do_){const s=g.secs[0];body+=`<div class="sec"><div class="sh"><span>${ROMAN[ri++]}. ${esc(EN_INS[s.k])}</span><span>${s.items.length}×${fmt(s.m)}=${fmt(s.items.length*s.m)}</span></div>${secBody(s)}</div>`}
-  else{const gt=g.secs.reduce((a,s)=>a+s.items.length*s.m,0);
-   body+=`<div class="sec"><div class="sh"><span>${ROMAN[ri++]}. Do as directed:</span><span>${fmt(gt)}</span></div>`;
-   g.secs.forEach(s=>{body+=`<div class="sh" style="margin-left:.6rem;font-weight:600">${subHead(s,EN_INS[s.k])}</div>${secBody(s)}`});body+='</div>'}});
+ /* ಕನ್ನಡ ಪತ್ರಿಕೆಯಂತೆ: ಪ್ರತಿ ವಿಭಾಗಕ್ಕೂ ರೋಮನ್ ಸಂಖ್ಯೆ + ಶೀರ್ಷಿಕೆ + ಅಂಕ (n×m=total), ಪ್ರಶ್ನೆ ಸಂಖ್ಯೆ ನಿರಂತರ */
+ sec.forEach(s=>{body+=`<div class="sec"><div class="sh"><span>${ROMAN[ri++]}. ${esc(EN_INS[s.k])}</span><span>${s.items.length}×${fmt(s.m)}=${fmt(s.items.length*s.m)}</span></div>${secBody(s)}</div>`});
  ST.lastPicked=bp;ST.lastLs=ls;
  return `<div class="paper fade" id="pp"><div class="ph"><div class="sch">${T('school')(ST.cls)}, ____________ ____________ Taluk</div><b style="font-size:1.25em">${T('exam')[P]}</b><br>${T('cls')}: ${ENG[ST.cls-1]} | ${T('subj')}: ${cur().title} ${cur().part}<br>${T('time')}: ${T('times')[P]} | ${T('maxm')}: ${max}<br>${T('stu')}: ______________________ ${T('roll')}: ____</div>${body}<div class="ph" style="border:0;border-top:2px solid #232a45;padding-top:.6rem">${T('totalM')}: ${fmt(tot)}</div></div>`}
+
 function printMode(m){const c=document.body.classList;c.remove('pr-paper','pr-bp');c.add('pr-'+m);
  const done=()=>{c.remove('pr-paper','pr-bp');window.removeEventListener('afterprint',done)};
  window.addEventListener('afterprint',done);setTimeout(()=>window.print(),60);setTimeout(done,20000)}
