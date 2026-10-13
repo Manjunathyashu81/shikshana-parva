@@ -207,7 +207,7 @@ kn:{tabs:[['ab','ಅಭ್ಯಾಸ ಉತ್ತರಗಳು'],['qb','LBA ಪ್
  newP:'🔀 ಹೊಸ ಪ್ರಶ್ನೆಪತ್ರಿಕೆ',hideA:'ಉತ್ತರ ಮರೆಮಾಡಿ',showA:'ಉತ್ತರ ತೋರಿಸಿ',bp:'📊 ಬ್ಲೂಪ್ರಿಂಟ್',bpTitle:'ಬ್ಲೂಪ್ರಿಂಟ್ (ನೀಲನಕ್ಷೆ) – ಈ ಪ್ರಶ್ನೆ ಪತ್ರಿಕೆಯ ಅಂಕಗಳ ಹಂಚಿಕೆ',
  noPaper:'ಈ ವಿಷಯಕ್ಕೆ LBA ಪ್ರಶ್ನೆ ಪತ್ರಿಕೆ ಇನ್ನೂ ಸಿದ್ಧಪಡಿಸಲಾಗಿಲ್ಲ.',noQ:'ಪ್ರಶ್ನೆಗಳಿಲ್ಲ',done:'ಮುಗಿಯಿತು!',doneTxt:(n,s)=>`ಒಟ್ಟು ${n} ಪ್ರಶ್ನೆಗಳು; ಬಹು ಆಯ್ಕೆ ಸರಿ ಉತ್ತರ: ${s}`,again:'ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ',
  /* ಬ್ಲೂಪ್ರಿಂಟ್ */
- obj:['ಜ್ಞಾನ','ಗ್ರಹಿಕೆ','ಅಭಿವ್ಯಕ್ತಿ','ಪ್ರಶಂಸೆ'],calc:'(ಲೆಕ್ಕದಲ್ಲಿ ಮಾತ್ರ)',
+ obj:['ಜ್ಞಾನ','ಗ್ರಹಿಕೆ','ಅಭಿವ್ಯಕ್ತಿ','ಪ್ರಶಂಸೆ'],calc:'',
  bt:{t1:'01. ಉದ್ದಿಷ್ಟವಾರು ಅಂಕಗಳ ಹಂಚಿಕೆ',t2:'02. ಘಟಕವಾರು ಅಂಕಗಳ ಹಂಚಿಕೆ',t3:'03. ಪ್ರಶ್ನೆಗಳ ಸ್ವರೂಪವನ್ನು ಆಧರಿಸಿ ಅಂಕಗಳ ಹಂಚಿಕೆ',t4:'04. ಕಠಿಣತೆಯ ಮಟ್ಟವನ್ನು ಆಧರಿಸಿ ಅಂಕಗಳ ಹಂಚಿಕೆ',t5:'ನೀಲನಕ್ಷೆ',t6:'ಪ್ರಶ್ನಾವಾರು ವಿಶ್ಲೇಷಣೆ',
   objs:'ಉದ್ದಿಷ್ಟಗಳು',nq:'ಪ್ರಶ್ನೆಗಳ ಸಂಖ್ಯೆ',marks:'ಅಂಕಗಳು',pct:'ಶೇಕಡಾ',sl:'ಕ್ರ.ಸಂ',unitName:'ಘಟಕದ ಹೆಸರು',unitsName:'ಘಟಕಗಳ ಹೆಸರು',qform:'ಪ್ರಶ್ನೆಯ ಸ್ವರೂಪ',diff:'ಕಠಿಣತೆಯ ಮಟ್ಟ',total:'ಒಟ್ಟು',totQ:'ಒಟ್ಟು ಪ್ರಶ್ನೆಗಳು',totM:'ಒಟ್ಟು ಅಂಕಗಳು',
   qtypes:['ವಸ್ತುನಿಷ್ಠ','ಕಿರುಉತ್ತರ','ವಿವರಣೆ'],short3:['ವ.ಉ','ಕಿ.ಉ','ವಿ.ಉ'],diffs:['ಸುಲಭ','ಸಾಧಾರಣ','ಕಠಿಣ'],
@@ -231,7 +231,7 @@ en:{tabs:[['ab','Practice Answers'],['qb','LBA Question Bank'],['paper','Questio
  lessonSel:'Lesson selection',groups:'Lesson groups',single:'Single lesson',lessons:(a,b)=>`Lessons ${a}–${b}`,lessonOne:l=>`Lesson ${l.n}: ${l.t}`,allL:(a,b)=>`All lessons (${a}–${b})`,
  newP:'🔀 New paper',hideA:'Hide answers',showA:'Show answers',bp:'📊 Blueprint',bpTitle:'Blueprint – marks distribution of this paper',
  noPaper:'Question paper not ready for this subject yet.',noQ:'No questions',done:'Finished!',doneTxt:(n,s)=>`${n} questions in all; MCQ correct: ${s}`,again:'Try again',
- obj:['Knowledge','Comprehension','Expression','Appreciation'],calc:'(calculation only)',
+ obj:['Knowledge','Comprehension','Expression','Appreciation'],calc:'',
  bt:{t1:'1. Weightage to objectives',t2:'2. Weightage to content',t3:'3. Weightage to type of questions',t4:'4. Weightage to difficulty',t5:'Blueprint',t6:'Question-wise analysis',
   objs:'Objectives',nq:'Total questions',marks:'Total marks',pct:'Percentage',sl:'Sl.',unitName:'Contents',unitsName:'Contents',qform:'Type of questions',diff:'Difficulty level',total:'Total',totQ:'Total questions',totM:'Total marks',
   qtypes:['V.S.A.','S.A.','L.A.'],short3:['V.S.A','S.A','L.A'],diffs:['Easy','Average','Difficult'],
@@ -568,7 +568,7 @@ function bpPaperHtml(qs,ls){const B=T('bt'),max=PT[ST.ptype].max;const tq=qs.len
  /* 1. ಉದ್ದಿಷ್ಟವಾರು */
  const o=T('obj').map((n,i)=>{const f=qs.filter(q=>objOf(q)===i);return {n,q:f.length,m:f.reduce((s,q)=>s+q.mk,0),calc:false}});
  if(ST.sub!=='en')o.filter(x=>x.q===0).forEach(x=>{const big=o.reduce((a,b)=>b.m>a.m?b:a);big.m-=1;x.m=1;x.calc=true});
- const t1=`<div class="tw"><table class="bpt"><thead><tr><th>${B.objs}</th>${o.map(x=>`<th>${x.n}${x.calc?'<br><small>'+T('calc')+'</small>':''}</th>`).join('')}<th>${B.total}</th></tr></thead><tbody><tr><td>${B.nq}</td>${o.map(x=>`<td>${x.q}</td>`).join('')}<td>${tq}</td></tr><tr class="tot"><td>${B.marks}</td>${o.map(x=>`<td>${fmt(x.m)}</td>`).join('')}<td>${fmt(max)}</td></tr><tr><td>${B.pct}</td>${o.map(x=>`<td>${pc(x.m)}</td>`).join('')}<td>100%</td></tr></tbody></table></div>`;
+ const t1=`<div class="tw"><table class="bpt"><thead><tr><th>${B.objs}</th>${o.map(x=>`<th>${x.n}</th>`).join('')}<th>${B.total}</th></tr></thead><tbody><tr><td>${B.nq}</td>${o.map(x=>`<td>${x.q}</td>`).join('')}<td>${tq}</td></tr><tr class="tot"><td>${B.marks}</td>${o.map(x=>`<td>${fmt(x.m)}</td>`).join('')}<td>${fmt(max)}</td></tr><tr><td>${B.pct}</td>${o.map(x=>`<td>${pc(x.m)}</td>`).join('')}<td>100%</td></tr></tbody></table></div>`;
  /* 2. ಘಟಕವಾರು */
  const LS=lessons().filter(l=>ls.includes(l.n));
  const lrow=LS.map(l=>{const f=qs.filter(q=>q.ch===l.n);return {n:lessonShort(l),q:f.length,m:f.reduce((s,q)=>s+q.mk,0)}});
