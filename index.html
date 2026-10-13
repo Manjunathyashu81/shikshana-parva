@@ -463,15 +463,15 @@ function buildPaperKN(){
 /* ===== English ಪ್ರಶ್ನೆ ಪತ್ರಿಕೆ: ನೀಡಿದ SA-2 / FA-3 English ಮಾದರಿ ಪತ್ರಿಕೆಗಳ ರೂಪದಲ್ಲಿ (LBA ಪ್ರಶ್ನೆಗಳಿಂದ) ===== */
 /* [kind, count, marks, group(1 = "Do as directed" ನ ಉಪಭಾಗ)] – ಒಟ್ಟು = ಪರೀಕ್ಷೆಯ ಗರಿಷ್ಠ ಅಂಕ */
 const EN_TPL={
- unit:[['mcq',6,1],['mean',2,1],['blank',3,1],['word',2,1],['odd',2,1],['yn',2,1],['short',2,2]],
- fa3:[['mcq',3,1],['odd',2,1],['mean',2,1],['jumble',2,1],['blank',2,1],['short',2,2]],
- fa4:[['mcq',4,1],['mean',2,1],['jumble',2,1],['blank',1,1],['yn',2,1],['short',2,2]],
- sa2:[['mcq',10,1],['mean',3,1],['own',2,1],['jumble',3,1],['blank',4,1],['word',3,1],['odd',3,1],['yn',2,1],['short',3,2],['long',1,4]]};
+ unit:[['mcq',6,1],['pic',1,1],['mean',2,1],['blank',3,1],['word',2,1],['odd',2,1],['short',2,2]],
+ fa3:[['mcq',3,1],['pic',2,1],['odd',1,1],['mean',2,1],['jumble',2,1],['blank',1,1],['short',2,2]],
+ fa4:[['mcq',3,1],['pic',2,1],['mean',2,1],['jumble',2,1],['blank',1,1],['yn',1,1],['short',2,2]],
+ sa2:[['mcq',9,1],['pic',3,1],['mean',3,1],['own',2,1],['jumble',3,1],['blank',3,1],['word',3,1],['odd',2,1],['yn',2,1],['short',3,2],['long',1,4]]};
 const EN_MAXIMG={unit:1,fa3:2,fa4:2,sa2:3};
-const EN_ORDER=['mcq','mean','own','jumble','blank','word','odd','yn','short','long'];
-const EN_INS={mcq:'Choose the correct answer:',mean:'Write the meaning of the following words:',own:'Make your own sentence using each word:',jumble:'Rearrange the words to make a meaningful sentence:',blank:'Fill in the blanks with suitable words:',word:'Give one word for each:',odd:'Pick out the odd one out and write:',yn:'Answer “Yes” or “No” in a full sentence:',short:'Answer the following questions in two or three sentences:',long:'Answer the following question in 5–6 sentences:'};
+const EN_ORDER=['mcq','pic','mean','own','jumble','blank','word','odd','yn','short','long'];
+const EN_INS={mcq:'Choose the correct answer:',pic:'Look at the picture and answer:',mean:'Write the meaning of the following words:',own:'Make your own sentence using each word:',jumble:'Rearrange the words to make a meaningful sentence:',blank:'Fill in the blanks with suitable words:',word:'Give one word for each:',odd:'Pick out the odd one out and write:',yn:'Answer “Yes” or “No” in a full sentence:',short:'Answer the following questions in two or three sentences:',long:'Answer the following question in 5–6 sentences:'};
 /* [objective a/g/b/p, form 0 V.S.A /1 S.A /2 L.A, specification, minutes] */
-const EN_BP={mcq:['g',0,'Finds out',3],mean:['a',0,'Recall',2],own:['b',0,'Writes own sentence',3],jumble:['g',0,'Arranges',3],blank:['a',0,'Recall',2],word:['a',0,'Recall',2],odd:['g',0,'Grasps',2],yn:['g',0,'Finds out',3],short:['a',1,'Recall',6],long:['g',2,'Grasps',8]};
+const EN_BP={mcq:['g',0,'Finds out',3],pic:['g',0,'Observes picture',3],mean:['a',0,'Recall',2],own:['b',0,'Writes own sentence',3],jumble:['g',0,'Arranges',3],blank:['a',0,'Recall',2],word:['a',0,'Recall',2],odd:['g',0,'Grasps',2],yn:['g',0,'Finds out',3],short:['a',1,'Recall',6],long:['g',2,'Grasps',8]};
 function enKind(q){const t=q.q||'';
  if(q.t==='mcq')return 'mcq';
  if(/^Fill in the blank/i.test(t))return 'blank';
@@ -486,6 +486,7 @@ function enItemHtml(k,q,n){const t=q.keep?q.q:enStrip(k,q),e=esc(t),ln='<span cl
  const img=q.img?`<div class="qpic"><img loading="lazy" src="${q.img}" alt=""></div>`:'';let h='';
  const blanks=x=>x.replace(/_{2,}/g,ln);
  if(k==='mcq')h=`<div>${n}. ${blanks(e)}</div>${img}<div class="po">${q.o.map((o,i)=>`(${T('optL')[i]}) ${esc(o)}`).join(' &nbsp; ')}</div>`;
+ else if(k==='pic')h=`<div>${n}. ${/_{2,}/.test(t)?blanks(e):e+' '+ln}</div>${img}`;
  else if(k==='mean')h=`<div>${n}. ${e} – ${ln}${ln}</div>`;
  else if(k==='own')h=`<div>${n}. ${e}</div>${wl}`;
  else if(k==='jumble')h=`<div>${n}. ${e}</div>${wl}`;
@@ -500,7 +501,7 @@ function enItemHtml(k,q,n){const t=q.keep?q.q:enStrip(k,q),e=esc(t),ln='<span cl
 function buildPaperEN(){
  const P=ST.ptype,max=PT[P].max,tpl=EN_TPL[P],ls=parseSel(ST.sel[P]);
  const r=rng(ST.seed[P]*7919+ls.length*31+P.length+(ls[0]||0));
- const by={};['mcq','blank','word','odd','yn','short','long','mean','own','jumble'].forEach(k=>by[k]=[]);
+ const by={};['mcq','blank','word','odd','yn','short','long','mean','own','jumble','pic'].forEach(k=>by[k]=[]);
  const seen=new Set();
  /* “Match the following” ಪ್ರಶ್ನೆಗಳನ್ನು ಪತ್ರಿಕೆಯಲ್ಲಿ ಬಳಸುವುದಿಲ್ಲ (ಏಕಾಂಗಿಯಾಗಿ ಸ್ಪಷ್ಟ ಸೂಚನೆ ಇಲ್ಲ) */
  allQ().filter(q=>ls.includes(q.ch)).forEach(q=>{const key=q.ch+'|'+q.q;if(seen.has(key))return;seen.add(key);const k=enKind(q);if(k==='match')return;by[k].push(q)});
@@ -510,6 +511,9 @@ function buildPaperEN(){
  const gs=shuffle(gl,r);
  by.mean=gs.filter((x,i)=>i%2===0);
  by.own=gs.filter((x,i)=>i%2===1).map(x=>Object.assign({},x,{a:'Any correct sentence using the word “'+x.q+'”.'}));
+ /* ಚಿತ್ರಾಧಾರಿತ ಪ್ರಶ್ನೆಗಳು: ಪಾಠದ iq (ಚಿತ್ರ + ಪ್ರಶ್ನೆ + ಉತ್ತರ) – ಒಂದು ಚಿತ್ರಕ್ಕೆ ಒಂದೇ ಪ್ರಶ್ನೆ */
+ {const iqs=[];lessons().filter(l=>ls.includes(l.n)).forEach(l=>(l.iq||[]).forEach((x,i)=>iqs.push(Object.assign({id:l.n+'-iq'+i,ch:l.n,lv:'e'},x))));
+  const si=new Set();shuffle(iqs,r).forEach(x=>{if(!si.has(x.img)){si.add(x.img);by.pic.push(x)}})}
  /* “Yes/No” ಉತ್ತರ ವಾಕ್ಯಗಳಿಂದ: ಪದಗಳನ್ನು ಜೋಡಿಸಿ ವಾಕ್ಯ ಮಾಡಿ */
  const FW=['the','a','an','he','she','it','they','we','his','her','their','there','this','that','these','those','my','our','did','was','were','is','are','do','does','in','on','at'];
  shuffle([...by.yn,...by.short],r).forEach(q=>{let t=String(q.a).replace(/\s*\((?:ಶಿಕ್ಷಕರು )?ಪರಿಶೀಲಿಸಿ\)/g,'').replace(/^(Yes|No)\s*,\s*/i,'').trim();
@@ -530,7 +534,7 @@ function buildPaperEN(){
   by.jumble.push({id:'j'+q.id,src:q.id,ch:q.ch,lv:q.lv||'e',q:sh.join(' / '),a:t})});
  let imgN=0;const used=new Set(),sec=[];
  const take=(k,n)=>{const o=[];for(const q of by[k]){if(o.length>=n)break;if(used.has(q.id)||(q.src&&used.has(q.src)))continue;if(q.img&&imgN>=EN_MAXIMG[P])continue;o.push(q);used.add(q.id);if(q.src)used.add(q.src);if(q.img)imgN++}return o};
- tpl.forEach(([k,n,m])=>{const its=take(k,n);if(its.length)sec.push({k,m,items:its})});
+ tpl.slice().sort((a,b)=>(b[0]==='pic')-(a[0]==='pic')).forEach(([k,n,m])=>{const its=take(k,n);if(its.length)sec.push({k,m,items:its})});
  /* ಕೊರತೆ ನಿಯಮ: ಒಟ್ಟು ಅಂಕ ನಿಖರವಾಗಿ ಗರಿಷ್ಠ ಅಂಕಕ್ಕೆ ಸಮನಾಗುವಂತೆ ಅದೇ ರೀತಿಯ 1-ಅಂಕದ ವಿಭಾಗಗಳಿಗೇ ಪ್ರಶ್ನೆ ಸೇರಿಸುವುದು */
  let miss=max-sec.reduce((a,x)=>a+x.items.length*x.m,0);
  if(miss>0){const pool=['blank','word','odd','yn','mcq','mean','jumble'];
