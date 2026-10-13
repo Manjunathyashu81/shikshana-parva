@@ -103,12 +103,25 @@ main{max-width:min(1100px,100%)}
 /* ===== ಅಭ್ಯಾಸ ಉತ್ತರ ಚಿತ್ರಗಳು ===== */
 .qpic{margin:.5rem 0;text-align:center}.qpic img,.qpic svg{max-width:100%;height:auto;max-height:22rem;background:#fff;border-radius:.6rem;padding:.4rem}
 /* ===== ಅಭ್ಯಾಸ ಉತ್ತರಗಳು: ಎಡಿಟ್ ಮತ್ತು ಮುದ್ರಣ ===== */
-.abhead{display:flex;align-items:flex-start;justify-content:space-between;gap:.6rem;flex-wrap:wrap}.abhead h3{flex:1;min-width:10rem;margin-bottom:.4rem}.abbtns{display:flex;gap:.5rem;flex-wrap:wrap}.abbtns .btn{margin:0;padding:.45rem .9rem;font-size:.85rem}#abbody.editing{outline:2px dashed var(--tan);outline-offset:6px}@media print{body *{visibility:hidden}#abbody,#abbody *{visibility:visible}#abbody{position:absolute;left:0;top:0;width:100%;padding:0}.abbtns,.nopr{display:none!important}}
+.abhead{display:flex;align-items:flex-start;justify-content:space-between;gap:.6rem;flex-wrap:wrap}.abhead h3{flex:1;min-width:10rem;margin-bottom:.4rem}.abbtns{display:flex;gap:.5rem;flex-wrap:wrap}.abbtns .btn{margin:0;padding:.45rem .9rem;font-size:.85rem}#abbody.editing{outline:2px dashed var(--tan);outline-offset:6px}
 .ans.col{white-space:pre-wrap;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.92em}
 .tbl{display:grid;grid-template-columns:1fr auto;gap:.15rem 1.6rem;max-width:30rem;margin:.4rem 0 .6rem}.trow{display:contents}.tbl span:last-child{text-align:right;font-variant-numeric:tabular-nums}
 .vsum{display:grid;width:max-content;max-width:100%;grid-template-columns:auto auto auto auto;column-gap:.3rem;font-family:ui-monospace,Menlo,Consolas,monospace;margin:.3rem 0 .5rem}.vsum .r,.vsum .op{text-align:right}.vsum .l,.vsum .dot{text-align:left}.vsum .dot{text-align:center}.vsum .h{font-family:inherit;font-weight:700;color:var(--tan)}.vsum .h.r{text-align:right;padding-right:.2rem}.vsum .rule{grid-column:1/-1;border-top:1px solid currentColor;margin:.1rem 0}
 .gridwrap{overflow-x:auto;margin:.4rem 0}.gtbl{border-collapse:collapse;font-size:.9em;min-width:60%}.gtbl td{border:1px solid rgba(255,255,255,.28);padding:.3rem .55rem;text-align:left;vertical-align:top}.gtbl td.n{text-align:right;font-variant-numeric:tabular-nums}.gtbl tr:first-child td{font-weight:700;color:var(--tan)}
 .qpic img{max-width:100%;border-radius:10px;margin:6px 0;background:#fff}
+/* ===== v12: ಬ್ಲೂಪ್ರಿಂಟ್ (ಮಾದರಿ ಪತ್ರಿಕೆಯಂತೆ), ಮುದ್ರಣ ===== */
+.bpt td.l{text-align:left}.bpt small{font-weight:400}.bpg{font-size:.78rem;min-width:46rem}.bpg th,.bpg td{padding:.3rem .2rem}
+.paper .bpt td.l{text-align:left}
+.pq .qpic img{max-height:14rem}
+@media print{
+ html,body{background:#fff!important;color:#000!important;display:block}
+ .top,.hero,footer,.tabs,.pills,.fl,select,.note,.btn,.h2,.sub,.toast,.nopr,.dd,.ddz,.bpwrap{display:none!important}
+ main{padding:0;max-width:none}
+ .paper{box-shadow:none;border-radius:0;background:#fff;color:#000;padding:0;margin:0}
+ #abbody .card{background:#fff!important;box-shadow:none!important;border:1px solid #999!important;color:#000!important;backdrop-filter:none}
+ #abbody .card *{color:#000!important}
+ #abbody .ans{background:#f2f2f2!important;border-left-color:#555!important}
+}
 </style></head><body>
 <div class="top"><button class="ib" id="bk" onclick="goBack()" aria-label="ಹಿಂದೆ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button><div class="crumb" id="crumb"></div>
 <button class="ib" onclick="goHome()" aria-label="ಹೋಮ್"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg></button></div>
@@ -121,33 +134,22 @@ main{max-width:min(1100px,100%)}
 <main id="main"></main>
 <footer><b>ಶಿಕ್ಷಣ ಪರ್ವ</b> · ಶಿಕ್ಷಕರಿಗಾಗಿ ಕಲಿಕಾ ಸಂಪನ್ಮೂಲ ವೇದಿಕೆ</footer>
 <script>
-const M=(q,o,a,lv)=>({t:'mcq',q,o,a,lv:lv||'e'});
-const O=(q,a,lv)=>({t:'one',q,a,lv:lv||'e'});
-const G=(q,a,lv)=>({t:'lang',q,a,lv:lv||'m'});
-const S=(q,a,lv)=>({t:'short',q,a,lv:lv||'m'});
-const L=(q,a,lv)=>({t:'long',q,a,lv:lv||'h'});
-const TL={mcq:'ಬಹು ಆಯ್ಕೆ',one:'ಒಂದು ವಾಕ್ಯ',lang:'ಭಾಷಾ ಚಟುವಟಿಕೆ',short:'ಎರಡು–ಮೂರು ವಾಕ್ಯ',long:'ವಿವರಣಾತ್ಮಕ'};
-const MK={mcq:1,one:1,lang:1,short:2,long:3};
-const LVN={e:'ಸುಲಭ',m:'ಮಧ್ಯಮ',h:'ಕಠಿಣ'};
-const TL_EN={mcq:'MCQ',one:'One sentence',lang:'Language activity',short:'Two–three sentences',long:'Descriptive'};
-const LVN_EN={e:'Easy',m:'Medium',h:'Hard'};
-function TLx(){return ST.sub==='en'?TL_EN:TL}
-function LVx(){return ST.sub==='en'?LVN_EN:LVN}
-const EN_UI={'ಪಾಠ (Chapter)':'Chapter','ಎಲ್ಲಾ ಪಾಠಗಳು':'All chapters','ಪ್ರಶ್ನೆ ಪ್ರಕಾರ':'Question type','ಎಲ್ಲಾ ಪ್ರಕಾರ':'All types','ಎಲ್ಲಾ ಹಂತ':'All levels','ಸುಲಭ':'Easy','ಮಧ್ಯಮ':'Medium','ಕಠಿಣ':'Hard','ಅಂಕ':'mark','ಪ್ರಶ್ನೆಗಳು':'questions','ಉತ್ತರ:':'Answer:','ಉತ್ತರ ನೋಡಿ':'Show answer','ಮುಂದಿನದು →':'Next →'};
-function T(s){return (ST.sub==='en'&&EN_UI[s]!==undefined)?EN_UI[s]:s}
-const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+/* ===== ಶಿಕ್ಷಣ ಪರ್ವ · LBA ಪ್ರಶ್ನೆ ಬಂಡಾರ (v12) ===== */
+const MK={mcq:1,one:0.5,lang:1,short:2,long:3};
+const esc=s=>String(s).replace(/\s*\((?:ಶಿಕ್ಷಕರು )?ಪರಿಶೀಲಿಸಿ\)/g,'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 const $=id=>document.getElementById(id);
+const fmt=n=>(Math.round(n*100)/100).toString();
 const SUBJ_META=[{id:'kn',name:'ಕನ್ನಡ',en:'Kannada',ic:'ಕ'},{id:'ma',name:'ಗಣಿತ',en:'Mathematics',ic:'∑'},{id:'en',name:'English',en:'English',ic:'Aa'},{id:'evs',name:'ಪರಿಸರ ಅಧ್ಯಯನ',en:'Environmental Studies',ic:'ಪ'},{id:'hi',name:'ಹಿಂದಿ',en:'Hindi',ic:'ह'}];
 const DATA={};
-const AVAIL={'4-kn':1,'4-ma':1,'4-en':1,'4-evs':1};
-const FILE={kn:'kannada',ma:'maths',en:'english',evs:'evs'};
-const TITLE={kn:['ಕನ್ನಡ','ಭಾಗ–2 · 2026–27'],ma:['ಗಣಿತ','ಭಾಗ–2 · 2026–27'],en:['English','Part–2 · 2026–27'],evs:['ಪರಿಸರ ಅಧ್ಯಯನ','ಭಾಗ–2 · 2026–27']};
+const AVAIL={'4-kn':1,'4-en':1};
+const FILE={kn:'kannada',en:'english'};
+const TITLE={kn:['ಕನ್ನಡ','ಭಾಗ–2 · 2026–27'],en:['English','Part–2 · 2026–27']};
 async function ensureSubject(cls,id){
  const key=cls+'-'+id;
  if(DATA[key])return true;
  if(!AVAIL[key]||!FILE[id])return false;
  try{
-  const res=await fetch(`data/kn/class-${cls}/sem-2/${FILE[id]}.json`);
+  const res=await fetch(`data/kn/class-${cls}/sem-2/${FILE[id]}.json`,{cache:'no-store'});
   if(!res.ok)return false;
   const j=await res.json();
   DATA[key]={title:TITLE[id][0],part:TITLE[id][1],lessons:j.lessons};
@@ -157,45 +159,105 @@ async function ensureSubject(cls,id){
 const CLASSES=[1,2,3,4,5,6,7,8,9,10];
 const ORD=['1ನೇ','2ನೇ','3ನೇ','4ನೇ','5ನೇ','6ನೇ','7ನೇ','8ನೇ','9ನೇ','10ನೇ'],ENG=['1st','2nd','3rd','4th','5th','6th','7th','8th','9th','10th'];
 const hasClass=c=>Object.keys(AVAIL).some(k=>k.startsWith(c+'-'));
-const IC={book:'<svg viewBox="0 0 24 24" width="1.2em" height="1.2em" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5c3-1 6-1 8 1 2-2 5-2 8-1v13c-3-1-6-1-8 1-2-2-5-2-8-1z"/><path d="M12 6v13"/></svg>'};
+
+/* ===== ಭಾಷಾ ಲೇಬಲ್‌ಗಳು (ವಿಷಯದ ಭಾಷೆ) ===== */
+const L10N={
+kn:{tabs:[['ab','ಅಭ್ಯಾಸ ಉತ್ತರಗಳು'],['qb','LBA ಪ್ರಶ್ನೆ ಬಂಡಾರ'],['paper','ಪ್ರಶ್ನೆ ಪತ್ರಿಕೆಗಳು'],['quiz','ರಸಪ್ರಶ್ನೆ']],
+ chapter:'ಪಾಠ',allCh:'ಎಲ್ಲಾ ಪಾಠಗಳು',qtype:'ಪ್ರಶ್ನೆ ಪ್ರಕಾರ',allTypes:'ಎಲ್ಲಾ ಪ್ರಕಾರ',allLv:'ಎಲ್ಲಾ ಹಂತ',
+ types:{mcq:'ಬಹು ಆಯ್ಕೆ',one:'ಒಂದು ವಾಕ್ಯ / ಪದ',lang:'ಭಾಷಾ ಚಟುವಟಿಕೆ',short:'ಎರಡು–ಮೂರು ವಾಕ್ಯ',long:'ವಿವರಣಾತ್ಮಕ'},
+ lv:{e:'ಸುಲಭ',m:'ಮಧ್ಯಮ',h:'ಕಠಿಣ'},mark:'ಅಂಕ',marks:'ಅಂಕ',qs:'ಪ್ರಶ್ನೆಗಳು',ans:'ಉತ್ತರ:',showAns:'ಉತ್ತರ ನೋಡಿ',next:'ಮುಂದಿನದು →',
+ words:'ಪದಗಳ ಅರ್ಥ',notes:'ಟಿಪ್ಪಣಿ',noWords:'ಈ ಪಾಠಕ್ಕೆ ಪದಗಳ ಅರ್ಥ ಪಟ್ಟಿ ಇಲ್ಲ',noNotes:'ಈ ಪಾಠಕ್ಕೆ ಟಿಪ್ಪಣಿ ಇಲ್ಲ',author:'ಲೇಖಕರು/ಕವಿ',page:'ಪುಟ',
+ abNote:'⚠ "ಮಾದರಿ/ಸೂಚಿತ" ಎಂದಿರುವ ಉತ್ತರಗಳು ಸ್ವತಂತ್ರ ಉತ್ತರಗಳ ಉದಾಹರಣೆಗಳು.',lessonWord:'ಪಾಠ',edit:'✏ ಎಡಿಟ್ ಮಾಡಿ',editDone:'✔ ಎಡಿಟ್ ಮುಗಿಸಿ',print:'🖨 ಮುದ್ರಿಸಿ',
+ exam:{unit:'ಘಟಕ ಪರೀಕ್ಷೆ',fa3:'ರೂಪನಾತ್ಮಕ ಮೌಲ್ಯಮಾಪನ-3',fa4:'ರೂಪನಾತ್ಮಕ ಮೌಲ್ಯಮಾಪನ-4',sa2:'ಸಂಕಲನಾತ್ಮಕ ಮೌಲ್ಯಮಾಪನ-2'},
+ examTab:{unit:'ಘಟಕ ಪರೀಕ್ಷೆ',fa3:'FA 3',fa4:'FA 4',sa2:'SA 2'},
+ school:c=>c<=5?'ಸರ್ಕಾರಿ ಕಿರಿಯ ಪ್ರಾಥಮಿಕ ಶಾಲೆ':c<=7?'ಸರ್ಕಾರಿ ಹಿರಿಯ ಪ್ರಾಥಮಿಕ ಶಾಲೆ':'ಸರ್ಕಾರಿ ಪ್ರೌಢಶಾಲೆ',
+ cls:'ತರಗತಿ',subj:'ವಿಷಯ',time:'ಸಮಯ',maxm:'ಗರಿಷ್ಠ ಅಂಕ',stu:'ವಿದ್ಯಾರ್ಥಿಯ ಹೆಸರು',roll:'ಕ್ರಮ ಸಂಖ್ಯೆ',totalM:'ಒಟ್ಟು ಅಂಕ',
+ times:{unit:'45 ನಿಮಿಷ',fa3:'35 ನಿಮಿಷ',fa4:'35 ನಿಮಿಷ',sa2:'1 ಗಂಟೆ 30 ನಿಮಿಷ'},
+ ins:{mcq:'ಸರಿಯಾದ ಉತ್ತರವನ್ನು ಆರಿಸಿ ಬರೆಯಿರಿ.',half:'ಅರ್ಧ ಅಂಕ – ಒಂದು ಪದ ಅಥವಾ ಪದಗುಚ್ಛದಲ್ಲಿ ಉತ್ತರಿಸಿ.',lang:'ಭಾಷಾ ಚಟುವಟಿಕೆ – ಸೂಚನೆಯಂತೆ ಉತ್ತರಿಸಿ.',short:'ಎರಡು–ಮೂರು ವಾಕ್ಯಗಳಲ್ಲಿ ಉತ್ತರಿಸಿ.',long:'ವಿವರಣಾತ್ಮಕವಾಗಿ ಉತ್ತರಿಸಿ.'},
+ letters:['ಅ','ಆ','ಇ','ಈ','ಉ'],optL:['ಅ','ಆ','ಇ','ಈ'],
+ lessonSel:'ಪಾಠ ಆಯ್ಕೆ',groups:'ಪಾಠಗಳ ಗುಂಪು',single:'ಒಂದು ಪಾಠ',lessons:(a,b)=>`ಪಾಠ ${a}–${b}`,lessonOne:l=>`ಪಾಠ ${l.n}: ${l.t}`,allL:(a,b)=>`ಎಲ್ಲಾ ಪಾಠಗಳು (${a}–${b})`,
+ newP:'🔀 ಹೊಸ ಪ್ರಶ್ನೆಪತ್ರಿಕೆ',hideA:'ಉತ್ತರ ಮರೆಮಾಡಿ',showA:'ಉತ್ತರ ತೋರಿಸಿ',bp:'📊 ಬ್ಲೂಪ್ರಿಂಟ್',bpTitle:'ಬ್ಲೂಪ್ರಿಂಟ್ (ನೀಲನಕ್ಷೆ) – ಈ ಪ್ರಶ್ನೆ ಪತ್ರಿಕೆಯ ಅಂಕಗಳ ಹಂಚಿಕೆ',
+ noPaper:'ಈ ವಿಷಯಕ್ಕೆ LBA ಪ್ರಶ್ನೆ ಪತ್ರಿಕೆ ಇನ್ನೂ ಸಿದ್ಧಪಡಿಸಲಾಗಿಲ್ಲ.',noQ:'ಪ್ರಶ್ನೆಗಳಿಲ್ಲ',done:'ಮುಗಿಯಿತು!',doneTxt:(n,s)=>`ಒಟ್ಟು ${n} ಪ್ರಶ್ನೆಗಳು; ಬಹು ಆಯ್ಕೆ ಸರಿ ಉತ್ತರ: ${s}`,again:'ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ',
+ /* ಬ್ಲೂಪ್ರಿಂಟ್ */
+ obj:['ಜ್ಞಾನ','ಗ್ರಹಿಕೆ','ಅಭಿವ್ಯಕ್ತಿ','ಪ್ರಶಂಸೆ'],calc:'(ಲೆಕ್ಕದಲ್ಲಿ ಮಾತ್ರ)',
+ bt:{t1:'01. ಉದ್ದಿಷ್ಟವಾರು ಅಂಕಗಳ ಹಂಚಿಕೆ',t2:'02. ಘಟಕವಾರು ಅಂಕಗಳ ಹಂಚಿಕೆ',t3:'03. ಪ್ರಶ್ನೆಗಳ ಸ್ವರೂಪವನ್ನು ಆಧರಿಸಿ ಅಂಕಗಳ ಹಂಚಿಕೆ',t4:'04. ಕಠಿಣತೆಯ ಮಟ್ಟವನ್ನು ಆಧರಿಸಿ ಅಂಕಗಳ ಹಂಚಿಕೆ',t5:'ನೀಲನಕ್ಷೆ',t6:'ಪ್ರಶ್ನಾವಾರು ವಿಶ್ಲೇಷಣೆ',
+  objs:'ಉದ್ದಿಷ್ಟಗಳು',nq:'ಪ್ರಶ್ನೆಗಳ ಸಂಖ್ಯೆ',marks:'ಅಂಕಗಳು',pct:'ಶೇಕಡಾ',sl:'ಕ್ರ.ಸಂ',unitName:'ಘಟಕದ ಹೆಸರು',unitsName:'ಘಟಕಗಳ ಹೆಸರು',qform:'ಪ್ರಶ್ನೆಯ ಸ್ವರೂಪ',diff:'ಕಠಿಣತೆಯ ಮಟ್ಟ',total:'ಒಟ್ಟು',totQ:'ಒಟ್ಟು ಪ್ರಶ್ನೆಗಳು',totM:'ಒಟ್ಟು ಅಂಕಗಳು',
+  qtypes:['ವಸ್ತುನಿಷ್ಠ','ಕಿರುಉತ್ತರ','ವಿವರಣೆ'],short3:['ವ.ಉ','ಕಿ.ಉ','ವಿ.ಉ'],diffs:['ಸುಲಭ','ಸಾಧಾರಣ','ಕಠಿಣ'],
+  note:'ಸೂಚನೆ: ಪ್ರಶ್ನೆಗಳು(ಅಂಕಗಳು) · ವ.ಉ = ವಸ್ತುನಿಷ್ಠ ಉತ್ತರ, ಕಿ.ಉ = ಕಿರುಉತ್ತರ, ವಿ.ಉ = ವಿವರಣಾತ್ಮಕ ಉತ್ತರ',
+  qn:'ಪ್ರ.ಸಂ',unit:'ಘಟಕ',obj:'ಉದ್ದಿಷ್ಟ',spec:'ನಿರ್ದಿಷ್ಟ',mk:'ಅಂಕ',form:'ಪ್ರಶ್ನೆಯ ರೂಪ',diffc:'ಕ್ಲಿಷ್ಟತೆ',tm:'ಸಮಯ',
+  specs:{mcq:'ಆಯ್ಕೆ ಮಾಡುತ್ತಾನೆ',one:'ಸ್ಮರಿಸುತ್ತಾನೆ',lang:'ಭಾಷಾ ಕೌಶಲ ಬಳಸುತ್ತಾನೆ',short:'ಬರೆಯುತ್ತಾನೆ',long:'ಬರೆಯುತ್ತಾನೆ'},
+  forms:{mcq:'ವಸ್ತುನಿಷ್ಠ',one:'ವಸ್ತುನಿಷ್ಠ',lang:'ವಸ್ತುನಿಷ್ಠ',short:'ಕಿರುಉತ್ತರ',long:'ವಿವರಣೆ'}}},
+en:{tabs:[['ab','Practice Answers'],['qb','LBA Question Bank'],['paper','Question Papers'],['quiz','Quiz']],
+ chapter:'Chapter',allCh:'All chapters',qtype:'Question type',allTypes:'All types',allLv:'All levels',
+ types:{mcq:'MCQ',one:'One word / sentence',lang:'Language activity',short:'Two–three sentences',long:'Descriptive'},
+ lv:{e:'Easy',m:'Medium',h:'Hard'},mark:'mark',marks:'marks',qs:'questions',ans:'Answer:',showAns:'Show answer',next:'Next →',
+ words:'Word meanings (ಪದಗಳ ಅರ್ಥ)',notes:'Notes (ಟಿಪ್ಪಣಿ)',noWords:'No word list for this lesson',noNotes:'No notes for this lesson',author:'Author / Poet',page:'Page',
+ abNote:'⚠ Answers marked "model / suggested" are examples of independent answers.',lessonWord:'Lesson',edit:'✏ Edit',editDone:'✔ Finish editing',print:'🖨 Print',
+ exam:{unit:'Unit Test',fa3:'Formative Assessment-3',fa4:'Formative Assessment-4',sa2:'Summative Assessment-2'},
+ examTab:{unit:'Unit test',fa3:'FA 3',fa4:'FA 4',sa2:'SA 2'},
+ school:c=>c<=5?'Government Lower Primary School':c<=7?'Government Higher Primary School':'Government High School',
+ cls:'Class',subj:'Subject',time:'Time',maxm:'Max marks',stu:'Student name',roll:'Roll no.',totalM:'Total marks',
+ times:{unit:'45 min',fa3:'35 min',fa4:'35 min',sa2:'1 hr 30 min'},
+ ins:{mcq:'Choose the correct answer and write it.',half:'Half-mark questions – answer in one word or phrase.',lang:'Language activity – answer as instructed.',short:'Answer in two or three sentences.',long:'Answer descriptively.'},
+ letters:['A','B','C','D','E'],optL:['A','B','C','D'],
+ lessonSel:'Lesson selection',groups:'Lesson groups',single:'Single lesson',lessons:(a,b)=>`Lessons ${a}–${b}`,lessonOne:l=>`Lesson ${l.n}: ${l.t}`,allL:(a,b)=>`All lessons (${a}–${b})`,
+ newP:'🔀 New paper',hideA:'Hide answers',showA:'Show answers',bp:'📊 Blueprint',bpTitle:'Blueprint – marks distribution of this paper',
+ noPaper:'Question paper not ready for this subject yet.',noQ:'No questions',done:'Finished!',doneTxt:(n,s)=>`${n} questions in all; MCQ correct: ${s}`,again:'Try again',
+ obj:['Knowledge','Comprehension','Expression','Appreciation'],calc:'(calculation only)',
+ bt:{t1:'1. Weightage to objectives',t2:'2. Weightage to content',t3:'3. Weightage to type of questions',t4:'4. Weightage to difficulty',t5:'Blueprint',t6:'Question-wise analysis',
+  objs:'Objectives',nq:'Total questions',marks:'Total marks',pct:'Percentage',sl:'Sl.',unitName:'Contents',unitsName:'Contents',qform:'Type of questions',diff:'Difficulty level',total:'Total',totQ:'Total questions',totM:'Total marks',
+  qtypes:['V.S.A.','S.A.','L.A.'],short3:['V.S.A','S.A','L.A'],diffs:['Easy','Average','Difficult'],
+  note:'Note: Questions(Marks) · V.S.A = Very Short Answer, S.A = Short Answer, L.A = Long Answer',
+  qn:'Q.N',unit:'Unit',obj:'Objective',spec:'Specification',mk:'Marks',form:'Question type',diffc:'Difficulty',tm:'Time',
+  specs:{mcq:'Selects',one:'Recalls',lang:'Uses language skill',short:'Writes',long:'Writes'},
+  forms:{mcq:'V.S.A',one:'V.S.A',lang:'V.S.A',short:'S.A',long:'L.A'}}}
+};
+const OBJ_K=['a','g','b','p'];
+const TMIN={mcq:2,one:1,lang:2,short:5,long:7};
+function Lx(){return L10N[ST.sub==='en'?'en':'kn']}
+function T(k){return Lx()[k]}
 /* ===== ಸ್ಥಿತಿ ===== */
-let ST={view:'home',cls:null,sub:null,tab:'ab',hist:[],mode:'browse',ch:'all',type:'all',lv:'all',q:'',qi:0,qo:[],qs:0,qa:null,ptype:'unit',showAns:true,abl:9,bpl:'all',bpOpen:false,qzc:'all',qzt:'all',
- sel:{unit:'9',fa3:'9-12',fa4:'13-16',sa2:'9-17'},seed:{unit:1,fa3:1,fa4:1,sa2:1}};
+let ST={view:'home',cls:null,sub:null,tab:'ab',hist:[],ch:'all',type:'all',lv:'all',qi:0,qo:[],qs:0,qa:null,ptype:'unit',showAns:true,abl:9,bpOpen:false,qzc:'all',qzt:'all',
+ sel:{unit:'',fa3:'',fa4:'',sa2:''},seed:{unit:1,fa3:1,fa4:1,sa2:1},lastPicked:[]};
 function cur(){return DATA[ST.cls+'-'+ST.sub]}
 function lessons(){return cur().lessons}
-function allQ(){const a=[];lessons().forEach(l=>l.qb.forEach((q,i)=>a.push(Object.assign({id:l.n+'-'+i,ch:l.n,mk:MK[q.t]},q))));return a}
-function appSnapshot(){return {view:ST.view,cls:ST.cls,sub:ST.sub,tab:ST.tab,mode:ST.mode,hist:ST.hist.slice()}}
-function restoreAppState(s){if(!s)return;Object.assign(ST,{view:s.view,cls:s.cls,sub:s.sub,tab:s.tab,mode:s.mode||'browse',hist:Array.isArray(s.hist)?s.hist.slice():[]});scrollTo(0,0);render()}
+function allQ(){const a=[];lessons().forEach(l=>l.qb.forEach((q,i)=>a.push(Object.assign({id:l.n+'-'+i,ch:l.n},q,{mk:(q.mk!==undefined?q.mk:MK[q.t])}))));return a}
+function appSnapshot(){return {view:ST.view,cls:ST.cls,sub:ST.sub,tab:ST.tab,hist:ST.hist.slice()}}
+function restoreAppState(s){if(!s)return;Object.assign(ST,{view:s.view,cls:s.cls,sub:s.sub,tab:s.tab,hist:Array.isArray(s.hist)?s.hist.slice():[]});scrollTo(0,0);render()}
 function nav(v,o){ST.hist.push({view:ST.view,cls:ST.cls,sub:ST.sub,tab:ST.tab});Object.assign(ST,{view:v},o||{});history.pushState({shikshanaParva:true,state:appSnapshot()},'',location.href);scrollTo(0,0);render()}
 function goHome(){if(ST.hist.length){history.go(-ST.hist.length)}else{Object.assign(ST,{view:'home',cls:null,sub:null});scrollTo(0,0);render()}}
 function goBack(){if(ST.hist.length&&history.state&&history.state.shikshanaParva){history.back()}else if(ST.hist.length){const h=ST.hist.pop();if(h)Object.assign(ST,h);scrollTo(0,0);render()}else if(ST.view!=='home'){Object.assign(ST,{view:'home',cls:null,sub:null});scrollTo(0,0);render()}}
-/* ===== Back-button guard (PWA): Back never closes the app directly =====
-   History: [root guard] -> [app entries...]. Back from Home lands on the root guard,
-   which asks for a second Back within 2 seconds before actually exiting. */
 history.replaceState({shikshanaParva:'root'},'',location.href);
 history.pushState({shikshanaParva:true,state:appSnapshot()},'',location.href);
 let exitArmed=false,exitTimer=null;
 window.addEventListener('popstate',function(e){
  const s=e.state;
  if(s&&s.shikshanaParva===true&&s.state){restoreAppState(s.state);return}
- /* Reached the root guard entry */
- if(ST.view!=='home'||ST.hist.length){Object.assign(ST,{view:'home',cls:null,sub:null,mode:'browse',hist:[]});scrollTo(0,0);render();history.pushState({shikshanaParva:true,state:appSnapshot()},'',location.href);return}
+ if(ST.view!=='home'||ST.hist.length){Object.assign(ST,{view:'home',cls:null,sub:null,hist:[]});scrollTo(0,0);render();history.pushState({shikshanaParva:true,state:appSnapshot()},'',location.href);return}
  if(exitArmed){clearTimeout(exitTimer);exitArmed=false;history.back();return}
  exitArmed=true;toast('ಹೊರಹೋಗಲು ಮತ್ತೊಮ್ಮೆ ಹಿಂದೆ ಒತ್ತಿ');
  history.pushState({shikshanaParva:true,state:appSnapshot()},'',location.href);
  exitTimer=setTimeout(()=>{exitArmed=false},2200)});
 function toast(m){const t=document.createElement('div');t.className='toast';t.textContent=m;document.body.appendChild(t);setTimeout(()=>t.remove(),2200)}
 function openClass(c){hasClass(c)?nav('class',{cls:c}):toast(ORD[c-1]+' ತರಗತಿ – ಶೀಘ್ರದಲ್ಲೇ ಸೇರಿಸಲಾಗುವುದು')}
-async function openSub(id){const ok=await ensureSubject(ST.cls,id);if(!ok){toast('ಈ ವಿಷಯ ಶೀಘ್ರದಲ್ಲೇ ಸೇರಿಸಲಾಗುವುದು');return}nav('subject',{sub:id,tab:'ab',mode:'browse',ch:'all',type:'all',lv:'all',q:'',abl:DATA[ST.cls+'-'+id].lessons[0].n})}
-function setTab(t){ST.tab=t;ST.mode='browse';render()}
+async function openSub(id){const ok=await ensureSubject(ST.cls,id);if(!ok){toast('ಈ ವಿಷಯ ಶೀಘ್ರದಲ್ಲೇ ಸೇರಿಸಲಾಗುವುದು');return}
+ const D=DATA[ST.cls+'-'+id];nav('subject',{sub:id,tab:'ab',ch:'all',type:'all',lv:'all',qzc:'all',qzt:'all',qi:0,qs:0,qa:null,qo:[],ptype:'unit',bpOpen:false,sel:{unit:'',fa3:'',fa4:'',sa2:''},abl:D.lessons[0].n})}
+function setTab(t){ST.tab=t;render()}
 /* ===== ಮುಖಪುಟ ===== */
 function vHome(){return `<div class="fade fill"><div class="h2">ತರಗತಿ ಆರಿಸಿ</div><div class="sub">ನಿಮ್ಮ ತರಗತಿಯನ್ನು ಆಯ್ಕೆ ಮಾಡಿ ಕಲಿಕಾ ಸಂಪನ್ಮೂಲಗಳನ್ನು ತೆರೆಯಿರಿ</div><div class="hgrid">${CLASSES.map(c=>{const on=hasClass(c);return `<button class="tile glass neu ${on?'':'off'}" onclick="openClass(${c})"><div class="n">${c}</div><div class="l">${ORD[c-1]} ತರಗತಿ</div><div class="e">${ENG[c-1]} Standard</div><span class="badge ${on?'on':''}">${on?'ಲಭ್ಯ':'ಶೀಘ್ರದಲ್ಲೇ'}</span></button>`}).join('')}</div></div>`}
 function vClass(){return `<div class="fade fill"><div class="h2">${ORD[ST.cls-1]} ತರಗತಿ – ವಿಷಯಗಳು</div><div class="sub">ವಿಷಯವನ್ನು ಆಯ್ಕೆ ಮಾಡಿ</div><div class="sgrid">${SUBJ_META.filter(s=>!(s.id==='hi'&&(ST.cls===4||ST.cls===5))).map(s=>{const on=!!AVAIL[ST.cls+'-'+s.id];return `<button class="tile sj glass neu ${on?'':'off'}" onclick="openSub('${s.id}')"><span class="ic">${s.ic}</span><span><div class="l">${s.name}</div><div class="e">${s.en}</div><span class="badge ${on?'on':''}">${on?'ಲಭ್ಯ':'ಶೀಘ್ರದಲ್ಲೇ'}</span></span></button>`}).join('')}</div></div>`}
 /* ===== ವಿಷಯ ===== */
-function ui(){return ST.sub==='en'?{words:'Word meanings (ಪದಗಳ ಅರ್ಥ)',notes:'Notes (ಟಿಪ್ಪಣಿ)',ans:'Answer (ಉ):',note:'⚠ Answers marked "model/suggested" (ಮಾದರಿ/ಸೂಚಿತ) are examples of independent answers; ⚠ check marked items with the textbook (ಪಠ್ಯಪುಸ್ತಕ).'}:{words:'ಪದಗಳ ಅರ್ಥ',notes:'ಟಿಪ್ಪಣಿ',ans:'ಉ:',note:'⚠ "ಮಾದರಿ/ಸೂಚಿತ" ಎಂದಿರುವ ಉತ್ತರಗಳು ಸ್ವತಂತ್ರ ಉತ್ತರಗಳ ಉದಾಹರಣೆಗಳು; ⚠ ಗುರುತಿರುವುದನ್ನು ಪಠ್ಯಪುಸ್ತಕದೊಂದಿಗೆ ಪರಿಶೀಲಿಸಿ.'}}
-function vSubject(){const T=(ST.sub==='en')?[['ab','Practice Answers'],['qb','LBA Question Bank'],['paper','Question Papers'],['quiz','Quiz']]:[['ab','ಅಭ್ಯಾಸ ಉತ್ತರಗಳು'],['qb','LBA ಪ್ರಶ್ನೆ ಬಂಡಾರ'],['paper','ಪ್ರಶ್ನೆ ಪತ್ರಿಕೆಗಳು'],['quiz','ರಸಪ್ರಶ್ನೆ (Quiz)']];
- return `<div class="fade"><div class="h2">${ORD[ST.cls-1]} ತರಗತಿ · ${cur().title}</div><div class="sub">${cur().part}</div><div class="tabs">${T.map(t=>`<button class="tb ${ST.tab===t[0]?'on':''}" onclick="setTab('${t[0]}')">${t[1]}</button>`).join('')}</div>${ST.tab==='ab'?vAb():ST.tab==='qb'?vQb():ST.tab==='quiz'?vQuiz():vPaper()}</div>`}
-function lessonSel(id,val,fn){return sel('ab_'+id,lessons().map(l=>[String(l.n),`ಪಾಠ ${l.n}: ${l.t}`]),val,fn.replace('this.value','value'))}
+function vSubject(){const tabs=T('tabs');
+ return `<div class="fade"><div class="h2">${ORD[ST.cls-1]} ತರಗತಿ · ${cur().title}</div><div class="sub">${cur().part}</div><div class="tabs">${tabs.map(t=>`<button class="tb ${ST.tab===t[0]?'on':''}" onclick="setTab('${t[0]}')">${t[1]}</button>`).join('')}</div>${ST.tab==='ab'?vAb():ST.tab==='qb'?vQb():ST.tab==='quiz'?vQuiz():vPaper()}</div>`}
+/* ===== ಥೀಮ್ ಡ್ರಾಪ್‌ಡೌನ್ ===== */
+const DDC={};
+function sel(key,opts,val,code){DDC[key]=code;const hit=opts.find(o=>o[0]!==null&&o[0]==val)||opts.find(o=>o[0]!==null);
+ return `<div class="dd" id="dd-${key}"><button type="button" class="ddb" onclick="ddT('${key}',event)"><span>${esc(hit?hit[1]:'')}</span><span class="ddc">▾</span></button><div class="ddl" style="display:none">${opts.map(o=>o[0]===null?`<div class="ddh">${esc(o[1])}</div>`:`<button type="button" class="ddi ${hit&&o[0]==hit[0]?'on':''}" onclick="ddP('${key}','${esc(o[0])}')">${esc(o[1])}</button>`).join('')}</div></div>`}
+function ddT(k,e){if(e)e.stopPropagation();const d=document.getElementById('dd-'+k);const l=d.querySelector('.ddl');const open=l.style.display!=='none';document.querySelectorAll('.ddl').forEach(x=>x.style.display='none');document.querySelectorAll('.ddz').forEach(x=>x.style.zIndex='');l.style.display=open?'none':'block';if(!open){const c=d.closest('.card');if(c){c.classList.add('ddz');c.style.zIndex=200}}}
+function ddP(k,v){new Function('value',DDC[k])(v)}
+document.addEventListener('click',()=>document.querySelectorAll('.ddl').forEach(x=>x.style.display='none'));
+function lessonLabel(l){return T('lessonOne')(l)}
+/* ===== ಅಭ್ಯಾಸ ಉತ್ತರಗಳು ===== */
 function colHtml(txt,L1='ರೂ.',L2='ಪೈ'){const lines=txt.split('\n');let i=0;
  const cell=(c,cls)=>`<span class="${cls||''}">${c}</span>`;
  let rows=cell('')+cell(L1,'h r')+cell('')+cell(L2,'h');
@@ -206,158 +268,135 @@ function colHtml(txt,L1='ರೂ.',L2='ಪೈ'){const lines=txt.split('\n');let i
      else rows+=cell(esc(t),'rule')}
    i++}
  const rest=lines.slice(i).join('\n').trim();
- return `<div class="ans"><b>${ui().ans}</b><div class="vsum">${rows}</div>${esc(rest)}</div>`}
+ return `<div class="ans"><b>${T('ans')}</b><div class="vsum">${rows}</div>${esc(rest)}</div>`}
 function gridHtml(txt){const lines=txt.split('\n');let html='',rest=[],inG=true;
  lines.forEach(ln=>{if(inG&&ln.includes('|')){html+='<tr>'+ln.split('|').map(c=>{c=c.trim();const num=/^[\d.,₹\-]+$/.test(c)||/^\d/.test(c);return `<td class="${num?'n':''}">${esc(c)}</td>`}).join('')+'</tr>'}else{inG=false;rest.push(ln)}});
- return `<div class="ans"><b>${ui().ans}</b><div class="gridwrap"><table class="gtbl"><tbody>${html}</tbody></table></div>${esc(rest.join('\n').trim())}</div>`}
+ return `<div class="ans"><b>${T('ans')}</b><div class="gridwrap"><table class="gtbl"><tbody>${html}</tbody></table></div>${esc(rest.join('\n').trim())}</div>`}
 function ansHtml(a){a=String(a);
  if(a.startsWith('[COL]'))return colHtml(a.slice(5));
  if(a.startsWith('[COLM]'))return colHtml(a.slice(6),'ಮೀ','ಸೆಂ.ಮೀ');
  if(a.startsWith('[COLKG]'))return colHtml(a.slice(7),'kg','g');
  if(a.startsWith('[COLLM]'))return colHtml(a.slice(7),'ಲೀ','ಮಿಲೀ');
  if(a.startsWith('[GRID]'))return gridHtml(a.slice(6));
- if(a.startsWith('[TAB]')){let rows='',rest=[];a.slice(5).split('\n').forEach(ln=>{const i=ln.indexOf('|');if(i>0&&!rest.length){rows+=`<div class="trow"><span>${esc(ln.slice(0,i))}</span><span>${esc(ln.slice(i+1))}</span></div>`}else rest.push(ln)});return `<div class="ans"><b>${ui().ans}</b><div class="tbl">${rows}</div>${esc(rest.join('\n'))}</div>`}
- return `<div class="ans"><b>${ui().ans}</b> ${esc(a)}</div>`}
+ if(a.startsWith('[TAB]')){let rows='',rest=[];a.slice(5).split('\n').forEach(ln=>{const i=ln.indexOf('|');if(i>0&&!rest.length){rows+=`<div class="trow"><span>${esc(ln.slice(0,i))}</span><span>${esc(ln.slice(i+1))}</span></div>`}else rest.push(ln)});return `<div class="ans"><b>${T('ans')}</b><div class="tbl">${rows}</div>${esc(rest.join('\n'))}</div>`}
+ return `<div class="ans"><b>${T('ans')}</b> ${esc(a)}</div>`}
+function picHtml(p){return p?`<div class="qpic">${String(p).trim().startsWith('<svg')?p:`<img loading="lazy" src="${p}" alt="">`}</div>`:''}
 function vAb(){const L=lessons(),l=L.find(x=>x.n==ST.abl)||L[0];
- let h=`<div class="card glass neu ddz nopr"><label class="fl" style="margin-top:0">ಪಾಠ</label>${lessonSel('abs',l.n,'ST.abl=+this.value;render()')}</div>
+ let h=`<div class="card glass neu ddz nopr"><label class="fl" style="margin-top:0">${T('chapter')}</label>${sel('abs',L.map(x=>[String(x.n),lessonLabel(x)]),l.n,'ST.abl=+value;render()')}</div>
  <div id="abbody">
- <div class="card glass neu"><div class="abhead"><h3>ಪಾಠ ${l.n}: ${esc(l.t)}</h3><div class="abbtns nopr"><button class="btn" id="abedbtn" onclick="togAbEdit()">✏ ಎಡಿಟ್ ಮಾಡಿ</button><button class="btn" onclick="window.print()">🖨 ಮುದ್ರಿಸಿ</button></div></div><div class="chn">ಲೇಖಕರು/ಕವಿ: ${esc(l.au)} · ಪುಟ ${l.pg}</div><details><summary>${ui().words}</summary><p>${esc(l.words)||"ಈ ಪಾಠಕ್ಕೆ ಪದಗಳ ಅರ್ಥ ಪಟ್ಟಿ ಇಲ್ಲ"}</p></details><details><summary>${ui().notes}</summary><p>${esc(l.notes)||"ಈ ಪಾಠಕ್ಕೆ ಟಿಪ್ಪಣಿ ಇಲ್ಲ"}</p></details></div>
- <div class="note nopr">${ui().note}</div>`;
- l.ab.forEach(s=>{h+=`<div class="card glass neu"><h3>${esc(s[0])}</h3>`+s[1].map((p,i)=>`<div class="qa"><div class="qt">${i+1}. ${esc(p[0])}</div>${p[2]?`<div class="qpic">${String(p[2]).trim().startsWith("<svg")?p[2]:`<img loading="lazy" src="${p[2]}" alt="ಚಿತ್ರ">`}</div>`:""}${ansHtml(p[1])}</div>`).join('')+'</div>'});
+ <div class="card glass neu"><div class="abhead"><h3>${esc(lessonLabel(l))}</h3><div class="abbtns nopr"><button class="btn" id="abedbtn" onclick="togAbEdit()">${T('edit')}</button><button class="btn" onclick="window.print()">${T('print')}</button></div></div><div class="chn">${T('author')}: ${esc(l.au||'')} · ${T('page')} ${l.pg}</div><details><summary>${T('words')}</summary><p>${esc(l.words)||T('noWords')}</p></details><details><summary>${T('notes')}</summary><p>${esc(l.notes)||T('noNotes')}</p></details></div>
+ <div class="note nopr">${T('abNote')}</div>`;
+ l.ab.forEach(s=>{h+=`<div class="card glass neu"><h3>${esc(s[0])}</h3>`+s[1].map((p,i)=>`<div class="qa"><div class="qt">${i+1}. ${esc(p[0])}</div>${picHtml(p[2])}${ansHtml(p[1])}</div>`).join('')+'</div>'});
  return h+'</div>'}
-function togAbEdit(){const b=$('abbody'),btn=$('abedbtn');if(!b)return;const on=b.getAttribute('contenteditable')==='true';b.setAttribute('contenteditable',on?'false':'true');b.classList.toggle('editing',!on);if(btn)btn.textContent=on?'✏ ಎಡಿಟ್ ಮಾಡಿ':'✔ ಎಡಿಟ್ ಮುಗಿಸಿ'}
-function qHtml(q,a){let h=`<div class="qt">${esc(q.q)}</div>${q.img?`<div class="qpic"><img loading="lazy" src="${q.img}" alt=""></div>`:''}`;
- if(q.t==='mcq')h+=q.o.map((o,i)=>`<div class="opt ${a&&i===q.a?'ok':''}"><span class="ol">${'ABCD'[i]}</span>${esc(o)}</div>`).join('');else if(a)h+=`<div class="ans"><b>${T('ಉತ್ತರ:')}</b> ${esc(q.a)}</div>`;return h}
-function fq(){return allQ().filter(q=>(ST.ch==='all'||q.ch==ST.ch)&&(ST.type==='all'||q.t===ST.type)&&(ST.lv==='all'||q.lv===ST.lv))}
+function togAbEdit(){const b=$('abbody'),btn=$('abedbtn');if(!b)return;const on=b.getAttribute('contenteditable')==='true';b.setAttribute('contenteditable',on?'false':'true');b.classList.toggle('editing',!on);if(btn)btn.textContent=on?T('edit'):T('editDone')}
 /* ===== LBA ಪ್ರಶ್ನೆ ಬಂಡಾರ ===== */
-/* ===== ಥೀಮ್ ಡ್ರಾಪ್‌ಡೌನ್ (ಆ್ಯಪ್ ಥೀಮ್ ಬಣ್ಣದಲ್ಲಿ) ===== */
-const DDC={};
-function sel(key,opts,val,code){DDC[key]=code;const hit=opts.find(o=>o[0]!==null&&o[0]==val)||opts.find(o=>o[0]!==null);
- return `<div class="dd" id="dd-${key}"><button type="button" class="ddb" onclick="ddT('${key}',event)"><span>${esc(hit?hit[1]:'')}</span><span class="ddc">▾</span></button><div class="ddl" style="display:none">${opts.map(o=>o[0]===null?`<div class="ddh">${esc(o[1])}</div>`:`<button type="button" class="ddi ${hit&&o[0]==hit[0]?'on':''}" onclick="ddP('${key}','${esc(o[0])}')">${esc(o[1])}</button>`).join('')}</div></div>`}
-function ddT(k,e){if(e)e.stopPropagation();const d=document.getElementById('dd-'+k);const l=d.querySelector('.ddl');const open=l.style.display!=='none';document.querySelectorAll('.ddl').forEach(x=>x.style.display='none');document.querySelectorAll('.ddz').forEach(x=>x.style.zIndex='');l.style.display=open?'none':'block';if(!open){const c=d.closest('.card');if(c){c.classList.add('ddz');c.style.zIndex=200}}}
-function ddP(k,v){new Function('value',DDC[k])(v)}
-document.addEventListener('click',()=>document.querySelectorAll('.ddl').forEach(x=>x.style.display='none'));
+function markTxt(m){return `${fmt(m)} ${m===1?T('mark'):T('marks')}`}
+function qHtml(q,a){let h=`<div class="qt">${esc(q.q)}</div>${q.img?`<div class="qpic"><img loading="lazy" src="${q.img}" alt=""></div>`:''}`;
+ if(q.t==='mcq')h+=q.o.map((o,i)=>`<div class="opt ${a&&i===q.a?'ok':''}"><span class="ol">${'ABCD'[i]}</span>${esc(o)}</div>`).join('');else if(a)h+=`<div class="ans"><b>${T('ans')}</b> ${esc(q.a)}</div>`;return h}
+function fq(){return allQ().filter(q=>(ST.ch==='all'||q.ch==ST.ch)&&(ST.type==='all'||q.t===ST.type)&&(ST.lv==='all'||q.lv===ST.lv))}
 function vQb(){const list=fq();
- const lo=[['all',T('ಎಲ್ಲಾ ಪಾಠಗಳು')],...lessons().map(l=>[String(l.n),`${l.n}. ${l.t}`])];
- const to=[['all',T('ಎಲ್ಲಾ ಪ್ರಕಾರ')],...Object.keys(TLx()).map(k=>[k,TLx()[k]])];
- return `<div class="card glass neu ddz"><div class="row"><div><label class="fl">${T('ಪಾಠ (Chapter)')}</label>${sel('ch',lo,ST.ch,'ST.ch=value;render()')}</div>
- <div><label class="fl">${T('ಪ್ರಶ್ನೆ ಪ್ರಕಾರ')}</label>${sel('type',to,ST.type,'ST.type=value;render()')}</div></div>
- <div class="pills">${[['all','ಎಲ್ಲಾ ಹಂತ'],['e','ಸುಲಭ'],['m','ಮಧ್ಯಮ'],['h','ಕಠಿಣ']].map(p=>`<button class="pill ${ST.lv===p[0]?'on':''}" onclick="ST.lv='${p[0]}';render()">${T(p[1])}</button>`).join('')}</div></div>
- <div class="cnt">${list.length} ${T('ಪ್ರಶ್ನೆಗಳು')}</div><div class="qwrap">`+list.map(q=>`<div class="card glass neu"><div class="meta"><span class="tag">${TLx()[q.t]}</span><span>${q.mk} ${T('ಅಂಕ')}</span><span><i class="dot ${q.lv}"></i>${LVx()[q.lv]}</span></div>${ST.sub==='en'?'':'<div class="chn">'+esc(lessons().find(l=>l.n==q.ch).t)+'</div>'}${qHtml(q,true)}</div>`).join('')+'</div>'}
-
-/* ===== LBA ಬ್ಲೂಪ್ರಿಂಟ (ಪಾಠವಾರು) : BP[ಪಾಠ] = {o: ಉದ್ದಿಷ್ಟ [ಪ್ರಶ್ನೆಗಳು, ಅಂಕಗಳು]; d: ಕಠಿಣತೆ [ಪ್ರಶ್ನೆಗಳು, ಅಂಕಗಳು]} ===== */
-const OBJ={a:'ಅರಿವು',g:'ಗ್ರಹಿಕೆ',b:'ಅಭಿವ್ಯಕ್ತಿ',p:'ಪ್ರಶಂಸೆ'};
-const OBJ_OF={mcq:'a',one:'a',lang:'g',short:'g',long:'b'};
-const BP={
-9:{o:[[25,26],[25,41],[7,15],[2,8]],d:[[21,26],[32,42],[6,22]]},
-10:{o:[[11,11],[12,19],[4,10],[2,6]],d:[[19,20],[6,14],[4,12]]},
-11:{o:[[9,16],[21,41],[7,20],[1,4]],d:[[13,17],[17,40],[8,24]]},
-12:{o:[[12,16],[16,24],[10,16],[1,4]],d:[[19,19],[21,29],[4,12]]},
-13:{o:[[15,15],[15,20],[5,10],[1,3]],d:[[20,22],[12,14],[4,12]]},
-14:{o:[[22,28],[25,29],[3,12],[0,0]],d:[[18,18],[29,39],[3,12]]},
-15:{o:[[15,19],[13,26],[6,18],[1,3]],d:[[21,26],[8,22],[6,18]]},
-16:{o:[[14,17],[22,37],[6,14],[2,8]],d:[[15,18],[22,30],[7,28]]},
-17:{o:[[15,15],[27,32],[10,26],[2,6]],d:[[24,24],[23,34],[7,21]]}
-};
-function bpAgg(ls){const o=['ಅರಿವು','ಗ್ರಹಿಕೆ','ಅಭಿವ್ಯಕ್ತಿ','ಪ್ರಶಂಸೆ'].map(n=>[n,0,0]),d=['ಅತಿ ಸುಲಭ','ಸುಲಭ','ಕಠಿಣ'].map(n=>[n,0,0]);
- ls.forEach(n=>{const b=BP[n];if(!b)return;b.o.forEach((r,i)=>{o[i][1]+=r[0];o[i][2]+=r[1]});b.d.forEach((r,i)=>{d[i][1]+=r[0];d[i][2]+=r[1]})});
- const sum=(a,k)=>a.reduce((s,r)=>s+r[k],0);
- return {o,d,oq:sum(o,1),om:sum(o,2),dq:sum(d,1),dm:sum(d,2)}}
-function bpTbl(rows,label,tq,tm){const T=tm||1;
- return `<div class="tw"><table class="bpt"><thead><tr><th>ಕ್ರ.ಸಂ</th><th>${label}</th><th>ಪ್ರಶ್ನೆಗಳ ಸಂಖ್ಯೆ</th><th>ಅಂಕಗಳು</th><th>ಶೇಕಡಾ</th></tr></thead><tbody>${rows.map((r,i)=>`<tr><td>${i+1}.</td><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td><td>${Math.round(r[2]*100/T)}%</td></tr>`).join('')}<tr class="tot"><td colspan="2">ಒಟ್ಟು</td><td>${tq}</td><td>${tm}</td><td>100%</td></tr></tbody></table></div>`}
-function vBp(){const all=ST.bpl==='all';const ls=all?lessons().map(l=>l.n):[+ST.bpl];const A=bpAgg(ls);
- const title=all?'ಎಲ್ಲಾ ಪಾಠಗಳು':`ಪಾಠ ${ST.bpl}: ${lessons().find(l=>l.n==+ST.bpl).t}`;
- const lo=[['all',T('ಎಲ್ಲಾ ಪಾಠಗಳು')],...lessons().map(l=>[String(l.n),`ಪಾಠ ${l.n}: ${l.t}`])];
- return `<div class="card glass neu ddz"><label class="fl" style="margin-top:0">ಪಾಠ ಆಯ್ಕೆ</label>${sel('bpl',lo,ST.bpl,'ST.bpl=value;render()')}</div>
- <div class="card glass neu"><h3>${esc(title)} – ಬ್ಲೂಪ್ರಿಂಟ</h3><div class="bph">ಹಂತ: 1 ಉದ್ದಿಷ್ಟ ವಾರು ಅಂಕಗಳ ಹಂಚಿಕೆ:</div>${bpTbl(A.o,'ಉದ್ದಿಷ್ಟಗಳು',A.oq,A.om)}<div class="bph">ಹಂತ: 2 ಕಠಿಣತೆ ಮಟ್ಟ ಆಧಾರಿತ ಅಂಕಗಳ ಹಂಚಿಕೆ:</div>${bpTbl(A.d,'ಪ್ರಶ್ನೆಯ ವಿಧ',A.dq,A.dm)}</div>`}
-
+ const lo=[['all',T('allCh')],...lessons().filter(l=>l.qb.length).map(l=>[String(l.n),lessonLabel(l)])];
+ const to=[['all',T('allTypes')],...Object.keys(T('types')).map(k=>[k,T('types')[k]])];
+ return `<div class="card glass neu ddz"><div class="row"><div><label class="fl">${T('chapter')}</label>${sel('ch',lo,ST.ch,'ST.ch=value;render()')}</div>
+ <div><label class="fl">${T('qtype')}</label>${sel('type',to,ST.type,'ST.type=value;render()')}</div></div>
+ <div class="pills">${[['all',T('allLv')],['e',T('lv').e],['m',T('lv').m],['h',T('lv').h]].map(p=>`<button class="pill ${ST.lv===p[0]?'on':''}" onclick="ST.lv='${p[0]}';render()">${p[1]}</button>`).join('')}</div></div>
+ <div class="cnt">${list.length} ${T('qs')}</div><div class="qwrap">`+list.map(q=>`<div class="card glass neu"><div class="meta"><span class="tag">${T('types')[q.t]}</span><span>${markTxt(q.mk)}</span><span><i class="dot ${q.lv}"></i>${T('lv')[q.lv]}</span></div>${qHtml(q,true)}</div>`).join('')+'</div>'}
 /* ===== ಪ್ರಶ್ನೆ ಪತ್ರಿಕೆಗಳು ===== */
+const PT={unit:{max:20},fa3:{max:15},fa4:{max:15},sa2:{max:40}};
+const QUOTA_KN={unit:{mcq:6,half:10,lang:2,short:2,long:1},fa3:{mcq:4,half:8,lang:2,short:1,long:1},fa4:{mcq:4,half:8,lang:2,short:1,long:1},sa2:{mcq:10,half:16,lang:4,short:6,long:2}};
+const QUOTA_EN={unit:{mcq:8,half:14,short:1,long:1},fa3:{mcq:5,half:10,short:1,long:1},fa4:{mcq:5,half:10,short:1,long:1},sa2:{mcq:12,half:20,short:6,long:2}};
 function rng(s){return function(){s|=0;s=s+0x6D2B79F5|0;let t=Math.imul(s^s>>>15,1|s);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
 function shuffle(a,r){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(r()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
-const PT={unit:{n:'ಘಟಕ ಪರೀಕ್ಷೆ',max:20,c:{mcq:5,one:4,lang:4,short:2,long:1},time:'45 ನಿಮಿಷ'},fa3:{n:'FA 3',max:15,c:{mcq:4,one:3,lang:3,short:1,long:1},time:'35 ನಿಮಿಷ'},fa4:{n:'FA 4',max:15,c:{mcq:4,one:3,lang:3,short:1,long:1},time:'35 ನಿಮಿಷ'},sa2:{n:'SA 2',max:40,c:{mcq:8,one:9,lang:6,short:4,long:3},time:'1 ಗಂಟೆ 45 ನಿಮಿಷ'}};
-function selOpts(p){if(ST.sub!=='en')return selOptsOld(p);const L=lessons().filter(l=>l.qb&&l.qb.length),nums=L.map(l=>l.n);const LB=(a,b)=>`Lessons ${a}–${b}`,LL=l=>`Lesson ${l.n}: ${l.t}`,ALL=`All lessons (${nums[0]}–${nums[nums.length-1]})`;const h=Math.ceil(nums.length/2),f=nums.slice(0,h),s=nums.slice(h),rr=x=>x.length?`${x[0]}-${x[x.length-1]}`:'';if(p==='unit')return {g:[],s:L.map(l=>[String(l.n),LL(l)])};const all=`${nums[0]}-${nums[nums.length-1]}`;const g=p==='sa2'?[[all,ALL],[rr(f),LB(f[0],f[f.length-1])],[rr(s),LB(s[0],s[s.length-1])]]:[[rr(f),LB(f[0],f[f.length-1])],[rr(s),LB(s[0],s[s.length-1])],[all,ALL]];return {g,s:p==='sa2'?[]:L.map(l=>[String(l.n),LL(l)])}}
-function enDefault(p){const L=lessons().filter(l=>l.qb&&l.qb.length),nums=L.map(l=>l.n),h=Math.ceil(nums.length/2),f=nums.slice(0,h),s=nums.slice(h);if(p==='unit')return String(nums[0]);if(p==='fa3')return `${f[0]}-${f[f.length-1]}`;if(p==='fa4')return `${s[0]}-${s[s.length-1]}`;return `${nums[0]}-${nums[nums.length-1]}`}
-function selOptsOld(p){const L=lessons(),a=L[0].n,z=L[L.length-1].n,m=Math.floor((a+z)/2);
- if(p==='unit')return {g:[],s:L.map(l=>[String(l.n),`ಪಾಠ ${l.n}: ${l.t}`])};
- const g=p==='sa2'?[[`${a}-${z}`,`ಎಲ್ಲಾ ಪಾಠಗಳು (${a}–${z})`],[`${a}-${m}`,`ಪಾಠ ${a}–${m}`],[`${m+1}-${z}`,`ಪಾಠ ${m+1}–${z}`]]:[[`${a}-${a+3}`,`ಪಾಠ ${a}–${a+3}`],[`${a+4}-${a+7}`,`ಪಾಠ ${a+4}–${a+7}`],[`${a}-${z}`,`ಎಲ್ಲಾ ಪಾಠಗಳು (${a}–${z})`]];
- return {g,s:p==='sa2'?[]:L.map(l=>[String(l.n),`ಪಾಠ ${l.n}: ${l.t}`])}}
-function parseSel(v){const p=String(v).split('-').map(Number);const a=p[0],b=p[1]||p[0];return lessons().map(l=>l.n).filter(n=>n>=a&&n<=b)}
-function bpPaperHtml(qs){const tq=qs.length,tm=qs.reduce((s,q)=>s+q.mk,0);
- const o=['ಅರಿವು','ಗ್ರಹಿಕೆ','ಅಭಿವ್ಯಕ್ತಿ','ಪ್ರಶಂಸೆ'].map(k=>{const f=qs.filter(q=>(q.ob?OBJ[q.ob]:OBJ[OBJ_OF[q.t]])===k);return [k,f.length,f.reduce((s,q)=>s+q.mk,0)]});
-  {const zero=o.filter(r=>r[1]===0);if(zero.length){zero.forEach(r=>{const big=o.reduce((a,b)=>b[2]>a[2]?b:a);big[2]-=1;r[2]=1;r[0]=r[0]+' (ಲೆಕ್ಕದಲ್ಲಿ ಮಾತ್ರ)'})}}
- const d=[['ಅತಿ ಸುಲಭ','e'],['ಸುಲಭ','m'],['ಕಠಿಣ','h']].map(([k,c])=>{const f=qs.filter(q=>q.lv===c);return [k,f.length,f.reduce((s,q)=>s+q.mk,0)]});
- return `<div class="bph">ಹಂತ: 1 ಉದ್ದಿಷ್ಟ ವಾರು ಅಂಕಗಳ ಹಂಚಿಕೆ:</div>${bpTbl(o,'ಉದ್ದಿಷ್ಟಗಳು',tq,tm)}<div class="bph">ಹಂತ: 2 ಕಠಿಣತೆ ಮಟ್ಟ ಆಧಾರಿತ ಅಂಕಗಳ ಹಂಚಿಕೆ:</div>${bpTbl(d,'ಪ್ರಶ್ನೆಯ ವಿಧ',tq,tm)}`}
-const PT_KN={unit:{max:20,c:{mcq:6,half:10,lang:2,short:2,long:1}},fa3:{max:15,c:{mcq:4,half:8,lang:2,short:1,long:1}},fa4:{max:15,c:{mcq:4,half:8,lang:2,short:1,long:1}},sa2:{max:40,c:{mcq:10,half:16,lang:4,short:6,long:2}}};
-const PT_EN={unit:{max:20,c:{mcq:8,half:14,short:1,long:1}},fa3:{max:15,c:{mcq:5,half:10,short:1,long:1}},fa4:{max:15,c:{mcq:5,half:10,short:1,long:1}},sa2:{max:40,c:{mcq:12,half:20,short:6,long:2}}};
-for(const k of Object.keys(PT_KN))PT_KN[k]=Object.assign({},PT[k],PT_KN[k]);
-for(const k of Object.keys(PT_EN))PT_EN[k]=Object.assign({},PT[k],PT_EN[k]);
-function EXN(P,cfg){return {unit:cfg.n,fa3:'ರೂಪನಾತ್ಮಕ ಮೌಲ್ಯಮಾಪನ-3',fa4:'ರೂಪನಾತ್ಮಕ ಮೌಲ್ಯಮಾಪನ-4',sa2:'ಸಂಕಲನಾತ್ಮಕ ಮೌಲ್ಯಮಾಪನ-2'}[P]||cfg.n}
-function buildPaper(){const P=ST.ptype,EN=ST.sub==='en',cfg=EN?PT_EN[P]:PT_KN[P],ls=parseSel(ST.sel[P]);const pool=allQ().filter(q=>ls.includes(q.ch));const r=rng(ST.seed[P]*7919+ls.length*31+P.length);
- const types=['mcq','one','half','lang','short','long'];const MKt=t=>t==='half'?0.5:MK[t];
- const secsKn=[['mcq','ಅ','ಸರಿಯಾದ ಉತ್ತರವನ್ನು ಆರಿಸಿ ಬರೆಯಿರಿ.'],['one','ಆ','ಒಂದು ವಾಕ್ಯದಲ್ಲಿ ಉತ್ತರಿಸಿ.'],['lang','ಇ','ಭಾಷಾ ಚಟುವಟಿಕೆ – ಸೂಚನೆಯಂತೆ ಉತ್ತರಿಸಿ.'],['short','ಈ','ಎರಡು–ಮೂರು ವಾಕ್ಯಗಳಲ್ಲಿ ಉತ್ತರಿಸಿ.'],['long','ಉ','ವಿವರಣಾತ್ಮಕವಾಗಿ ಉತ್ತರಿಸಿ.']];
-  const secsEn=[['mcq','ಅ','Choose the correct answer and write it.'],['half','ಆ','Half-mark questions – answer in one word or phrase.'],['short','ಈ','Answer in two or three sentences.'],['long','ಉ','Answer descriptively.']];
-  const secs=[['mcq','ಅ','ಸರಿಯಾದ ಉತ್ತರವನ್ನು ಆರಿಸಿ ಬರೆಯಿರಿ.'],['half','ಆ','ಅರ್ಧ ಅಂಕ – ಒಂದು ಪದ ಅಥವಾ ಪದಗುಚ್ಛದಲ್ಲಿ ಉತ್ತರಿಸಿ.'],['lang','ಇ','ಭಾಷಾ ಚಟುವಟಿಕೆ – ಸೂಚನೆಯಂತೆ ಉತ್ತರಿಸಿ.'],['short','ಈ','ಎರಡು–ಮೂರು ವಾಕ್ಯಗಳಲ್ಲಿ ಉತ್ತರಿಸಿ.'],['long','ಉ','ವಿವರಣಾತ್ಮಕವಾಗಿ ಉತ್ತರಿಸಿ.']];
- let mcqPool=pool.filter(q=>q.t==='mcq');
- // ಬಹು ಆಯ್ಕೆ ಲಭ್ಯವಿಲ್ಲದಿದ್ದರೆ: ಮೊದಲು ಅಭ್ಯಾಸ ಉತ್ತರಗಳು (ab) ದತ್ತಾಂಶ; ಸಾಕಾಗದಿದ್ದರೆ ಒಂದು ವಾಕ್ಯ ಪ್ರಶ್ನೆಗಳಿಂದ
- let oneLeft=pool.filter(q=>q.t==='one');
- const bad=/ಮಕ್ಕಳ|ಪರಿಶೀಲಿಸಿ|ಅಂಕ|ಕೀಲಿ|ಸಾರಾಂಶ|ಮಾದರಿ|ಸೂಚಿತ|⚠|[;\(\)]/;
- const mkMcq=(list,prefix)=>{const ansAll=list.map(p=>p.a);return list.map((p,i)=>{const others=[...new Set(ansAll.filter(a=>a!==p.a))];if(others.length<3)return null;
-   const d=shuffle(others,r).slice(0,3);const opts=shuffle([p.a,...d],r);return {id:prefix+i,oid:p.oid,ch:p.ch,t:'mcq',q:p.q,o:opts,a:opts.indexOf(p.a),lv:p.lv,mk:1}}).filter(Boolean)};
- if(false){
-  const abPairs=[];lessons().filter(l=>ls.includes(l.n)).forEach(l=>(l.ab||[]).forEach(g=>g[1].forEach((p,i)=>{if(typeof p[1]==='string'&&p[1].length<=30&&!bad.test(p[1]))abPairs.push({ch:l.n,q:p[0],a:p[1],lv:'m',oid:null})})));
-  mcqPool=mkMcq(abPairs,'ab-');
-  if(mcqPool.length<cfg.c.mcq){
-   const cand=oneLeft.filter(q=>String(q.a).length<=30&&!bad.test(q.a)).map(q=>({ch:q.ch,q:q.q,a:q.a,lv:q.lv,oid:q.id}));
-   const synth=mkMcq(cand,'syn-');
-   const takenOne=new Set(synth.map(x=>x.oid));
-   oneLeft=oneLeft.filter(q=>!takenOne.has(q.id));
-   mcqPool=mcqPool.concat(synth);
-  }
- }
- const bytype={half:shuffle(pool.filter(q=>q.mk===0.5),r),mcq:shuffle(mcqPool,r),one:shuffle(oneLeft.filter(q=>q.mk!==0.5),r),lang:shuffle(pool.filter(q=>q.t==='lang'),r),short:shuffle(pool.filter(q=>q.t==='short'),r),long:shuffle(pool.filter(q=>q.t==='long'),r)};
- Object.keys(bytype).forEach(k=>{bytype[k]=[...bytype[k].filter(q=>q.img),...bytype[k].filter(q=>!q.img)]});
-  const pick={},used=new Set();
- types.forEach(t=>{pick[t]=bytype[t].slice(0,cfg.c[t]||0);pick[t].forEach(q=>used.add(q.id))});
+function lessonNums(){return lessons().filter(l=>l.qb&&l.qb.length).map(l=>l.n)}
+function halves(){const nums=lessonNums(),h=Math.ceil(nums.length/2);return {all:nums,f:nums.slice(0,h),s:nums.slice(h)}}
+const rr=x=>x.length?`${x[0]}-${x[x.length-1]}`:'';
+function selOpts(p){const H=halves(),L=lessons().filter(l=>H.all.includes(l.n));
+ if(p==='unit')return {g:[],s:L.map(l=>[String(l.n),lessonLabel(l)])};
+ const lb=x=>T('lessons')(x[0],x[x.length-1]);
+ if(p==='fa3')return {g:[[rr(H.f),lb(H.f)]],s:[]};
+ if(p==='fa4')return {g:[[rr(H.s),lb(H.s)]],s:[]};
+ return {g:[[rr(H.all),T('allL')(H.all[0],H.all[H.all.length-1])],[rr(H.f),lb(H.f)],[rr(H.s),lb(H.s)]],s:[]}}
+function ensureSel(p){const o=selOpts(p),ok=[...o.g.map(x=>x[0]),...o.s.map(x=>x[0])];if(!ok.includes(ST.sel[p]))ST.sel[p]=(o.g[0]||o.s[0])[0]}
+function parseSel(v){const p=String(v).split('-').map(Number);const a=p[0],b=p[1]||p[0];return lessonNums().filter(n=>n>=a&&n<=b)}
+function objOf(q){if(q.ob){const i=OBJ_K.indexOf(q.ob);if(i>=0)return i}return (q.t==='mcq'||q.t==='one')?0:(q.t==='long'?2:1)}
+function buildPaper(){const P=ST.ptype,EN=ST.sub==='en',max=PT[P].max,quota=(EN?QUOTA_EN:QUOTA_KN)[P],ls=parseSel(ST.sel[P]);
+ const pool=allQ().filter(q=>ls.includes(q.ch));
+ const r=rng(ST.seed[P]*7919+ls.length*31+P.length);
+ const types=['mcq','half','lang','short','long'];
+ const MKt=t=>t==='half'?0.5:MK[t];
+ const by={mcq:pool.filter(q=>q.t==='mcq'),half:pool.filter(q=>q.mk===0.5&&q.t!=='mcq'),lang:pool.filter(q=>q.t==='lang'),short:pool.filter(q=>q.t==='short'),long:pool.filter(q=>q.t==='long')};
+ /* ಚಿತ್ರ ಪ್ರಶ್ನೆಗಳು ಮೊದಲು (ಗರಿಷ್ಠ 3) */
+ Object.keys(by).forEach(k=>{const s=shuffle(by[k],r);by[k]=[...s.filter(q=>q.img),...s.filter(q=>!q.img)]});
+ const pick={mcq:[],half:[],lang:[],short:[],long:[]},used=new Set();let imgN=0;
+ const take=(t,n)=>{for(const q of by[t]){if(pick[t].length>=n)break;if(used.has(q.id))continue;if(q.img&&imgN>=3)continue;pick[t].push(q);used.add(q.id);if(q.img)imgN++}};
+ types.forEach(t=>take(t,quota[t]||0));
  const sumMk=()=>types.reduce((s,t)=>s+pick[t].reduce((a,q)=>a+q.mk,0),0);
- const OB=q=>q.ob?OBJ[q.ob]:OBJ[OBJ_OF[q.t]];
-  for(const ob of [OBJ.b,OBJ.p]){if(Object.values(pick).flat().some(q=>OB(q)===ob))continue;const cand=Object.values(bytype).flat().find(q=>!used.has(q.id)&&OB(q)===ob&&(q.t==='mcq'||q.t==='short'||q.t==='long'));if(!cand)continue;const tgt=['mcq','short','long'].find(x=>pick[x]&&pick[x].length&&MKt(x)===cand.mk);if(!tgt)continue;const old=pick[tgt].pop();used.delete(old.id);pick[tgt].push(cand);used.add(cand.id)}
-  let tot=sumMk(),k=0,guard=0;
- // ಒಟ್ಟು ಅಂಕ ಗುರಿ ತಲುಪುವವರೆಗೆ ಅದೇ ಪಾಠದ ಇತರ ವಿಧಗಳಿಂದ ಪ್ರಶ್ನೆ ಹೆಚ್ಚಿಸಿ
- while(tot<cfg.max&&guard++<1000){const d=cfg.max-tot;let added=false;
-  for(let i=0;i<types.length&&!added;i++){const t=types[(k+i)%types.length];if(MKt(t)>d)continue;const nx=bytype[t].find(q=>!used.has(q.id));if(nx){pick[t].push(nx);used.add(nx.id);tot+=MKt(t);added=true}}
+ let tot=sumMk(),k=0,guard=0;
+ while(tot<max&&guard++<2000){const d=max-tot;let added=false;
+  for(let i=0;i<types.length&&!added;i++){const t=types[(k+i)%types.length];if(MKt(t)>d)continue;const nx=by[t].find(q=>!used.has(q.id)&&!(q.img&&imgN>=3));if(nx){pick[t].push(nx);used.add(nx.id);if(nx.img)imgN++;tot+=MKt(t);added=true}}
   k++;if(!added)break}
- const all=[];let n=1,body='',imgN=0;
- secs.forEach(([t,lbl,ins])=>{const qs=pick[t];if(!qs.length)return;const m=MKt(t);all.push(...qs);
-  body+=`<div class="sec"><b>${lbl}. ${ins}</b> <span class="mk">(${qs.length} × ${m} = ${qs.length*m})</span>`;
-  qs.forEach(q=>{body+=`<div class="pq"><div>${n++}. ${esc(q.q)}</div>${(q.img&&imgN<3&&++imgN)?`<div class="qpic"><img loading="lazy" src="${q.img}" alt=""></div>`:''}`;if(q.t==='mcq')body+='<div class="po">'+q.o.map((o,i)=>`(${'ಅಆಇಈ'[i]}) ${esc(o)}`).join(' &nbsp; ')+'</div>';
-   if(ST.showAns)body+=`<div class="ans"><b>${ui().ans}</b> ${q.t==='mcq'?'('+'ಅಆಇಈ'[q.a]+') '+esc(q.o[q.a]):esc(q.a)}</div>`;body+='</div>'});body+='</div>'});
+ const secs=types.filter(t=>pick[t].length);
+ const all=[];let n=1,body='';
+ secs.forEach((t,si)=>{const qs=pick[t],m=MKt(t);all.push(...qs);
+  body+=`<div class="sec"><b>${T('letters')[si]}. ${T('ins')[t]}</b> <span class="mk">(${qs.length} × ${fmt(m)} = ${fmt(qs.length*m)})</span>`;
+  qs.forEach(q=>{body+=`<div class="pq"><div>${n++}. ${esc(q.q)}</div>${q.img?`<div class="qpic"><img loading="lazy" src="${q.img}" alt=""></div>`:''}`;
+   if(q.t==='mcq')body+='<div class="po">'+q.o.map((o,i)=>`(${T('optL')[i]}) ${esc(o)}`).join(' &nbsp; ')+'</div>';
+   if(ST.showAns)body+=`<div class="ans"><b>${T('ans')}</b> ${q.t==='mcq'?'('+T('optL')[q.a]+') '+esc(q.o[q.a]):esc(q.a)}</div>`;body+='</div>'});body+='</div>'});
  const tm=all.reduce((s,q)=>s+q.mk,0);
- ST.lastPicked=all;
- return `<div class="paper fade" id="pp"><div class="ph"><div class="sch">${schoolKn()} ………………………………………………</div><b style="font-size:1.25em">${EXN(P,cfg)}</b><br>ತರಗತಿ: ${ORD[ST.cls-1]} | ವಿಷಯ: ${cur().title} ${cur().part}<br>ಸಮಯ: ${cfg.time} | ಗರಿಷ್ಠ ಅಂಕ: ${cfg.max}<br>ವಿದ್ಯಾರ್ಥಿಯ ಹೆಸರು: ______________________ ಕ್ರಮ ಸಂಖ್ಯೆ: ____</div>${body}<div class="ph" style="border:0;border-top:2px solid #232a45;padding-top:.6rem">ಒಟ್ಟು ಅಂಕ: ${tm}</div></div>`}
-function togEdit(b){const p=$('pp');if(!p)return;const on=p.getAttribute('contenteditable')==='true';p.setAttribute('contenteditable',on?'false':'true');p.classList.toggle('editing',!on);b.textContent=on?'✏ ಎಡಿಟ್ ಮಾಡಿ':'✔ ಎಡಿಟ್ ಮುಗಿಸಿ'}
-const EN_PAPER=[["ರೂಪನಾತ್ಮಕ ಮೌಲ್ಯಮಾಪನ-3", "Formative Assessment-3"], ["ರೂಪನಾತ್ಮಕ ಮೌಲ್ಯಮಾಪನ-4", "Formative Assessment-4"], ["ಸಂಕಲನಾತ್ಮಕ ಮೌಲ್ಯಮಾಪನ-2", "Summative Assessment-2"], ["ರೂಪನಾತ್ಮಕ ಮೌಲ್ಯಮಾಪನ", "Formative Assessment"], ["ಸಂಕಲನಾತ್ಮಕ ಮೌಲ್ಯಮಾಪನ", "Summative Assessment"], ["(ಲೆಕ್ಕದಲ್ಲಿ ಮಾತ್ರ)", "(calculation only)"], ["ಅರ್ಧ ಅಂಕ – ಒಂದು ಪದ ಅಥವಾ ಪದಗುಚ್ಛದಲ್ಲಿ ಉತ್ತರಿಸಿ.", "Half-mark questions – answer in one word or phrase."], ["ಸರ್ಕಾರಿ ಕಿರಿಯ ಪ್ರಾಥಮಿಕ ಶಾಲೆ", "Government Lower Primary School"], ["ಸರ್ಕಾರಿ ಹಿರಿಯ ಪ್ರಾಥಮಿಕ ಶಾಲೆ", "Government Higher Primary School"], ["ಸರ್ಕಾರಿ ಪ್ರೌಢಶಾಲೆ", "Government High School"], ["(ಶಿಕ್ಷಕರು ಪರಿಶೀಲಿಸಿ)", "(Teacher to check)"], ["Answer (ಉ):", "Answer:"], ["ಈ ವಿಷಯಕ್ಕೆ LBA ಪ್ರಶ್ನೆ ಪತ್ರಿಕೆ ಇನ್ನೂ ಸಿದ್ಧಪಡಿಸಲಾಗಿಲ್ಲ.", "Question paper not ready for this subject yet."], ["ಬ್ಲೂಪ್ರಿಂಟ – ಈ ಪ್ರಶ್ನೆ ಪತ್ರಿಕೆಯ ಅಂಕಗಳ ಹಂಚಿಕೆ", "Blueprint – marks distribution of this paper"], ["ಹಂತ: 2 ಕಠಿಣತೆ ಮಟ್ಟ ಆಧಾರಿತ ಅಂಕಗಳ ಹಂಚಿಕೆ:", "Step 2: marks by difficulty:"], ["ಭಾಷಾ ಚಟುವಟಿಕೆ – ಸೂಚನೆಯಂತೆ ಉತ್ತರಿಸಿ.", "Language activity – answer as instructed."], ["ಹಂತ: 1 ಉದ್ದಿಷ್ಟ ವಾರು ಅಂಕಗಳ ಹಂಚಿಕೆ:", "Step 1: marks by objective:"], ["ಸರಿಯಾದ ಉತ್ತರವನ್ನು ಆರಿಸಿ ಬರೆಯಿರಿ.", "Choose the correct answer and write it."], ["ಎರಡು–ಮೂರು ವಾಕ್ಯಗಳಲ್ಲಿ ಉತ್ತರಿಸಿ.", "Answer in two or three sentences."], ["ಸರ್ಕಾರಿ ಹಿರಿಯ/ಕಿರಿಯ/ ಪ್ರೌಢಶಾಲೆ", "Government School"], ["ಒಂದು ವಾಕ್ಯದಲ್ಲಿ ಉತ್ತರಿಸಿ.", "Answer in one sentence."], ["ವಿವರಣಾತ್ಮಕವಾಗಿ ಉತ್ತರಿಸಿ.", "Answer descriptively."], ["ವಿದ್ಯಾರ್ಥಿಯ ಹೆಸರು:", "Student name:"], ["ಹೊಸ ಪ್ರಶ್ನೆಪತ್ರಿಕೆ", "New paper"], ["ಪ್ರಶ್ನೆಗಳ ಸಂಖ್ಯೆ", "Questions"], ["ಉತ್ತರ ಮರೆಮಾಡಿ", "Hide answers"], ["ಕ್ರಮ ಸಂಖ್ಯೆ:", "Roll no.:"], ["ಉತ್ತರ ತೋರಿಸಿ", "Show answers"], ["ಎಡಿಟ್ ಮುಗಿಸಿ", "Finish editing"], ["ಪ್ರಶ್ನೆಯ ವಿಧ", "Question type"], ["ಘಟಕ ಪರೀಕ್ಷೆ", "Unit Test"], ["ಗರಿಷ್ಠ ಅಂಕ:", "Max marks:"], ["ಪಾಠಗಳ ಗುಂಪು", "Lesson groups"], ["ಉದ್ದಿಷ್ಟಗಳು", "Objectives"], ["ಒಟ್ಟು ಅಂಕ:", "Total marks:"], ["ಬ್ಲೂಪ್ರಿಂಟ", "Blueprint"], ["ಎಡಿಟ್ ಮಾಡಿ", "Edit"], ["ಅಭಿವ್ಯಕ್ತಿ", "Expression"], ["ಮೌಲ್ಯಮಾಪನ", "Assessment"], ["ಪಾಠ ಆಯ್ಕೆ", "Lesson selection"], ["ಒಂದು ಪಾಠ", "Single lesson"], ["ಮುದ್ರಿಸಿ", "Print"], ["ಅತಿ ಸುಲಭ", "Very easy"], ["ಗ್ರಹಿಕೆ", "Understanding"], ["ಪ್ರಶಂಸೆ", "Appreciation"], ["ತರಗತಿ:", "Class:"], ["ಕ್ರ.ಸಂ", "Sl."], ["ಅಂಕಗಳು", "Marks"], ["ವಿಷಯ:", "Subject:"], ["ನಿಮಿಷ", "min"], ["ಅರಿವು", "Awareness"], ["ಶೇಕಡಾ", "%"], ["ಸಮಯ:", "Time:"], ["ಗಂಟೆ", "hr"], ["ಸುಲಭ", "Easy"], ["ಕಠಿಣ", "Hard"], ["(ಅ)", "(A)"], ["(ಆ)", "(B)"], ["(ಇ)", "(C)"], ["(ಈ)", "(D)"], ["ಅ.", "A."], ["ಆ.", "B."], ["ಇ.", "C."], ["ಈ.", "D."], ["ಉ.", "E."]];
-function enP(h){for(const [a,b] of EN_PAPER)h=h.split(a).join(b);return h}
-function vPaper(){const P=ST.ptype,o=selOpts(P),ok=[...o.g.map(x=>x[0]),...o.s.map(x=>x[0])];if(!ok.includes(ST.sel[P])){ST.sel[P]=ST.sub==='en'?enDefault(P):(o.g[0]||o.s[0])[0]}const h=vPaperKn();return ST.sub==='en'?enP(h):h}
-function schoolKn(){const c=ST.cls;return c<=5?'ಸರ್ಕಾರಿ ಕಿರಿಯ ಪ್ರಾಥಮಿಕ ಶಾಲೆ':c<=7?'ಸರ್ಕಾರಿ ಹಿರಿಯ ಪ್ರಾಥಮಿಕ ಶಾಲೆ':'ಸರ್ಕಾರಿ ಪ್ರೌಢಶಾಲೆ'}
-function vPaperKn(){if(!allQ().length)return '<div class="card glass neu">ಈ ವಿಷಯಕ್ಕೆ LBA ಪ್ರಶ್ನೆ ಪತ್ರಿಕೆ ಇನ್ನೂ ಸಿದ್ಧಪಡಿಸಲಾಗಿಲ್ಲ.</div>';const P=ST.ptype,cfg=PT[P];const o=selOpts(P);if(ST.sub==='en'){const ok=[...o.g.map(x=>x[0]),...o.s.map(x=>x[0])];if(!ok.includes(ST.sel[P]))ST.sel[P]=enDefault(P)}const v=ST.sel[P];const paperHtml=buildPaper();const bpSec=ST.bpOpen?'<div class="card glass neu nopr"><h3>ಬ್ಲೂಪ್ರಿಂಟ – ಈ ಪ್ರಶ್ನೆ ಪತ್ರಿಕೆಯ ಅಂಕಗಳ ಹಂಚಿಕೆ</h3>'+bpPaperHtml(ST.lastPicked||[])+'</div>':'';
- const tabs=[['unit','ಘಟಕ ಪರೀಕ್ಷೆ'],['fa3','FA 3'],['fa4','FA 4'],['sa2','SA 2']].map(([k,l])=>`<button class="tb sm ${P===k?'on':''}" onclick="ST.ptype='${k}';render()">${l} (${PT[k].max})</button>`).join('');
- const po=[];if(o.g.length){po.push([null,'ಪಾಠಗಳ ಗುಂಪು']);o.g.forEach(x=>po.push(x))}if(o.s.length){po.push([null,'ಒಂದು ಪಾಠ']);o.s.forEach(x=>po.push(x))}
+ ST.lastPicked=all;ST.lastLs=ls;
+ return `<div class="paper fade" id="pp"><div class="ph"><div class="sch">${T('school')(ST.cls)} ${EN?'':'………………………………………………'}</div><b style="font-size:1.25em">${T('exam')[P]}</b><br>${T('cls')}: ${EN?ENG[ST.cls-1]:ORD[ST.cls-1]} | ${T('subj')}: ${cur().title} ${cur().part}<br>${T('time')}: ${T('times')[P]} | ${T('maxm')}: ${max}<br>${T('stu')}: ______________________ ${T('roll')}: ____</div>${body}<div class="ph" style="border:0;border-top:2px solid #232a45;padding-top:.6rem">${T('totalM')}: ${fmt(tm)}</div></div>`}
+function togEdit(b){const p=$('pp');if(!p)return;const on=p.getAttribute('contenteditable')==='true';p.setAttribute('contenteditable',on?'false':'true');p.classList.toggle('editing',!on);b.textContent=on?T('edit'):T('editDone')}
+/* ===== ಬ್ಲೂಪ್ರಿಂಟ್ (ಮಾದರಿ ಪ್ರಶ್ನೆ ಪತ್ರಿಕೆಯಂತೆ) ===== */
+function formIdx(q){return q.t==='short'?1:q.t==='long'?2:0}
+function lessonShort(l){return ST.sub==='en'?l.t.replace(/\s*\(.*$/,''):l.t}
+function bpPaperHtml(qs,ls){const B=T('bt'),max=PT[ST.ptype].max;const tq=qs.length,tm=qs.reduce((s,q)=>s+q.mk,0);const pc=m=>fmt(Math.round(m*1000/max)/10)+'%';
+ /* 1. ಉದ್ದಿಷ್ಟವಾರು */
+ const o=T('obj').map((n,i)=>{const f=qs.filter(q=>objOf(q)===i);return {n,q:f.length,m:f.reduce((s,q)=>s+q.mk,0),calc:false}});
+ o.filter(x=>x.q===0).forEach(x=>{const big=o.reduce((a,b)=>b.m>a.m?b:a);big.m-=1;x.m=1;x.calc=true});
+ const t1=`<div class="tw"><table class="bpt"><thead><tr><th>${B.objs}</th>${o.map(x=>`<th>${x.n}${x.calc?'<br><small>'+T('calc')+'</small>':''}</th>`).join('')}<th>${B.total}</th></tr></thead><tbody><tr><td>${B.nq}</td>${o.map(x=>`<td>${x.q}</td>`).join('')}<td>${tq}</td></tr><tr class="tot"><td>${B.marks}</td>${o.map(x=>`<td>${fmt(x.m)}</td>`).join('')}<td>${fmt(max)}</td></tr><tr><td>${B.pct}</td>${o.map(x=>`<td>${pc(x.m)}</td>`).join('')}<td>100%</td></tr></tbody></table></div>`;
+ /* 2. ಘಟಕವಾರು */
+ const LS=lessons().filter(l=>ls.includes(l.n));
+ const lrow=LS.map(l=>{const f=qs.filter(q=>q.ch===l.n);return {n:lessonShort(l),q:f.length,m:f.reduce((s,q)=>s+q.mk,0)}});
+ const tbl=(rows,head)=>`<div class="tw"><table class="bpt"><thead><tr><th>${B.sl}</th><th>${head}</th><th>${B.nq}</th><th>${B.marks}</th><th>${B.pct}</th></tr></thead><tbody>${rows.map((r,i)=>`<tr><td>${i+1}</td><td class="l">${esc(r.n)}</td><td>${r.q}</td><td>${fmt(r.m)}</td><td>${pc(r.m)}</td></tr>`).join('')}<tr class="tot"><td colspan="2">${B.total}</td><td>${tq}</td><td>${fmt(tm)}</td><td>100%</td></tr></tbody></table></div>`;
+ /* 3. ಸ್ವರೂಪ  4. ಕಠಿಣತೆ */
+ const frow=B.qtypes.map((n,i)=>{const f=qs.filter(q=>formIdx(q)===i);return {n,q:f.length,m:f.reduce((s,q)=>s+q.mk,0)}});
+ const drow=B.diffs.map((n,i)=>{const c='emh'[i];const f=qs.filter(q=>q.lv===c);return {n,q:f.length,m:f.reduce((s,q)=>s+q.mk,0)}});
+ /* 5. ನೀಲನಕ್ಷೆ ಗ್ರಿಡ್ */
+ const cell=(f)=>f.length?`${f.length}(${fmt(f.reduce((s,q)=>s+q.mk,0))})`:'';
+ let g=`<div class="tw"><table class="bpt bpg"><thead><tr><th rowspan="2">${B.sl}</th><th rowspan="2">${B.unitsName}</th>${T('obj').map(n=>`<th colspan="3">${n}</th>`).join('')}<th colspan="2">${B.total}</th></tr><tr>${[0,1,2,3].map(()=>B.short3.map(s=>`<th>${s}</th>`).join('')).join('')}<th>${ST.sub==='en'?'Qns':'ಪ್ರಶ್ನೆ'}</th><th>${ST.sub==='en'?'Marks':'ಅಂಕ'}</th></tr></thead><tbody>`;
+ const colQ=Array(12).fill(0),colM=Array(12).fill(0);
+ LS.forEach((l,i)=>{const f=qs.filter(q=>q.ch===l.n);g+=`<tr><td>${i+1}</td><td class="l">${esc(lessonShort(l))}</td>`;
+  for(let ob=0;ob<4;ob++)for(let fm=0;fm<3;fm++){const c=f.filter(q=>objOf(q)===ob&&formIdx(q)===fm);g+=`<td>${cell(c)}</td>`;colQ[ob*3+fm]+=c.length;colM[ob*3+fm]+=c.reduce((s,q)=>s+q.mk,0)}
+  g+=`<td><b>${f.length}</b></td><td><b>${fmt(f.reduce((s,q)=>s+q.mk,0))}</b></td></tr>`});
+ g+=`<tr class="tot"><td colspan="2">${B.totQ}</td>${colQ.map(x=>`<td>${x||''}</td>`).join('')}<td>${tq}</td><td></td></tr><tr class="tot"><td colspan="2">${B.totM}</td>${colM.map(x=>`<td>${x?fmt(x):''}</td>`).join('')}<td></td><td>${fmt(tm)}</td></tr></tbody></table></div><div class="chn">${B.note}</div>`;
+ /* 6. ಪ್ರಶ್ನಾವಾರು ವಿಶ್ಲೇಷಣೆ */
+ const lname=n=>{const l=lessons().find(x=>x.n===n);return l?lessonShort(l):''};
+ let a=`<div class="tw"><table class="bpt"><thead><tr><th>${B.qn}</th><th>${B.unit}</th><th>${B.obj}</th><th>${B.spec}</th><th>${B.mk}</th><th>${B.form}</th><th>${B.diffc}</th><th>${B.tm}</th></tr></thead><tbody>`;
+ let tt=0;qs.forEach((q,i)=>{const tmv=TMIN[q.t];tt+=tmv;a+=`<tr><td>${i+1}</td><td class="l">${esc(lname(q.ch))}</td><td>${T('obj')[objOf(q)]}</td><td>${B.specs[q.t]}</td><td>${fmt(q.mk)}</td><td>${B.forms[q.t]}</td><td>${B.diffs['emh'.indexOf(q.lv)]}</td><td>${tmv}</td></tr>`});
+ a+=`<tr class="tot"><td colspan="4">${B.total}</td><td>${fmt(tm)}</td><td></td><td></td><td>${tt}</td></tr></tbody></table></div>`;
+ return `<div class="bph">${B.t1}</div>${t1}<div class="bph">${B.t2}</div>${tbl(lrow,B.unitName)}<div class="bph">${B.t3}</div>${tbl(frow,B.qform)}<div class="bph">${B.t4}</div>${tbl(drow,B.diff)}<div class="bph">${B.t5}</div>${g}<div class="bph">${B.t6}</div>${a}`}
+function vPaper(){if(!allQ().length)return `<div class="card glass neu">${T('noPaper')}</div>`;
+ const P=ST.ptype;ensureSel(P);const o=selOpts(P),v=ST.sel[P];
+ const paperHtml=buildPaper();
+ const bpSec=ST.bpOpen?`<div class="card glass neu nopr bpwrap"><h3>${T('bpTitle')}</h3>${bpPaperHtml(ST.lastPicked,ST.lastLs)}</div>`:'';
+ const tabs=['unit','fa3','fa4','sa2'].map(k=>`<button class="tb sm ${P===k?'on':''}" onclick="ST.ptype='${k}';render()">${T('examTab')[k]} (${PT[k].max})</button>`).join('');
+ const po=[];if(o.g.length){po.push([null,T('groups')]);o.g.forEach(x=>po.push(x))}if(o.s.length){po.push([null,T('single')]);o.s.forEach(x=>po.push(x))}
  return `<div class="tabs nopr">${tabs}</div>
- <div class="card glass neu nopr ddz"><label class="fl" style="margin-top:0">ಪಾಠ ಆಯ್ಕೆ</label>${sel('psel',po,v,'ST.sel[ST.ptype]=value;render()')}
- <div class="pills"><button class="btn" onclick="ST.seed[ST.ptype]++;render()">🔀 ಹೊಸ ಪ್ರಶ್ನೆಪತ್ರಿಕೆ</button><button class="btn" onclick="ST.showAns=!ST.showAns;render()">${ST.showAns?'ಉತ್ತರ ಮರೆಮಾಡಿ':'ಉತ್ತರ ತೋರಿಸಿ'}</button><button class="btn" onclick="togEdit(this)">✏ ಎಡಿಟ್ ಮಾಡಿ</button><button class="btn" onclick="window.print()">🖨 ಮುದ್ರಿಸಿ</button><button class="btn ${ST.bpOpen?'on':''}" onclick="ST.bpOpen=!ST.bpOpen;render()">📊 ಬ್ಲೂಪ್ರಿಂಟ ${ST.bpOpen?'▴':'▾'}</button></div></div>${bpSec}${paperHtml}`}
-/* ===== ರಸಪ್ರಶ್ನೆ (ಎಲ್ಲಾ ಪ್ರಶ್ನೆ ವಿಧಗಳು) ===== */
+ <div class="card glass neu nopr ddz"><label class="fl" style="margin-top:0">${T('lessonSel')}</label>${sel('psel',po,v,'ST.sel[ST.ptype]=value;render()')}
+ <div class="pills"><button class="btn" onclick="ST.seed[ST.ptype]++;render()">${T('newP')}</button><button class="btn" onclick="ST.showAns=!ST.showAns;render()">${ST.showAns?T('hideA'):T('showA')}</button><button class="btn" onclick="togEdit(this)">${T('edit')}</button><button class="btn" onclick="window.print()">${T('print')}</button><button class="btn ${ST.bpOpen?'on':''}" onclick="ST.bpOpen=!ST.bpOpen;render()">${T('bp')} ${ST.bpOpen?'▴':'▾'}</button></div></div>${paperHtml}${bpSec}`}
+/* ===== ರಸಪ್ರಶ್ನೆ ===== */
 function vQuiz(){const list=allQ().filter(q=>(ST.qzc==='all'||q.ch==ST.qzc)&&(ST.qzt==='all'||q.t===ST.qzt));
- const lo=[['all',T('ಎಲ್ಲಾ ಪಾಠಗಳು')],...lessons().map(l=>[String(l.n),`${l.n}. ${l.t}`])];
- const to=[['all',T('ಎಲ್ಲಾ ಪ್ರಕಾರ')],...Object.keys(TLx()).map(k=>[k,TLx()[k]])];
- return `<div class="card glass neu nopr ddz"><div class="row"><div><label class="fl" style="margin-top:0">ಪಾಠ</label>${sel('qzc',lo,ST.qzc,'ST.qzc=value;startQuiz()')}</div><div><label class="fl" style="margin-top:0">ಪ್ರಶ್ನೆ ಪ್ರಕಾರ</label>${sel('qzt',to,ST.qzt,'ST.qzt=value;startQuiz()')}</div></div></div>`+quizHtml(list)}
+ const lo=[['all',T('allCh')],...lessons().filter(l=>l.qb.length).map(l=>[String(l.n),lessonLabel(l)])];
+ const to=[['all',T('allTypes')],...Object.keys(T('types')).map(k=>[k,T('types')[k]])];
+ return `<div class="card glass neu nopr ddz"><div class="row"><div><label class="fl" style="margin-top:0">${T('chapter')}</label>${sel('qzc',lo,ST.qzc,'ST.qzc=value;startQuiz()')}</div><div><label class="fl" style="margin-top:0">${T('qtype')}</label>${sel('qzt',to,ST.qzt,'ST.qzt=value;startQuiz()')}</div></div></div>`+quizHtml(list)}
 function startQuiz(){ST.qi=0;ST.qs=0;ST.qa=null;ST.qo=[];render()}
-function quizHtml(list){if(!list.length)return '<div class="card glass neu">ಪ್ರಶ್ನೆಗಳಿಲ್ಲ</div>';
+function quizHtml(list){if(!list.length)return `<div class="card glass neu">${T('noQ')}</div>`;
  if(!ST.qo.length)ST.qo=shuffle(list.map(q=>q.id),rng(Date.now()%99999));const id=ST.qo[ST.qi];
- if(!id)return `<div class="card glass neu"><h3>ಮುಗಿಯಿತು!</h3><p>ಒಟ್ಟು ${ST.qo.length} ಪ್ರಶ್ನೆಗಳು; ಬಹು ಆಯ್ಕೆ ಸರಿ ಉತ್ತರ: ${ST.qs}</p><button class="btn" onclick="startQuiz()">ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ</button></div>`;
- const q=allQ().find(x=>x.id===id);let h=`<div class="card glass neu"><div class="meta"><span class="tag">${TLx()[q.t]}</span><span>${q.mk} ${T('ಅಂಕ')}</span><span>${ST.qi+1}/${ST.qo.length}</span></div><div class="qt">${esc(q.q)}</div>`;
+ if(!id)return `<div class="card glass neu"><h3>${T('done')}</h3><p>${T('doneTxt')(ST.qo.length,ST.qs)}</p><button class="btn" onclick="startQuiz()">${T('again')}</button></div>`;
+ const q=allQ().find(x=>x.id===id);let h=`<div class="card glass neu"><div class="meta"><span class="tag">${T('types')[q.t]}</span><span>${markTxt(q.mk)}</span><span>${ST.qi+1}/${ST.qo.length}</span></div><div class="qt">${esc(q.q)}</div>${q.img?`<div class="qpic"><img loading="lazy" src="${q.img}" alt=""></div>`:''}`;
  if(q.t==='mcq')h+=q.o.map((o,i)=>{let c='';if(ST.qa!==null){if(i===q.a)c='ok';else if(i===ST.qa)c='bad'}return `<div class="opt ${c}" onclick="ansQ(${i},${q.a})" style="cursor:pointer"><span class="ol">${'ABCD'[i]}</span>${esc(o)}</div>`}).join('');
- else h+=ST.qa!==null?`<div class="ans"><b>${T('ಉತ್ತರ:')}</b> ${esc(q.a)}</div>`:`<button class="btn" onclick="ST.qa=0;render()">${T('ಉತ್ತರ ನೋಡಿ')}</button>`;
- if(ST.qa!==null)h+=`<button class="btn" onclick="ST.qi++;ST.qa=null;render()">ಮುಂದಿನದು →</button>`;return h+'</div>'}
+ else h+=ST.qa!==null?`<div class="ans"><b>${T('ans')}</b> ${esc(q.a)}</div>`:`<button class="btn" onclick="ST.qa=0;render()">${T('showAns')}</button>`;
+ if(ST.qa!==null)h+=`<button class="btn" onclick="ST.qi++;ST.qa=null;render()">${T('next')}</button>`;return h+'</div>'}
 function ansQ(i,a){if(ST.qa!==null)return;ST.qa=i;if(i===a)ST.qs++;render()}
 /* ===== ರೆಂಡರ್ ===== */
 function render(){
@@ -366,6 +405,6 @@ function render(){
  $('bk').disabled=ST.view==='home';
  let c='<b>ಮುಖಪುಟ</b>';if(ST.cls)c+=` › ${ORD[ST.cls-1]} ತರಗತಿ`;if(ST.sub&&ST.view==='subject'&&cur())c+=` › <b>${cur().title}</b>`;$('crumb').innerHTML=c;
  $('main').innerHTML=ST.view==='home'?vHome():ST.view==='class'?vClass():vSubject();}
-if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js');
+if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{});
 render();
 </script></body></html>
