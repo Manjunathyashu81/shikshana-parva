@@ -413,6 +413,77 @@ body.vsub .qwrap .card{background:linear-gradient(145deg,rgba(255,255,255,.07),r
 body.vsub .qwrap .opt{background:linear-gradient(180deg,rgba(0,0,0,.2),rgba(0,0,0,.08)),rgba(14,13,9,.5);border:1px solid rgba(255,225,185,.12);box-shadow:0 3px 8px rgba(0,0,0,.3),inset 2px 2px 6px rgba(0,0,0,.4),inset -1px -1px 4px rgba(255,236,200,.05)}
 body.vsub .qwrap .opt.ok{background:linear-gradient(165deg,rgba(255,255,255,.12),rgba(255,255,255,0) 45%),linear-gradient(135deg,rgba(62,128,70,.94),rgba(22,66,36,.97));border:1.5px solid rgba(138,214,128,.9);box-shadow:0 0 16px rgba(96,200,104,.4),0 4px 10px rgba(0,0,0,.35),inset 0 0 12px rgba(150,230,130,.2),inset 0 1px 0 rgba(255,255,255,.25)}
 body.vsub .qwrap .opt.ok .ol{background:#f2d49b;color:#23311f;box-shadow:0 0 8px rgba(242,212,155,.5)}
+
+/* ===== v21: ಪ್ರಶ್ನೆ ಪತ್ರಿಕೆಗಳು patch — scoped to body.vsub; screen look is @media screen only, print is separate ===== */
+
+/* 1. MAIN 4 TABS — compact (equal width/height, one row; active glow untouched) */
+body.vsub .tabs.t4{grid-auto-rows:min(15cqw,62px)}
+body.vsub .tabs.t4 .tb{gap:.9cqw;padding:0 1cqw}
+body.vsub .tabs.t4 .tb::before{width:min(5cqw,21px);height:min(5cqw,21px)}
+
+/* 2. ACTION BUTTONS — exactly 3 + 3 horizontal pills */
+body.vsub .pills.acts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:48px;gap:8px;margin:14px 0 0}
+body.vsub .acts .btn{display:flex;align-items:center;justify-content:center;gap:5px;width:100%;height:48px;min-height:48px;margin:0;padding:0 8px;border-radius:999px;
+ font-size:clamp(11px,3.2vw,13.5px);font-weight:700;line-height:1.2;text-align:center;text-wrap:balance;overflow:hidden;white-space:normal;
+ background:linear-gradient(180deg,#3f7a4c,#1f4a2c);color:#f6e7c4;border:1px solid rgba(242,212,155,.8);box-shadow:0 3px 8px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.2)}
+body.vsub .acts .btn::before{content:"";flex:none;width:15px;height:15px;background:currentColor;-webkit-mask:var(--i) center/contain no-repeat;mask:var(--i) center/contain no-repeat}
+body.vsub .acts .btn:active{box-shadow:inset 0 2px 6px rgba(0,0,0,.45)}
+body.vsub .acts .btn.on{color:#fff8e4;background:linear-gradient(165deg,rgba(104,168,72,.96),rgba(30,82,42,.97));border-color:rgba(218,228,120,.95);box-shadow:0 0 12px rgba(150,222,84,.4),0 3px 8px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.3)}
+body.vsub .acts .btn[data-ic=new]{--i:url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2024%2024%22%20fill=%22none%22%20stroke=%22black%22%20stroke-width=%221.9%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22%3E%3Cpath%20d=%22M16%203h5v5M4%2020L21%203M21%2016v5h-5M15%2015l6%206M4%204l5%205%22/%3E%3C/svg%3E")}
+body.vsub .acts .btn[data-ic=hide]{--i:url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2024%2024%22%20fill=%22none%22%20stroke=%22black%22%20stroke-width=%221.9%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22%3E%3Cpath%20d=%22M3%203l18%2018M10.6%2010.6a2%202%200%20002.8%202.8M9.9%205.1A10.4%2010.4%200%200112%205c6%200%209.5%207%209.5%207a17%2017%200%2001-3.2%204M6.1%206.1A17%2017%200%20002.5%2012s3.5%207%209.5%207a9.7%209.7%200%20004-.9%22/%3E%3C/svg%3E")}
+body.vsub .acts .btn[data-ic=bp]{--i:url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2024%2024%22%20fill=%22none%22%20stroke=%22black%22%20stroke-width=%221.9%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22%3E%3Cpath%20d=%22M4%2020V10M10%2020V4M16%2020v-7M22%2020H2%22/%3E%3C/svg%3E")}
+body.vsub .acts .btn[data-ic=edit]{--i:url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2024%2024%22%20fill=%22none%22%20stroke=%22black%22%20stroke-width=%221.9%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22%3E%3Cpath%20d=%22M12%2020h9M16.5%203.5a2.1%202.1%200%20013%203L7%2019l-4%201%201-4z%22/%3E%3C/svg%3E")}
+body.vsub .acts .btn[data-ic=print]{--i:url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2024%2024%22%20fill=%22none%22%20stroke=%22black%22%20stroke-width=%221.9%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22%3E%3Cpath%20d=%22M6%209V3h12v6M6%2018H4a1%201%200%2001-1-1v-6a2%202%200%20012-2h14a2%202%200%20012%202v6a1%201%200%2001-1%201h-2M7%2014h10v7H7z%22/%3E%3C/svg%3E")}
+
+@media screen{
+/* 3. QUESTION PAPER — glass sections like the reference (content/IDs unchanged) */
+body.vsub .paper{display:flex;flex-direction:column;gap:12px;margin-top:4px;padding:0;border-radius:0;background:none;box-shadow:none;color:#2b2418}
+body.vsub .paper .ph,body.vsub .paper .ph[style]{margin:0;padding:14px 12px;border:1px solid rgba(255,255,255,.55)!important;border-radius:22px;text-align:center;line-height:1.75;font-weight:600;color:#2b2418;
+ background:linear-gradient(160deg,rgba(255,252,242,.92),rgba(250,243,224,.82));backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 8px 20px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.7)}
+body.vsub .paper .ph .sch{margin:0 0 2px;font-size:15px}
+body.vsub .paper .ph b{color:#1f3d27}
+body.vsub .paper .sec{margin:0;padding:8px;border-radius:24px;border:1px solid rgba(255,255,255,.5);
+ background:linear-gradient(160deg,rgba(226,240,208,.55),rgba(196,222,176,.34));box-shadow:0 8px 20px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+body.vsub .paper .sh{margin:0 0 8px;gap:8px;align-items:center;font-size:14.5px;font-weight:800}
+body.vsub .paper .sh>span:first-child{padding:7px 16px;border-radius:999px;line-height:1.35;color:#fff6de;background:linear-gradient(180deg,#3f7a4c,#1f4a2c);box-shadow:0 2px 6px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.2)}
+body.vsub .paper .sh>span:last-child{flex:none;padding:5px 12px;border-radius:999px;white-space:nowrap;color:#f6e7c4;background:rgba(18,44,28,.84);border:1px solid rgba(242,212,155,.85)}
+body.vsub .paper .sec>:not(.sh){margin:0;padding:.5rem 1rem;background:rgba(255,251,240,.94);color:#2b2418}
+body.vsub .paper .sec>.sh+*{border-radius:16px 16px 0 0;padding-top:.85rem}
+body.vsub .paper .sec>:not(.sh):last-child{border-radius:0 0 16px 16px;padding-bottom:.85rem}
+body.vsub .paper .sec>.sh+*:last-child{border-radius:16px}
+body.vsub .paper .wl{border-bottom-color:#8a8466}
+body.vsub .paper .ans{margin:.4rem 0 .2rem;padding:8px 12px;border-radius:12px;border-left:4px solid #3f7a4c;background:rgba(63,122,76,.13);color:#1f3d27;font-size:14px}
+body.vsub .paper .sec>.ans{background:rgba(63,122,76,.16)}
+body.vsub .paper .mt td{color:#2b2418}
+
+/* 4. BLUEPRINT — same glass/cream-gold system, cream header rows like the reference */
+body.vsub .bpwrap{margin:2px 0 12px;padding:14px 12px;border-radius:22px;border:1px solid rgba(255,225,185,.32);
+ background:linear-gradient(145deg,rgba(255,255,255,.10),rgba(255,255,255,.03)),rgba(18,34,26,.52);box-shadow:0 8px 20px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.14);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+body.vsub .bpwrap .bpbar{margin:0}
+body.vsub .bpwrap .bpbar h3{margin:0 0 2px;font-size:clamp(15px,4.4vw,20px);line-height:1.45;color:#fbf1dd}
+body.vsub .bpwrap .bph{display:inline-block;margin:14px 0 8px;padding:7px 16px;border-radius:999px;font-size:14px;font-weight:800;color:#3a2a10;background:linear-gradient(180deg,#f1e3bf,#dcc795);box-shadow:0 2px 6px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.6)}
+body.vsub .bpwrap .tw{margin-bottom:6px;border-radius:14px;border:1px solid rgba(255,235,200,.35)}
+body.vsub .bpwrap .bpt{font-size:13px}
+body.vsub .bpwrap .bpt th,body.vsub .bpwrap .bpt td{border-color:rgba(255,235,200,.22);background:rgba(14,34,28,.62);color:#f3ead6}
+body.vsub .bpwrap .bpt th{background:#e7d8b4;color:#3a2a10;font-weight:800}
+body.vsub .bpwrap .bpt .tot td{background:rgba(8,24,20,.84);color:#fff4dc;font-weight:800}
+body.vsub .bpwrap .chn{color:rgba(255,244,222,.85)}
+}
+
+@media(max-width:360px){body.vsub .acts .btn{font-size:11px;padding:0 6px;gap:4px}body.vsub .acts .btn::before{width:13px;height:13px}}
+
+/* 5. PRINT — white page, dark text, no website chrome; images stay full colour */
+@page{size:A4;margin:12mm}
+@media print{
+ body.vsub main{max-width:none!important;width:100%!important;padding:0!important}
+ body.vsub main>.fade{display:block!important}
+ body.vsub:not(.pr-bp) .paper{display:block!important;gap:0;background:#fff!important;box-shadow:none!important;color:#000!important}
+ body.vsub .paper,body.vsub .paper *{color:#000!important;text-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+ body.vsub .paper .ans{background:#f2f2f2!important;border-left:3px solid #555!important}
+ body.vsub .paper img,body.vsub .qpic img{filter:none!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ body.pr-bp .bpwrap .bpbar{display:block!important}
+ body.pr-bp .bpwrap .bpbar h3{margin:0 0 .4rem;font-size:1.1rem}
+}
 </style></head><body>
 <div class="top"><button class="ib" id="bk" onclick="goBack()" aria-label="ಹಿಂದೆ"><svg class="ic-back" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg><svg class="ic-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button><div class="crumb" id="crumb"></div>
 <span class="ib deco" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg></span><span class="ib deco" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 17V11a6 6 0 0112 0v6l1.5 2h-15z"/><path d="M10 21h4"/></svg><i class="rd"></i></span><button class="ib" onclick="goHome()" aria-label="ಹೋಮ್"><svg class="ic-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg><svg class="ic-user" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="8" r="4.2"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7z"/></svg></button></div>
@@ -828,7 +899,11 @@ function buildPaperEN(){
 function printMode(m){const c=document.body.classList;c.remove('pr-paper','pr-bp');c.add('pr-'+m);
  const done=()=>{c.remove('pr-paper','pr-bp');window.removeEventListener('afterprint',done)};
  window.addEventListener('afterprint',done);setTimeout(()=>window.print(),60);setTimeout(done,20000)}
-function togEdit(b){const p=$('pp');if(!p)return;const on=p.getAttribute('contenteditable')==='true';p.setAttribute('contenteditable',on?'false':'true');p.classList.toggle('editing',!on);b.textContent=on?T('edit'):T('editDone')}
+function togEdit(b){const p=$('pp');if(!p)return;const on=p.getAttribute('contenteditable')==='true';p.setAttribute('contenteditable',on?'false':'true');p.classList.toggle('editing',!on);b.textContent=pl(on?T('edit'):T('editDone'))}
+/* v21: leading emoji removed from action pills (icons are drawn in CSS) */
+const pl=s=>String(s).replace(/^[^\p{L}\p{N}]+/u,'');
+/* v21: ಬ್ಲೂಪ್ರಿಂಟ್ ಮುದ್ರಿಸಿ now lives in the action rows; blueprint must exist in DOM to print */
+function printBpMode(){if(!ST.bpOpen){ST.bpOpen=true;render()}printMode('bp')}
 /* ===== ಬ್ಲೂಪ್ರಿಂಟ್ (ಮಾದರಿ ಪ್ರಶ್ನೆ ಪತ್ರಿಕೆಯಂತೆ) ===== */
 function formIdx(q){return q.fi!==undefined?q.fi:(q.t==='short'?1:q.t==='long'?2:0)}
 function lessonShort(l){return ST.sub==='en'?l.t.replace(/\s*\(.*$/,''):l.t}
@@ -861,12 +936,12 @@ function bpPaperHtml(qs,ls){const B=T('bt'),max=PT[ST.ptype].max;const tq=qs.len
 function vPaper(){if(!allQ().length)return `<div class="card glass neu">${T('noPaper')}</div>`;
  const P=ST.ptype;ensureSel(P);const o=selOpts(P),v=ST.sel[P];
  const paperHtml=ST.sub==='kn'?buildPaperKN():ST.sub==='en'?buildPaperEN():buildPaper();
- const bpSec=ST.bpOpen?`<div class="card glass neu bpwrap"><div class="bpbar nopr"><h3>${T('bpTitle')}</h3><button class="btn" onclick="printMode('bp')">${T('printBp')}</button></div>${bpPaperHtml(ST.lastPicked,ST.lastLs)}</div>`:'';
+ const bpSec=ST.bpOpen?`<div class="card glass neu bpwrap"><div class="bpbar"><h3>${T('bpTitle')}</h3></div>${bpPaperHtml(ST.lastPicked,ST.lastLs)}</div>`:'';
  const tabs=['unit','fa3','fa4','sa2'].map(k=>`<button class="tb sm ${P===k?'on':''}" onclick="ST.ptype='${k}';render()">${T('examTab')[k]} (${PT[k].max})</button>`).join('');
  const po=[];if(o.g.length){po.push([null,T('groups')]);o.g.forEach(x=>po.push(x))}if(o.s.length){po.push([null,T('single')]);o.s.forEach(x=>po.push(x))}
  return `<div class="tabs nopr">${tabs}</div>
  <div class="card glass neu nopr ddz"><label class="fl" style="margin-top:0">${T('lessonSel')}</label>${sel('psel',po,v,'ST.sel[ST.ptype]=value;render()')}
- <div class="pills"><button class="btn" onclick="ST.seed[ST.ptype]++;render()">${T('newP')}</button><button class="btn" onclick="ST.showAns=!ST.showAns;render()">${ST.showAns?T('hideA'):T('showA')}</button><button class="btn" onclick="togEdit(this)">${T('edit')}</button><button class="btn" onclick="printMode('paper')">${T('printP')}</button><button class="btn ${ST.bpOpen?'on':''}" onclick="ST.bpOpen=!ST.bpOpen;render()">${T('bp')} ${ST.bpOpen?'▴':'▾'}</button></div></div>${bpSec}${paperHtml}`}
+ <div class="pills acts"><button class="btn" data-ic="new" onclick="ST.seed[ST.ptype]++;render()">${pl(T('newP'))}</button><button class="btn" data-ic="hide" onclick="ST.showAns=!ST.showAns;render()">${ST.showAns?T('hideA'):T('showA')}</button><button class="btn ${ST.bpOpen?'on':''}" data-ic="bp" onclick="ST.bpOpen=!ST.bpOpen;render()">${pl(T('bp'))} ${ST.bpOpen?'▴':'▾'}</button><button class="btn" data-ic="edit" onclick="togEdit(this)">${pl(T('edit'))}</button><button class="btn" data-ic="print" onclick="printMode('paper')">${pl(T('printP'))}</button><button class="btn" data-ic="print" onclick="printBpMode()">${pl(T('printBp'))}</button></div></div>${bpSec}${paperHtml}`}
 /* ===== ರಸಪ್ರಶ್ನೆ ===== */
 function vQuiz(){const list=allQ().filter(q=>(ST.qzc==='all'||q.ch==ST.qzc)&&(ST.qzt==='all'||q.t===ST.qzt));
  const lo=[['all',T('allCh')],...lessons().filter(l=>l.qb.length).map(l=>[String(l.n),lessonLabel(l)])];
