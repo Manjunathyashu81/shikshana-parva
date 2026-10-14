@@ -380,6 +380,39 @@ body.vsub .qwrap .ol{width:38px;height:38px;background:#2a2f48;color:var(--gold)
 /* 6. correct / selected answer: green (not gold) */
 body.vsub .qwrap .opt.ok{color:#fbf5e4;background:linear-gradient(135deg,rgba(56,116,66,.94),rgba(22,64,36,.96));border:1px solid rgba(132,208,128,.75);box-shadow:0 0 14px rgba(90,190,100,.32),inset 0 1px 0 rgba(255,255,255,.2),inset 0 -2px 6px rgba(0,0,0,.25)}
 body.vsub .qwrap .opt.ok .ol{background:#f2d49b;color:#23311f}
+
+/* ===== v20: single visual patch to match master target (CSS only; overrides v19 where needed) ===== */
+
+/* TOP TABS — fixed equal cells; glow is box-shadow only, so layout never shifts */
+body.vsub .tabs.t4{grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:min(18cqw,86px);align-items:stretch;gap:clamp(5px,1.6vw,10px);padding:2px 0 4px;overflow:visible}
+body.vsub .tabs.t4 .tb{box-sizing:border-box;height:100%;min-height:0;max-height:none;font-size:min(3.1cqw,13.5px);color:#f6ebd2;text-shadow:0 1px 3px rgba(0,0,0,.55);border-radius:min(3.6cqw,16px);
+ background:linear-gradient(160deg,rgba(255,255,255,.10),rgba(255,255,255,.02)),rgba(18,16,11,.5);
+ border:1px solid rgba(255,225,185,.26);
+ box-shadow:0 4px 12px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.14),inset 0 -8px 12px rgba(0,0,0,.18);
+ backdrop-filter:blur(14px) saturate(1.1);-webkit-backdrop-filter:blur(14px) saturate(1.1)}
+body.vsub .tabs.t4 .tb::before{background:var(--gold);filter:drop-shadow(0 1px 2px rgba(0,0,0,.5))}
+/* ACTIVE (LBA) — green luminous glass, warm yellow-green border */
+body.vsub .tabs.t4 .tb.on{color:#fff8e4;
+ background:linear-gradient(165deg,rgba(255,255,255,.16),rgba(255,255,255,0) 45%),linear-gradient(165deg,rgba(104,168,72,.62),rgba(30,82,42,.78));
+ border:1.5px solid rgba(218,228,120,.95);
+ box-shadow:0 0 0 1px rgba(218,228,120,.25),0 0 16px rgba(150,222,84,.55),0 0 32px rgba(150,212,72,.26),0 6px 14px rgba(0,0,0,.4),inset 0 0 14px rgba(176,232,104,.3),inset 0 1px 0 rgba(255,255,255,.38);
+ text-shadow:0 0 8px rgba(190,240,120,.5),0 1px 3px rgba(0,0,0,.55)}
+body.vsub .tabs.t4 .tb.on::before{background:#fff1c8;filter:drop-shadow(0 0 5px rgba(196,242,120,.9))}
+
+/* DROPDOWNS — dark glass, soft rounded rectangle */
+body.vsub .card.ddz .ddb{border-radius:16px;background:linear-gradient(180deg,rgba(0,0,0,.28),rgba(0,0,0,.14)),rgba(14,13,9,.55);border:1px solid rgba(255,225,185,.22);box-shadow:inset 0 2px 7px rgba(0,0,0,.5),0 1px 0 rgba(255,255,255,.06)}
+
+/* DIFFICULTY FILTERS — inactive dark glass, selected golden */
+body.vsub .pill{background:linear-gradient(160deg,rgba(255,255,255,.09),rgba(255,255,255,.02)),rgba(16,14,10,.5);border:1px solid rgba(255,225,185,.26);box-shadow:0 3px 9px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.12)}
+body.vsub .pill.on{background:linear-gradient(180deg,#f9e5ab,#e0b45a);color:#3a2a0c;border:1px solid rgba(255,238,184,.95);box-shadow:0 0 16px rgba(244,204,108,.5),0 3px 9px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.6),inset 0 -3px 6px rgba(150,100,20,.25)}
+
+/* QUESTION CARDS — dark glass + soft neumorphic depth */
+body.vsub .qwrap .card{background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.01)),linear-gradient(145deg,rgba(48,43,31,.62),rgba(22,20,14,.72));border:1px solid rgba(255,225,185,.16);box-shadow:8px 8px 18px rgba(0,0,0,.42),-4px -4px 12px rgba(255,236,200,.05),inset 1px 1px 0 rgba(255,236,200,.1),inset -1px -1px 8px rgba(0,0,0,.2)}
+
+/* ANSWERS — inactive dark glass, only .ok is green */
+body.vsub .qwrap .opt{background:linear-gradient(180deg,rgba(0,0,0,.2),rgba(0,0,0,.08)),rgba(14,13,9,.5);border:1px solid rgba(255,225,185,.12);box-shadow:0 3px 8px rgba(0,0,0,.3),inset 2px 2px 6px rgba(0,0,0,.4),inset -1px -1px 4px rgba(255,236,200,.05)}
+body.vsub .qwrap .opt.ok{background:linear-gradient(165deg,rgba(255,255,255,.12),rgba(255,255,255,0) 45%),linear-gradient(135deg,rgba(62,128,70,.94),rgba(22,66,36,.97));border:1.5px solid rgba(138,214,128,.9);box-shadow:0 0 16px rgba(96,200,104,.4),0 4px 10px rgba(0,0,0,.35),inset 0 0 12px rgba(150,230,130,.2),inset 0 1px 0 rgba(255,255,255,.25)}
+body.vsub .qwrap .opt.ok .ol{background:#f2d49b;color:#23311f;box-shadow:0 0 8px rgba(242,212,155,.5)}
 </style></head><body>
 <div class="top"><button class="ib" id="bk" onclick="goBack()" aria-label="ಹಿಂದೆ"><svg class="ic-back" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg><svg class="ic-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button><div class="crumb" id="crumb"></div>
 <span class="ib deco" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg></span><span class="ib deco" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 17V11a6 6 0 0112 0v6l1.5 2h-15z"/><path d="M10 21h4"/></svg><i class="rd"></i></span><button class="ib" onclick="goHome()" aria-label="ಹೋಮ್"><svg class="ic-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg><svg class="ic-user" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="8" r="4.2"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7z"/></svg></button></div>
