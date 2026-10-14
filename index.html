@@ -286,6 +286,65 @@ body.vcls .sgrid .tile.sj.s-kn{--pw:61.64%}
 body.vcls .sgrid .tile.sj.s-ma{--pw:58.31%}
 body.vcls .sgrid .tile.sj.s-en{--pw:60.36%}
 body.vcls .sgrid .tile.sj.s-evs{--pw:41.69%}
+
+/* ===== v18: subject screen (ಅಭ್ಯಾಸ ಉತ್ತರಗಳು / LBA / ಪತ್ರಿಕೆ / ರಸಪ್ರಶ್ನೆ) matched to reference — CSS only, scoped to body.vsub ===== */
+body.vsub .top{padding:20px 13px 12px;gap:8px}
+body.vsub .top .deco{display:none}
+body.vsub .top .ib,body.vsub .top #bk{width:36px;height:36px;margin:0}
+body.vsub .top .ib svg,body.vsub .top #bk svg{width:18px;height:18px}
+body.vsub .crumb{flex:1;min-width:0;padding:7px 12px;border-radius:99px;font-size:clamp(12px,3.4vw,18px);font-weight:700;color:#f6ebd2;background:rgba(38,30,20,.55);border:1px solid rgba(255,230,190,.22);box-shadow:0 3px 10px rgba(0,0,0,.3);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+body.vsub .crumb b{color:var(--gold)}
+body.vsub .hero p{display:none}
+body.vsub .hero::after{background:linear-gradient(180deg,rgba(0,0,0,.22),transparent 26%,transparent 66%,rgba(15,13,9,.38))}
+body.vsub main{width:100%;max-width:640px;padding:10px 12px 8px}
+body.vsub main>.fade{display:flex;flex-direction:column;width:100%}
+body.vsub main>.fade>*{min-width:0}
+/* heading block with calendar badge */
+body.vsub .fade>.h2{position:relative;padding-left:54px;font-size:clamp(18px,5.2vw,32px);line-height:1.3;margin:0;color:#fbf1dd;text-shadow:0 2px 8px rgba(0,0,0,.6)}
+body.vsub .fade>.h2::before{content:"";position:absolute;left:0;top:3px;width:44px;height:44px;border-radius:50%;border:1.5px solid rgba(242,212,155,.75);background:rgba(20,16,10,.6) url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23f2d49b%22 stroke-width=%221.7%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22%3E%3Crect x=%223.5%22 y=%225%22 width=%2217%22 height=%2215%22 rx=%223%22/%3E%3Cpath d=%22M8 3v4M16 3v4M3.5 10h17M8 14h2M12 14h2M8 17h2%22/%3E%3C/svg%3E") center/52% no-repeat;box-shadow:0 3px 10px rgba(0,0,0,.35)}
+body.vsub .fade>.sub{padding-left:54px;font-size:clamp(12px,3.7vw,20px);line-height:1.35;margin:0 0 12px;color:rgba(255,244,222,.9);text-shadow:0 1px 5px rgba(0,0,0,.6)}
+/* four equal horizontal tabs */
+body.vsub .tabs.t4{order:-1;container-type:inline-size;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin:0 0 14px;width:100%}
+body.vsub .tabs.t4 .tb{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.2cqw;width:100%;min-width:0;height:min(18cqw,86px);padding:0 1cqw;margin:0;border-radius:min(3.6cqw,16px);overflow:hidden;font-size:min(3.2cqw,14px);font-weight:700;line-height:1.25;text-align:center;text-wrap:balance;color:#f2e6cc;background:linear-gradient(160deg,rgba(255,255,255,.10),rgba(255,255,255,.02)),rgba(26,24,16,.55);border:1px solid rgba(255,225,185,.3);box-shadow:0 4px 12px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.14);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:.2s}
+body.vsub .tabs.t4 .tb::before{content:"";flex:none;width:min(6.2cqw,26px);height:min(6.2cqw,26px);background:var(--gold);-webkit-mask:var(--ti) center/contain no-repeat;mask:var(--ti) center/contain no-repeat}
+body.vsub .tabs.t4 .tb[data-t=ab]{--ti:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22black%22 stroke-width=%221.8%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22%3E%3Cpath d=%22M7 3h7l4 4v14H7z%22/%3E%3Cpath d=%22M14 3v4h4M10 12h5M10 16h5%22/%3E%3C/svg%3E")}
+body.vsub .tabs.t4 .tb[data-t=qb]{--ti:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22black%22 stroke-width=%221.8%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22%3E%3Cpath d=%22M2 9l10-5 10 5-10 5z%22/%3E%3Cpath d=%22M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5%22/%3E%3Cpath d=%22M22 9v6%22/%3E%3C/svg%3E")}
+body.vsub .tabs.t4 .tb[data-t=paper]{--ti:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22black%22 stroke-width=%221.8%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22%3E%3Cpath d=%22M12 4H6a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2v-6%22/%3E%3Cpath d=%22M17.5 3.5l3 3L12 15l-4 1 1-4z%22/%3E%3C/svg%3E")}
+body.vsub .tabs.t4 .tb[data-t=quiz]{--ti:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22black%22 stroke-width=%221.8%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22%3E%3Cpath d=%22M6 3h12v18l-6-4-6 4z%22/%3E%3C/svg%3E")}
+body.vsub .tabs.t4 .tb:hover{color:#fff4dc}
+body.vsub .tabs.t4 .tb.on{color:#fff6de;background:linear-gradient(165deg,rgba(70,134,80,.96),rgba(22,62,36,.97));border:1.5px solid rgba(255,226,160,.9);box-shadow:0 0 0 1px rgba(255,226,160,.22),0 0 16px rgba(130,210,90,.38),0 5px 14px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.25)}
+body.vsub .tabs.t4 .tb.on::before{background:#fff1c8}
+/* secondary (exam) tabs + pills */
+body.vsub .tabs:not(.t4){gap:8px;margin:0 0 12px}
+body.vsub .tabs:not(.t4) .tb,body.vsub .pill{color:#f2e6cc;background:rgba(26,24,16,.55);border:1px solid rgba(255,225,185,.3);box-shadow:0 3px 8px rgba(0,0,0,.3)}
+body.vsub .tabs:not(.t4) .tb.on,body.vsub .pill.on{color:#fff6de;background:linear-gradient(165deg,rgba(70,134,80,.96),rgba(22,62,36,.97));border-color:rgba(255,226,160,.9)}
+/* cards */
+body.vsub main .card{width:100%;border-radius:16px;padding:14px;margin:0 0 12px;background:linear-gradient(145deg,rgba(255,255,255,.10),rgba(255,255,255,.03)),rgba(20,18,12,.40);border:1px solid rgba(255,225,185,.28);box-shadow:0 6px 16px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.12);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+body.vsub .qwrap .card{margin:0}
+body.vsub .card h3{color:var(--gold);font-size:clamp(17px,4.7vw,26px);line-height:1.35;margin-bottom:6px}
+body.vsub .fl{color:rgba(255,244,222,.78);font-size:13px;margin:0 0 6px}
+body.vsub .ddb{background:rgba(12,16,10,.62);border:1px solid rgba(255,225,185,.25);border-radius:14px;box-shadow:inset 0 2px 6px rgba(0,0,0,.4);padding:12px 14px;font-size:15px;color:#f6ebd2}
+body.vsub .ddc{color:var(--gold)}
+body.vsub .ddl{background:rgba(24,22,16,.97);border-color:rgba(242,212,155,.4)}
+body.vsub .ddi.on,body.vsub .ddh{color:var(--gold)}
+body.vsub .ddi:hover{background:rgba(242,212,155,.14)}
+body.vsub .abhead{flex-wrap:nowrap;align-items:flex-start;gap:8px}
+body.vsub .abhead h3{min-width:0}
+body.vsub .abbtns{flex:none;flex-wrap:nowrap}
+body.vsub .chn{font-size:13px;color:rgba(255,244,222,.8);margin:2px 0 6px}
+body.vsub summary{font-size:15px;color:var(--gold)}
+body.vsub details p{font-size:14px;color:#f1e6d0}
+body.vsub .qt{font-size:15px;line-height:1.5;color:#fbf1dd;margin:.4rem 0}
+body.vsub .qa{border-bottom-color:rgba(255,225,185,.12)}
+body.vsub .ans{padding:9px 12px;border-radius:12px;border-left:4px solid var(--gold);background:rgba(255,255,255,.10);color:#fff4dc;font-size:14px;line-height:1.5;margin:.4rem 0}
+body.vsub .note{padding:10px 12px;border-radius:14px;font-size:13px;line-height:1.5;margin:0 0 12px;color:#f6ebd2;border:1px dashed rgba(242,212,155,.55);background:rgba(0,0,0,.22)}
+/* buttons */
+body.vsub .btn{padding:8px 15px;border-radius:99px;font-size:14px;font-weight:700;color:#f6e7c4;background:linear-gradient(180deg,#3f7a4c,#1f4a2c);border:1px solid rgba(242,212,155,.8);box-shadow:0 3px 8px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.2)}
+body.vsub .abbtns .btn{white-space:nowrap;margin:0}
+body.vsub .btn:active{box-shadow:inset 0 2px 6px rgba(0,0,0,.45)}
+body.vsub select,body.vsub input{background-color:rgba(12,16,10,.62);border-color:rgba(255,225,185,.25);box-shadow:inset 0 2px 6px rgba(0,0,0,.4)}
+body.vsub .opt{background:rgba(12,16,10,.45);border-color:rgba(255,225,185,.2);box-shadow:none}
+body.vsub .tag{background:rgba(242,212,155,.16);color:var(--gold)}
 </style></head><body>
 <div class="top"><button class="ib" id="bk" onclick="goBack()" aria-label="ಹಿಂದೆ"><svg class="ic-back" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg><svg class="ic-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button><div class="crumb" id="crumb"></div>
 <span class="ib deco" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg></span><span class="ib deco" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 17V11a6 6 0 0112 0v6l1.5 2h-15z"/><path d="M10 21h4"/></svg><i class="rd"></i></span><button class="ib" onclick="goHome()" aria-label="ಹೋಮ್"><svg class="ic-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg><svg class="ic-user" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="8" r="4.2"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7z"/></svg></button></div>
@@ -417,7 +476,7 @@ const ARW='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-wid
 function vClass(){return `<div class="fade fill"><div class="h2">${ORD[ST.cls-1]} ತರಗತಿ – ವಿಷಯಗಳು</div><div class="sub">ವಿಷಯವನ್ನು ಆಯ್ಕೆ ಮಾಡಿ</div><div class="sgrid">${subjFor(ST.cls).map(s=>{const on=!!AVAIL[ST.cls+'-'+s.id];return `<button class="tile sj glass neu s-${s.id} ${on?'':'off'}" onclick="openSub('${s.id}')"><span class="ic">${s.ic}</span><span class="sjt"><span class="l">${s.name}</span><span class="e">${s.en}</span><span class="badge ${on?'on':''}">${on?'ಲಭ್ಯ':'ಶೀಘ್ರದಲ್ಲೇ'}</span></span><span class="arw">${ARW}</span></button>`}).join('')}</div></div>`}
 /* ===== ವಿಷಯ ===== */
 function vSubject(){const tabs=T('tabs');
- return `<div class="fade"><div class="h2">${ORD[ST.cls-1]} ತರಗತಿ · ${cur().title}</div><div class="sub">${cur().part}</div><div class="tabs">${tabs.map(t=>`<button class="tb ${ST.tab===t[0]?'on':''}" onclick="setTab('${t[0]}')">${t[1]}</button>`).join('')}</div>${ST.tab==='ab'?vAb():ST.tab==='qb'?vQb():ST.tab==='quiz'?vQuiz():vPaper()}</div>`}
+ return `<div class="fade"><div class="h2">${ORD[ST.cls-1]} ತರಗತಿ · ${cur().title}</div><div class="sub">${cur().part}</div><div class="tabs t4">${tabs.map(t=>`<button class="tb ${ST.tab===t[0]?'on':''}" data-t="${t[0]}" onclick="setTab('${t[0]}')">${t[1]}</button>`).join('')}</div>${ST.tab==='ab'?vAb():ST.tab==='qb'?vQb():ST.tab==='quiz'?vQuiz():vPaper()}</div>`}
 /* ===== ಥೀಮ್ ಡ್ರಾಪ್‌ಡೌನ್ ===== */
 const DDC={};
 function sel(key,opts,val,code){DDC[key]=code;const hit=opts.find(o=>o[0]!==null&&o[0]==val)||opts.find(o=>o[0]!==null);
@@ -756,7 +815,7 @@ function quizHtml(list){if(!list.length)return `<div class="card glass neu">${T(
 function ansQ(i,a){if(ST.qa!==null)return;ST.qa=i;if(i===a)ST.qs++;render()}
 /* ===== ರೆಂಡರ್ ===== */
 function render(){
- const hero=$('hero');hero.classList.toggle('sm',ST.view!=='home'&&ST.view!=='class');document.body.classList.toggle('vcls',ST.view==='class');
+ const hero=$('hero');hero.classList.toggle('sm',ST.view!=='home'&&ST.view!=='class'&&ST.view!=='subject');document.body.classList.toggle('vcls',ST.view==='class');document.body.classList.toggle('vsub',ST.view==='subject');
  $('herop').textContent=(ST.view==='home'||ST.view==='class')?'Shikshana Parva · ಕಲಿಕೆಯ ಹಬ್ಬ':'ಶಿಕ್ಷಕರಿಗಾಗಿ ಕಲಿಕಾ ಸಂಪನ್ಮೂಲ ವೇದಿಕೆ';
  $('bk').disabled=ST.view==='home';
  let c='<b>ಮುಖಪುಟ</b>';if(ST.cls)c+=` › ${ORD[ST.cls-1]} ತರಗತಿ`;if(ST.sub&&ST.view==='subject'&&cur())c+=` › <b>${cur().title}</b>`;$('crumb').innerHTML=c;
