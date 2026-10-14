@@ -345,6 +345,41 @@ body.vsub .btn:active{box-shadow:inset 0 2px 6px rgba(0,0,0,.45)}
 body.vsub select,body.vsub input{background-color:rgba(12,16,10,.62);border-color:rgba(255,225,185,.25);box-shadow:inset 0 2px 6px rgba(0,0,0,.4)}
 body.vsub .opt{background:rgba(12,16,10,.45);border-color:rgba(255,225,185,.2);box-shadow:none}
 body.vsub .tag{background:rgba(242,212,155,.16);color:var(--gold)}
+
+/* ===== v19: LBA ಪ್ರಶ್ನೆ ಬಂಡಾರ visual refinement — CSS only, scoped to body.vsub =====
+   tabs / filter panel / filter pills = glass ; question cards / options = soft neumorphic ;
+   "ಎಲ್ಲಾ ಹಂತ" (selected filter) = gold ; correct answer = green */
+
+/* 1. four main tabs: equal columns, pure glass, warm-gold selected state (no green) */
+body.vsub .tabs.t4{grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(5px,1.6vw,10px)}
+body.vsub .tabs.t4 .tb{flex:none;height:min(18cqw,86px);background:linear-gradient(160deg,rgba(255,255,255,.14),rgba(255,255,255,.04));border:1px solid rgba(255,235,200,.28);box-shadow:0 4px 14px rgba(0,0,0,.26),inset 0 1px 0 rgba(255,255,255,.2);backdrop-filter:blur(14px) saturate(1.1);-webkit-backdrop-filter:blur(14px) saturate(1.1)}
+body.vsub .tabs.t4 .tb.on{color:#fff4d8;background:linear-gradient(160deg,rgba(255,238,196,.26),rgba(255,224,168,.08));border:1.5px solid rgba(242,212,155,.88);box-shadow:0 0 0 1px rgba(242,212,155,.16),0 0 18px rgba(242,200,120,.3),0 5px 14px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.32)}
+body.vsub .tabs.t4 .tb.on::before{background:var(--gold)}
+
+/* 2. filter panel (the .ddz card only): translucent dark glass, not neumorphic */
+body.vsub main .card.ddz{background:linear-gradient(145deg,rgba(255,255,255,.09),rgba(255,255,255,.02)),rgba(18,16,11,.46);border:1px solid rgba(255,225,185,.26);border-radius:20px;padding:clamp(14px,4.2vw,22px);box-shadow:0 6px 18px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.14);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+body.vsub .card.ddz .row{grid-template-columns:1fr;gap:12px}
+body.vsub .card.ddz .ddb{background:rgba(10,10,7,.55);border:1px solid rgba(255,225,185,.2);box-shadow:inset 0 2px 7px rgba(0,0,0,.45);border-radius:999px;padding:13px 18px;min-height:48px}
+
+/* 3. level pills: equal size glass, gold when selected */
+body.vsub .pills{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0}
+body.vsub .pill{flex:1 1 auto;display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 16px;border-radius:999px;font-size:15px;font-weight:600;line-height:1.2;white-space:nowrap;color:#f2e6cc;background:linear-gradient(160deg,rgba(255,255,255,.12),rgba(255,255,255,.03));border:1px solid rgba(255,225,185,.3);box-shadow:0 3px 9px rgba(0,0,0,.25),inset 0 1px 0 rgba(255,255,255,.14);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+body.vsub .pill.on{color:#3a2a0c;font-weight:800;background:linear-gradient(180deg,#f8e3a6,#e2b75f);border:1px solid rgba(255,236,176,.95);box-shadow:0 0 14px rgba(242,200,110,.4),0 3px 9px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.55)}
+
+/* 4. question cards: one consistent soft neumorphic style */
+body.vsub .qwrap{gap:16px}
+body.vsub .qwrap .card{background:linear-gradient(145deg,rgba(52,46,34,.62),rgba(26,23,16,.7));border:1px solid rgba(255,225,185,.12);border-radius:22px;padding:clamp(14px,4vw,20px);box-shadow:8px 8px 18px rgba(0,0,0,.42),-5px -5px 14px rgba(255,236,200,.05),inset 1px 1px 0 rgba(255,236,200,.08);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+body.vsub .qwrap .qt{font-size:clamp(16px,4.4vw,20px);color:#f6ebd2}
+body.vsub .qwrap .cnt,body.vsub .cnt{color:rgba(255,244,222,.85)}
+body.vsub .qwrap .tag{background:rgba(242,212,155,.18);color:var(--gold);border-radius:12px;padding:6px 14px}
+
+/* 5. answer options: inset neumorphic rows */
+body.vsub .qwrap .opt{min-height:54px;padding:8px 14px;margin:10px 0;border-radius:16px;color:#f6ebd2;background:rgba(12,11,8,.5);border:1px solid rgba(255,225,185,.1);box-shadow:inset 3px 3px 7px rgba(0,0,0,.5),inset -2px -2px 5px rgba(255,236,200,.05)}
+body.vsub .qwrap .ol{width:38px;height:38px;background:#2a2f48;color:var(--gold)}
+
+/* 6. correct / selected answer: green (not gold) */
+body.vsub .qwrap .opt.ok{color:#fbf5e4;background:linear-gradient(135deg,rgba(56,116,66,.94),rgba(22,64,36,.96));border:1px solid rgba(132,208,128,.75);box-shadow:0 0 14px rgba(90,190,100,.32),inset 0 1px 0 rgba(255,255,255,.2),inset 0 -2px 6px rgba(0,0,0,.25)}
+body.vsub .qwrap .opt.ok .ol{background:#f2d49b;color:#23311f}
 </style></head><body>
 <div class="top"><button class="ib" id="bk" onclick="goBack()" aria-label="ಹಿಂದೆ"><svg class="ic-back" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg><svg class="ic-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button><div class="crumb" id="crumb"></div>
 <span class="ib deco" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg></span><span class="ib deco" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 17V11a6 6 0 0112 0v6l1.5 2h-15z"/><path d="M10 21h4"/></svg><i class="rd"></i></span><button class="ib" onclick="goHome()" aria-label="ಹೋಮ್"><svg class="ic-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg><svg class="ic-user" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="8" r="4.2"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7z"/></svg></button></div>
