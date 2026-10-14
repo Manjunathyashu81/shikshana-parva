@@ -148,6 +148,25 @@ main{max-width:min(1100px,100%)}
  .paper .pq .qpic img{max-height:8.5rem}
  .paper .sec,.paper .pq{break-inside:avoid}
 }
+
+/* ===== v14: ಗ್ಲಾಸ್ ಸಾಲುಗಳು (ಒಂದೇ ಸಾಲಿನಲ್ಲಿ ಟ್ಯಾಬ್‌ಗಳು) ===== */
+.tabs,.grow{display:grid;gap:.45rem;padding:.5rem;margin-bottom:.9rem;border-radius:1.5rem;
+ background:linear-gradient(145deg,rgba(255,255,255,.13),rgba(255,255,255,.04));
+ border:1px solid rgba(255,255,255,.16);
+ backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);
+ box-shadow:0 8px 24px rgba(10,13,26,.45),inset 0 1px 0 rgba(255,255,255,.18)}
+.tabs{grid-template-columns:repeat(4,minmax(0,1fr))}
+.grow{grid-template-columns:repeat(3,minmax(0,1fr));margin:.8rem 0 0}
+.tabs .tb,.grow .btn{position:relative;margin:0;min-width:0;min-height:3rem;padding:.55rem .25rem;
+ display:flex;align-items:center;justify-content:center;text-align:center;
+ font-size:.8rem;line-height:1.25;font-weight:700;border-radius:1.2rem;word-break:keep-all;overflow-wrap:anywhere;
+ border:1px solid rgba(255,255,255,.1)}
+.tabs .tb::after,.grow .btn::after{content:"";position:absolute;left:28%;right:28%;bottom:3px;height:2px;border-radius:2px;
+ background:var(--tan2);opacity:.55;box-shadow:0 0 8px 1px var(--tan)}
+.tabs .tb.on::after,.grow .btn.on::after{background:#232a45;box-shadow:none;opacity:.5}
+.grow .btn.on{color:#232a45;background:linear-gradient(135deg,#e2bf9b,#c09470);box-shadow:inset 2px 2px 5px rgba(255,255,255,.35),4px 4px 10px var(--sd)}
+.tabs .tb.sm{font-size:.8rem}
+@media(min-width:700px){.tabs .tb,.grow .btn{font-size:.95rem;min-height:3.2rem}}
 </style></head><body>
 <div class="top"><button class="ib" id="bk" onclick="goBack()" aria-label="ಹಿಂದೆ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button><div class="crumb" id="crumb"></div>
 <button class="ib" onclick="goHome()" aria-label="ಹೋಮ್"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg></button></div>
@@ -560,6 +579,7 @@ function buildPaperEN(){
 function printMode(m){const c=document.body.classList;c.remove('pr-paper','pr-bp');c.add('pr-'+m);
  const done=()=>{c.remove('pr-paper','pr-bp');window.removeEventListener('afterprint',done)};
  window.addEventListener('afterprint',done);setTimeout(()=>window.print(),60);setTimeout(done,20000)}
+function printBp(){if(!ST.bpOpen){ST.bpOpen=true;render()}printMode('bp')}
 function togEdit(b){const p=$('pp');if(!p)return;const on=p.getAttribute('contenteditable')==='true';p.setAttribute('contenteditable',on?'false':'true');p.classList.toggle('editing',!on);b.textContent=on?T('edit'):T('editDone')}
 /* ===== ಬ್ಲೂಪ್ರಿಂಟ್ (ಮಾದರಿ ಪ್ರಶ್ನೆ ಪತ್ರಿಕೆಯಂತೆ) ===== */
 function formIdx(q){return q.fi!==undefined?q.fi:(q.t==='short'?1:q.t==='long'?2:0)}
@@ -593,12 +613,12 @@ function bpPaperHtml(qs,ls){const B=T('bt'),max=PT[ST.ptype].max;const tq=qs.len
 function vPaper(){if(!allQ().length)return `<div class="card glass neu">${T('noPaper')}</div>`;
  const P=ST.ptype;ensureSel(P);const o=selOpts(P),v=ST.sel[P];
  const paperHtml=ST.sub==='kn'?buildPaperKN():ST.sub==='en'?buildPaperEN():buildPaper();
- const bpSec=ST.bpOpen?`<div class="card glass neu bpwrap"><div class="bpbar nopr"><h3>${T('bpTitle')}</h3><button class="btn" onclick="printMode('bp')">${T('printBp')}</button></div>${bpPaperHtml(ST.lastPicked,ST.lastLs)}</div>`:'';
+ const bpSec=ST.bpOpen?`<div class="card glass neu bpwrap"><div class="bpbar nopr"><h3>${T('bpTitle')}</h3></div>${bpPaperHtml(ST.lastPicked,ST.lastLs)}</div>`:'';
  const tabs=['unit','fa3','fa4','sa2'].map(k=>`<button class="tb sm ${P===k?'on':''}" onclick="ST.ptype='${k}';render()">${T('examTab')[k]} (${PT[k].max})</button>`).join('');
  const po=[];if(o.g.length){po.push([null,T('groups')]);o.g.forEach(x=>po.push(x))}if(o.s.length){po.push([null,T('single')]);o.s.forEach(x=>po.push(x))}
  return `<div class="tabs nopr">${tabs}</div>
  <div class="card glass neu nopr ddz"><label class="fl" style="margin-top:0">${T('lessonSel')}</label>${sel('psel',po,v,'ST.sel[ST.ptype]=value;render()')}
- <div class="pills"><button class="btn" onclick="ST.seed[ST.ptype]++;render()">${T('newP')}</button><button class="btn" onclick="ST.showAns=!ST.showAns;render()">${ST.showAns?T('hideA'):T('showA')}</button><button class="btn" onclick="togEdit(this)">${T('edit')}</button><button class="btn" onclick="printMode('paper')">${T('printP')}</button><button class="btn ${ST.bpOpen?'on':''}" onclick="ST.bpOpen=!ST.bpOpen;render()">${T('bp')} ${ST.bpOpen?'▴':'▾'}</button></div></div>${bpSec}${paperHtml}`}
+ <div class="grow nopr"><button class="btn" onclick="ST.seed[ST.ptype]++;render()">${T('newP')}</button><button class="btn" onclick="ST.showAns=!ST.showAns;render()">${ST.showAns?T('hideA'):T('showA')}</button><button class="btn ${ST.bpOpen?'on':''}" onclick="ST.bpOpen=!ST.bpOpen;render()">${T('bp')} ${ST.bpOpen?'▴':'▾'}</button></div><div class="grow nopr"><button class="btn" onclick="togEdit(this)">${T('edit')}</button><button class="btn" onclick="printMode('paper')">${T('printP')}</button><button class="btn" onclick="printBp()">${T('printBp')}</button></div></div></div>${bpSec}${paperHtml}`}
 /* ===== ರಸಪ್ರಶ್ನೆ ===== */
 function vQuiz(){const list=allQ().filter(q=>(ST.qzc==='all'||q.ch==ST.qzc)&&(ST.qzt==='all'||q.t===ST.qzt));
  const lo=[['all',T('allCh')],...lessons().filter(l=>l.qb.length).map(l=>[String(l.n),lessonLabel(l)])];
