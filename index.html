@@ -149,24 +149,31 @@ main{max-width:min(1100px,100%)}
  .paper .sec,.paper .pq{break-inside:avoid}
 }
 
-/* ===== v14: ಗ್ಲಾಸ್ ಸಾಲುಗಳು (ಒಂದೇ ಸಾಲಿನಲ್ಲಿ ಟ್ಯಾಬ್‌ಗಳು) ===== */
-.tabs,.grow{display:grid;gap:.45rem;padding:.5rem;margin-bottom:.9rem;border-radius:1.5rem;
- background:linear-gradient(145deg,rgba(255,255,255,.13),rgba(255,255,255,.04));
- border:1px solid rgba(255,255,255,.16);
- backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);
- box-shadow:0 8px 24px rgba(10,13,26,.45),inset 0 1px 0 rgba(255,255,255,.18)}
+/* ===== v14: ಗ್ಲಾಸ್ ಕಾರ್ಡ್ ಸಾಲುಗಳು (ರೆಫರೆನ್ಸ್ ಚಿತ್ರದಂತೆ) ===== */
+.tabs,.grow{--g1:#3aa0ff;--g2:#ff9a2e;--g3:#ff4fa3;--g4:#a07bff;
+ display:grid;gap:.55rem;padding:.8rem .7rem 1.05rem;margin-bottom:1rem;border-radius:1.6rem;position:relative;
+ background:linear-gradient(160deg,rgba(250,251,255,.97),rgba(224,228,246,.94));
+ border:1px solid rgba(255,255,255,.75);
+ box-shadow:0 18px 38px rgba(6,9,22,.55),0 4px 10px rgba(6,9,22,.35),inset 0 1px 0 #fff,inset 0 -10px 22px rgba(150,160,205,.25)}
 .tabs{grid-template-columns:repeat(4,minmax(0,1fr))}
-.grow{grid-template-columns:repeat(3,minmax(0,1fr));margin:.8rem 0 0}
-.tabs .tb,.grow .btn{position:relative;margin:0;min-width:0;min-height:3rem;padding:.55rem .25rem;
+.grow{grid-template-columns:repeat(3,minmax(0,1fr));margin:.9rem 0 0}
+.tabs .tb,.grow .btn{--g:var(--g1);position:relative;margin:0;min-width:0;min-height:3.1rem;padding:.55rem .25rem;
  display:flex;align-items:center;justify-content:center;text-align:center;
- font-size:.8rem;line-height:1.25;font-weight:700;border-radius:1.2rem;word-break:keep-all;overflow-wrap:anywhere;
- border:1px solid rgba(255,255,255,.1)}
-.tabs .tb::after,.grow .btn::after{content:"";position:absolute;left:28%;right:28%;bottom:3px;height:2px;border-radius:2px;
- background:var(--tan2);opacity:.55;box-shadow:0 0 8px 1px var(--tan)}
-.tabs .tb.on::after,.grow .btn.on::after{background:#232a45;box-shadow:none;opacity:.5}
-.grow .btn.on{color:#232a45;background:linear-gradient(135deg,#e2bf9b,#c09470);box-shadow:inset 2px 2px 5px rgba(255,255,255,.35),4px 4px 10px var(--sd)}
+ font-size:.8rem;line-height:1.25;font-weight:700;color:#fff;border-radius:2rem;overflow-wrap:anywhere;
+ background:linear-gradient(180deg,#16254d,#0b1634);border:1px solid rgba(255,255,255,.12);
+ box-shadow:0 6px 12px rgba(8,14,36,.45),inset 0 1px 0 rgba(255,255,255,.18);transition:.2s}
+.tabs .tb:nth-child(2),.grow .btn:nth-child(2){--g:var(--g2)}
+.tabs .tb:nth-child(3),.grow .btn:nth-child(3){--g:var(--g3)}
+.tabs .tb:nth-child(4){--g:var(--g4)}
+.tabs .tb::after,.grow .btn::after{content:"";position:absolute;left:24%;right:24%;bottom:-4px;height:4px;border-radius:4px;
+ background:var(--g);filter:blur(1.5px);box-shadow:0 0 10px 2px var(--g),0 4px 14px 2px var(--g);opacity:.9}
+.tabs .tb:hover,.grow .btn:hover{color:#fff;transform:translateY(-1px)}
+.tabs .tb:active,.grow .btn:active{transform:translateY(1px)}
+.tabs .tb.on,.grow .btn.on{color:#fff;background:linear-gradient(180deg,#22377a,#101e48);
+ box-shadow:0 0 0 2px var(--g),0 0 16px 1px var(--g),0 6px 12px rgba(8,14,36,.45),inset 0 1px 0 rgba(255,255,255,.25)}
+.tabs .tb.on::after,.grow .btn.on::after{left:14%;right:14%;height:5px;opacity:1}
 .tabs .tb.sm{font-size:.8rem}
-@media(min-width:700px){.tabs .tb,.grow .btn{font-size:.95rem;min-height:3.2rem}}
+@media(min-width:700px){.tabs .tb,.grow .btn{font-size:.95rem;min-height:3.3rem}}
 </style></head><body>
 <div class="top"><button class="ib" id="bk" onclick="goBack()" aria-label="ಹಿಂದೆ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button><div class="crumb" id="crumb"></div>
 <button class="ib" onclick="goHome()" aria-label="ಹೋಮ್"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg></button></div>
