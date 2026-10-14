@@ -492,7 +492,12 @@ body.vsub .tabs.nopr:not(.t4){display:grid;grid-template-columns:repeat(4,minmax
 body.vsub .tabs.nopr:not(.t4) .tb{display:flex;align-items:center;justify-content:center;width:100%;min-width:0;height:46px;padding:0 4px;margin:0;border-radius:999px;
  font-size:clamp(11px,3.2vw,14px);font-weight:700;line-height:1.2;text-align:center;text-wrap:balance;white-space:normal;overflow:hidden;
  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
-body.vsub .tabs.nopr:not(.t4) .tb.on{box-shadow:0 0 0 1px rgba(255,226,160,.22),0 0 14px rgba(130,210,90,.38),0 4px 10px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.25)}
+/* v23: selected exam tab = same champagne/gold selected state as the action buttons */
+body.vsub .tabs.nopr:not(.t4) .tb.on,body.vsub .tabs.nopr:not(.t4) .tb.on:hover{color:#3a2a0c;font-weight:800;
+ background:linear-gradient(180deg,#f9e5ab,#e0b45a);
+ border:1px solid rgba(255,238,184,.95);
+ box-shadow:0 0 16px rgba(244,204,108,.5),0 4px 10px rgba(0,0,0,.32),inset 0 1px 0 rgba(255,255,255,.6),inset 0 -3px 6px rgba(150,100,20,.25);
+ transform:translateY(-1px);text-shadow:none}
 
 /* B. action buttons: exactly 3 + 3, equal width, dark glass (gold family) */
 body.vsub .pills.acts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(2,50px);grid-auto-flow:row;gap:8px;width:100%}
