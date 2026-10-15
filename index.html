@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="kn"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#232a45"><link rel="manifest" href="manifest.webmanifest"><title>ಶಿಕ್ಷಣ ಪರ್ವ</title>
+<!DOCTYPE html><html lang="kn"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#232a45"><link rel="manifest" href="manifest.webmanifest"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="ಶಿಕ್ಷಣ ಪರ್ವ"><meta name="application-name" content="ಶಿಕ್ಷಣ ಪರ್ವ"><meta name="color-scheme" content="dark"><link rel="icon" type="image/png" href="icons/icon-192.png"><link rel="apple-touch-icon" href="icons/icon-192.png"><title>ಶಿಕ್ಷಣ ಪರ್ವ</title>
 <style>
 :root{--bg:#262d48;--bg2:#1c2136;--slate:#4d5a78;--slate2:#6a789a;--tan:#c9a07c;--tan2:#e2bf9b;--cream:#efe3d4;--txt:#ece4da;--mut:#a9b0c6;--sd:rgba(10,13,26,.65);--sl:rgba(98,112,150,.28);--r:1.25rem}
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
@@ -638,9 +638,183 @@ body:has(.hgrid) footer{margin:8px auto 12px}
 }
 
 @media print{body.vsub .fgrid,body.vsub .hsel,body.vsub .abrow{display:none!important}}
+
+/* =====================================================================
+   v25 — fixes only (no redesign):
+   1 lesson card width · 2 print-button state · 3-6 quiz fit / compact card / 2×2 MCQ
+   7-11 A4 print flow · 12-17 edge-to-edge / safe-area / fullscreen
+   ===================================================================== */
+
+/* ---- global: viewport, safe areas, [hidden] ---- */
+[hidden]{display:none!important}
+html,body{margin:0;width:100%;min-height:100%}
+body{padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body .top,body.vcls .top,body.vsub .top{padding-top:calc(20px + env(safe-area-inset-top,0px))}
+.hero.sm .ht{padding-top:calc(62px + env(safe-area-inset-top,0px))}
+.top #fs{flex:none}
+#fs svg{width:17px;height:17px}
+#fs .fs-off{display:none}#fs.isfs .fs-on{display:none}#fs.isfs .fs-off{display:block}
+body.vcls .top #fs,body.vsub .top #fs{width:36px;height:36px}
+
+@media screen{
+
+/* ---- 1. "ಪಾಠ ಆಯ್ಕೆ" card = half of the row ---- */
+body.vsub .fade.pv{grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:10px}
+body.vsub .fade.pv>.hsel{min-width:0;padding:8px 10px 10px}
+body.vsub .fade.pv .card.hsel .fl{font-size:12px}
+body.vsub .fade.pv .card.hsel .ddb{font-size:13px;padding:8px 10px;min-height:0}
+body.vsub .fade.pv .card.hsel .ddb>span:first-child{-webkit-line-clamp:2}
+body.vsub .fade.pv .card.hsel .ddl{width:min(92vw,360px)}
+
+/* ---- 2. touch devices: :hover must not stay "stuck" on a button after tapping it ---- */
+}
+@media screen and (hover:none){
+body.vsub .pills.acts .btn:not(.on):hover{color:#f3dfae;border-color:rgba(255,225,185,.30)}
+body.vsub .tabs.nopr:not(.t4) .tb:not(.on):hover{color:#f6ebd2}
+.btn:not(.on):hover{color:var(--cream)}
+.ib:hover{color:var(--tan2);transform:none}
+}
+
+/* =====================================================================
+   3-6. QUIZ SCREEN — fits the viewport (dvh), compact card, 2×2 options
+   ===================================================================== */
+@media screen{
+html.vquiz{height:100%;overflow:hidden}
+body.vquiz{height:100vh;height:100dvh;min-height:0;overflow:hidden}
+body.vquiz footer{display:none}
+
+/* header image keeps its look but is height-limited so the card gets the space (same idea as the home screen) */
+body.vquiz .hero{flex:none;aspect-ratio:auto;height:auto;min-height:0}
+body.vquiz .hero .ht{position:relative;left:auto;top:auto;width:auto;padding:calc(56px + env(safe-area-inset-top,0px)) 0 clamp(4px,1dvh,8px) 27.7%}
+body.vquiz .hero h1{font-size:min(9.6cqw,5dvh)}
+
+body.vquiz.vsub main{flex:1 1 auto;min-height:0;display:flex;flex-direction:column;padding:clamp(4px,1dvh,10px) 12px clamp(6px,1.2dvh,12px)}
+body.vquiz.vsub main>.fade{flex:1 1 auto;min-height:0;display:flex;flex-direction:column;width:100%}
+
+body.vquiz.vsub .fade>.h2{display:flex;align-items:center;min-height:32px;padding-left:40px;font-size:clamp(15px,4vw,20px);line-height:1.25}
+body.vquiz.vsub .fade>.h2::before{width:32px;height:32px;top:0}
+body.vquiz.vsub .fade>.sub{padding-left:40px;font-size:11px;line-height:1.25;margin:0 0 clamp(4px,.9dvh,8px)}
+body.vquiz.vsub .tabs.t4{flex:none;grid-auto-rows:clamp(46px,min(12.5vw,7.8dvh),56px);margin:0 0 clamp(6px,1.1dvh,10px)}
+
+/* chapter / type cards + level pills: compact, same look */
+body.vquiz.vsub .fgrid{flex:none;gap:8px;margin:0 0 clamp(6px,1.1dvh,10px)}
+body.vquiz.vsub .fgrid .card.fc{padding:6px 8px 8px;border-radius:14px}
+body.vquiz.vsub .fgrid .card.fc .fl{font-size:11px;line-height:1.2;margin:0 0 3px}
+body.vquiz.vsub .fgrid .card.fc .ddb{min-height:clamp(34px,5.4dvh,44px);padding:5px 8px;font-size:12.5px}
+body.vquiz.vsub .pills.lvp{flex:none;gap:6px;margin:0 0 clamp(6px,1.1dvh,10px)}
+body.vquiz.vsub .pill{min-height:clamp(32px,4.8dvh,40px);padding:0 12px;font-size:13.5px}
+body.vquiz .ddl{max-height:min(55vh,calc(100dvh - 230px))}
+
+/* the question card: height follows its content, never a fixed pixel height */
+body.vquiz.vsub main .card.qzcard{flex:0 1 auto;min-height:0;margin:0;padding:clamp(10px,1.8dvh,18px) clamp(12px,3.6vw,20px);border-radius:22px}
+body.vsub .qzbody{flex:1 1 auto;min-height:0;display:flex;flex-direction:column;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none}
+body.vsub .qzbody::-webkit-scrollbar{display:none}
+body.vquiz.vsub .qzcard .meta{font-size:12.5px;gap:8px}
+body.vquiz.vsub .qzcard .tag{padding:3px 10px;border-radius:10px}
+body.vquiz.vsub .qzcard .qt{font-size:clamp(15px,min(4.6vw,2.6dvh),22px);line-height:1.4;margin:clamp(6px,1.2dvh,12px) 0 clamp(8px,1.4dvh,14px)}
+body.vquiz.vsub .qzcard .qpic{flex:0 1 auto;min-height:0;margin:0 0 8px}
+body.vquiz.vsub .qzcard .qpic img{max-height:min(14rem,22dvh);width:auto;max-width:100%;object-fit:contain}
+body.vquiz.vsub .qzcard .ans{margin:0 0 4px;padding:8px 12px;font-size:clamp(13px,2.2dvh,16px);line-height:1.5}
+
+/* ---- 5. MCQ: 2 columns × 2 rows ---- */
+body.vsub .qzcard .opts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(6px,1.2dvh,10px)}
+body.vsub .qzcard .opts .opt{margin:0;min-width:0;min-height:clamp(44px,7.2dvh,64px);padding:6px 8px 6px 6px;gap:8px;border-radius:14px;font-size:clamp(13px,min(3.7vw,2.2dvh),17px);line-height:1.3}
+body.vsub .qzcard .opts .ol{flex:none;width:clamp(26px,4.4dvh,34px);height:clamp(26px,4.4dvh,34px);font-size:clamp(13px,2dvh,16px)}
+body.vsub .qzcard .opt .ot{min-width:0;flex:1 1 auto;overflow-wrap:break-word}
+/* very long Kannada option text: slightly smaller type so the 2×2 grid still fits the card */
+body.vsub .qzcard .opts.lg .opt{font-size:clamp(11.5px,min(3.2vw,1.9dvh),14.5px);line-height:1.25;min-height:0}
+body.vsub .qzcard .opts.lg .ol{width:24px;height:24px;font-size:12px}
+
+/* action row (Show answer / Next) always visible below the scrolling-safety body */
+body.vsub .qzact{flex:none;display:flex;justify-content:flex-end;flex-wrap:wrap;gap:8px;padding-top:clamp(6px,1.2dvh,12px)}
+body.vsub .qzact:empty{display:none;padding:0}
+body.vsub .qzcard .qzact .btn{margin:0;padding:clamp(6px,1.1dvh,10px) 18px;font-size:14px}
+}
+
+/* very short phones: trim decoration, keep everything on one screen */
+@media screen and (max-height:600px){
+body.vquiz.vsub .fade>.sub{display:none}
+body.vquiz.vsub .tabs.t4{grid-auto-rows:40px}
+body.vquiz.vsub .tabs.t4 .tb::before{display:none}
+body.vquiz .hero .hsub{display:none}
+body.vquiz.vsub .tabs.t4{grid-auto-rows:36px;margin-bottom:5px}
+body.vquiz.vsub .fade>.h2{min-height:28px}
+body.vquiz.vsub .fade>.h2::before{width:28px;height:28px}
+body.vquiz.vsub .fgrid .card.fc{padding:4px 8px 6px}
+body.vquiz.vsub .fgrid .card.fc .ddb{min-height:30px}
+body.vquiz.vsub .pill{min-height:30px}
+body.vquiz.vsub main{padding-bottom:3px}
+body.vquiz.vsub .pills.lvp,body.vquiz.vsub .fgrid{margin-bottom:5px}
+}
+
+/* =====================================================================
+   7-11. PRINT — one flowing A4 document (paper + blueprint + practice answers)
+   ===================================================================== */
+@page{size:A4 portrait;margin:12mm 15mm 15mm 15mm}
+@media print{
+ /* 9. screen heights / flex shells never control the printed page */
+ html,body{height:auto!important;min-height:0!important;max-height:none!important;width:auto!important;overflow:visible!important;
+  display:block!important;margin:0!important;padding:0!important;background:#fff!important;background-image:none!important;color:#000!important}
+ html{font-size:11.5pt!important}
+ body{font-size:1rem!important;line-height:1.55!important}
+ *,*::before,*::after{animation:none!important;transition:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;text-shadow:none!important}
+ .card,.glass,.neu{box-shadow:none!important}
+ main,main>.fade,.fade{display:block!important;position:static!important;width:auto!important;max-width:none!important;height:auto!important;min-height:0!important;
+  max-height:none!important;flex:none!important;margin:0!important;padding:0!important;overflow:visible!important;transform:none!important;opacity:1!important}
+ .top,.hero,footer,.tabs,.pills,.fgrid,.hsel,.abrow,.note,.toast,.nopr,.dd,.ddz,#fs,.qzact{display:none!important}
+
+ /* 10. question paper */
+ .paper{display:block!important;background:#fff!important;color:#000!important;border:0!important;border-radius:0!important;box-shadow:none!important;outline:0!important;
+  padding:0!important;margin:0!important}
+ .paper.editing{outline:0!important}
+ .paper,.paper *{color:#000!important}
+ .paper .ph{margin:0 0 .6rem!important;padding:0 0 .5rem!important;background:none!important;border:0!important;border-bottom:1.5pt solid #000!important;border-radius:0!important;
+  box-shadow:none!important;text-align:center;line-height:1.7;font-weight:600;break-after:avoid;page-break-after:avoid;break-inside:avoid;page-break-inside:avoid}
+ .paper .ph:last-child{border-bottom:0!important;border-top:1.5pt solid #000!important;margin:.9rem 0 0!important;padding:.5rem 0 0!important;break-after:auto;page-break-after:auto}
+ /* sections flow across pages; only the small blocks inside them stay whole */
+ .paper .sec{margin:.9rem 0 0!important;padding:0!important;background:none!important;border:0!important;border-radius:0!important;box-shadow:none!important;
+  break-inside:auto!important;page-break-inside:auto!important}
+ .paper .sh{display:flex!important;justify-content:space-between;align-items:baseline;gap:1rem;margin:0 0 .4rem!important;padding:0!important;background:none!important;border:0!important;
+  font-weight:700;break-after:avoid;page-break-after:avoid}
+ .paper .sh>span{padding:0!important;margin:0!important;background:none!important;border:0!important;border-radius:0!important}
+ .paper .sh>span:last-child{flex:none;white-space:nowrap;text-align:right}
+ .paper .sec>b{break-after:avoid;page-break-after:avoid}
+ .paper .pq{margin:.35rem 0 .35rem .2rem!important;padding:0!important;break-inside:avoid;page-break-inside:avoid;orphans:3;widows:3}
+ .paper .sh+.pq{break-before:avoid;page-break-before:avoid}
+ .paper .mt,.paper table,.paper tr,.paper .qpic,.paper .ans,.paper .wh{break-inside:avoid;page-break-inside:avoid}
+ .paper .wl{height:1.65rem;margin:0 0 0 1.4rem;border-bottom:.75pt solid #000}
+ .paper .ln,.paper .mt td.ma{border-bottom:.75pt solid #000}
+ .paper .qpic{margin:.3rem 0;text-align:center}
+ .paper .ans{margin:.3rem 0 .2rem!important;padding:.3rem .6rem!important;background:#f2f2f2!important;border-left:2.5pt solid #555!important;border-radius:0!important;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact}
+ img,svg{-webkit-print-color-adjust:exact;print-color-adjust:exact;filter:none!important;max-width:100%}
+
+ /* 11. blueprint */
+ .bpwrap{display:none!important}
+ body.pr-bp .bpwrap{display:block!important;margin:0!important;padding:0!important;background:#fff!important;border:0!important;border-radius:0!important;box-shadow:none!important;overflow:visible!important}
+ body.pr-bp .bpwrap .bpbar{display:block!important;margin:0 0 .5rem}
+ body.pr-bp .bpwrap .bpbar h3{margin:0 0 .5rem;font-size:1.05rem;line-height:1.4;text-align:center;color:#000!important}
+ body.pr-bp .bpwrap .bph{display:block;margin:.9rem 0 .35rem!important;padding:0!important;background:none!important;border-radius:0!important;box-shadow:none!important;
+  font-size:1rem;font-weight:800;break-after:avoid;page-break-after:avoid}
+ body.pr-bp .bpwrap .tw{margin:0 0 .5rem!important;overflow:visible!important;border:0!important;border-radius:0!important}
+ body.pr-bp .bpwrap .bpt{width:100%!important;min-width:0!important;border-collapse:collapse;font-size:.88rem}
+ body.pr-bp .bpwrap .bpg{font-size:.62rem!important}
+ body.pr-bp .bpwrap .bpt th,body.pr-bp .bpwrap .bpt td{padding:.2rem .25rem;background:none!important;border:.75pt solid #000!important}
+ body.pr-bp .bpwrap .bpt th{background:#eee!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ body.pr-bp .bpwrap .bpt thead{display:table-header-group}
+ body.pr-bp .bpwrap .bpt tr{break-inside:avoid;page-break-inside:avoid}
+ body.pr-bp .bpwrap .chn{margin:.2rem 0 .5rem;font-size:.8rem}
+
+ /* practice answers (ಅಭ್ಯಾಸ ಉತ್ತರಗಳು) */
+ #abbody.editing,#abbody{outline:0!important}
+ #abbody .card{overflow:visible!important}
+ #abbody .qa{break-inside:avoid;page-break-inside:avoid}
+ #abbody h3{break-after:avoid;page-break-after:avoid}
+}
+
 </style></head><body>
 <div class="top"><button class="ib" id="bk" onclick="goBack()" aria-label="ಹಿಂದೆ"><svg class="ic-back" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg><svg class="ic-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button><div class="crumb" id="crumb"></div>
-<span class="ib deco" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg></span><span class="ib deco" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 17V11a6 6 0 0112 0v6l1.5 2h-15z"/><path d="M10 21h4"/></svg><i class="rd"></i></span><button class="ib" onclick="goHome()" aria-label="ಹೋಮ್"><svg class="ic-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg><svg class="ic-user" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="8" r="4.2"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7z"/></svg></button></div>
+<span class="ib deco" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg></span><span class="ib deco" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 17V11a6 6 0 0112 0v6l1.5 2h-15z"/><path d="M10 21h4"/></svg><i class="rd"></i></span><button class="ib" id="fs" type="button" hidden aria-label="ಪೂರ್ಣ ಪರದೆ" aria-pressed="false"><svg class="fs-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg><svg class="fs-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4v5H4M15 4v5h5M9 20v-5H4M15 20v-5h5"/></svg></button><button class="ib" onclick="goHome()" aria-label="ಹೋಮ್"><svg class="ic-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg><svg class="ic-user" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="8" r="4.2"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7z"/></svg></button></div>
 <section class="hero" id="hero"><svg viewBox="0 0 1200 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1c2136"/><stop offset=".6" stop-color="#2b3350"/><stop offset="1" stop-color="#4d5a78"/></linearGradient><radialGradient id="sun" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#f0d6b8"/><stop offset=".55" stop-color="#c9a07c"/><stop offset="1" stop-color="#c9a07c" stop-opacity="0"/></radialGradient><linearGradient id="m1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6a789a"/><stop offset="1" stop-color="#3a4465"/></linearGradient><linearGradient id="m2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3b4668"/><stop offset="1" stop-color="#262d48"/></linearGradient></defs>
 <rect width="1200" height="300" fill="url(#sky)"/><circle cx="880" cy="120" r="150" fill="url(#sun)" opacity=".75"/><circle cx="880" cy="120" r="46" fill="#e2bf9b"/>
 <g fill="#e2bf9b"><circle cx="90" cy="40" r="2.2"/><circle cx="210" cy="70" r="1.6"/><circle cx="330" cy="30" r="2"/><circle cx="470" cy="62" r="1.5"/><circle cx="580" cy="26" r="2.2"/><circle cx="700" cy="55" r="1.6"/><circle cx="1010" cy="35" r="2"/><circle cx="1110" cy="80" r="1.8"/><circle cx="150" cy="120" r="1.4"/><circle cx="400" cy="110" r="1.4"/></g>
@@ -803,7 +977,7 @@ function ansHtml(a){a=String(a);
  return `<div class="ans"><b>${T('ans')}</b> ${esc(a)}</div>`}
 function picHtml(p){if(!p||(Array.isArray(p)&&!p.length))return '';const a=Array.isArray(p)?p:[p];return `<div class="qpic">${a.map(x=>String(x).trim().startsWith('<svg')?x:`<img loading="lazy" src="${x}" alt="">`).join('')}</div>`}
 function vAb(){const L=lessons(),l=L.find(x=>x.n==ST.abl)||L[0];
- let h=`<div class="abrow nopr"><div class="card glass neu ddz nopr abchap"><label class="fl" style="margin-top:0">${T('chapter')}</label>${sel('abs',L.map(x=>[String(x.n),lessonLabel(x)]),l.n,'ST.abl=+value;render()')}</div><div class="pills acts abside"><button class="btn" id="abedbtn" data-ic="edit" onclick="togAbEdit()">${pl(T('edit'))}</button><button class="btn" data-ic="print" onclick="this.classList.add('on');window.print();setTimeout(()=>this.classList.remove('on'),700)">${pl(T('print'))}</button></div></div>
+ let h=`<div class="abrow nopr"><div class="card glass neu ddz nopr abchap"><label class="fl" style="margin-top:0">${T('chapter')}</label>${sel('abs',L.map(x=>[String(x.n),lessonLabel(x)]),l.n,'ST.abl=+value;render()')}</div><div class="pills acts abside"><button class="btn" id="abedbtn" data-ic="edit" onclick="togAbEdit()">${pl(T('edit'))}</button><button class="btn" type="button" data-ic="print" onclick="printMode('ab',event)">${pl(T('print'))}</button></div></div>
  <div id="abbody">
  <div class="card glass neu"><div class="abhead"><h3>${esc(lessonLabel(l))}</h3></div><div class="chn">${T('author')}: ${esc(l.au||'')} · ${T('page')} ${l.pg}</div><details><summary>${T('words')}</summary><p>${esc(l.words)||T('noWords')}</p></details><details><summary>${T('notes')}</summary><p>${esc(l.notes)||T('noNotes')}</p></details></div>
  <div class="note nopr">${T('abNote')}</div>`;
@@ -1050,9 +1224,26 @@ function buildPaperEN(){
  ST.lastPicked=bp;ST.lastLs=ls;
  return `<div class="paper fade" id="pp"><div class="ph"><div class="sch">${T('school')(ST.cls)}, ____________ ____________ Taluk</div><b style="font-size:1.25em">${T('exam')[P]}</b><br>${T('cls')}: ${ENG[ST.cls-1]} | ${T('subj')}: ${cur().title} ${cur().part}<br>${T('time')}: ${T('times')[P]} | ${T('maxm')}: ${max}<br>${T('stu')}: ______________________ ${T('roll')}: ____</div>${body}<div class="ph" style="border:0;border-top:2px solid #232a45;padding-top:.6rem">${T('totalM')}: ${fmt(tot)}</div></div>`}
 
-function printMode(m){const c=document.body.classList;c.remove('pr-paper','pr-bp');c.add('pr-'+m);
- const done=()=>{c.remove('pr-paper','pr-bp');window.removeEventListener('afterprint',done)};
- window.addEventListener('afterprint',done);setTimeout(()=>window.print(),60);setTimeout(done,20000)}
+/* v25: print helpers — no persistent selected state; everything resets after the print dialog closes */
+const PRN={on:false,t:0,blur:false,timer:0};
+const PRINT_BTN='.acts .btn[data-ic="print"]';
+function resetPrintUi(){
+ document.querySelectorAll(PRINT_BTN).forEach(b=>{b.classList.remove('on','active','selected','pressed');b.removeAttribute('aria-pressed');if(PRN.blur&&document.activeElement===b)b.blur()});
+ if(ST.act&&(ST.act.k==='print'||ST.act.k==='printbp'))ST.act=null}
+function endPrint(){
+ document.body.classList.remove('pr-paper','pr-bp','pr-ab');
+ clearTimeout(PRN.timer);PRN.on=false;resetPrintUi();PRN.blur=false}
+function printMode(m,ev){
+ const c=document.body.classList;c.remove('pr-paper','pr-bp','pr-ab');c.add('pr-'+m);
+ /* mouse/touch activation → drop focus so the button cannot look selected; keyboard activation (detail 0) keeps focus for accessibility */
+ const b=ev&&ev.currentTarget;PRN.blur=!(ev&&ev.detail===0);
+ if(b&&PRN.blur&&b.blur)b.blur();
+ PRN.on=true;PRN.t=Date.now();clearTimeout(PRN.timer);PRN.timer=setTimeout(endPrint,180000);
+ setTimeout(()=>{try{window.print()}catch(e){endPrint()}},60)}
+window.addEventListener('afterprint',endPrint);
+window.addEventListener('pageshow',()=>{resetPrintUi();if(PRN.on&&Date.now()-PRN.t>500)endPrint()});
+document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'){resetPrintUi();if(PRN.on&&Date.now()-PRN.t>800)endPrint()}});
+window.addEventListener('focus',()=>{if(PRN.on&&Date.now()-PRN.t>1500)endPrint();else resetPrintUi()});
 function togEdit(b){const p=$('pp');if(!p)return;const on=p.getAttribute('contenteditable')==='true';p.setAttribute('contenteditable',on?'false':'true');p.classList.toggle('editing',!on);b.classList.toggle('on',!on);b.textContent=pl(on?T('edit'):T('editDone'))}
 /* v21: leading emoji removed from action pills (icons are drawn in CSS) */
 const pl=s=>String(s).replace(/^[^\p{L}\p{N}]+/u,'');
@@ -1061,7 +1252,7 @@ function actCtx(){return ST.ptype+'|'+(ST.sel&&ST.sel[ST.ptype])}
 function actOn(k){return ST.act&&ST.act.k===k&&ST.act.c===actCtx()?' on':''}
 function setAct(k){ST.act={k:k,c:actCtx()};document.querySelectorAll('.acts .btn[data-act]').forEach(x=>x.classList.toggle('on',x.dataset.act===k))}
 /* v21: ಬ್ಲೂಪ್ರಿಂಟ್ ಮುದ್ರಿಸಿ now lives in the action rows; blueprint must exist in DOM to print */
-function printBpMode(){if(!ST.bpOpen){ST.bpOpen=true;render()}printMode('bp')}
+function printBpMode(ev){if(!ST.bpOpen){ST.bpOpen=true;render()}printMode('bp',ev)}
 /* ===== ಬ್ಲೂಪ್ರಿಂಟ್ (ಮಾದರಿ ಪ್ರಶ್ನೆ ಪತ್ರಿಕೆಯಂತೆ) ===== */
 function formIdx(q){return q.fi!==undefined?q.fi:(q.t==='short'?1:q.t==='long'?2:0)}
 function lessonShort(l){return ST.sub==='en'?l.t.replace(/\s*\(.*$/,''):l.t}
@@ -1099,7 +1290,7 @@ function vPaper(){if(!allQ().length)return `<div class="card glass neu">${T('noP
  const po=[];if(o.g.length){po.push([null,T('groups')]);o.g.forEach(x=>po.push(x))}if(o.s.length){po.push([null,T('single')]);o.s.forEach(x=>po.push(x))}
  return `<div class="card glass neu nopr ddz hsel"><label class="fl" style="margin-top:0">${T('lessonSel')}</label>${sel('psel',po,v,'ST.sel[ST.ptype]=value;render()')}</div><div class="tabs nopr">${tabs}</div>
  <div class="card glass neu nopr acard">
- <div class="pills acts"><button class="btn${actOn('new')}" data-ic="new" data-act="new" onclick="setAct('new');ST.seed[ST.ptype]++;render()">${pl(T('newP'))}</button><button class="btn${ST.showAns?'':' on'}" data-ic="hide" onclick="ST.showAns=!ST.showAns;render()">${ST.showAns?T('hideA'):T('showA')}</button><button class="btn ${ST.bpOpen?'on':''}" data-ic="bp" onclick="ST.bpOpen=!ST.bpOpen;render()">${pl(T('bp'))} ${ST.bpOpen?'▴':'▾'}</button><button class="btn" data-ic="edit" onclick="togEdit(this)">${pl(T('edit'))}</button><button class="btn${actOn('print')}" data-ic="print" data-act="print" onclick="setAct('print');printMode('paper')">${pl(T('printP'))}</button><button class="btn${actOn('printbp')}" data-ic="print" data-act="printbp" onclick="setAct('printbp');printBpMode()">${pl(T('printBp'))}</button></div></div>${bpSec}${paperHtml}`}
+ <div class="pills acts"><button class="btn${actOn('new')}" data-ic="new" data-act="new" onclick="setAct('new');ST.seed[ST.ptype]++;render()">${pl(T('newP'))}</button><button class="btn${ST.showAns?'':' on'}" data-ic="hide" onclick="ST.showAns=!ST.showAns;render()">${ST.showAns?T('hideA'):T('showA')}</button><button class="btn ${ST.bpOpen?'on':''}" data-ic="bp" onclick="ST.bpOpen=!ST.bpOpen;render()">${pl(T('bp'))} ${ST.bpOpen?'▴':'▾'}</button><button class="btn" data-ic="edit" onclick="togEdit(this)">${pl(T('edit'))}</button><button class="btn" type="button" data-ic="print" onclick="printMode('paper',event)">${pl(T('printP'))}</button><button class="btn" type="button" data-ic="print" onclick="printBpMode(event)">${pl(T('printBp'))}</button></div></div>${bpSec}${paperHtml}`}
 /* ===== ರಸಪ್ರಶ್ನೆ ===== */
 function vQuiz(){const list=allQ().filter(q=>(ST.qzc==='all'||q.ch==ST.qzc)&&(ST.qzt==='all'||q.t===ST.qzt)&&((ST.qzl||'all')==='all'||q.lv===ST.qzl));
  const lo=[['all',T('allCh')],...lessons().filter(l=>l.qb.length).map(l=>[String(l.n),lessonLabel(l)])];
@@ -1109,18 +1300,36 @@ function startQuiz(){ST.qi=0;ST.qs=0;ST.qa=null;ST.qo=[];render()}
 function quizHtml(list){if(!list.length)return `<div class="card glass neu">${T('noQ')}</div>`;
  if(!ST.qo.length)ST.qo=shuffle(list.map(q=>q.id),rng(Date.now()%99999));const id=ST.qo[ST.qi];
  if(!id)return `<div class="card glass neu"><h3>${T('done')}</h3><p>${T('doneTxt')(ST.qo.length,ST.qs)}</p><button class="btn" onclick="startQuiz()">${T('again')}</button></div>`;
- const q=allQ().find(x=>x.id===id);let h=`<div class="card glass neu qzcard qzb${ST.qi%7}${ST.qa!==null?' qzans':''}"><div class="meta"><span class="tag">${T('types')[q.t]}</span><span>${markTxt(q.mk)}</span><span>${ST.qi+1}/${ST.qo.length}</span></div><div class="qt">${esc(q.q)}</div>${q.img?`<div class="qpic"><img loading="lazy" src="${q.img}" alt=""></div>`:''}`;
- if(q.t==='mcq')h+=q.o.map((o,i)=>{let c='';if(ST.qa!==null){if(i===q.a)c='ok';else if(i===ST.qa)c='bad'}return `<div class="opt ${c}" onclick="ansQ(${i},${q.a})" style="cursor:pointer"><span class="ol">${'ABCD'[i]}</span>${esc(o)}</div>`}).join('');
- else h+=ST.qa!==null?`<div class="ans"><b>${T('ans')}</b> ${esc(q.a)}</div>`:`<button class="btn" onclick="ST.qa=0;render()">${T('showAns')}</button>`;
- if(ST.qa!==null)h+=`<button class="btn" onclick="ST.qi++;ST.qa=null;render()">${T('next')}</button>`;return h+'</div>'}
+ const q=allQ().find(x=>x.id===id);const ans=ST.qa!==null;
+ let h=`<div class="card glass neu qzcard qzb${ST.qi%7}${ans?' qzans':''}"><div class="qzbody"><div class="meta"><span class="tag">${T('types')[q.t]}</span><span>${markTxt(q.mk)}</span><span>${ST.qi+1}/${ST.qo.length}</span></div><div class="qt">${esc(q.q)}</div>${q.img?`<div class="qpic"><img loading="lazy" src="${q.img}" alt=""></div>`:''}`;
+ if(q.t==='mcq')h+='<div class="opts'+(q.o.some(o=>String(o).length>45)?' lg':'')+'">'+q.o.map((o,i)=>{let c='';if(ans){if(i===q.a)c='ok';else if(i===ST.qa)c='bad'}return `<div class="opt ${c}" onclick="ansQ(${i},${q.a})" style="cursor:pointer"><span class="ol">${'ABCD'[i]}</span><span class="ot">${esc(o)}</span></div>`}).join('')+'</div>';
+ else if(ans)h+=`<div class="ans"><b>${T('ans')}</b> ${esc(q.a)}</div>`;
+ h+='</div><div class="qzact">';
+ if(q.t!=='mcq'&&!ans)h+=`<button class="btn" onclick="ST.qa=0;render()">${T('showAns')}</button>`;
+ if(ans)h+=`<button class="btn" onclick="ST.qi++;ST.qa=null;render()">${T('next')}</button>`;
+ return h+'</div></div>'}
 function ansQ(i,a){if(ST.qa!==null)return;ST.qa=i;if(i===a)ST.qs++;render()}
 /* ===== ರೆಂಡರ್ ===== */
 function render(){
- const hero=$('hero');hero.classList.toggle('sm',ST.view!=='home'&&ST.view!=='class'&&ST.view!=='subject');document.body.classList.toggle('vcls',ST.view==='class');document.body.classList.toggle('vsub',ST.view==='subject');
+ const hero=$('hero');hero.classList.toggle('sm',ST.view!=='home'&&ST.view!=='class'&&ST.view!=='subject');document.body.classList.toggle('vcls',ST.view==='class');document.body.classList.toggle('vsub',ST.view==='subject');{const qz=ST.view==='subject'&&ST.tab==='quiz';document.body.classList.toggle('vquiz',qz);document.documentElement.classList.toggle('vquiz',qz)}
  $('herop').textContent=(ST.view==='home'||ST.view==='class')?'Shikshana Parva · ಕಲಿಕೆಯ ಹಬ್ಬ':'ಶಿಕ್ಷಕರಿಗಾಗಿ ಕಲಿಕಾ ಸಂಪನ್ಮೂಲ ವೇದಿಕೆ';
  $('bk').disabled=ST.view==='home';
  let c='<b>ಮುಖಪುಟ</b>';if(ST.cls)c+=` › ${ORD[ST.cls-1]} ತರಗತಿ`;if(ST.sub&&ST.view==='subject'&&cur())c+=` › <b>${cur().title}</b>`;$('crumb').innerHTML=c;
  $('main').innerHTML=ST.view==='home'?vHome():ST.view==='class'?vClass():vSubject();}
+/* v25: Fullscreen API — only from a user tap, only where supported, hidden when already running as an installed app */
+(function(){
+ const btn=document.getElementById('fs');if(!btn)return;
+ const root=document.documentElement;
+ const req=root.requestFullscreen||root.webkitRequestFullscreen;
+ const ext=document.exitFullscreen||document.webkitExitFullscreen;
+ const isFs=()=>!!(document.fullscreenElement||document.webkitFullscreenElement);
+ const installed=()=>{try{return matchMedia('(display-mode: standalone)').matches||matchMedia('(display-mode: fullscreen)').matches||matchMedia('(display-mode: minimal-ui)').matches||navigator.standalone===true}catch(e){return false}};
+ function sync(){const on=isFs();btn.hidden=!(req&&ext)||installed();btn.classList.toggle('isfs',on);btn.setAttribute('aria-pressed',on?'true':'false');btn.setAttribute('aria-label',on?'ಪೂರ್ಣ ಪರದೆಯಿಂದ ಹೊರಬನ್ನಿ':'ಪೂರ್ಣ ಪರದೆ')}
+ btn.addEventListener('click',function(){
+  try{const p=isFs()?ext.call(document):req.call(root,{navigationUI:'hide'});if(p&&p.catch)p.catch(()=>{})}catch(e){}});
+ document.addEventListener('fullscreenchange',sync);document.addEventListener('webkitfullscreenchange',sync);
+ try{matchMedia('(display-mode: standalone)').addEventListener('change',sync)}catch(e){}
+ sync()})();
 if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{});
 render();
 </script></body></html>
