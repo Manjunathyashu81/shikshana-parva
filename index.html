@@ -912,7 +912,7 @@ Object.assign(L10N.en.types,{one1:'One mark',long4:'Descriptive (4 marks)'});
 Object.assign(L10N.kn.ins,{one1:'ಒಂದು ಅಂಕ – ಒಂದು ಪದ ಅಥವಾ ವಾಕ್ಯದಲ್ಲಿ ಉತ್ತರಿಸಿ.',long4:'ವಿವರಣಾತ್ಮಕವಾಗಿ ಉತ್ತರಿಸಿ (ಐದು–ಆರು ವಾಕ್ಯ).'});
 Object.assign(L10N.en.ins,{one1:'One mark – answer in a word or sentence.',long4:'Answer descriptively (five to six sentences).'});
 function Lx(){return L10N[ST.sub==='en'?'en':'kn']}
-function T(k){if(k==='obj'&&ST.sub==='evs'&&typeof EVS_OBJ!=='undefined')return EVS_OBJ;return Lx()[k]}
+function T(k){if(k==='obj'&&ST.sub==='evs'&&typeof EVS_OBJ!=='undefined')return EVS_OBJ;if(k==='obj'&&ST.sub==='ma'&&typeof MA_OBJ!=='undefined')return MA_OBJ;return Lx()[k]}
 /* ===== ಸ್ಥಿತಿ ===== */
 let ST={view:'home',cls:null,sub:null,tab:'ab',hist:[],ch:'all',type:'all',lv:'all',qi:0,qo:[],qs:0,qa:null,ptype:'unit',showAns:true,abl:9,bpOpen:false,qzc:'all',qzt:'all',
  sel:{unit:'',fa3:'',fa4:'',sa2:''},seed:{unit:1,fa3:1,fa4:1,sa2:1},lastPicked:[]};
@@ -1387,9 +1387,65 @@ function buildPaperEVS(){
  ST.lastPicked=bp;ST.lastLs=ls;
  const warn=tot!==max?`<div class="chn nopr">ಎಚ್ಚರಿಕೆ: ಈ ಪಾಠ ಆಯ್ಕೆಗೆ ಸಾಕಷ್ಟು ಪ್ರಶ್ನೆಗಳಿಲ್ಲ – ${fmt(tot)} / ${max} ಅಂಕ ಮಾತ್ರ ತುಂಬಿದೆ.</div>`:'';
  return `<div class="paper fade" id="pp"><div class="ph"><div class="sch">${T('school')(ST.cls)}, ____________ ____________ ತಾಲ್ಲೂಕು</div><b style="font-size:1.25em">${T('exam')[P]}</b><br>${T('cls')}: ${ORD[ST.cls-1]} | ${T('subj')}: ${cur().title} ${cur().part}<br>${T('time')}: ${T('times')[P]} | ${T('maxm')}: ${max}<br>${T('stu')}: ______________________ ${T('roll')}: ____</div>${body}${warn}<div class="ph" style="border:0;border-top:2px solid #232a45;padding-top:.6rem">${T('totalM')}: ${fmt(tot)}</div></div>`}
+/* ===== ಗಣಿತ ಪ್ರಶ್ನೆಪತ್ರಿಕೆ (ಮಾಸ್ಟರ್ ಪ್ರಾಂಪ್ಟ್ v2 §12) – ಚಿತ್ರ ಕ್ಯಾಪ್ ಮತ್ತು ವಿಭಾಗಗಳು ಸ್ಥಿರ ===== */
+const MA_OBJ=['ಜ್ಞಾನ','ಗ್ರಹಿಕೆ','ಅನ್ವಯ','ಕೌಶಲ'];
+const MA_TPL={
+ unit:[['mcq',8,1],['tf',2,1],['pic',2,1],['short',4,2]],
+ fa3:[['mcq',6,1],['pic',3,1],['short',3,2]],
+ fa4:[['mcq',7,1],['tf',1,1],['pic',3,1],['short',2,2]],
+ sa2:[['mcq',12,1],['tf',2,1],['pic',3,1],['short',6,2],['long3',1,3],['long4',2,4]]};
+const MA_MAXIMG={unit:2,fa3:3,fa4:3,sa2:4};
+const MA_ORDER=['mcq','tf','one','pic','short','long3','long4'];
+const MA_INS={mcq:'ಕೊಟ್ಟಿರುವ ನಾಲ್ಕು ಆಯ್ಕೆಗಳಲ್ಲಿ ಸರಿಯಾದ ಉತ್ತರವನ್ನು ಆರಿಸಿ ಬರೆಯಿರಿ:',tf:'ಸರಿ ಅಥವಾ ತಪ್ಪು ಎಂದು ಬರೆಯಿರಿ:',one:'ಖಾಲಿ ಜಾಗ ತುಂಬಿರಿ:',pic:'ಚಿತ್ರವನ್ನು ನೋಡಿ ಉತ್ತರಿಸಿ:',short:'ಈ ಕೆಳಗಿನ ಸಮಸ್ಯೆಗಳನ್ನು ಬಿಡಿಸಿರಿ:',long3:'ಈ ಕೆಳಗಿನ ಸಮಸ್ಯೆಗಳನ್ನು ಬಿಡಿಸಿರಿ (ಮೂರು ಅಂಕ):',long4:'ಈ ಕೆಳಗಿನ ಸಮಸ್ಯೆಗಳನ್ನು ಬಿಡಿಸಿರಿ (ನಾಲ್ಕು ಅಂಕ):'};
+/* [ಉದ್ದಿಷ್ಟ (OBJ_K), ರೂಪ (0 ವ.ಉ / 1 ಕಿ.ಉ / 2 ವಿ.ಉ), ನಿರ್ದಿಷ್ಟ, ನಿಮಿಷ, ಕ್ಲಿಷ್ಟತೆ] */
+const MA_BP={mcq:['a',0,'ಆಯ್ಕೆ ಮಾಡುತ್ತಾನೆ',2,'e'],tf:['g',0,'ಗುರುತಿಸುತ್ತಾನೆ',1,'e'],one:['a',0,'ಸ್ಮರಿಸುತ್ತಾನೆ',2,'e'],pic:['g',0,'ಚಿತ್ರ ಗಮನಿಸಿ ಉತ್ತರಿಸುತ್ತಾನೆ',2,'e'],short:['b',1,'ಲೆಕ್ಕ ಹಾಕುತ್ತಾನೆ',4,'m'],long3:['b',2,'ವಿವರಿಸುತ್ತಾನೆ',5,'h'],long4:['p',2,'ಅನ್ವಯಿಸುತ್ತಾನೆ',6,'h']};
+/* ಪ್ರಶ್ನೆಯ ಪ್ರಕಾರ: mcq / tf (ಸರಿ ಅಥವಾ ತಪ್ಪು) / one (ಖಾಲಿ ಜಾಗ) / short (2 ಅಂಕ) / long3 (3) / long4 (4) / match (ಈ ಪತ್ರಿಕೆಯಲ್ಲಿ ಬಳಸುವುದಿಲ್ಲ) */
+function maKind(q){const t=String(q.q||'');
+ if(q.a===undefined||q.a===null||q.a==='')return 'skip';
+ if(q.t==='mcq')return Array.isArray(q.o)&&q.o.length===4?'mcq':'skip';
+ if(q.t==='one1'){if(/^ಹೊಂದಿಸಿ ಬರೆ/.test(t))return 'match';if(/^ಸರಿ ಅಥವಾ ತಪ್ಪು\s*:/.test(t))return /^(ಸರಿ|ತಪ್ಪು)$/.test(String(q.a).trim())?'tf':'skip';return 'one'}
+ if(q.t==='short')return 'short';
+ if(q.t==='long')return 'long3';
+ if(q.t==='long4')return 'long4';
+ return 'skip'}
+function buildPaperMA(){
+ const P=ST.ptype,max=PT[P].max,tpl=MA_TPL[P],ls=parseSel(ST.sel[P]);
+ const r=rng(ST.seed[P]*7919+ls.length*31+P.length+(ls[0]||0));
+ const KS=['mcq','tf','one','short','long3','long4','pic'];
+ const by={};KS.forEach(k=>by[k]=[]);
+ const seen=new Set();
+ allQ().filter(q=>ls.includes(q.ch)).forEach(q=>{const k=maKind(q);if(k==='skip'||k==='match')return;const key=q.ch+'|'+q.q;if(seen.has(key))return;seen.add(key);by[k].push(q)});
+ KS.forEach(k=>by[k]=shuffle(by[k],r));
+ /* ಚಿತ್ರ ಪ್ರಶ್ನೆಗಳು (iq): ಒಂದು ಚಿತ್ರಕ್ಕೆ ಒಂದೇ ಪ್ರಶ್ನೆ */
+ {const iqs=[];lessons().filter(l=>ls.includes(l.n)).forEach(l=>(l.iq||[]).forEach((x,i)=>{if(x.img&&x.q&&x.a)iqs.push(Object.assign({id:l.n+'-iq'+i,ch:l.n,lv:x.lv||'e'},x))}));
+  const si=new Set();shuffle(iqs,r).forEach(x=>{if(!si.has(x.img)){si.add(x.img);by.pic.push(x)}})}
+ const used=new Set(),sec=[];let imgN=0;
+ const take=(k,n)=>{const o=[];for(const q of by[k]){if(o.length>=n)break;if(used.has(q.id))continue;if(k==='pic'&&imgN>=MA_MAXIMG[P])break;o.push(q);used.add(q.id);if(k==='pic')imgN++}return o};
+ tpl.slice().sort((a,b)=>(b[0]==='pic')-(a[0]==='pic')).forEach(([k,n,m])=>{const its=take(k,n);if(its.length)sec.push({k,m,items:its})});
+ /* ಕೊರತೆ ನಿಯಮ: ಒಟ್ಟು ಅಂಕ ನಿಖರವಾಗಿ ಗರಿಷ್ಠ ಅಂಕಕ್ಕೆ ಸಮನಾಗುವಂತೆ ಇತರ ಪ್ರಶ್ನೆಗಳಿಂದ ತುಂಬುವುದು */
+ const tot0=()=>sec.reduce((a,s)=>a+s.items.length*s.m,0);
+ const avail=k=>by[k].filter(q=>!used.has(q.id)).length;
+ const add=(k,m)=>{const it=take(k,1);if(!it.length)return false;let s=sec.find(x=>x.k===k&&x.m===m);if(!s){s={k,m,items:[]};sec.push(s)}s.items.push(it[0]);return true};
+ const cand=[['mcq',1],['tf',1],['one',1],['short',2],['long3',3],['long4',4]];
+ const can=(m,av)=>{if(m===0)return true;if(m<0)return false;for(const [k,mk] of cand){if((av[k]||0)>0){const a2=Object.assign({},av);a2[k]--;if(can(m-mk,a2))return true}}return false};
+ let miss=max-tot0(),guard=0;
+ while(miss>0&&guard++<80){let done=false;
+  for(const [k,mk] of cand){if(mk>miss)continue;const av={};cand.forEach(([k2])=>av[k2]=avail(k2));av[k]--;
+   if(av[k]>=0&&can(miss-mk,av)&&add(k,mk)){miss-=mk;done=true;break}}
+  if(!done)break}
+ sec.sort((a,b)=>MA_ORDER.indexOf(a.k)-MA_ORDER.indexOf(b.k)||a.m-b.m);
+ let body='',n=1,ri=0,tot=0;const bp=[];
+ sec.forEach(s=>{const B=MA_BP[s.k];
+  body+=`<div class="sec"><div class="sh"><span>${ROMAN[ri++]}. ${esc(MA_INS[s.k])}</span><span>${s.items.length}×${fmt(s.m)}=${fmt(s.items.length*s.m)}</span></div>`;
+  s.items.forEach(q=>{body+=evsItemHtml(s.k,q,n);bp.push({ch:q.ch,mk:s.m,lv:q.lv||B[4],ob:B[0],fi:B[1],sp:B[2],tm:B[3],t:'one'});tot+=s.m;n++});
+  body+='</div>'});
+ ST.lastPicked=bp;ST.lastLs=ls;
+ const warn=tot!==max?`<div class="chn nopr">ಎಚ್ಚರಿಕೆ: ಈ ಪಾಠ ಆಯ್ಕೆಗೆ ಸಾಕಷ್ಟು ಪ್ರಶ್ನೆಗಳಿಲ್ಲ – ${fmt(tot)} / ${max} ಅಂಕ ಮಾತ್ರ ತುಂಬಿದೆ.</div>`:'';
+ return `<div class="paper fade" id="pp"><div class="ph"><div class="sch">${T('school')(ST.cls)}, ____________ ____________ ತಾಲ್ಲೂಕು</div><b style="font-size:1.25em">${T('exam')[P]}</b><br>${T('cls')}: ${ORD[ST.cls-1]} | ${T('subj')}: ${cur().title} ${cur().part}<br>${T('time')}: ${T('times')[P]} | ${T('maxm')}: ${max}<br>${T('stu')}: ______________________ ${T('roll')}: ____</div>${body}${warn}<div class="ph" style="border:0;border-top:2px solid #232a45;padding-top:.6rem">${T('totalM')}: ${fmt(tot)}</div></div>`}
+
 function vPaper(){if(!allQ().length)return `<div class="card glass neu">${T('noPaper')}</div>`;
  const P=ST.ptype;ensureSel(P);const o=selOpts(P),v=ST.sel[P];
- const paperHtml=ST.sub==='kn'?buildPaperKN():ST.sub==='en'?buildPaperEN():ST.sub==='evs'?buildPaperEVS():buildPaper();
+ const paperHtml=ST.sub==='kn'?buildPaperKN():ST.sub==='en'?buildPaperEN():ST.sub==='evs'?buildPaperEVS():ST.sub==='ma'?buildPaperMA():buildPaper();
  const bpSec=ST.bpOpen?`<div class="card glass neu bpwrap"><div class="bpbar"><h3>${T('bpTitle')}</h3></div>${bpPaperHtml(ST.lastPicked,ST.lastLs)}</div>`:'';
  const tabs=['unit','fa3','fa4','sa2'].map(k=>`<button class="tb sm ${P===k?'on':''}" data-p="${k}" onclick="ST.ptype='${k}';render()">${T('examTab')[k]} (${PT[k].max})</button>`).join('');
  const po=[];if(o.g.length){po.push([null,T('groups')]);o.g.forEach(x=>po.push(x))}if(o.s.length){po.push([null,T('single')]);o.s.forEach(x=>po.push(x))}
