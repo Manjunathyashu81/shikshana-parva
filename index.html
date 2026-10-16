@@ -826,7 +826,7 @@ body.vquiz.vsub .pills.lvp,body.vquiz.vsub .fgrid{margin-bottom:5px}
 <footer><b>ಶಿಕ್ಷಣ ಪರ್ವ</b> · ಶಿಕ್ಷಕರಿಗಾಗಿ ಕಲಿಕಾ ಸಂಪನ್ಮೂಲ ವೇದಿಕೆ</footer>
 <script>
 /* ===== ಶಿಕ್ಷಣ ಪರ್ವ · LBA ಪ್ರಶ್ನೆ ಬಂಡಾರ (v12) ===== */
-const MK={mcq:1,one:0.5,lang:1,short:2,long:3};
+const MK={mcq:1,one:0.5,lang:1,short:2,long:3,one1:1,long4:4};
 const esc=s=>String(s).replace(/\s*\((?:ಶಿಕ್ಷಕರು )?ಪರಿಶೀಲಿಸಿ\)/g,'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 const $=id=>document.getElementById(id);
 const fmt=n=>(Math.round(n*100)/100).toString();
@@ -907,6 +907,10 @@ en:{tabs:[['ab','Practice Answers'],['qb','LBA Question Bank'],['paper','Questio
 };
 const OBJ_K=['a','g','b','p'];
 const TMIN={mcq:2,one:1,lang:2,short:5,long:7};
+Object.assign(L10N.kn.types,{one1:'ಒಂದು ಅಂಕ',long4:'ವಿವರಣಾತ್ಮಕ (4 ಅಂಕ)'});
+Object.assign(L10N.en.types,{one1:'One mark',long4:'Descriptive (4 marks)'});
+Object.assign(L10N.kn.ins,{one1:'ಒಂದು ಅಂಕ – ಒಂದು ಪದ ಅಥವಾ ವಾಕ್ಯದಲ್ಲಿ ಉತ್ತರಿಸಿ.',long4:'ವಿವರಣಾತ್ಮಕವಾಗಿ ಉತ್ತರಿಸಿ (ಐದು–ಆರು ವಾಕ್ಯ).'});
+Object.assign(L10N.en.ins,{one1:'One mark – answer in a word or sentence.',long4:'Answer descriptively (five to six sentences).'});
 function Lx(){return L10N[ST.sub==='en'?'en':'kn']}
 function T(k){return Lx()[k]}
 /* ===== ಸ್ಥಿತಿ ===== */
@@ -1283,9 +1287,35 @@ function bpPaperHtml(qs,ls){const B=T('bt'),max=PT[ST.ptype].max;const tq=qs.len
  let tt=0;qs.forEach((q,i)=>{const tmv=q.tm||TMIN[q.t];tt+=tmv;a+=`<tr><td>${i+1}</td><td class="l">${esc(lname(q.ch))}</td><td>${T('obj')[objOf(q)]}</td><td>${q.sp||B.specs[q.t]}</td><td>${fmt(q.mk)}</td><td>${q.fi!==undefined?B.qtypes[q.fi]:B.forms[q.t]}</td><td>${B.diffs['emh'.indexOf(q.lv)]}</td><td>${tmv}</td></tr>`});
  a+=`<tr class="tot"><td colspan="4">${B.total}</td><td>${fmt(tm)}</td><td></td><td></td><td>${tt}</td></tr></tbody></table></div>`;
  return `<div class="bph">${B.t1}</div>${t1}<div class="bph">${B.t2}</div>${tbl(lrow,B.unitName)}<div class="bph">${B.t3}</div>${tbl(frow,B.qform)}<div class="bph">${B.t4}</div>${tbl(drow,B.diff)}<div class="bph">${B.t5}</div>${g}<div class="bph">${B.t6}</div>${a}`}
+function buildPaperEVS(){
+ const P=ST.ptype;
+ if(P!=='sa2')return `<div class="card glass neu">ಈ ಪತ್ರಿಕೆ ಮಾದರಿ ಇನ್ನೂ ಸಿದ್ಧವಾಗಿಲ್ಲ. ಸಂಕಲನಾತ್ಮಕ ಮೌಲ್ಯಮಾಪನ-2 ಆಯ್ಕೆ ಮಾಡಿ.</div>`;
+ const ls=parseSel(ST.sel[P]);
+ const pool=allQ().filter(q=>ls.includes(q.ch));
+ /* ಚಿತ್ರ ಪ್ರಶ್ನೆಗಳು (iq) ಸಹ ಪೂಲ್‌ಗೆ ಸೇರುತ್ತವೆ – 1 ಅಂಕ, ಒಂದು ವಾಕ್ಯ ಉತ್ತರ */
+ lessons().filter(l=>ls.includes(l.n)).forEach(l=>(l.iq||[]).forEach((q,i)=>pool.push(Object.assign({id:'iq'+l.n+'-'+i,ch:l.n,t:'one1',mk:1},q))));
+ const r=rng(ST.seed[P]*7919+ls.length*31+11);
+ const by={one1:shuffle(pool.filter(q=>q.t==='one1'),r),short:shuffle(pool.filter(q=>q.t==='short'),r),long4:shuffle(pool.filter(q=>q.t==='long4'),r)};
+ /* [ಶೀರ್ಷಿಕೆ, ಪ್ರಕಾರ, ಸಂಖ್ಯೆ, ಸೂಚನೆ] – ಮಾದರಿ: ಸಂಕಲನಾತ್ಮಕ ಮೌಲ್ಯಮಾಪನ-2 (EVS) */
+ const TPL=[['I','one1',3,'ಖಾಲಿ ಬಿಟ್ಟ ಸ್ಥಳ ತುಂಬಿರಿ.'],['II','one1',3,'ಗುಂಪಿಗೆ ಸೇರದ ಪದ ಗುರುತಿಸಿ ಬರೆಯಿರಿ.'],['III','one1',4,'ಹೊಂದಿಸಿ ಬರೆಯಿರಿ.'],['IV','one1',2,'ವಿರುದ್ಧಾರ್ಥಕ ಪದ ಬರೆಯಿರಿ.'],['V','one1',2,'ಸ್ವಂತ ವಾಕ್ಯ ರಚಿಸಿ.'],['VI','one1',4,'ಪದ್ಯ ಭಾಗ ಪೂರ್ಣಗೊಳಿಸಿ.'],['VII','short',2,'ಮಾತು ಯಾರು ಹೇಳಿದರು ಮತ್ತು ಯಾರಿಗೆ ಹೇಳಿದರು?'],['VIII','one1',4,'ಒಂದು ವಾಕ್ಯದಲ್ಲಿ ಉತ್ತರಿಸಿ.'],['IX','short',3,'ಎರಡು–ಮೂರು ವಾಕ್ಯಗಳಲ್ಲಿ ಉತ್ತರಿಸಿ.'],['IX','long4',2,'ಐದು–ಆರು ವಾಕ್ಯಗಳಲ್ಲಿ ಉತ್ತರಿಸಿ.']];
+ const used=new Set();let imgN=0,n=1,body='',tm=0,short=[];const all=[];
+ TPL.forEach(([R,t,cnt,ins])=>{
+   const mk=MK[t],picks=[];
+   for(const q of by[t]){ if(picks.length>=cnt)break; if(used.has(q.id))continue; if(q.img&&imgN>=3)continue; picks.push(q); used.add(q.id); if(q.img)imgN++; }
+   if(picks.length<cnt)short.push(`${R} (${t}): ${cnt-picks.length} ಕೊರತೆ`);
+   tm+=picks.length*mk; all.push(...picks);
+   body+=`<div class="sec"><b>${R}. ${ins}</b> <span class="mk">(${picks.length} × ${mk} = ${picks.length*mk})</span>`;
+   picks.forEach(q=>{ body+=`<div class="pq"><div>${n++}. ${esc(q.q)}</div>${q.img?`<div class="qpic"><img loading="lazy" src="${q.img}" alt=""></div>`:''}`;
+     if(ST.showAns)body+=`<div class="ans"><b>${T('ans')}</b> ${esc(q.a)}</div>`; body+='</div>'; });
+   body+='</div>';
+ });
+ ST.lastPicked=all;ST.lastLs=ls;
+ const warn=short.length?`<div class="ans">ಕೊರತೆ: ${short.join(', ')}</div>`:'';
+ return `<div class="paper fade" id="pp"><div class="ph"><div class="sch">${T('school')(ST.cls)}</div><b style="font-size:1.25em">${T('exam')[P]}</b><br>${T('cls')}: ${ORD[ST.cls-1]} | ${T('subj')}: ${cur().title}</div>${body}${warn}<div class="ft"><b>ಒಟ್ಟು ಅಂಕ: ${tm} / ${PT[P].max}</b></div></div>`;
+}
 function vPaper(){if(!allQ().length)return `<div class="card glass neu">${T('noPaper')}</div>`;
  const P=ST.ptype;ensureSel(P);const o=selOpts(P),v=ST.sel[P];
- const paperHtml=ST.sub==='kn'?buildPaperKN():ST.sub==='en'?buildPaperEN():buildPaper();
+ const paperHtml=ST.sub==='kn'?buildPaperKN():ST.sub==='en'?buildPaperEN():ST.sub==='evs'?buildPaperEVS():buildPaper();
  const bpSec=ST.bpOpen?`<div class="card glass neu bpwrap"><div class="bpbar"><h3>${T('bpTitle')}</h3></div>${bpPaperHtml(ST.lastPicked,ST.lastLs)}</div>`:'';
  const tabs=['unit','fa3','fa4','sa2'].map(k=>`<button class="tb sm ${P===k?'on':''}" data-p="${k}" onclick="ST.ptype='${k}';render()">${T('examTab')[k]} (${PT[k].max})</button>`).join('');
  const po=[];if(o.g.length){po.push([null,T('groups')]);o.g.forEach(x=>po.push(x))}if(o.s.length){po.push([null,T('single')]);o.s.forEach(x=>po.push(x))}
