@@ -826,7 +826,7 @@ body.vquiz.vsub .pills.lvp,body.vquiz.vsub .fgrid{margin-bottom:5px}
 <footer><b>ಶಿಕ್ಷಣ ಪರ್ವ</b> · ಶಿಕ್ಷಕರಿಗಾಗಿ ಕಲಿಕಾ ಸಂಪನ್ಮೂಲ ವೇದಿಕೆ</footer>
 <script>
 /* ===== ಶಿಕ್ಷಣ ಪರ್ವ · LBA ಪ್ರಶ್ನೆ ಬಂಡಾರ (v12) ===== */
-const MK={mcq:1,one:0.5,lang:1,short:2,long:3};
+const MK={mcq:1,one:0.5,lang:1,short:2,long:3,one1:1,long4:4};
 const esc=s=>String(s).replace(/\s*\((?:ಶಿಕ್ಷಕರು )?ಪರಿಶೀಲಿಸಿ\)/g,'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 const $=id=>document.getElementById(id);
 const fmt=n=>(Math.round(n*100)/100).toString();
@@ -907,8 +907,12 @@ en:{tabs:[['ab','Practice Answers'],['qb','LBA Question Bank'],['paper','Questio
 };
 const OBJ_K=['a','g','b','p'];
 const TMIN={mcq:2,one:1,lang:2,short:5,long:7};
+Object.assign(L10N.kn.types,{one1:'ಒಂದು ಅಂಕ',long4:'ವಿವರಣಾತ್ಮಕ (4 ಅಂಕ)'});
+Object.assign(L10N.en.types,{one1:'One mark',long4:'Descriptive (4 marks)'});
+Object.assign(L10N.kn.ins,{one1:'ಒಂದು ಅಂಕ – ಒಂದು ಪದ ಅಥವಾ ವಾಕ್ಯದಲ್ಲಿ ಉತ್ತರಿಸಿ.',long4:'ವಿವರಣಾತ್ಮಕವಾಗಿ ಉತ್ತರಿಸಿ (ಐದು–ಆರು ವಾಕ್ಯ).'});
+Object.assign(L10N.en.ins,{one1:'One mark – answer in a word or sentence.',long4:'Answer descriptively (five to six sentences).'});
 function Lx(){return L10N[ST.sub==='en'?'en':'kn']}
-function T(k){return Lx()[k]}
+function T(k){if(k==='obj'&&ST.sub==='evs'&&typeof EVS_OBJ!=='undefined')return EVS_OBJ;return Lx()[k]}
 /* ===== ಸ್ಥಿತಿ ===== */
 let ST={view:'home',cls:null,sub:null,tab:'ab',hist:[],ch:'all',type:'all',lv:'all',qi:0,qo:[],qs:0,qa:null,ptype:'unit',showAns:true,abl:9,bpOpen:false,qzc:'all',qzt:'all',
  sel:{unit:'',fa3:'',fa4:'',sa2:''},seed:{unit:1,fa3:1,fa4:1,sa2:1},lastPicked:[]};
@@ -1260,7 +1264,7 @@ function lessonShort(l){return ST.sub==='en'?l.t.replace(/\s*\(.*$/,''):l.t}
 function bpPaperHtml(qs,ls){const B=T('bt'),max=PT[ST.ptype].max;const tq=qs.length,tm=qs.reduce((s,q)=>s+q.mk,0);const pc=m=>fmt(Math.round(m*1000/max)/10)+'%';
  /* 1. ಉದ್ದಿಷ್ಟವಾರು */
  const o=T('obj').map((n,i)=>{const f=qs.filter(q=>objOf(q)===i);return {n,q:f.length,m:f.reduce((s,q)=>s+q.mk,0),calc:false}});
- if(ST.sub!=='en')o.filter(x=>x.q===0).forEach(x=>{const big=o.reduce((a,b)=>b.m>a.m?b:a);big.m-=1;x.m=1;x.calc=true});
+ if(ST.sub!=='en'&&ST.sub!=='evs')o.filter(x=>x.q===0).forEach(x=>{const big=o.reduce((a,b)=>b.m>a.m?b:a);big.m-=1;x.m=1;x.calc=true});
  const t1=`<div class="tw"><table class="bpt"><thead><tr><th>${B.objs}</th>${o.map(x=>`<th>${x.n}</th>`).join('')}<th>${B.total}</th></tr></thead><tbody><tr><td>${B.nq}</td>${o.map(x=>`<td>${x.q}</td>`).join('')}<td>${tq}</td></tr><tr class="tot"><td>${B.marks}</td>${o.map(x=>`<td>${fmt(x.m)}</td>`).join('')}<td>${fmt(max)}</td></tr><tr><td>${B.pct}</td>${o.map(x=>`<td>${pc(x.m)}</td>`).join('')}<td>100%</td></tr></tbody></table></div>`;
  /* 2. ಘಟಕವಾರು */
  const LS=lessons().filter(l=>ls.includes(l.n));
@@ -1283,9 +1287,109 @@ function bpPaperHtml(qs,ls){const B=T('bt'),max=PT[ST.ptype].max;const tq=qs.len
  let tt=0;qs.forEach((q,i)=>{const tmv=q.tm||TMIN[q.t];tt+=tmv;a+=`<tr><td>${i+1}</td><td class="l">${esc(lname(q.ch))}</td><td>${T('obj')[objOf(q)]}</td><td>${q.sp||B.specs[q.t]}</td><td>${fmt(q.mk)}</td><td>${q.fi!==undefined?B.qtypes[q.fi]:B.forms[q.t]}</td><td>${B.diffs['emh'.indexOf(q.lv)]}</td><td>${tmv}</td></tr>`});
  a+=`<tr class="tot"><td colspan="4">${B.total}</td><td>${fmt(tm)}</td><td></td><td></td><td>${tt}</td></tr></tbody></table></div>`;
  return `<div class="bph">${B.t1}</div>${t1}<div class="bph">${B.t2}</div>${tbl(lrow,B.unitName)}<div class="bph">${B.t3}</div>${tbl(frow,B.qform)}<div class="bph">${B.t4}</div>${tbl(drow,B.diff)}<div class="bph">${B.t5}</div>${g}<div class="bph">${B.t6}</div>${a}`}
+/* ===== ಪರಿಸರ ಅಧ್ಯಯನ (EVS) ಪ್ರಶ್ನೆ ಪತ್ರಿಕೆ: SA-2 ಮಾದರಿ ಪತ್ರಿಕೆಯ ಚೌಕಟ್ಟಿನಲ್ಲಿ (LBA ಪ್ರಶ್ನೆಗಳಿಂದ) ===== */
+/* [ಬಗೆ, ಸಂಖ್ಯೆ, ಪ್ರತಿ ಪ್ರಶ್ನೆಗೆ ಅಂಕ] – ಒಟ್ಟು = ಪರೀಕ್ಷೆಯ ಗರಿಷ್ಠ ಅಂಕ */
+const EVS_TPL={
+ unit:[['mcq',4,1],['pic',2,1],['match',4,1],['blank',2,1],['one',2,1],['short',1,2],['long4',1,4]],
+ fa3:[['mcq',3,1],['pic',3,1],['match',4,1],['blank',1,1],['tf',2,1],['short',1,2]],
+ fa4:[['mcq',3,1],['pic',3,1],['match',4,1],['blank',2,1],['one',1,1],['short',1,2]],
+ sa2:[['mcq',8,1],['pic',4,1],['match',4,1],['one',4,1],['short',6,2],['long4',2,4]]};
+const EVS_MAXIMG={unit:2,fa3:3,fa4:3,sa2:4};
+const EVS_ORDER=['mcq','pic','match','blank','tf','one','short','long3','long4'];
+const EVS_INS={mcq:'ಕೊಟ್ಟಿರುವ ನಾಲ್ಕು ಆಯ್ಕೆಗಳಲ್ಲಿ ಸೂಕ್ತ ಉತ್ತರವನ್ನು ಆರಿಸಿ ಬರೆಯಿರಿ:',pic:'ಚಿತ್ರವನ್ನು ನೋಡಿ ಉತ್ತರಿಸಿ:',match:'ಹೊಂದಿಸಿ ಬರೆಯಿರಿ:',blank:'ಬಿಟ್ಟ ಸ್ಥಳಗಳನ್ನು ಸೂಕ್ತ ಪದಗಳಿಂದ ತುಂಬಿರಿ:',tf:'ಸರಿ ಅಥವಾ ತಪ್ಪು ಎಂದು ಬರೆಯಿರಿ:',one:'ಈ ಕೆಳಗಿನ ಪ್ರಶ್ನೆಗಳಿಗೆ ಒಂದು ವಾಕ್ಯದಲ್ಲಿ ಉತ್ತರಿಸಿ:',short:'ಈ ಕೆಳಗಿನ ಪ್ರಶ್ನೆಗಳಿಗೆ ಎರಡು–ಮೂರು ವಾಕ್ಯಗಳಲ್ಲಿ ಉತ್ತರಿಸಿ:',long3:'ಈ ಕೆಳಗಿನ ಪ್ರಶ್ನೆಗಳಿಗೆ ಮೂರು–ನಾಲ್ಕು ವಾಕ್ಯಗಳಲ್ಲಿ ಉತ್ತರಿಸಿ:',long4:'ಈ ಕೆಳಗಿನ ಪ್ರಶ್ನೆಗಳಿಗೆ 5–6 ವಾಕ್ಯಗಳಲ್ಲಿ ಉತ್ತರಿಸಿ:'};
+/* ಬ್ಲೂಪ್ರಿಂಟ್: [ಉದ್ದಿಷ್ಟ a ಜ್ಞಾನ / g ತಿಳಿವಳಿಕೆ / b ಅನ್ವಯ / p ಕೌಶಲ, ಸ್ವರೂಪ 0 ವ.ಉ 1 ಕಿ.ಉ 2 ವಿ.ಉ, ನಿರ್ದಿಷ್ಟ, ಸಮಯ(ನಿ), ಕಠಿಣತೆ] – ಮಾದರಿ ವಿಶ್ಲೇಷಣೆಯಂತೆ */
+const EVS_BP={mcq:['g',0,'ಆಯ್ಕೆ ಮಾಡುತ್ತಾನೆ',2,'e'],pic:['g',0,'ಚಿತ್ರ ಗಮನಿಸಿ ಆಯ್ಕೆ ಮಾಡುತ್ತಾನೆ',2,'e'],match:['g',0,'ಹೊಂದಿಸುತ್ತಾನೆ',2,'e'],blank:['a',0,'ಸ್ಮರಿಸುತ್ತಾನೆ',2,'e'],tf:['g',0,'ಆಯ್ಕೆ ಮಾಡುತ್ತಾನೆ',2,'e'],one:['a',1,'ಸ್ಮರಿಸುತ್ತಾನೆ',4,'m'],short:['a',1,'ಸ್ಮರಿಸುತ್ತಾನೆ',5,'m'],long3:['b',1,'ವಿವರಿಸುತ್ತಾನೆ',6,'m'],long4:['b',2,'ವಿವರಿಸುತ್ತಾನೆ',6,'h']};
+const EVS_OBJ=['ಜ್ಞಾನ','ತಿಳಿವಳಿಕೆ','ಅನ್ವಯ','ಕೌಶಲ'];
+function evsKind(q){const t=String(q.q||'');
+ if(/^\s*\[ಪ್ರಶ್ನೆ ಪಠ್ಯ|ಪ್ರಶ್ನೆ ಪಠ್ಯ ಇಲ್ಲ/.test(t)||q.a==='ಕೋಷ್ಟಕ ಉತ್ತರ')return 'skip';
+ if(q.t==='mcq')return 'mcq';
+ if(q.t==='one1'){
+  if(/^ಹೊಂದಿಸಿ ಬರೆ/.test(t))return 'match';
+  if(/^ಸರಿ ಅಥವಾ ತಪ್ಪು\s*:/.test(t))return (/\?\s*$/.test(t)||!/^(ಸರಿ|ತಪ್ಪು)$/.test(String(q.a).trim()))?'skip':'tf';
+  if(/_{2,}/.test(t))return 'blank';
+  return 'one'}
+ if(q.t==='short')return 'short';
+ if(q.t==='long')return 'long3';
+ if(q.t==='long4')return q.note==='drawing'?'draw':'long4';
+ return 'skip'}
+function evsShortOb(t){return /ವ್ಯತ್ಯಾಸ|ಹೋಲಿಸಿ/.test(t)?['g','ವ್ಯತ್ಯಾಸಿಸುತ್ತಾನೆ']:/ಹೇಗೆ|ಏಕೆ|ಯಾಕೆ|ನೀವು|ನಿಮ್ಮ|ನೀನು|ನಿನ್ನ|ನಾನು/.test(t)?['b','ವಿವರಿಸುತ್ತಾನೆ']:/ಪಟ್ಟಿ|ಯಾವುವು|ಹೆಸರಿಸಿ/.test(t)?['a','ಪಟ್ಟಿ ಮಾಡುತ್ತಾನೆ']:['a','ಸ್ಮರಿಸುತ್ತಾನೆ']}
+function evsMatchPairs(q){return String(q.a).split(/\s*;\s*/).map(x=>x.split(/\s+–\s+/)).filter(x=>x.length===2&&x[0].trim()&&x[1].trim()&&!/ಕೀ ಪ್ರಕಾರ|ಪರಿಶೀಲಿಸಿ/.test(x[0]+x[1])).map(x=>[x[0].trim(),x[1].trim()])}
+function evsStrip(k,q){let t=String(q.q);
+ if(k==='tf')return t.replace(/^ಸರಿ ಅಥವಾ ತಪ್ಪು\s*:\s*/,'').trim();
+ if(k==='pic')return t.replace(/^ಚಿತ್ರವನ್ನು ನೋಡಿ ಉತ್ತರಿಸಿ\s*:\s*/,'').replace(/([?.])\s*\([^)]*\)\s*$/,'$1').trim();/* ಪ್ರಶ್ನೆಯ ನಂತರದ ಆವರಣ ಸುಳಿವು (ಉತ್ತರ ಬಹಿರಂಗ) ಪತ್ರಿಕೆಯಲ್ಲಿ ತೋರಿಸುವುದಿಲ್ಲ */
+ return t}
+function evsItemHtml(k,q,n){const t=evsStrip(k,q),e=esc(t),ln='<span class="ln"></span>',wl='<div class="wl"></div>';
+ const img=q.img?`<div class="qpic"><img loading="lazy" src="${q.img}" alt=""></div>`:'';let h='',ans=esc(q.a);
+ if(k==='mcq'){h=`<div>${n}. ${e.replace(/_{2,}/g,ln)}</div><div class="po">${q.o.map((o,i)=>`(${T('optL')[i]}) ${esc(o)}`).join(' &nbsp; ')}</div>`;ans='('+T('optL')[q.a]+') '+esc(q.o[q.a])}
+ else if(k==='pic')h=`<div>${n}. ${e}</div>${img}${wl}`;
+ else if(k==='blank')h=`<div>${n}. ${e.replace(/_{2,}/g,ln)}</div>`;
+ else if(k==='tf')h=`<div>${n}. ${e} &nbsp; ( <span class="ln" style="min-width:4rem"></span> )</div>`;
+ else if(k==='one')h=`<div>${n}. ${e}</div>${wl}`;
+ else if(k==='short')h=`<div>${n}. ${e}</div>${wl}${wl}${wl}`;
+ else if(k==='long3')h=`<div>${n}. ${e}</div>${wl.repeat(4)}`;
+ else{h=`<div>${n}. ${e}</div>${wl.repeat(5)}`;if(q.note==='drawing')ans='ಮಕ್ಕಳ ಚಿತ್ರವನ್ನು ಆಧರಿಸಿ ಅಂಕ ನೀಡುವುದು.'}
+ if(ST.showAns)h+=`<div class="ans"><b>${T('ans')}</b> ${ans}</div>`;
+ return `<div class="pq">${h}</div>`}
+function buildPaperEVS(){
+ const P=ST.ptype,max=PT[P].max,tpl=EVS_TPL[P],ls=parseSel(ST.sel[P]);
+ const r=rng(ST.seed[P]*7919+ls.length*31+P.length+(ls[0]||0));
+ const by={};['mcq','blank','tf','one','short','long3','long4','draw','match','pic'].forEach(k=>by[k]=[]);
+ const seen=new Set();
+ allQ().filter(q=>ls.includes(q.ch)).forEach(q=>{const k=evsKind(q);if(k==='skip')return;const key=q.ch+'|'+q.q;if(seen.has(key))return;seen.add(key);
+  if(k==='match'){const pr=evsMatchPairs(q);if(pr.length>=4){const m=q.q.replace(/^ಹೊಂದಿಸಿ ಬರೆಯಿರಿ\s*:\s*/,'').replace(/\s*\([^)]*\)\s*$/,'').trim();by.match.push({id:q.id,ch:q.ch,lv:q.lv,pairs:pr,topic:/^\(/.test(m)?'':m})}return}
+  by[k].push(q)});
+ ['mcq','blank','tf','one','short','long3','long4','draw','match'].forEach(k=>by[k]=shuffle(by[k],r));
+ /* ಚಿತ್ರ ಪ್ರಶ್ನೆಗಳು (iq): ಒಂದು ಚಿತ್ರಕ್ಕೆ ಒಂದೇ ಪ್ರಶ್ನೆ; ಮೊದಲು ತೆಗೆದುಕೊಳ್ಳಲಾಗುತ್ತದೆ */
+ {const iqs=[];lessons().filter(l=>ls.includes(l.n)).forEach(l=>(l.iq||[]).forEach((x,i)=>{if(x.img&&x.q&&x.a)iqs.push(Object.assign({id:l.n+'-iq'+i,ch:l.n,lv:'e'},x))}));
+  const si=new Set();shuffle(iqs,r).forEach(x=>{if(!si.has(x.img)){si.add(x.img);by.pic.push(x)}})}
+ /* ಒಂದು ಪತ್ರಿಕೆಯಲ್ಲಿ ಗರಿಷ್ಠ 1 ಚಿತ್ರ ಬರೆಯುವ ಪ್ರಶ್ನೆ */
+ by.long4=P==='sa2'?[...by.draw.slice(0,1),...by.long4]:[...by.long4,...by.draw.slice(0,1)];/* SA-2 ಮಾದರಿಯಲ್ಲಿ ಒಂದು ಚಿತ್ರ ಬರೆಯುವ (ಕೌಶಲ) ಪ್ರಶ್ನೆ ಇರುತ್ತದೆ */
+ const used=new Set(),sec=[];let imgN=0;
+ const take=(k,n)=>{const o=[];for(const q of by[k]){if(o.length>=n)break;if(used.has(q.id))continue;if(k==='pic'&&imgN>=EVS_MAXIMG[P])break;o.push(q);used.add(q.id);if(k==='pic')imgN++}return o};
+ tpl.slice().sort((a,b)=>(b[0]==='pic')-(a[0]==='pic')).forEach(([k,n,m])=>{
+  if(k==='match'){const b=by.match.find(x=>!used.has(x.id));if(b){used.add(b.id);sec.push({k,m,block:b,pairs:shuffle(b.pairs,r).slice(0,n),items:[]})}return}
+  const its=take(k,n);if(its.length)sec.push({k,m,items:its})});
+ const cnt=s=>s.k==='match'?s.pairs.length:s.items.length;
+ const tot0=()=>sec.reduce((a,s)=>a+cnt(s)*s.m,0);
+ /* ಕೊರತೆ ನಿಯಮ: ಒಟ್ಟು ಅಂಕ ನಿಖರವಾಗಿ ಗರಿಷ್ಠ ಅಂಕಕ್ಕೆ – ಮೊದಲು ಅದೇ ರೀತಿಯ 1-ಅಂಕದ ವಿಭಾಗಗಳಿಗೆ, ನಂತರ 2/3 ಅಂಕದ ಪ್ರಶ್ನೆಗಳು */
+ const avail=k=>by[k].filter(q=>!used.has(q.id)).length;
+ const add=(k,m)=>{
+  if(k==='match'){const s=sec.find(x=>x.k==='match');if(!s)return false;const rest=shuffle(s.block.pairs,r).filter(p=>!s.pairs.some(x=>x[0]===p[0])).slice(0,1);if(!rest.length||s.pairs.length>=8)return false;s.pairs.push(rest[0]);return true}
+  const it=take(k,1);if(!it.length)return false;let s=sec.find(x=>x.k===k&&x.m===m);if(!s){s={k,m,items:[]};sec.push(s)}s.items.push(it[0]);return true};
+ const matchRoom=()=>{const s=sec.find(x=>x.k==='match');return s?Math.max(0,Math.min(8,s.block.pairs.length)-s.pairs.length):0};
+ const cap=k=>k==='match'?matchRoom():k==='pic'?Math.max(0,Math.min(EVS_MAXIMG[P]-imgN,avail('pic'))):avail(k);
+ {let miss=max-tot0();
+  const one=['blank','one','tf','mcq','match','pic'];
+  const present=one.filter(k=>sec.some(x=>x.k===k&&x.m===1));
+  const cand=[...present,...['blank','one','tf','mcq'].filter(k=>!present.includes(k))].map(k=>[k,1]).concat([['short',2],['long3',3],['long4',4]]);
+  /* ಉಳಿದ ಅಂಕಗಳನ್ನು ನಿಖರವಾಗಿ ತುಂಬಬಹುದೇ ಎಂದು ಪರೀಕ್ಷಿಸುವ ಲೆಕ್ಕ */
+  const can=(m,av)=>{if(m===0)return true;if(m<0)return false;for(const [k,mk] of cand){if(av[k+mk]>0){const a2=Object.assign({},av);a2[k+mk]--;if(can(m-mk,a2))return true}}return false};
+  let guard=0;while(miss>0&&guard++<80){let done=false;
+   for(const [k,mk] of cand){if(mk>miss||cap(k)<1)continue;const av={};
+    cand.forEach(([k2,m2])=>av[k2+m2]=cap(k2));av[k+mk]--;
+    if(can(miss-mk,av)&&add(k,mk)){miss-=mk;done=true;break}}
+   if(!done)break}}
+ sec.sort((a,b)=>EVS_ORDER.indexOf(a.k)-EVS_ORDER.indexOf(b.k)||a.m-b.m);
+ let body='',n=1,ri=0,tot=0;const bp=[];
+ sec.forEach(s=>{const c=cnt(s),B=EVS_BP[s.k];
+  const ins=s.k==='match'&&s.block.topic?`ಹೊಂದಿಸಿ ಬರೆಯಿರಿ (${s.block.topic}):`:EVS_INS[s.k];
+  body+=`<div class="sec"><div class="sh"><span>${ROMAN[ri++]}. ${esc(ins)}</span><span>${c}×${fmt(s.m)}=${fmt(c*s.m)}</span></div>`;
+  const row=(ch,lv,o)=>{const b=Object.assign({ob:B[0],fi:B[1],sp:B[2]},o||{});bp.push({ch,mk:s.m,lv:lv||B[4],ob:b.ob,fi:b.fi,sp:b.sp,tm:B[3],t:'one'});tot+=s.m};
+  if(s.k==='match'){const rs=shuffle(s.pairs.map(p=>p[1]),rng(ST.seed[P]*131+7+ls.length));
+   body+='<table class="mt"><tbody>'+s.pairs.map((p,i)=>`<tr><td class="ml">${n+i}. ${esc(p[0])}</td><td class="mr">${esc(rs[i])}</td><td class="ma"></td></tr>`).join('')+'</tbody></table>';
+   if(ST.showAns)body+=`<div class="ans"><b>${T('ans')}</b> ${s.pairs.map(p=>esc(p[0])+' – '+esc(p[1])).join(' ; ')}</div>`;
+   s.pairs.forEach(()=>row(s.block.ch,'e'));n+=c}
+  else s.items.forEach(q=>{body+=evsItemHtml(s.k,q,n++);
+   if(s.k==='short'){const o=evsShortOb(q.q);row(q.ch,'m',{ob:o[0],sp:o[1]})}
+   else if(s.k==='long4'&&q.note==='drawing')row(q.ch,'h',{ob:'p',sp:'ಚಿತ್ರ ಬಿಡಿಸುತ್ತಾನೆ'});
+   else row(q.ch)});
+  body+='</div>'});
+ ST.lastPicked=bp;ST.lastLs=ls;
+ const warn=tot!==max?`<div class="chn nopr">ಎಚ್ಚರಿಕೆ: ಈ ಪಾಠ ಆಯ್ಕೆಗೆ ಸಾಕಷ್ಟು ಪ್ರಶ್ನೆಗಳಿಲ್ಲ – ${fmt(tot)} / ${max} ಅಂಕ ಮಾತ್ರ ತುಂಬಿದೆ.</div>`:'';
+ return `<div class="paper fade" id="pp"><div class="ph"><div class="sch">${T('school')(ST.cls)}, ____________ ____________ ತಾಲ್ಲೂಕು</div><b style="font-size:1.25em">${T('exam')[P]}</b><br>${T('cls')}: ${ORD[ST.cls-1]} | ${T('subj')}: ${cur().title} ${cur().part}<br>${T('time')}: ${T('times')[P]} | ${T('maxm')}: ${max}<br>${T('stu')}: ______________________ ${T('roll')}: ____</div>${body}${warn}<div class="ph" style="border:0;border-top:2px solid #232a45;padding-top:.6rem">${T('totalM')}: ${fmt(tot)}</div></div>`}
 function vPaper(){if(!allQ().length)return `<div class="card glass neu">${T('noPaper')}</div>`;
  const P=ST.ptype;ensureSel(P);const o=selOpts(P),v=ST.sel[P];
- const paperHtml=ST.sub==='kn'?buildPaperKN():ST.sub==='en'?buildPaperEN():buildPaper();
+ const paperHtml=ST.sub==='kn'?buildPaperKN():ST.sub==='en'?buildPaperEN():ST.sub==='evs'?buildPaperEVS():buildPaper();
  const bpSec=ST.bpOpen?`<div class="card glass neu bpwrap"><div class="bpbar"><h3>${T('bpTitle')}</h3></div>${bpPaperHtml(ST.lastPicked,ST.lastLs)}</div>`:'';
  const tabs=['unit','fa3','fa4','sa2'].map(k=>`<button class="tb sm ${P===k?'on':''}" data-p="${k}" onclick="ST.ptype='${k}';render()">${T('examTab')[k]} (${PT[k].max})</button>`).join('');
  const po=[];if(o.g.length){po.push([null,T('groups')]);o.g.forEach(x=>po.push(x))}if(o.s.length){po.push([null,T('single')]);o.s.forEach(x=>po.push(x))}
