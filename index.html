@@ -992,7 +992,7 @@ function togAbEdit(){const b=$('abbody'),btn=$('abedbtn');if(!b)return;const on=
 /* ===== LBA ಪ್ರಶ್ನೆ ಬಂಡಾರ ===== */
 function markTxt(m){return `${fmt(m)} ${m===1?T('mark'):T('marks')}`}
 function qHtml(q,a){let h=`<div class="qt">${esc(q.q)}</div>${q.img?`<div class="qpic"><img loading="lazy" src="${q.img}" alt=""></div>`:''}`;
- if(q.t==='mcq')h+=q.o.map((o,i)=>`<div class="opt ${a&&i===q.a?'ok':''}"><span class="ol">${'ABCD'[i]}</span>${esc(o)}</div>`).join('');else if(a)h+=`<div class="ans"><b>${T('ans')}</b> ${esc(q.a)}</div>`;return h}
+ if(q.t==='mcq')h+=q.o.map((o,i)=>`<div class="opt ${a&&i===q.a?'ok':''}"><span class="ol">${'ABCD'[i]}</span>${esc(o)}</div>`).join('');else if(a)h+=ansHtml(q.a);return h}
 function fq(){return allQ().filter(q=>(ST.ch==='all'||q.ch==ST.ch)&&(ST.type==='all'||q.t===ST.type)&&(ST.lv==='all'||q.lv===ST.lv))}
 function vQb(){const list=fq();
  const lo=[['all',T('allCh')],...lessons().filter(l=>l.qb.length).map(l=>[String(l.n),lessonLabel(l)])];
@@ -1464,7 +1464,7 @@ function quizHtml(list){if(!list.length)return `<div class="card glass neu">${T(
  const q=allQ().find(x=>x.id===id);const ans=ST.qa!==null;
  let h=`<div class="card glass neu qzcard qzb${ST.qi%7}${ans?' qzans':''}"><div class="qzbody"><div class="meta"><span class="tag">${T('types')[q.t]}</span><span>${markTxt(q.mk)}</span><span>${ST.qi+1}/${ST.qo.length}</span></div><div class="qt">${esc(q.q)}</div>${q.img?`<div class="qpic"><img loading="lazy" src="${q.img}" alt=""></div>`:''}`;
  if(q.t==='mcq')h+='<div class="opts'+(q.o.some(o=>String(o).length>45)?' lg':'')+'">'+q.o.map((o,i)=>{let c='';if(ans){if(i===q.a)c='ok';else if(i===ST.qa)c='bad'}return `<div class="opt ${c}" onclick="ansQ(${i},${q.a})" style="cursor:pointer"><span class="ol">${'ABCD'[i]}</span><span class="ot">${esc(o)}</span></div>`}).join('')+'</div>';
- else if(ans)h+=`<div class="ans"><b>${T('ans')}</b> ${esc(q.a)}</div>`;
+ else if(ans)h+=ansHtml(q.a);
  h+='</div><div class="qzact">';
  if(q.t!=='mcq'&&!ans)h+=`<button class="btn" onclick="ST.qa=0;render()">${T('showAns')}</button>`;
  if(ans)h+=`<button class="btn" onclick="ST.qi++;ST.qa=null;render()">${T('next')}</button>`;
