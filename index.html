@@ -1293,7 +1293,8 @@ function buildPaperEVS(){
  const ls=parseSel(ST.sel[P]);
  const pool=allQ().filter(q=>ls.includes(q.ch));
  /* ಚಿತ್ರ ಪ್ರಶ್ನೆಗಳು (iq) ಸಹ ಪೂಲ್‌ಗೆ ಸೇರುತ್ತವೆ – 1 ಅಂಕ, ಒಂದು ವಾಕ್ಯ ಉತ್ತರ */
- lessons().filter(l=>ls.includes(l.n)).forEach(l=>(l.iq||[]).forEach((q,i)=>pool.push(Object.assign({id:'iq'+l.n+'-'+i,ch:l.n,t:'one1',mk:1},q))));
+ /* ಚಿತ್ರ ಪ್ರಶ್ನೆಗಳನ್ನು ಸೇರಿಸಲು ಈ ಸ್ವಿಚ್ ಅನ್ನು true ಮಾಡಿ (ವಿಭಾಗ ಸೂಚನೆಗಳು ಸರಿಯಾದ ನಂತರ) */
+  /* ಚಿತ್ರ ಪ್ರಶ್ನೆಗಳು (iq) ಈ ಪತ್ರಿಕೆಯಲ್ಲಿ ಸದ್ಯಕ್ಕೆ ಸೇರಿಸಲ್ಪಟ್ಟಿಲ್ಲ */
  const r=rng(ST.seed[P]*7919+ls.length*31+11);
  const by={one1:shuffle(pool.filter(q=>q.t==='one1'),r),short:shuffle(pool.filter(q=>q.t==='short'),r),long4:shuffle(pool.filter(q=>q.t==='long4'),r)};
  /* [ಶೀರ್ಷಿಕೆ, ಪ್ರಕಾರ, ಸಂಖ್ಯೆ, ಸೂಚನೆ] – ಮಾದರಿ: ಸಂಕಲನಾತ್ಮಕ ಮೌಲ್ಯಮಾಪನ-2 (EVS) */
